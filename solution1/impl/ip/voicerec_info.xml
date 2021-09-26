@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+  <core name="" type="" target="">
+    <kernel name="voicerec" language="c" vlnv="xilinx.com:hls:voicerec:3.1" attributes="" hash="" preferredWorkGroupSizeMultiple="0" workGroupSize="1" debug="false">
+      <port name="M_AXI_VOICE_REC" mode="master" range="0xFFFFFFFF" dataWidth="32" portType="addressable" base="0x00000000"/>
+      <port name="S_AXI_VOICE_REC" mode="slave" range="0x1000" dataWidth="32" portType="addressable" base="0x00000000"/>
+      <arg name="new_sample" addressQualifier="1" id="0" port="M_AXI_VOICE_REC" size="0x4" offset="0x18" hostOffset="0x0" hostSize="0x4" type="int*"/>
+      <compileWorkGroupSize x="1" y="1" z="1"/>
+    </kernel>
+  </core>
+</project>

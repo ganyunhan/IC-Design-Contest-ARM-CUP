@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xd:acceleratorMap xmlns:xd="http://www.xilinx.com/xidane" xd:functionName="voicerec" xd:componentRef="voicerec" xd:initiationInterval="203786530" xd:clockPeriod="5.000" xd:sequential="true" xd:hostMachine="64" xd:reset="control">
+  <xd:returnValue xd:interfaceRef="s_axi_voice_rec" xd:busTypeRef="axilite" xd:dataWidth="32" xd:offset="0x10" xd:statusOffset="0x14"/>
+  <xd:controlReg xd:name="control" xd:interfaceRef="s_axi_voice_rec" xd:busTypeRef="axilite" xd:type="generic_axi_lite" xd:offset="0x0"/>
+  <xd:arg xd:name="*(new_sample)" xd:originalName="new_sample" xd:direction="inout" xd:interfaceRef="m_axi_voice_rec" xd:busTypeRef="aximm" xd:arraySize="8000" xd:dataWidth="32" xd:bufferDirection="in"/>
+  <xd:arg xd:name="new_sample" xd:originalName="new_sample" xd:direction="in" xd:interfaceRef="s_axi_voice_rec" xd:busTypeRef="axilite" xd:aximmInterfaceRef="m_axi_voice_rec" xd:dataWidth="32" xd:offset="0x18" xd:handshakeRef="ap_none"/>
+  <xd:arg xd:name="*(guess)" xd:originalName="guess" xd:direction="out" xd:interfaceRef="guess" xd:busTypeRef="register" xd:handshakeRef="ap_none" xd:dataWidth="32" xd:firstOut="142"/>
+  <xd:latencyEstimates xd:best-case="600025" xd:worst-case="203786529" xd:average-case="34949310"/>
+  <xd:resourceEstimates xd:LUT="32639" xd:FF="27567" xd:BRAM="112" xd:DSP="69"/>
+</xd:acceleratorMap>

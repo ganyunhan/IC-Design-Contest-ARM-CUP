@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
+  <source>
+    <originFiles name="voicerec.cpp" path="E:\Competition\IC\voice_rec\voicerec\voicerec.cpp"/>
+    <originFiles name="neuralNetworkSynth.cpp" path="E:\Competition\IC\voice_rec\voicerec\neuralNetworkSynth.cpp"/>
+  </source>
+  <testbench>
+    <originFiles name="voicerec_test.cpp" path="E:\Competition\IC\voice_rec\voicerec\voicerec_test.cpp"/>
+    <originFiles name="ting.h" path="E:\Competition\IC\voice_rec\voicerec\ting.h"/>
+    <originFiles name="qian.h" path="E:\Competition\IC\voice_rec\voicerec\qian.h"/>
+    <originFiles name="lai.h" path="E:\Competition\IC\voice_rec\voicerec\lai.h"/>
+  </testbench>
+</autopilotfilemapping:AutoPilotFileMapping>

@@ -1,0 +1,53 @@
+<profile>
+
+<section name = "Vivado HLS Report for 'voicerec'" level="0">
+<item name = "Date">Mon Aug 16 14:12:57 2021
+</item>
+<item name = "Version">2018.2 (Build 2258646 on Thu Jun 14 20:25:20 MDT 2018)</item>
+<item name = "Project">voicerec</item>
+<item name = "Solution">solution1</item>
+<item name = "Product family">artix7</item>
+<item name = "Target device">xc7a200tsbg484-1</item>
+</section>
+
+<section name = "Performance Estimates" level="0">
+<item name = "Timing (ns)">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="4">Clock, Target, Estimated, Uncertainty</keys>
+<column name="ap_clk">5.00, 8.658, 0.00</column>
+</table>
+</item>
+</section>
+</item>
+<item name = "Latency (clock cycles)">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="6">, min, max, min, max, Type</keys>
+<column name="">600025, 203786529, 600025, 203786529, none</column>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="0">
+<keys size="7">Instance, Module, min, max, min, max, Type</keys>
+<column name="grp_feedForward_fu_640">feedForward, 380651, 380651, 380651, 380651, none</column>
+<column name="grp_processChunk_fu_659">processChunk, 39048, 3324624, 39048, 3324624, none</column>
+</table>
+</item>
+<item name = "Loop"><table name="" hasTotal="0">
+<keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
+<column name="- memcpy.voicerec(int volatile*, int*)::testSound.new_sample">8001, 8001, 3, 1, 1, 8000, yes</column>
+<column name="- Loop 2">592000, 592000, 74, -, -, 8000, no</column>
+<column name="- Loop 3">3654, 3654, 58, -, -, 63, no</column>
+<column name=" + Loop 3.1">56, 56, 4, -, -, 14, no</column>
+<column name="- Loop 4">15, 15, 5, -, -, 3, no</column>
+<column name="- Loop 5">6, 47999, 6, -, -, 1 ~ 7999, no</column>
+</table>
+</item>
+</section>
+</item>
+</section>
+</item>
+</section>
+</profile>

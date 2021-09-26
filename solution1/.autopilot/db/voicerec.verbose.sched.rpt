@@ -1,0 +1,2560 @@
+
+
+================================================================
+== Vivado HLS Report for 'voicerec'
+================================================================
+* Date:           Mon Aug 16 14:12:56 2021
+
+* Version:        2018.2 (Build 2258646 on Thu Jun 14 20:25:20 MDT 2018)
+* Project:        voicerec
+* Solution:       solution1
+* Product family: artix7
+* Target device:  xc7a200tsbg484-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |   5.00|     8.658|        0.00|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +--------+-----------+--------+-----------+---------+
+    |       Latency      |      Interval      | Pipeline|
+    |   min  |    max    |   min  |    max    |   Type  |
+    +--------+-----------+--------+-----------+---------+
+    |  600025|  203786529|  600025|  203786529|   none  |
+    +--------+-----------+--------+-----------+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +--------------------------------------------------------------+--------+--------+----------+-----------+-----------+----------+----------+
+        |                                                              |     Latency     | Iteration|  Initiation Interval  |   Trip   |          |
+        |                           Loop Name                          |   min  |   max  |  Latency |  achieved |   target  |   Count  | Pipelined|
+        +--------------------------------------------------------------+--------+--------+----------+-----------+-----------+----------+----------+
+        |- memcpy.voicerec(int volatile*, int*)::testSound.new_sample  |    8001|    8001|         3|          1|          1|      8000|    yes   |
+        |- Loop 2                                                      |  592000|  592000|        74|          -|          -|      8000|    no    |
+        |- Loop 3                                                      |    3654|    3654|        58|          -|          -|        63|    no    |
+        | + Loop 3.1                                                   |      56|      56|         4|          -|          -|        14|    no    |
+        |- Loop 4                                                      |      15|      15|         5|          -|          -|         3|    no    |
+        |- Loop 5                                                      |       6|   47999|         6|          -|          -| 1 ~ 7999 |    no    |
+        +--------------------------------------------------------------+--------+--------+----------+-----------+-----------+----------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 1
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 2
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
++ Individual pipeline summary: 
+  * Pipeline-0: initiation interval (II) = 1, depth = 3
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 234
+* Pipeline : 1
+  Pipeline-0 : II = 1, D = 3, States = { 9 10 11 }
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+	2  / true
+2 --> 
+	3  / true
+3 --> 
+	4  / true
+4 --> 
+	5  / true
+5 --> 
+	6  / true
+6 --> 
+	7  / true
+7 --> 
+	8  / true
+8 --> 
+	9  / true
+9 --> 
+	12  / (exitcond8)
+	10  / (!exitcond8)
+10 --> 
+	11  / true
+11 --> 
+	9  / true
+12 --> 
+	13  / true
+13 --> 
+	14  / (!exitcond2)
+	87  / (exitcond2)
+14 --> 
+	15  / true
+15 --> 
+	16  / true
+16 --> 
+	17  / true
+17 --> 
+	18  / true
+18 --> 
+	19  / true
+19 --> 
+	20  / true
+20 --> 
+	21  / true
+21 --> 
+	22  / true
+22 --> 
+	23  / true
+23 --> 
+	24  / true
+24 --> 
+	25  / true
+25 --> 
+	26  / true
+26 --> 
+	27  / true
+27 --> 
+	28  / true
+28 --> 
+	29  / true
+29 --> 
+	30  / true
+30 --> 
+	31  / true
+31 --> 
+	32  / true
+32 --> 
+	33  / true
+33 --> 
+	34  / true
+34 --> 
+	35  / true
+35 --> 
+	36  / true
+36 --> 
+	37  / true
+37 --> 
+	38  / true
+38 --> 
+	39  / true
+39 --> 
+	40  / true
+40 --> 
+	41  / true
+41 --> 
+	42  / true
+42 --> 
+	43  / true
+43 --> 
+	44  / true
+44 --> 
+	45  / true
+45 --> 
+	46  / true
+46 --> 
+	47  / true
+47 --> 
+	48  / true
+48 --> 
+	49  / true
+49 --> 
+	50  / true
+50 --> 
+	51  / true
+51 --> 
+	52  / true
+52 --> 
+	53  / true
+53 --> 
+	54  / true
+54 --> 
+	55  / true
+55 --> 
+	56  / true
+56 --> 
+	57  / true
+57 --> 
+	58  / true
+58 --> 
+	59  / true
+59 --> 
+	60  / true
+60 --> 
+	61  / true
+61 --> 
+	62  / true
+62 --> 
+	63  / true
+63 --> 
+	64  / true
+64 --> 
+	65  / true
+65 --> 
+	66  / true
+66 --> 
+	67  / true
+67 --> 
+	68  / true
+68 --> 
+	69  / true
+69 --> 
+	70  / true
+70 --> 
+	71  / true
+71 --> 
+	72  / true
+72 --> 
+	73  / true
+73 --> 
+	74  / true
+74 --> 
+	75  / true
+75 --> 
+	76  / true
+76 --> 
+	77  / true
+77 --> 
+	78  / true
+78 --> 
+	79  / true
+79 --> 
+	80  / true
+80 --> 
+	81  / true
+81 --> 
+	82  / true
+82 --> 
+	83  / true
+83 --> 
+	84  / true
+84 --> 
+	85  / true
+85 --> 
+	86  / true
+86 --> 
+	13  / true
+87 --> 
+	88  / true
+88 --> 
+	89  / true
+89 --> 
+	90  / true
+90 --> 
+	91  / true
+91 --> 
+	92  / (!tmp_11)
+	228  / (tmp_11)
+92 --> 
+	93  / true
+93 --> 
+	94  / true
+94 --> 
+	95  / true
+95 --> 
+	96  / true
+96 --> 
+	97  / true
+97 --> 
+	98  / true
+98 --> 
+	99  / true
+99 --> 
+	100  / true
+100 --> 
+	101  / true
+101 --> 
+	102  / true
+102 --> 
+	103  / true
+103 --> 
+	104  / true
+104 --> 
+	105  / true
+105 --> 
+	106  / true
+106 --> 
+	107  / true
+107 --> 
+	108  / true
+108 --> 
+	109  / true
+109 --> 
+	110  / true
+110 --> 
+	111  / true
+111 --> 
+	112  / true
+112 --> 
+	113  / true
+113 --> 
+	114  / true
+114 --> 
+	115  / true
+115 --> 
+	116  / true
+116 --> 
+	117  / true
+117 --> 
+	118  / true
+118 --> 
+	119  / true
+119 --> 
+	120  / true
+120 --> 
+	121  / true
+121 --> 
+	122  / true
+122 --> 
+	123  / true
+123 --> 
+	124  / true
+124 --> 
+	125  / true
+125 --> 
+	126  / true
+126 --> 
+	127  / true
+127 --> 
+	128  / true
+128 --> 
+	129  / true
+129 --> 
+	130  / true
+130 --> 
+	131  / true
+131 --> 
+	132  / true
+132 --> 
+	133  / true
+133 --> 
+	134  / true
+134 --> 
+	135  / true
+135 --> 
+	136  / true
+136 --> 
+	137  / true
+137 --> 
+	138  / true
+138 --> 
+	139  / true
+139 --> 
+	140  / true
+140 --> 
+	141  / true
+141 --> 
+	142  / true
+142 --> 
+	143  / true
+143 --> 
+	144  / true
+144 --> 
+	145  / true
+145 --> 
+	146  / true
+146 --> 
+	147  / true
+147 --> 
+	148  / true
+148 --> 
+	149  / true
+149 --> 
+	150  / true
+150 --> 
+	151  / true
+151 --> 
+	152  / true
+152 --> 
+	153  / true
+153 --> 
+	154  / true
+154 --> 
+	155  / true
+155 --> 
+	156  / true
+156 --> 
+	157  / true
+157 --> 
+	158  / true
+158 --> 
+	159  / true
+159 --> 
+	160  / true
+160 --> 
+	161  / true
+161 --> 
+	162  / true
+162 --> 
+	163  / true
+163 --> 
+	164  / true
+164 --> 
+	165  / true
+165 --> 
+	166  / true
+166 --> 
+	167  / true
+167 --> 
+	168  / true
+168 --> 
+	169  / true
+169 --> 
+	170  / true
+170 --> 
+	171  / true
+171 --> 
+	172  / true
+172 --> 
+	173  / true
+173 --> 
+	174  / true
+174 --> 
+	175  / true
+175 --> 
+	176  / true
+176 --> 
+	177  / true
+177 --> 
+	178  / true
+178 --> 
+	179  / true
+179 --> 
+	180  / true
+180 --> 
+	181  / true
+181 --> 
+	182  / true
+182 --> 
+	183  / true
+183 --> 
+	184  / true
+184 --> 
+	185  / true
+185 --> 
+	186  / true
+186 --> 
+	187  / true
+187 --> 
+	188  / true
+188 --> 
+	189  / true
+189 --> 
+	190  / true
+190 --> 
+	191  / true
+191 --> 
+	192  / true
+192 --> 
+	193  / true
+193 --> 
+	194  / true
+194 --> 
+	195  / true
+195 --> 
+	196  / true
+196 --> 
+	197  / true
+197 --> 
+	198  / true
+198 --> 
+	199  / true
+199 --> 
+	200  / true
+200 --> 
+	201  / true
+201 --> 
+	202  / true
+202 --> 
+	203  / true
+203 --> 
+	204  / true
+204 --> 
+	205  / true
+205 --> 
+	206  / true
+206 --> 
+	207  / true
+207 --> 
+	208  / true
+208 --> 
+	209  / true
+209 --> 
+	210  / true
+210 --> 
+	211  / true
+211 --> 
+	212  / true
+212 --> 
+	213  / true
+213 --> 
+	218  / (exitcond1_i)
+	214  / (!exitcond1_i)
+214 --> 
+	215  / (!exitcond_i)
+	213  / (exitcond_i)
+215 --> 
+	216  / true
+216 --> 
+	217  / true
+217 --> 
+	214  / true
+218 --> 
+	219  / true
+219 --> 
+	220  / (!exitcond_i1)
+	224  / (exitcond_i1)
+220 --> 
+	221  / true
+221 --> 
+	222  / true
+222 --> 
+	223  / true
+223 --> 
+	219  / true
+224 --> 
+	225  / true
+225 --> 
+	226  / true
+226 --> 
+	227  / true
+227 --> 
+	234  / true
+228 --> 
+	229  / (tmp_7)
+	227  / (!tmp_7)
+229 --> 
+	230  / true
+230 --> 
+	231  / true
+231 --> 
+	232  / true
+232 --> 
+	233  / true
+233 --> 
+	228  / (!tmp_16)
+	227  / (tmp_16)
+234 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 1.00>
+ST_1 : Operation 235 [1/1] (1.00ns)   --->   "%new_sample_read = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %new_sample)"   --->   Operation 235 'read' 'new_sample_read' <Predicate = true> <Delay = 1.00> <Core = "s_axilite">   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 236 [1/1] (0.00ns)   --->   "%new_sample1 = call i30 @_ssdm_op_PartSelect.i30.i32.i32.i32(i32 %new_sample_read, i32 2, i32 31)"   --->   Operation 236 'partselect' 'new_sample1' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 237 [1/1] (0.00ns)   --->   "%flatInput = alloca [882 x float], align 16" [voicerec/neuralNetworkSynth.cpp:70->voicerec/voicerec.cpp:258]   --->   Operation 237 'alloca' 'flatInput' <Predicate = true> <Delay = 0.00> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 8000> <RAM>
+
+State 2 <SV = 1> <Delay = 5.00>
+ST_2 : Operation 238 [1/1] (0.00ns)   --->   "%tmp_6 = zext i30 %new_sample1 to i64"   --->   Operation 238 'zext' 'tmp_6' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 239 [1/1] (0.00ns)   --->   "%voice_rec_addr = getelementptr i32* %voice_rec, i64 %tmp_6"   --->   Operation 239 'getelementptr' 'voice_rec_addr' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 240 [7/7] (5.00ns)   --->   "%voice_rec_addr_rd_re = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %voice_rec_addr, i32 8000)" [voicerec/voicerec.cpp:243]   --->   Operation 240 'readreq' 'voice_rec_addr_rd_re' <Predicate = true> <Delay = 5.00> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 3 <SV = 2> <Delay = 5.00>
+ST_3 : Operation 241 [6/7] (5.00ns)   --->   "%voice_rec_addr_rd_re = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %voice_rec_addr, i32 8000)" [voicerec/voicerec.cpp:243]   --->   Operation 241 'readreq' 'voice_rec_addr_rd_re' <Predicate = true> <Delay = 5.00> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 4 <SV = 3> <Delay = 5.00>
+ST_4 : Operation 242 [5/7] (5.00ns)   --->   "%voice_rec_addr_rd_re = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %voice_rec_addr, i32 8000)" [voicerec/voicerec.cpp:243]   --->   Operation 242 'readreq' 'voice_rec_addr_rd_re' <Predicate = true> <Delay = 5.00> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 5 <SV = 4> <Delay = 5.00>
+ST_5 : Operation 243 [4/7] (5.00ns)   --->   "%voice_rec_addr_rd_re = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %voice_rec_addr, i32 8000)" [voicerec/voicerec.cpp:243]   --->   Operation 243 'readreq' 'voice_rec_addr_rd_re' <Predicate = true> <Delay = 5.00> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 6 <SV = 5> <Delay = 5.00>
+ST_6 : Operation 244 [3/7] (5.00ns)   --->   "%voice_rec_addr_rd_re = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %voice_rec_addr, i32 8000)" [voicerec/voicerec.cpp:243]   --->   Operation 244 'readreq' 'voice_rec_addr_rd_re' <Predicate = true> <Delay = 5.00> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 7 <SV = 6> <Delay = 5.00>
+ST_7 : Operation 245 [2/7] (5.00ns)   --->   "%voice_rec_addr_rd_re = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %voice_rec_addr, i32 8000)" [voicerec/voicerec.cpp:243]   --->   Operation 245 'readreq' 'voice_rec_addr_rd_re' <Predicate = true> <Delay = 5.00> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 8 <SV = 7> <Delay = 5.00>
+ST_8 : Operation 246 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i32* %voice_rec), !map !127"   --->   Operation 246 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 247 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i32* %guess) nounwind, !map !133"   --->   Operation 247 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 248 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i32 0) nounwind, !map !137"   --->   Operation 248 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 249 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecTopModule([9 x i8]* @voicerec_str) nounwind"   --->   Operation 249 'spectopmodule' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 250 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32 0, [10 x i8]* @p_str4, i32 1, i32 1, [1 x i8]* @p_str2, i32 0, i32 0, [10 x i8]* @p_str5, [7 x i8]* @p_str6, [1 x i8]* @p_str2, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str2, [1 x i8]* @p_str2) nounwind" [voicerec/voicerec.cpp:233]   --->   Operation 250 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 251 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32* %voice_rec, [6 x i8]* @p_str7, i32 0, i32 0, [1 x i8]* @p_str2, i32 0, i32 8000, [10 x i8]* @p_str5, [6 x i8]* @p_str8, [1 x i8]* @p_str2, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str2, [1 x i8]* @p_str2) nounwind" [voicerec/voicerec.cpp:234]   --->   Operation 251 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 252 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32 %new_sample, [10 x i8]* @mode, i32 0, i32 0, [1 x i8]* @p_str2, i32 0, i32 8000, [1 x i8]* @bundle, [6 x i8]* @p_str8, [1 x i8]* @p_str2, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str2, [1 x i8]* @p_str2) nounwind" [voicerec/voicerec.cpp:234]   --->   Operation 252 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 253 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32* %guess, [8 x i8]* @p_str9, i32 1, i32 1, [1 x i8]* @p_str2, i32 0, i32 0, [1 x i8]* @p_str2, [1 x i8]* @p_str2, [1 x i8]* @p_str2, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str2, [1 x i8]* @p_str2) nounwind" [voicerec/voicerec.cpp:235]   --->   Operation 253 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 254 [1/7] (5.00ns)   --->   "%voice_rec_addr_rd_re = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %voice_rec_addr, i32 8000)" [voicerec/voicerec.cpp:243]   --->   Operation 254 'readreq' 'voice_rec_addr_rd_re' <Predicate = true> <Delay = 5.00> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_8 : Operation 255 [1/1] (1.66ns)   --->   "br label %burst.rd.header"   --->   Operation 255 'br' <Predicate = true> <Delay = 1.66>
+
+State 9 <SV = 8> <Delay = 2.13>
+ST_9 : Operation 256 [1/1] (0.00ns)   --->   "%indvar = phi i13 [ 0, %0 ], [ %indvar_next, %burst.rd.body ]"   --->   Operation 256 'phi' 'indvar' <Predicate = true> <Delay = 0.00>
+ST_9 : Operation 257 [1/1] (2.04ns)   --->   "%exitcond8 = icmp eq i13 %indvar, -192"   --->   Operation 257 'icmp' 'exitcond8' <Predicate = true> <Delay = 2.04> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.40> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_9 : Operation 258 [1/1] (0.00ns)   --->   "%empty = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 8000, i64 8000, i64 8000) nounwind"   --->   Operation 258 'speclooptripcount' 'empty' <Predicate = true> <Delay = 0.00>
+ST_9 : Operation 259 [1/1] (2.13ns)   --->   "%indvar_next = add i13 %indvar, 1"   --->   Operation 259 'add' 'indvar_next' <Predicate = true> <Delay = 2.13> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.13> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_9 : Operation 260 [1/1] (0.00ns)   --->   "br i1 %exitcond8, label %burst.rd.end.preheader, label %burst.rd.body"   --->   Operation 260 'br' <Predicate = true> <Delay = 0.00>
+
+State 10 <SV = 9> <Delay = 5.00>
+ST_10 : Operation 261 [1/1] (5.00ns)   --->   "%voice_rec_addr_read = call i32 @_ssdm_op_Read.m_axi.i32P(i32* %voice_rec_addr)" [voicerec/voicerec.cpp:243]   --->   Operation 261 'read' 'voice_rec_addr_read' <Predicate = (!exitcond8)> <Delay = 5.00> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 11 <SV = 10> <Delay = 3.25>
+ST_11 : Operation 262 [1/1] (0.00ns)   --->   "%burstread_rbegin = call i32 (...)* @_ssdm_op_SpecRegionBegin([17 x i8]* @burstread_OC_region_s) nounwind"   --->   Operation 262 'specregionbegin' 'burstread_rbegin' <Predicate = (!exitcond8)> <Delay = 0.00>
+ST_11 : Operation 263 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecPipeline(i32 1, i32 1, i32 1, i32 0, [1 x i8]* @p_str12)"   --->   Operation 263 'specpipeline' <Predicate = (!exitcond8)> <Delay = 0.00>
+ST_11 : Operation 264 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopName([59 x i8]* @memcpy_OC_voicerec_I)"   --->   Operation 264 'specloopname' <Predicate = (!exitcond8)> <Delay = 0.00>
+ST_11 : Operation 265 [1/1] (0.00ns)   --->   "%indvar9 = zext i13 %indvar to i64"   --->   Operation 265 'zext' 'indvar9' <Predicate = (!exitcond8)> <Delay = 0.00>
+ST_11 : Operation 266 [1/1] (0.00ns)   --->   "%testSound_addr = getelementptr [8000 x i32]* @testSound, i64 0, i64 %indvar9" [voicerec/voicerec.cpp:243]   --->   Operation 266 'getelementptr' 'testSound_addr' <Predicate = (!exitcond8)> <Delay = 0.00>
+ST_11 : Operation 267 [1/1] (3.25ns)   --->   "store i32 %voice_rec_addr_read, i32* %testSound_addr, align 4" [voicerec/voicerec.cpp:243]   --->   Operation 267 'store' <Predicate = (!exitcond8)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 8000> <RAM>
+ST_11 : Operation 268 [1/1] (0.00ns)   --->   "%burstread_rend = call i32 (...)* @_ssdm_op_SpecRegionEnd([17 x i8]* @burstread_OC_region_s, i32 %burstread_rbegin) nounwind"   --->   Operation 268 'specregionend' 'burstread_rend' <Predicate = (!exitcond8)> <Delay = 0.00>
+ST_11 : Operation 269 [1/1] (0.00ns)   --->   "br label %burst.rd.header"   --->   Operation 269 'br' <Predicate = (!exitcond8)> <Delay = 0.00>
+
+State 12 <SV = 9> <Delay = 1.66>
+ST_12 : Operation 270 [1/1] (1.66ns)   --->   "br label %burst.rd.end" [voicerec/voicerec.cpp:244]   --->   Operation 270 'br' <Predicate = true> <Delay = 1.66>
+
+State 13 <SV = 10> <Delay = 3.25>
+ST_13 : Operation 271 [1/1] (0.00ns)   --->   "%i = phi i13 [ %i_1, %1 ], [ 0, %burst.rd.end.preheader ]"   --->   Operation 271 'phi' 'i' <Predicate = true> <Delay = 0.00>
+ST_13 : Operation 272 [1/1] (2.04ns)   --->   "%exitcond2 = icmp eq i13 %i, -192" [voicerec/voicerec.cpp:244]   --->   Operation 272 'icmp' 'exitcond2' <Predicate = true> <Delay = 2.04> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.40> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_13 : Operation 273 [1/1] (0.00ns)   --->   "%empty_5 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 8000, i64 8000, i64 8000) nounwind"   --->   Operation 273 'speclooptripcount' 'empty_5' <Predicate = true> <Delay = 0.00>
+ST_13 : Operation 274 [1/1] (2.13ns)   --->   "%i_1 = add i13 %i, 1" [voicerec/voicerec.cpp:244]   --->   Operation 274 'add' 'i_1' <Predicate = true> <Delay = 2.13> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.13> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_13 : Operation 275 [1/1] (0.00ns)   --->   "br i1 %exitcond2, label %2, label %1" [voicerec/voicerec.cpp:244]   --->   Operation 275 'br' <Predicate = true> <Delay = 0.00>
+ST_13 : Operation 276 [1/1] (0.00ns)   --->   "%tmp_1 = zext i13 %i to i64" [voicerec/voicerec.cpp:245]   --->   Operation 276 'zext' 'tmp_1' <Predicate = (!exitcond2)> <Delay = 0.00>
+ST_13 : Operation 277 [1/1] (0.00ns)   --->   "%testSound_addr_1 = getelementptr inbounds [8000 x i32]* @testSound, i64 0, i64 %tmp_1" [voicerec/voicerec.cpp:245]   --->   Operation 277 'getelementptr' 'testSound_addr_1' <Predicate = (!exitcond2)> <Delay = 0.00>
+ST_13 : Operation 278 [2/2] (3.25ns)   --->   "%testSound_load = load i32* %testSound_addr_1, align 4" [voicerec/voicerec.cpp:245]   --->   Operation 278 'load' 'testSound_load' <Predicate = (!exitcond2)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 8000> <RAM>
+ST_13 : Operation 279 [2/2] (3.25ns)   --->   "%inSound_load = load float* getelementptr inbounds ([8000 x float]* @inSound, i64 0, i64 7999), align 4" [voicerec/voicerec.cpp:248]   --->   Operation 279 'load' 'inSound_load' <Predicate = (exitcond2)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 8000> <RAM>
+
+State 14 <SV = 11> <Delay = 3.25>
+ST_14 : Operation 280 [1/2] (3.25ns)   --->   "%testSound_load = load i32* %testSound_addr_1, align 4" [voicerec/voicerec.cpp:245]   --->   Operation 280 'load' 'testSound_load' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 8000> <RAM>
+
+State 15 <SV = 12> <Delay = 2.70>
+ST_15 : Operation 281 [1/1] (2.70ns)   --->   "%tmp_2 = add nsw i32 %testSound_load, -6900" [voicerec/voicerec.cpp:245]   --->   Operation 281 'add' 'tmp_2' <Predicate = true> <Delay = 2.70> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.13> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+
+State 16 <SV = 13> <Delay = 6.60>
+ST_16 : Operation 282 [8/8] (6.60ns)   --->   "%tmp_3 = sitofp i32 %tmp_2 to double" [voicerec/voicerec.cpp:245]   --->   Operation 282 'sitodp' 'tmp_3' <Predicate = true> <Delay = 6.60> <Core = "Int2Double">   --->   Core 116 'Int2Double' <Latency = 7> <II = 1> <Delay = 6.60> <FuncUnit> <Opcode : 'sitodp' 'uitodp'> <InPorts = 1> <OutPorts = 1>
+
+State 17 <SV = 14> <Delay = 6.60>
+ST_17 : Operation 283 [7/8] (6.60ns)   --->   "%tmp_3 = sitofp i32 %tmp_2 to double" [voicerec/voicerec.cpp:245]   --->   Operation 283 'sitodp' 'tmp_3' <Predicate = true> <Delay = 6.60> <Core = "Int2Double">   --->   Core 116 'Int2Double' <Latency = 7> <II = 1> <Delay = 6.60> <FuncUnit> <Opcode : 'sitodp' 'uitodp'> <InPorts = 1> <OutPorts = 1>
+
+State 18 <SV = 15> <Delay = 6.60>
+ST_18 : Operation 284 [6/8] (6.60ns)   --->   "%tmp_3 = sitofp i32 %tmp_2 to double" [voicerec/voicerec.cpp:245]   --->   Operation 284 'sitodp' 'tmp_3' <Predicate = true> <Delay = 6.60> <Core = "Int2Double">   --->   Core 116 'Int2Double' <Latency = 7> <II = 1> <Delay = 6.60> <FuncUnit> <Opcode : 'sitodp' 'uitodp'> <InPorts = 1> <OutPorts = 1>
+
+State 19 <SV = 16> <Delay = 6.60>
+ST_19 : Operation 285 [5/8] (6.60ns)   --->   "%tmp_3 = sitofp i32 %tmp_2 to double" [voicerec/voicerec.cpp:245]   --->   Operation 285 'sitodp' 'tmp_3' <Predicate = true> <Delay = 6.60> <Core = "Int2Double">   --->   Core 116 'Int2Double' <Latency = 7> <II = 1> <Delay = 6.60> <FuncUnit> <Opcode : 'sitodp' 'uitodp'> <InPorts = 1> <OutPorts = 1>
+
+State 20 <SV = 17> <Delay = 6.60>
+ST_20 : Operation 286 [4/8] (6.60ns)   --->   "%tmp_3 = sitofp i32 %tmp_2 to double" [voicerec/voicerec.cpp:245]   --->   Operation 286 'sitodp' 'tmp_3' <Predicate = true> <Delay = 6.60> <Core = "Int2Double">   --->   Core 116 'Int2Double' <Latency = 7> <II = 1> <Delay = 6.60> <FuncUnit> <Opcode : 'sitodp' 'uitodp'> <InPorts = 1> <OutPorts = 1>
+
+State 21 <SV = 18> <Delay = 6.60>
+ST_21 : Operation 287 [3/8] (6.60ns)   --->   "%tmp_3 = sitofp i32 %tmp_2 to double" [voicerec/voicerec.cpp:245]   --->   Operation 287 'sitodp' 'tmp_3' <Predicate = true> <Delay = 6.60> <Core = "Int2Double">   --->   Core 116 'Int2Double' <Latency = 7> <II = 1> <Delay = 6.60> <FuncUnit> <Opcode : 'sitodp' 'uitodp'> <InPorts = 1> <OutPorts = 1>
+
+State 22 <SV = 19> <Delay = 6.60>
+ST_22 : Operation 288 [2/8] (6.60ns)   --->   "%tmp_3 = sitofp i32 %tmp_2 to double" [voicerec/voicerec.cpp:245]   --->   Operation 288 'sitodp' 'tmp_3' <Predicate = true> <Delay = 6.60> <Core = "Int2Double">   --->   Core 116 'Int2Double' <Latency = 7> <II = 1> <Delay = 6.60> <FuncUnit> <Opcode : 'sitodp' 'uitodp'> <InPorts = 1> <OutPorts = 1>
+
+State 23 <SV = 20> <Delay = 6.60>
+ST_23 : Operation 289 [1/8] (6.60ns)   --->   "%tmp_3 = sitofp i32 %tmp_2 to double" [voicerec/voicerec.cpp:245]   --->   Operation 289 'sitodp' 'tmp_3' <Predicate = true> <Delay = 6.60> <Core = "Int2Double">   --->   Core 116 'Int2Double' <Latency = 7> <II = 1> <Delay = 6.60> <FuncUnit> <Opcode : 'sitodp' 'uitodp'> <InPorts = 1> <OutPorts = 1>
+
+State 24 <SV = 21> <Delay = 4.87>
+ST_24 : Operation 290 [59/59] (4.87ns)   --->   "%tmp_4 = fdiv double %tmp_3, 1.000000e+03" [voicerec/voicerec.cpp:245]   --->   Operation 290 'ddiv' 'tmp_4' <Predicate = true> <Delay = 4.87> <Core = "DDiv">   --->   Core 111 'DDiv' <Latency = 58> <II = 1> <Delay = 4.87> <FuncUnit> <Opcode : 'ddiv' 'drem'> <InPorts = 2> <OutPorts = 1>
+
+State 25 <SV = 22> <Delay = 4.87>
+ST_25 : Operation 291 [58/59] (4.87ns)   --->   "%tmp_4 = fdiv double %tmp_3, 1.000000e+03" [voicerec/voicerec.cpp:245]   --->   Operation 291 'ddiv' 'tmp_4' <Predicate = true> <Delay = 4.87> <Core = "DDiv">   --->   Core 111 'DDiv' <Latency = 58> <II = 1> <Delay = 4.87> <FuncUnit> <Opcode : 'ddiv' 'drem'> <InPorts = 2> <OutPorts = 1>
+
+State 26 <SV = 23> <Delay = 4.87>
+ST_26 : Operation 292 [57/59] (4.87ns)   --->   "%tmp_4 = fdiv double %tmp_3, 1.000000e+03" [voicerec/voicerec.cpp:245]   --->   Operation 292 'ddiv' 'tmp_4' <Predicate = true> <Delay = 4.87> <Core = "DDiv">   --->   Core 111 'DDiv' <Latency = 58> <II = 1> <Delay = 4.87> <FuncUnit> <Opcode : 'ddiv' 'drem'> <InPorts = 2> <OutPorts = 1>
+
+State 27 <SV = 24> <Delay = 4.87>
+ST_27 : Operation 293 [56/59] (4.87ns)   --->   "%tmp_4 = fdiv double %tmp_3, 1.000000e+03" [voicerec/voicerec.cpp:245]   --->   Operation 293 'ddiv' 'tmp_4' <Predicate = true> <Delay = 4.87> <Core = "DDiv">   --->   Core 111 'DDiv' <Latency = 58> <II = 1> <Delay = 4.87> <FuncUnit> <Opcode : 'ddiv' 'drem'> <InPorts = 2> <OutPorts = 1>
+
+State 28 <SV = 25> <Delay = 4.87>
+ST_28 : Operation 294 [55/59] (4.87ns)   --->   "%tmp_4 = fdiv double %tmp_3, 1.000000e+03" [voicerec/voicerec.cpp:245]   --->   Operation 294 'ddiv' 'tmp_4' <Predicate = true> <Delay = 4.87> <Core = "DDiv">   --->   Core 111 'DDiv' <Latency = 58> <II = 1> <Delay = 4.87> <FuncUnit> <Opcode : 'ddiv' 'drem'> <InPorts = 2> <OutPorts = 1>
+
+State 29 <SV = 26> <Delay = 4.87>
+ST_29 : Operation 295 [54/59] (4.87ns)   --->   "%tmp_4 = fdiv double %tmp_3, 1.000000e+03" [voicerec/voicerec.cpp:245]   --->   Operation 295 'ddiv' 'tmp_4' <Predicate = true> <Delay = 4.87> <Core = "DDiv">   --->   Core 111 'DDiv' <Latency = 58> <II = 1> <Delay = 4.87> <FuncUnit> <Opcode : 'ddiv' 'drem'> <InPorts = 2> <OutPorts = 1>
+
+State 30 <SV = 27> <Delay = 4.87>
+ST_30 : Operation 296 [53/59] (4.87ns)   --->   "%tmp_4 = fdiv double %tmp_3, 1.000000e+03" [voicerec/voicerec.cpp:245]   --->   Operation 296 'ddiv' 'tmp_4' <Predicate = true> <Delay = 4.87> <Core = "DDiv">   --->   Core 111 'DDiv' <Latency = 58> <II = 1> <Delay = 4.87> <FuncUnit> <Opcode : 'ddiv' 'drem'> <InPorts = 2> <OutPorts = 1>
+
+State 31 <SV = 28> <Delay = 4.87>
+ST_31 : Operation 297 [52/59] (4.87ns)   --->   "%tmp_4 = fdiv double %tmp_3, 1.000000e+03" [voicerec/voicerec.cpp:245]   --->   Operation 297 'ddiv' 'tmp_4' <Predicate = true> <Delay = 4.87> <Core = "DDiv">   --->   Core 111 'DDiv' <Latency = 58> <II = 1> <Delay = 4.87> <FuncUnit> <Opcode : 'ddiv' 'drem'> <InPorts = 2> <OutPorts = 1>
+
+State 32 <SV = 29> <Delay = 4.87>
+ST_32 : Operation 298 [51/59] (4.87ns)   --->   "%tmp_4 = fdiv double %tmp_3, 1.000000e+03" [voicerec/voicerec.cpp:245]   --->   Operation 298 'ddiv' 'tmp_4' <Predicate = true> <Delay = 4.87> <Core = "DDiv">   --->   Core 111 'DDiv' <Latency = 58> <II = 1> <Delay = 4.87> <FuncUnit> <Opcode : 'ddiv' 'drem'> <InPorts = 2> <OutPorts = 1>
+
+State 33 <SV = 30> <Delay = 4.87>
+ST_33 : Operation 299 [50/59] (4.87ns)   --->   "%tmp_4 = fdiv double %tmp_3, 1.000000e+03" [voicerec/voicerec.cpp:245]   --->   Operation 299 'ddiv' 'tmp_4' <Predicate = true> <Delay = 4.87> <Core = "DDiv">   --->   Core 111 'DDiv' <Latency = 58> <II = 1> <Delay = 4.87> <FuncUnit> <Opcode : 'ddiv' 'drem'> <InPorts = 2> <OutPorts = 1>
+
+State 34 <SV = 31> <Delay = 4.87>
+ST_34 : Operation 300 [49/59] (4.87ns)   --->   "%tmp_4 = fdiv double %tmp_3, 1.000000e+03" [voicerec/voicerec.cpp:245]   --->   Operation 300 'ddiv' 'tmp_4' <Predicate = true> <Delay = 4.87> <Core = "DDiv">   --->   Core 111 'DDiv' <Latency = 58> <II = 1> <Delay = 4.87> <FuncUnit> <Opcode : 'ddiv' 'drem'> <InPorts = 2> <OutPorts = 1>
+
+State 35 <SV = 32> <Delay = 4.87>
+ST_35 : Operation 301 [48/59] (4.87ns)   --->   "%tmp_4 = fdiv double %tmp_3, 1.000000e+03" [voicerec/voicerec.cpp:245]   --->   Operation 301 'ddiv' 'tmp_4' <Predicate = true> <Delay = 4.87> <Core = "DDiv">   --->   Core 111 'DDiv' <Latency = 58> <II = 1> <Delay = 4.87> <FuncUnit> <Opcode : 'ddiv' 'drem'> <InPorts = 2> <OutPorts = 1>
+
+State 36 <SV = 33> <Delay = 4.87>
+ST_36 : Operation 302 [47/59] (4.87ns)   --->   "%tmp_4 = fdiv double %tmp_3, 1.000000e+03" [voicerec/voicerec.cpp:245]   --->   Operation 302 'ddiv' 'tmp_4' <Predicate = true> <Delay = 4.87> <Core = "DDiv">   --->   Core 111 'DDiv' <Latency = 58> <II = 1> <Delay = 4.87> <FuncUnit> <Opcode : 'ddiv' 'drem'> <InPorts = 2> <OutPorts = 1>
+
+State 37 <SV = 34> <Delay = 4.87>
+ST_37 : Operation 303 [46/59] (4.87ns)   --->   "%tmp_4 = fdiv double %tmp_3, 1.000000e+03" [voicerec/voicerec.cpp:245]   --->   Operation 303 'ddiv' 'tmp_4' <Predicate = true> <Delay = 4.87> <Core = "DDiv">   --->   Core 111 'DDiv' <Latency = 58> <II = 1> <Delay = 4.87> <FuncUnit> <Opcode : 'ddiv' 'drem'> <InPorts = 2> <OutPorts = 1>
+
+State 38 <SV = 35> <Delay = 4.87>
+ST_38 : Operation 304 [45/59] (4.87ns)   --->   "%tmp_4 = fdiv double %tmp_3, 1.000000e+03" [voicerec/voicerec.cpp:245]   --->   Operation 304 'ddiv' 'tmp_4' <Predicate = true> <Delay = 4.87> <Core = "DDiv">   --->   Core 111 'DDiv' <Latency = 58> <II = 1> <Delay = 4.87> <FuncUnit> <Opcode : 'ddiv' 'drem'> <InPorts = 2> <OutPorts = 1>
+
+State 39 <SV = 36> <Delay = 4.87>
+ST_39 : Operation 305 [44/59] (4.87ns)   --->   "%tmp_4 = fdiv double %tmp_3, 1.000000e+03" [voicerec/voicerec.cpp:245]   --->   Operation 305 'ddiv' 'tmp_4' <Predicate = true> <Delay = 4.87> <Core = "DDiv">   --->   Core 111 'DDiv' <Latency = 58> <II = 1> <Delay = 4.87> <FuncUnit> <Opcode : 'ddiv' 'drem'> <InPorts = 2> <OutPorts = 1>
+
+State 40 <SV = 37> <Delay = 4.87>
+ST_40 : Operation 306 [43/59] (4.87ns)   --->   "%tmp_4 = fdiv double %tmp_3, 1.000000e+03" [voicerec/voicerec.cpp:245]   --->   Operation 306 'ddiv' 'tmp_4' <Predicate = true> <Delay = 4.87> <Core = "DDiv">   --->   Core 111 'DDiv' <Latency = 58> <II = 1> <Delay = 4.87> <FuncUnit> <Opcode : 'ddiv' 'drem'> <InPorts = 2> <OutPorts = 1>
+
+State 41 <SV = 38> <Delay = 4.87>
+ST_41 : Operation 307 [42/59] (4.87ns)   --->   "%tmp_4 = fdiv double %tmp_3, 1.000000e+03" [voicerec/voicerec.cpp:245]   --->   Operation 307 'ddiv' 'tmp_4' <Predicate = true> <Delay = 4.87> <Core = "DDiv">   --->   Core 111 'DDiv' <Latency = 58> <II = 1> <Delay = 4.87> <FuncUnit> <Opcode : 'ddiv' 'drem'> <InPorts = 2> <OutPorts = 1>
+
+State 42 <SV = 39> <Delay = 4.87>
+ST_42 : Operation 308 [41/59] (4.87ns)   --->   "%tmp_4 = fdiv double %tmp_3, 1.000000e+03" [voicerec/voicerec.cpp:245]   --->   Operation 308 'ddiv' 'tmp_4' <Predicate = true> <Delay = 4.87> <Core = "DDiv">   --->   Core 111 'DDiv' <Latency = 58> <II = 1> <Delay = 4.87> <FuncUnit> <Opcode : 'ddiv' 'drem'> <InPorts = 2> <OutPorts = 1>
+
+State 43 <SV = 40> <Delay = 4.87>
+ST_43 : Operation 309 [40/59] (4.87ns)   --->   "%tmp_4 = fdiv double %tmp_3, 1.000000e+03" [voicerec/voicerec.cpp:245]   --->   Operation 309 'ddiv' 'tmp_4' <Predicate = true> <Delay = 4.87> <Core = "DDiv">   --->   Core 111 'DDiv' <Latency = 58> <II = 1> <Delay = 4.87> <FuncUnit> <Opcode : 'ddiv' 'drem'> <InPorts = 2> <OutPorts = 1>
+
+State 44 <SV = 41> <Delay = 4.87>
+ST_44 : Operation 310 [39/59] (4.87ns)   --->   "%tmp_4 = fdiv double %tmp_3, 1.000000e+03" [voicerec/voicerec.cpp:245]   --->   Operation 310 'ddiv' 'tmp_4' <Predicate = true> <Delay = 4.87> <Core = "DDiv">   --->   Core 111 'DDiv' <Latency = 58> <II = 1> <Delay = 4.87> <FuncUnit> <Opcode : 'ddiv' 'drem'> <InPorts = 2> <OutPorts = 1>
+
+State 45 <SV = 42> <Delay = 4.87>
+ST_45 : Operation 311 [38/59] (4.87ns)   --->   "%tmp_4 = fdiv double %tmp_3, 1.000000e+03" [voicerec/voicerec.cpp:245]   --->   Operation 311 'ddiv' 'tmp_4' <Predicate = true> <Delay = 4.87> <Core = "DDiv">   --->   Core 111 'DDiv' <Latency = 58> <II = 1> <Delay = 4.87> <FuncUnit> <Opcode : 'ddiv' 'drem'> <InPorts = 2> <OutPorts = 1>
+
+State 46 <SV = 43> <Delay = 4.87>
+ST_46 : Operation 312 [37/59] (4.87ns)   --->   "%tmp_4 = fdiv double %tmp_3, 1.000000e+03" [voicerec/voicerec.cpp:245]   --->   Operation 312 'ddiv' 'tmp_4' <Predicate = true> <Delay = 4.87> <Core = "DDiv">   --->   Core 111 'DDiv' <Latency = 58> <II = 1> <Delay = 4.87> <FuncUnit> <Opcode : 'ddiv' 'drem'> <InPorts = 2> <OutPorts = 1>
+
+State 47 <SV = 44> <Delay = 4.87>
+ST_47 : Operation 313 [36/59] (4.87ns)   --->   "%tmp_4 = fdiv double %tmp_3, 1.000000e+03" [voicerec/voicerec.cpp:245]   --->   Operation 313 'ddiv' 'tmp_4' <Predicate = true> <Delay = 4.87> <Core = "DDiv">   --->   Core 111 'DDiv' <Latency = 58> <II = 1> <Delay = 4.87> <FuncUnit> <Opcode : 'ddiv' 'drem'> <InPorts = 2> <OutPorts = 1>
+
+State 48 <SV = 45> <Delay = 4.87>
+ST_48 : Operation 314 [35/59] (4.87ns)   --->   "%tmp_4 = fdiv double %tmp_3, 1.000000e+03" [voicerec/voicerec.cpp:245]   --->   Operation 314 'ddiv' 'tmp_4' <Predicate = true> <Delay = 4.87> <Core = "DDiv">   --->   Core 111 'DDiv' <Latency = 58> <II = 1> <Delay = 4.87> <FuncUnit> <Opcode : 'ddiv' 'drem'> <InPorts = 2> <OutPorts = 1>
+
+State 49 <SV = 46> <Delay = 4.87>
+ST_49 : Operation 315 [34/59] (4.87ns)   --->   "%tmp_4 = fdiv double %tmp_3, 1.000000e+03" [voicerec/voicerec.cpp:245]   --->   Operation 315 'ddiv' 'tmp_4' <Predicate = true> <Delay = 4.87> <Core = "DDiv">   --->   Core 111 'DDiv' <Latency = 58> <II = 1> <Delay = 4.87> <FuncUnit> <Opcode : 'ddiv' 'drem'> <InPorts = 2> <OutPorts = 1>
+
+State 50 <SV = 47> <Delay = 4.87>
+ST_50 : Operation 316 [33/59] (4.87ns)   --->   "%tmp_4 = fdiv double %tmp_3, 1.000000e+03" [voicerec/voicerec.cpp:245]   --->   Operation 316 'ddiv' 'tmp_4' <Predicate = true> <Delay = 4.87> <Core = "DDiv">   --->   Core 111 'DDiv' <Latency = 58> <II = 1> <Delay = 4.87> <FuncUnit> <Opcode : 'ddiv' 'drem'> <InPorts = 2> <OutPorts = 1>
+
+State 51 <SV = 48> <Delay = 4.87>
+ST_51 : Operation 317 [32/59] (4.87ns)   --->   "%tmp_4 = fdiv double %tmp_3, 1.000000e+03" [voicerec/voicerec.cpp:245]   --->   Operation 317 'ddiv' 'tmp_4' <Predicate = true> <Delay = 4.87> <Core = "DDiv">   --->   Core 111 'DDiv' <Latency = 58> <II = 1> <Delay = 4.87> <FuncUnit> <Opcode : 'ddiv' 'drem'> <InPorts = 2> <OutPorts = 1>
+
+State 52 <SV = 49> <Delay = 4.87>
+ST_52 : Operation 318 [31/59] (4.87ns)   --->   "%tmp_4 = fdiv double %tmp_3, 1.000000e+03" [voicerec/voicerec.cpp:245]   --->   Operation 318 'ddiv' 'tmp_4' <Predicate = true> <Delay = 4.87> <Core = "DDiv">   --->   Core 111 'DDiv' <Latency = 58> <II = 1> <Delay = 4.87> <FuncUnit> <Opcode : 'ddiv' 'drem'> <InPorts = 2> <OutPorts = 1>
+
+State 53 <SV = 50> <Delay = 4.87>
+ST_53 : Operation 319 [30/59] (4.87ns)   --->   "%tmp_4 = fdiv double %tmp_3, 1.000000e+03" [voicerec/voicerec.cpp:245]   --->   Operation 319 'ddiv' 'tmp_4' <Predicate = true> <Delay = 4.87> <Core = "DDiv">   --->   Core 111 'DDiv' <Latency = 58> <II = 1> <Delay = 4.87> <FuncUnit> <Opcode : 'ddiv' 'drem'> <InPorts = 2> <OutPorts = 1>
+
+State 54 <SV = 51> <Delay = 4.87>
+ST_54 : Operation 320 [29/59] (4.87ns)   --->   "%tmp_4 = fdiv double %tmp_3, 1.000000e+03" [voicerec/voicerec.cpp:245]   --->   Operation 320 'ddiv' 'tmp_4' <Predicate = true> <Delay = 4.87> <Core = "DDiv">   --->   Core 111 'DDiv' <Latency = 58> <II = 1> <Delay = 4.87> <FuncUnit> <Opcode : 'ddiv' 'drem'> <InPorts = 2> <OutPorts = 1>
+
+State 55 <SV = 52> <Delay = 4.87>
+ST_55 : Operation 321 [28/59] (4.87ns)   --->   "%tmp_4 = fdiv double %tmp_3, 1.000000e+03" [voicerec/voicerec.cpp:245]   --->   Operation 321 'ddiv' 'tmp_4' <Predicate = true> <Delay = 4.87> <Core = "DDiv">   --->   Core 111 'DDiv' <Latency = 58> <II = 1> <Delay = 4.87> <FuncUnit> <Opcode : 'ddiv' 'drem'> <InPorts = 2> <OutPorts = 1>
+
+State 56 <SV = 53> <Delay = 4.87>
+ST_56 : Operation 322 [27/59] (4.87ns)   --->   "%tmp_4 = fdiv double %tmp_3, 1.000000e+03" [voicerec/voicerec.cpp:245]   --->   Operation 322 'ddiv' 'tmp_4' <Predicate = true> <Delay = 4.87> <Core = "DDiv">   --->   Core 111 'DDiv' <Latency = 58> <II = 1> <Delay = 4.87> <FuncUnit> <Opcode : 'ddiv' 'drem'> <InPorts = 2> <OutPorts = 1>
+
+State 57 <SV = 54> <Delay = 4.87>
+ST_57 : Operation 323 [26/59] (4.87ns)   --->   "%tmp_4 = fdiv double %tmp_3, 1.000000e+03" [voicerec/voicerec.cpp:245]   --->   Operation 323 'ddiv' 'tmp_4' <Predicate = true> <Delay = 4.87> <Core = "DDiv">   --->   Core 111 'DDiv' <Latency = 58> <II = 1> <Delay = 4.87> <FuncUnit> <Opcode : 'ddiv' 'drem'> <InPorts = 2> <OutPorts = 1>
+
+State 58 <SV = 55> <Delay = 4.87>
+ST_58 : Operation 324 [25/59] (4.87ns)   --->   "%tmp_4 = fdiv double %tmp_3, 1.000000e+03" [voicerec/voicerec.cpp:245]   --->   Operation 324 'ddiv' 'tmp_4' <Predicate = true> <Delay = 4.87> <Core = "DDiv">   --->   Core 111 'DDiv' <Latency = 58> <II = 1> <Delay = 4.87> <FuncUnit> <Opcode : 'ddiv' 'drem'> <InPorts = 2> <OutPorts = 1>
+
+State 59 <SV = 56> <Delay = 4.87>
+ST_59 : Operation 325 [24/59] (4.87ns)   --->   "%tmp_4 = fdiv double %tmp_3, 1.000000e+03" [voicerec/voicerec.cpp:245]   --->   Operation 325 'ddiv' 'tmp_4' <Predicate = true> <Delay = 4.87> <Core = "DDiv">   --->   Core 111 'DDiv' <Latency = 58> <II = 1> <Delay = 4.87> <FuncUnit> <Opcode : 'ddiv' 'drem'> <InPorts = 2> <OutPorts = 1>
+
+State 60 <SV = 57> <Delay = 4.87>
+ST_60 : Operation 326 [23/59] (4.87ns)   --->   "%tmp_4 = fdiv double %tmp_3, 1.000000e+03" [voicerec/voicerec.cpp:245]   --->   Operation 326 'ddiv' 'tmp_4' <Predicate = true> <Delay = 4.87> <Core = "DDiv">   --->   Core 111 'DDiv' <Latency = 58> <II = 1> <Delay = 4.87> <FuncUnit> <Opcode : 'ddiv' 'drem'> <InPorts = 2> <OutPorts = 1>
+
+State 61 <SV = 58> <Delay = 4.87>
+ST_61 : Operation 327 [22/59] (4.87ns)   --->   "%tmp_4 = fdiv double %tmp_3, 1.000000e+03" [voicerec/voicerec.cpp:245]   --->   Operation 327 'ddiv' 'tmp_4' <Predicate = true> <Delay = 4.87> <Core = "DDiv">   --->   Core 111 'DDiv' <Latency = 58> <II = 1> <Delay = 4.87> <FuncUnit> <Opcode : 'ddiv' 'drem'> <InPorts = 2> <OutPorts = 1>
+
+State 62 <SV = 59> <Delay = 4.87>
+ST_62 : Operation 328 [21/59] (4.87ns)   --->   "%tmp_4 = fdiv double %tmp_3, 1.000000e+03" [voicerec/voicerec.cpp:245]   --->   Operation 328 'ddiv' 'tmp_4' <Predicate = true> <Delay = 4.87> <Core = "DDiv">   --->   Core 111 'DDiv' <Latency = 58> <II = 1> <Delay = 4.87> <FuncUnit> <Opcode : 'ddiv' 'drem'> <InPorts = 2> <OutPorts = 1>
+
+State 63 <SV = 60> <Delay = 4.87>
+ST_63 : Operation 329 [20/59] (4.87ns)   --->   "%tmp_4 = fdiv double %tmp_3, 1.000000e+03" [voicerec/voicerec.cpp:245]   --->   Operation 329 'ddiv' 'tmp_4' <Predicate = true> <Delay = 4.87> <Core = "DDiv">   --->   Core 111 'DDiv' <Latency = 58> <II = 1> <Delay = 4.87> <FuncUnit> <Opcode : 'ddiv' 'drem'> <InPorts = 2> <OutPorts = 1>
+
+State 64 <SV = 61> <Delay = 4.87>
+ST_64 : Operation 330 [19/59] (4.87ns)   --->   "%tmp_4 = fdiv double %tmp_3, 1.000000e+03" [voicerec/voicerec.cpp:245]   --->   Operation 330 'ddiv' 'tmp_4' <Predicate = true> <Delay = 4.87> <Core = "DDiv">   --->   Core 111 'DDiv' <Latency = 58> <II = 1> <Delay = 4.87> <FuncUnit> <Opcode : 'ddiv' 'drem'> <InPorts = 2> <OutPorts = 1>
+
+State 65 <SV = 62> <Delay = 4.87>
+ST_65 : Operation 331 [18/59] (4.87ns)   --->   "%tmp_4 = fdiv double %tmp_3, 1.000000e+03" [voicerec/voicerec.cpp:245]   --->   Operation 331 'ddiv' 'tmp_4' <Predicate = true> <Delay = 4.87> <Core = "DDiv">   --->   Core 111 'DDiv' <Latency = 58> <II = 1> <Delay = 4.87> <FuncUnit> <Opcode : 'ddiv' 'drem'> <InPorts = 2> <OutPorts = 1>
+
+State 66 <SV = 63> <Delay = 4.87>
+ST_66 : Operation 332 [17/59] (4.87ns)   --->   "%tmp_4 = fdiv double %tmp_3, 1.000000e+03" [voicerec/voicerec.cpp:245]   --->   Operation 332 'ddiv' 'tmp_4' <Predicate = true> <Delay = 4.87> <Core = "DDiv">   --->   Core 111 'DDiv' <Latency = 58> <II = 1> <Delay = 4.87> <FuncUnit> <Opcode : 'ddiv' 'drem'> <InPorts = 2> <OutPorts = 1>
+
+State 67 <SV = 64> <Delay = 4.87>
+ST_67 : Operation 333 [16/59] (4.87ns)   --->   "%tmp_4 = fdiv double %tmp_3, 1.000000e+03" [voicerec/voicerec.cpp:245]   --->   Operation 333 'ddiv' 'tmp_4' <Predicate = true> <Delay = 4.87> <Core = "DDiv">   --->   Core 111 'DDiv' <Latency = 58> <II = 1> <Delay = 4.87> <FuncUnit> <Opcode : 'ddiv' 'drem'> <InPorts = 2> <OutPorts = 1>
+
+State 68 <SV = 65> <Delay = 4.87>
+ST_68 : Operation 334 [15/59] (4.87ns)   --->   "%tmp_4 = fdiv double %tmp_3, 1.000000e+03" [voicerec/voicerec.cpp:245]   --->   Operation 334 'ddiv' 'tmp_4' <Predicate = true> <Delay = 4.87> <Core = "DDiv">   --->   Core 111 'DDiv' <Latency = 58> <II = 1> <Delay = 4.87> <FuncUnit> <Opcode : 'ddiv' 'drem'> <InPorts = 2> <OutPorts = 1>
+
+State 69 <SV = 66> <Delay = 4.87>
+ST_69 : Operation 335 [14/59] (4.87ns)   --->   "%tmp_4 = fdiv double %tmp_3, 1.000000e+03" [voicerec/voicerec.cpp:245]   --->   Operation 335 'ddiv' 'tmp_4' <Predicate = true> <Delay = 4.87> <Core = "DDiv">   --->   Core 111 'DDiv' <Latency = 58> <II = 1> <Delay = 4.87> <FuncUnit> <Opcode : 'ddiv' 'drem'> <InPorts = 2> <OutPorts = 1>
+
+State 70 <SV = 67> <Delay = 4.87>
+ST_70 : Operation 336 [13/59] (4.87ns)   --->   "%tmp_4 = fdiv double %tmp_3, 1.000000e+03" [voicerec/voicerec.cpp:245]   --->   Operation 336 'ddiv' 'tmp_4' <Predicate = true> <Delay = 4.87> <Core = "DDiv">   --->   Core 111 'DDiv' <Latency = 58> <II = 1> <Delay = 4.87> <FuncUnit> <Opcode : 'ddiv' 'drem'> <InPorts = 2> <OutPorts = 1>
+
+State 71 <SV = 68> <Delay = 4.87>
+ST_71 : Operation 337 [12/59] (4.87ns)   --->   "%tmp_4 = fdiv double %tmp_3, 1.000000e+03" [voicerec/voicerec.cpp:245]   --->   Operation 337 'ddiv' 'tmp_4' <Predicate = true> <Delay = 4.87> <Core = "DDiv">   --->   Core 111 'DDiv' <Latency = 58> <II = 1> <Delay = 4.87> <FuncUnit> <Opcode : 'ddiv' 'drem'> <InPorts = 2> <OutPorts = 1>
+
+State 72 <SV = 69> <Delay = 4.87>
+ST_72 : Operation 338 [11/59] (4.87ns)   --->   "%tmp_4 = fdiv double %tmp_3, 1.000000e+03" [voicerec/voicerec.cpp:245]   --->   Operation 338 'ddiv' 'tmp_4' <Predicate = true> <Delay = 4.87> <Core = "DDiv">   --->   Core 111 'DDiv' <Latency = 58> <II = 1> <Delay = 4.87> <FuncUnit> <Opcode : 'ddiv' 'drem'> <InPorts = 2> <OutPorts = 1>
+
+State 73 <SV = 70> <Delay = 4.87>
+ST_73 : Operation 339 [10/59] (4.87ns)   --->   "%tmp_4 = fdiv double %tmp_3, 1.000000e+03" [voicerec/voicerec.cpp:245]   --->   Operation 339 'ddiv' 'tmp_4' <Predicate = true> <Delay = 4.87> <Core = "DDiv">   --->   Core 111 'DDiv' <Latency = 58> <II = 1> <Delay = 4.87> <FuncUnit> <Opcode : 'ddiv' 'drem'> <InPorts = 2> <OutPorts = 1>
+
+State 74 <SV = 71> <Delay = 4.87>
+ST_74 : Operation 340 [9/59] (4.87ns)   --->   "%tmp_4 = fdiv double %tmp_3, 1.000000e+03" [voicerec/voicerec.cpp:245]   --->   Operation 340 'ddiv' 'tmp_4' <Predicate = true> <Delay = 4.87> <Core = "DDiv">   --->   Core 111 'DDiv' <Latency = 58> <II = 1> <Delay = 4.87> <FuncUnit> <Opcode : 'ddiv' 'drem'> <InPorts = 2> <OutPorts = 1>
+
+State 75 <SV = 72> <Delay = 4.87>
+ST_75 : Operation 341 [8/59] (4.87ns)   --->   "%tmp_4 = fdiv double %tmp_3, 1.000000e+03" [voicerec/voicerec.cpp:245]   --->   Operation 341 'ddiv' 'tmp_4' <Predicate = true> <Delay = 4.87> <Core = "DDiv">   --->   Core 111 'DDiv' <Latency = 58> <II = 1> <Delay = 4.87> <FuncUnit> <Opcode : 'ddiv' 'drem'> <InPorts = 2> <OutPorts = 1>
+
+State 76 <SV = 73> <Delay = 4.87>
+ST_76 : Operation 342 [7/59] (4.87ns)   --->   "%tmp_4 = fdiv double %tmp_3, 1.000000e+03" [voicerec/voicerec.cpp:245]   --->   Operation 342 'ddiv' 'tmp_4' <Predicate = true> <Delay = 4.87> <Core = "DDiv">   --->   Core 111 'DDiv' <Latency = 58> <II = 1> <Delay = 4.87> <FuncUnit> <Opcode : 'ddiv' 'drem'> <InPorts = 2> <OutPorts = 1>
+
+State 77 <SV = 74> <Delay = 4.87>
+ST_77 : Operation 343 [6/59] (4.87ns)   --->   "%tmp_4 = fdiv double %tmp_3, 1.000000e+03" [voicerec/voicerec.cpp:245]   --->   Operation 343 'ddiv' 'tmp_4' <Predicate = true> <Delay = 4.87> <Core = "DDiv">   --->   Core 111 'DDiv' <Latency = 58> <II = 1> <Delay = 4.87> <FuncUnit> <Opcode : 'ddiv' 'drem'> <InPorts = 2> <OutPorts = 1>
+
+State 78 <SV = 75> <Delay = 4.87>
+ST_78 : Operation 344 [5/59] (4.87ns)   --->   "%tmp_4 = fdiv double %tmp_3, 1.000000e+03" [voicerec/voicerec.cpp:245]   --->   Operation 344 'ddiv' 'tmp_4' <Predicate = true> <Delay = 4.87> <Core = "DDiv">   --->   Core 111 'DDiv' <Latency = 58> <II = 1> <Delay = 4.87> <FuncUnit> <Opcode : 'ddiv' 'drem'> <InPorts = 2> <OutPorts = 1>
+
+State 79 <SV = 76> <Delay = 4.87>
+ST_79 : Operation 345 [4/59] (4.87ns)   --->   "%tmp_4 = fdiv double %tmp_3, 1.000000e+03" [voicerec/voicerec.cpp:245]   --->   Operation 345 'ddiv' 'tmp_4' <Predicate = true> <Delay = 4.87> <Core = "DDiv">   --->   Core 111 'DDiv' <Latency = 58> <II = 1> <Delay = 4.87> <FuncUnit> <Opcode : 'ddiv' 'drem'> <InPorts = 2> <OutPorts = 1>
+
+State 80 <SV = 77> <Delay = 4.87>
+ST_80 : Operation 346 [3/59] (4.87ns)   --->   "%tmp_4 = fdiv double %tmp_3, 1.000000e+03" [voicerec/voicerec.cpp:245]   --->   Operation 346 'ddiv' 'tmp_4' <Predicate = true> <Delay = 4.87> <Core = "DDiv">   --->   Core 111 'DDiv' <Latency = 58> <II = 1> <Delay = 4.87> <FuncUnit> <Opcode : 'ddiv' 'drem'> <InPorts = 2> <OutPorts = 1>
+
+State 81 <SV = 78> <Delay = 4.87>
+ST_81 : Operation 347 [2/59] (4.87ns)   --->   "%tmp_4 = fdiv double %tmp_3, 1.000000e+03" [voicerec/voicerec.cpp:245]   --->   Operation 347 'ddiv' 'tmp_4' <Predicate = true> <Delay = 4.87> <Core = "DDiv">   --->   Core 111 'DDiv' <Latency = 58> <II = 1> <Delay = 4.87> <FuncUnit> <Opcode : 'ddiv' 'drem'> <InPorts = 2> <OutPorts = 1>
+
+State 82 <SV = 79> <Delay = 4.87>
+ST_82 : Operation 348 [1/59] (4.87ns)   --->   "%tmp_4 = fdiv double %tmp_3, 1.000000e+03" [voicerec/voicerec.cpp:245]   --->   Operation 348 'ddiv' 'tmp_4' <Predicate = true> <Delay = 4.87> <Core = "DDiv">   --->   Core 111 'DDiv' <Latency = 58> <II = 1> <Delay = 4.87> <FuncUnit> <Opcode : 'ddiv' 'drem'> <InPorts = 2> <OutPorts = 1>
+
+State 83 <SV = 80> <Delay = 4.30>
+ST_83 : Operation 349 [3/3] (4.30ns)   --->   "%tmp_5 = fptrunc double %tmp_4 to float" [voicerec/voicerec.cpp:245]   --->   Operation 349 'fptrunc' 'tmp_5' <Predicate = true> <Delay = 4.30> <Core = "Double2Float">   --->   Core 117 'Double2Float' <Latency = 2> <II = 1> <Delay = 4.30> <FuncUnit> <Opcode : 'fptrunc'> <InPorts = 1> <OutPorts = 1>
+
+State 84 <SV = 81> <Delay = 4.30>
+ST_84 : Operation 350 [2/3] (4.30ns)   --->   "%tmp_5 = fptrunc double %tmp_4 to float" [voicerec/voicerec.cpp:245]   --->   Operation 350 'fptrunc' 'tmp_5' <Predicate = true> <Delay = 4.30> <Core = "Double2Float">   --->   Core 117 'Double2Float' <Latency = 2> <II = 1> <Delay = 4.30> <FuncUnit> <Opcode : 'fptrunc'> <InPorts = 1> <OutPorts = 1>
+
+State 85 <SV = 82> <Delay = 4.30>
+ST_85 : Operation 351 [1/3] (4.30ns)   --->   "%tmp_5 = fptrunc double %tmp_4 to float" [voicerec/voicerec.cpp:245]   --->   Operation 351 'fptrunc' 'tmp_5' <Predicate = true> <Delay = 4.30> <Core = "Double2Float">   --->   Core 117 'Double2Float' <Latency = 2> <II = 1> <Delay = 4.30> <FuncUnit> <Opcode : 'fptrunc'> <InPorts = 1> <OutPorts = 1>
+
+State 86 <SV = 83> <Delay = 3.25>
+ST_86 : Operation 352 [1/1] (0.00ns)   --->   "%inSound_addr = getelementptr inbounds [8000 x float]* @inSound, i64 0, i64 %tmp_1" [voicerec/voicerec.cpp:245]   --->   Operation 352 'getelementptr' 'inSound_addr' <Predicate = true> <Delay = 0.00>
+ST_86 : Operation 353 [1/1] (3.25ns)   --->   "store float %tmp_5, float* %inSound_addr, align 4" [voicerec/voicerec.cpp:245]   --->   Operation 353 'store' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 8000> <RAM>
+ST_86 : Operation 354 [1/1] (0.00ns)   --->   "br label %burst.rd.end" [voicerec/voicerec.cpp:244]   --->   Operation 354 'br' <Predicate = true> <Delay = 0.00>
+
+State 87 <SV = 11> <Delay = 3.25>
+ST_87 : Operation 355 [1/2] (3.25ns)   --->   "%inSound_load = load float* getelementptr inbounds ([8000 x float]* @inSound, i64 0, i64 7999), align 4" [voicerec/voicerec.cpp:248]   --->   Operation 355 'load' 'inSound_load' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 8000> <RAM>
+
+State 88 <SV = 12> <Delay = 4.24>
+ST_88 : Operation 356 [1/1] (0.00ns)   --->   "%inSound_load_to_int = bitcast float %inSound_load to i32" [voicerec/voicerec.cpp:248]   --->   Operation 356 'bitcast' 'inSound_load_to_int' <Predicate = true> <Delay = 0.00>
+ST_88 : Operation 357 [1/1] (0.00ns)   --->   "%tmp = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %inSound_load_to_int, i32 23, i32 30)" [voicerec/voicerec.cpp:248]   --->   Operation 357 'partselect' 'tmp' <Predicate = true> <Delay = 0.00>
+ST_88 : Operation 358 [1/1] (0.00ns)   --->   "%tmp_13 = trunc i32 %inSound_load_to_int to i23" [voicerec/voicerec.cpp:248]   --->   Operation 358 'trunc' 'tmp_13' <Predicate = true> <Delay = 0.00>
+ST_88 : Operation 359 [1/1] (1.47ns)   --->   "%notlhs = icmp ne i8 %tmp, -1" [voicerec/voicerec.cpp:248]   --->   Operation 359 'icmp' 'notlhs' <Predicate = true> <Delay = 1.47> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.40> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_88 : Operation 360 [1/1] (2.40ns)   --->   "%notrhs = icmp eq i23 %tmp_13, 0" [voicerec/voicerec.cpp:248]   --->   Operation 360 'icmp' 'notrhs' <Predicate = true> <Delay = 2.40> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.40> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_88 : Operation 361 [3/3] (4.24ns)   --->   "%tmp_10 = fcmp oeq float %inSound_load, 0.000000e+00" [voicerec/voicerec.cpp:248]   --->   Operation 361 'fcmp' 'tmp_10' <Predicate = true> <Delay = 4.24> <Core = "FCmp">   --->   Core 105 'FCmp' <Latency = 2> <II = 1> <Delay = 4.24> <FuncUnit> <Opcode : 'fcmp'> <InPorts = 2> <OutPorts = 1>
+
+State 89 <SV = 13> <Delay = 4.24>
+ST_89 : Operation 362 [2/3] (4.24ns)   --->   "%tmp_10 = fcmp oeq float %inSound_load, 0.000000e+00" [voicerec/voicerec.cpp:248]   --->   Operation 362 'fcmp' 'tmp_10' <Predicate = true> <Delay = 4.24> <Core = "FCmp">   --->   Core 105 'FCmp' <Latency = 2> <II = 1> <Delay = 4.24> <FuncUnit> <Opcode : 'fcmp'> <InPorts = 2> <OutPorts = 1>
+
+State 90 <SV = 14> <Delay = 4.24>
+ST_90 : Operation 363 [1/3] (4.24ns)   --->   "%tmp_10 = fcmp oeq float %inSound_load, 0.000000e+00" [voicerec/voicerec.cpp:248]   --->   Operation 363 'fcmp' 'tmp_10' <Predicate = true> <Delay = 4.24> <Core = "FCmp">   --->   Core 105 'FCmp' <Latency = 2> <II = 1> <Delay = 4.24> <FuncUnit> <Opcode : 'fcmp'> <InPorts = 2> <OutPorts = 1>
+
+State 91 <SV = 15> <Delay = 5.00>
+ST_91 : Operation 364 [1/1] (0.00ns) (grouped into LUT with out node tmp_11)   --->   "%tmp_9 = or i1 %notrhs, %notlhs" [voicerec/voicerec.cpp:248]   --->   Operation 364 'or' 'tmp_9' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_91 : Operation 365 [1/1] (0.97ns) (out node of the LUT)   --->   "%tmp_11 = and i1 %tmp_9, %tmp_10" [voicerec/voicerec.cpp:248]   --->   Operation 365 'and' 'tmp_11' <Predicate = true> <Delay = 0.97> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_91 : Operation 366 [1/1] (0.00ns)   --->   "br i1 %tmp_11, label %.preheader.preheader, label %.preheader4.0" [voicerec/voicerec.cpp:248]   --->   Operation 366 'br' <Predicate = true> <Delay = 0.00>
+ST_91 : Operation 367 [2/2] (5.00ns)   --->   "call fastcc void @processChunk(i14 0, [882 x float]* @result, i7 0, [8000 x float]* @inSound) nounwind" [voicerec/voicerec.cpp:255]   --->   Operation 367 'call' <Predicate = (!tmp_11)> <Delay = 5.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_91 : Operation 368 [1/1] (1.66ns)   --->   "br label %.preheader" [voicerec/voicerec.cpp:264]   --->   Operation 368 'br' <Predicate = (tmp_11)> <Delay = 1.66>
+
+State 92 <SV = 16> <Delay = 0.00>
+ST_92 : Operation 369 [1/2] (0.00ns)   --->   "call fastcc void @processChunk(i14 0, [882 x float]* @result, i7 0, [8000 x float]* @inSound) nounwind" [voicerec/voicerec.cpp:255]   --->   Operation 369 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 93 <SV = 17> <Delay = 5.00>
+ST_93 : Operation 370 [2/2] (5.00ns)   --->   "call fastcc void @processChunk(i14 128, [882 x float]* @result, i7 1, [8000 x float]* @inSound) nounwind" [voicerec/voicerec.cpp:255]   --->   Operation 370 'call' <Predicate = true> <Delay = 5.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 94 <SV = 18> <Delay = 0.00>
+ST_94 : Operation 371 [1/2] (0.00ns)   --->   "call fastcc void @processChunk(i14 128, [882 x float]* @result, i7 1, [8000 x float]* @inSound) nounwind" [voicerec/voicerec.cpp:255]   --->   Operation 371 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 95 <SV = 19> <Delay = 5.00>
+ST_95 : Operation 372 [2/2] (5.00ns)   --->   "call fastcc void @processChunk(i14 256, [882 x float]* @result, i7 2, [8000 x float]* @inSound) nounwind" [voicerec/voicerec.cpp:255]   --->   Operation 372 'call' <Predicate = true> <Delay = 5.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 96 <SV = 20> <Delay = 0.00>
+ST_96 : Operation 373 [1/2] (0.00ns)   --->   "call fastcc void @processChunk(i14 256, [882 x float]* @result, i7 2, [8000 x float]* @inSound) nounwind" [voicerec/voicerec.cpp:255]   --->   Operation 373 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 97 <SV = 21> <Delay = 5.00>
+ST_97 : Operation 374 [2/2] (5.00ns)   --->   "call fastcc void @processChunk(i14 384, [882 x float]* @result, i7 3, [8000 x float]* @inSound) nounwind" [voicerec/voicerec.cpp:255]   --->   Operation 374 'call' <Predicate = true> <Delay = 5.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 98 <SV = 22> <Delay = 0.00>
+ST_98 : Operation 375 [1/2] (0.00ns)   --->   "call fastcc void @processChunk(i14 384, [882 x float]* @result, i7 3, [8000 x float]* @inSound) nounwind" [voicerec/voicerec.cpp:255]   --->   Operation 375 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 99 <SV = 23> <Delay = 5.00>
+ST_99 : Operation 376 [2/2] (5.00ns)   --->   "call fastcc void @processChunk(i14 512, [882 x float]* @result, i7 4, [8000 x float]* @inSound) nounwind" [voicerec/voicerec.cpp:255]   --->   Operation 376 'call' <Predicate = true> <Delay = 5.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 100 <SV = 24> <Delay = 0.00>
+ST_100 : Operation 377 [1/2] (0.00ns)   --->   "call fastcc void @processChunk(i14 512, [882 x float]* @result, i7 4, [8000 x float]* @inSound) nounwind" [voicerec/voicerec.cpp:255]   --->   Operation 377 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 101 <SV = 25> <Delay = 5.00>
+ST_101 : Operation 378 [2/2] (5.00ns)   --->   "call fastcc void @processChunk(i14 640, [882 x float]* @result, i7 5, [8000 x float]* @inSound) nounwind" [voicerec/voicerec.cpp:255]   --->   Operation 378 'call' <Predicate = true> <Delay = 5.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 102 <SV = 26> <Delay = 0.00>
+ST_102 : Operation 379 [1/2] (0.00ns)   --->   "call fastcc void @processChunk(i14 640, [882 x float]* @result, i7 5, [8000 x float]* @inSound) nounwind" [voicerec/voicerec.cpp:255]   --->   Operation 379 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 103 <SV = 27> <Delay = 5.00>
+ST_103 : Operation 380 [2/2] (5.00ns)   --->   "call fastcc void @processChunk(i14 768, [882 x float]* @result, i7 6, [8000 x float]* @inSound) nounwind" [voicerec/voicerec.cpp:255]   --->   Operation 380 'call' <Predicate = true> <Delay = 5.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 104 <SV = 28> <Delay = 0.00>
+ST_104 : Operation 381 [1/2] (0.00ns)   --->   "call fastcc void @processChunk(i14 768, [882 x float]* @result, i7 6, [8000 x float]* @inSound) nounwind" [voicerec/voicerec.cpp:255]   --->   Operation 381 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 105 <SV = 29> <Delay = 5.00>
+ST_105 : Operation 382 [2/2] (5.00ns)   --->   "call fastcc void @processChunk(i14 896, [882 x float]* @result, i7 7, [8000 x float]* @inSound) nounwind" [voicerec/voicerec.cpp:255]   --->   Operation 382 'call' <Predicate = true> <Delay = 5.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 106 <SV = 30> <Delay = 0.00>
+ST_106 : Operation 383 [1/2] (0.00ns)   --->   "call fastcc void @processChunk(i14 896, [882 x float]* @result, i7 7, [8000 x float]* @inSound) nounwind" [voicerec/voicerec.cpp:255]   --->   Operation 383 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 107 <SV = 31> <Delay = 5.00>
+ST_107 : Operation 384 [2/2] (5.00ns)   --->   "call fastcc void @processChunk(i14 1024, [882 x float]* @result, i7 8, [8000 x float]* @inSound) nounwind" [voicerec/voicerec.cpp:255]   --->   Operation 384 'call' <Predicate = true> <Delay = 5.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 108 <SV = 32> <Delay = 0.00>
+ST_108 : Operation 385 [1/2] (0.00ns)   --->   "call fastcc void @processChunk(i14 1024, [882 x float]* @result, i7 8, [8000 x float]* @inSound) nounwind" [voicerec/voicerec.cpp:255]   --->   Operation 385 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 109 <SV = 33> <Delay = 5.00>
+ST_109 : Operation 386 [2/2] (5.00ns)   --->   "call fastcc void @processChunk(i14 1152, [882 x float]* @result, i7 9, [8000 x float]* @inSound) nounwind" [voicerec/voicerec.cpp:255]   --->   Operation 386 'call' <Predicate = true> <Delay = 5.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 110 <SV = 34> <Delay = 0.00>
+ST_110 : Operation 387 [1/2] (0.00ns)   --->   "call fastcc void @processChunk(i14 1152, [882 x float]* @result, i7 9, [8000 x float]* @inSound) nounwind" [voicerec/voicerec.cpp:255]   --->   Operation 387 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 111 <SV = 35> <Delay = 5.00>
+ST_111 : Operation 388 [2/2] (5.00ns)   --->   "call fastcc void @processChunk(i14 1280, [882 x float]* @result, i7 10, [8000 x float]* @inSound) nounwind" [voicerec/voicerec.cpp:255]   --->   Operation 388 'call' <Predicate = true> <Delay = 5.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 112 <SV = 36> <Delay = 0.00>
+ST_112 : Operation 389 [1/2] (0.00ns)   --->   "call fastcc void @processChunk(i14 1280, [882 x float]* @result, i7 10, [8000 x float]* @inSound) nounwind" [voicerec/voicerec.cpp:255]   --->   Operation 389 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 113 <SV = 37> <Delay = 5.00>
+ST_113 : Operation 390 [2/2] (5.00ns)   --->   "call fastcc void @processChunk(i14 1408, [882 x float]* @result, i7 11, [8000 x float]* @inSound) nounwind" [voicerec/voicerec.cpp:255]   --->   Operation 390 'call' <Predicate = true> <Delay = 5.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 114 <SV = 38> <Delay = 0.00>
+ST_114 : Operation 391 [1/2] (0.00ns)   --->   "call fastcc void @processChunk(i14 1408, [882 x float]* @result, i7 11, [8000 x float]* @inSound) nounwind" [voicerec/voicerec.cpp:255]   --->   Operation 391 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 115 <SV = 39> <Delay = 5.00>
+ST_115 : Operation 392 [2/2] (5.00ns)   --->   "call fastcc void @processChunk(i14 1536, [882 x float]* @result, i7 12, [8000 x float]* @inSound) nounwind" [voicerec/voicerec.cpp:255]   --->   Operation 392 'call' <Predicate = true> <Delay = 5.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 116 <SV = 40> <Delay = 0.00>
+ST_116 : Operation 393 [1/2] (0.00ns)   --->   "call fastcc void @processChunk(i14 1536, [882 x float]* @result, i7 12, [8000 x float]* @inSound) nounwind" [voicerec/voicerec.cpp:255]   --->   Operation 393 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 117 <SV = 41> <Delay = 5.00>
+ST_117 : Operation 394 [2/2] (5.00ns)   --->   "call fastcc void @processChunk(i14 1664, [882 x float]* @result, i7 13, [8000 x float]* @inSound) nounwind" [voicerec/voicerec.cpp:255]   --->   Operation 394 'call' <Predicate = true> <Delay = 5.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 118 <SV = 42> <Delay = 0.00>
+ST_118 : Operation 395 [1/2] (0.00ns)   --->   "call fastcc void @processChunk(i14 1664, [882 x float]* @result, i7 13, [8000 x float]* @inSound) nounwind" [voicerec/voicerec.cpp:255]   --->   Operation 395 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 119 <SV = 43> <Delay = 5.00>
+ST_119 : Operation 396 [2/2] (5.00ns)   --->   "call fastcc void @processChunk(i14 1792, [882 x float]* @result, i7 14, [8000 x float]* @inSound) nounwind" [voicerec/voicerec.cpp:255]   --->   Operation 396 'call' <Predicate = true> <Delay = 5.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 120 <SV = 44> <Delay = 0.00>
+ST_120 : Operation 397 [1/2] (0.00ns)   --->   "call fastcc void @processChunk(i14 1792, [882 x float]* @result, i7 14, [8000 x float]* @inSound) nounwind" [voicerec/voicerec.cpp:255]   --->   Operation 397 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 121 <SV = 45> <Delay = 5.00>
+ST_121 : Operation 398 [2/2] (5.00ns)   --->   "call fastcc void @processChunk(i14 1920, [882 x float]* @result, i7 15, [8000 x float]* @inSound) nounwind" [voicerec/voicerec.cpp:255]   --->   Operation 398 'call' <Predicate = true> <Delay = 5.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 122 <SV = 46> <Delay = 0.00>
+ST_122 : Operation 399 [1/2] (0.00ns)   --->   "call fastcc void @processChunk(i14 1920, [882 x float]* @result, i7 15, [8000 x float]* @inSound) nounwind" [voicerec/voicerec.cpp:255]   --->   Operation 399 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 123 <SV = 47> <Delay = 5.00>
+ST_123 : Operation 400 [2/2] (5.00ns)   --->   "call fastcc void @processChunk(i14 2048, [882 x float]* @result, i7 16, [8000 x float]* @inSound) nounwind" [voicerec/voicerec.cpp:255]   --->   Operation 400 'call' <Predicate = true> <Delay = 5.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 124 <SV = 48> <Delay = 0.00>
+ST_124 : Operation 401 [1/2] (0.00ns)   --->   "call fastcc void @processChunk(i14 2048, [882 x float]* @result, i7 16, [8000 x float]* @inSound) nounwind" [voicerec/voicerec.cpp:255]   --->   Operation 401 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 125 <SV = 49> <Delay = 5.00>
+ST_125 : Operation 402 [2/2] (5.00ns)   --->   "call fastcc void @processChunk(i14 2176, [882 x float]* @result, i7 17, [8000 x float]* @inSound) nounwind" [voicerec/voicerec.cpp:255]   --->   Operation 402 'call' <Predicate = true> <Delay = 5.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 126 <SV = 50> <Delay = 0.00>
+ST_126 : Operation 403 [1/2] (0.00ns)   --->   "call fastcc void @processChunk(i14 2176, [882 x float]* @result, i7 17, [8000 x float]* @inSound) nounwind" [voicerec/voicerec.cpp:255]   --->   Operation 403 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 127 <SV = 51> <Delay = 5.00>
+ST_127 : Operation 404 [2/2] (5.00ns)   --->   "call fastcc void @processChunk(i14 2304, [882 x float]* @result, i7 18, [8000 x float]* @inSound) nounwind" [voicerec/voicerec.cpp:255]   --->   Operation 404 'call' <Predicate = true> <Delay = 5.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 128 <SV = 52> <Delay = 0.00>
+ST_128 : Operation 405 [1/2] (0.00ns)   --->   "call fastcc void @processChunk(i14 2304, [882 x float]* @result, i7 18, [8000 x float]* @inSound) nounwind" [voicerec/voicerec.cpp:255]   --->   Operation 405 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 129 <SV = 53> <Delay = 5.00>
+ST_129 : Operation 406 [2/2] (5.00ns)   --->   "call fastcc void @processChunk(i14 2432, [882 x float]* @result, i7 19, [8000 x float]* @inSound) nounwind" [voicerec/voicerec.cpp:255]   --->   Operation 406 'call' <Predicate = true> <Delay = 5.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 130 <SV = 54> <Delay = 0.00>
+ST_130 : Operation 407 [1/2] (0.00ns)   --->   "call fastcc void @processChunk(i14 2432, [882 x float]* @result, i7 19, [8000 x float]* @inSound) nounwind" [voicerec/voicerec.cpp:255]   --->   Operation 407 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 131 <SV = 55> <Delay = 5.00>
+ST_131 : Operation 408 [2/2] (5.00ns)   --->   "call fastcc void @processChunk(i14 2560, [882 x float]* @result, i7 20, [8000 x float]* @inSound) nounwind" [voicerec/voicerec.cpp:255]   --->   Operation 408 'call' <Predicate = true> <Delay = 5.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 132 <SV = 56> <Delay = 0.00>
+ST_132 : Operation 409 [1/2] (0.00ns)   --->   "call fastcc void @processChunk(i14 2560, [882 x float]* @result, i7 20, [8000 x float]* @inSound) nounwind" [voicerec/voicerec.cpp:255]   --->   Operation 409 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 133 <SV = 57> <Delay = 5.00>
+ST_133 : Operation 410 [2/2] (5.00ns)   --->   "call fastcc void @processChunk(i14 2688, [882 x float]* @result, i7 21, [8000 x float]* @inSound) nounwind" [voicerec/voicerec.cpp:255]   --->   Operation 410 'call' <Predicate = true> <Delay = 5.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 134 <SV = 58> <Delay = 0.00>
+ST_134 : Operation 411 [1/2] (0.00ns)   --->   "call fastcc void @processChunk(i14 2688, [882 x float]* @result, i7 21, [8000 x float]* @inSound) nounwind" [voicerec/voicerec.cpp:255]   --->   Operation 411 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 135 <SV = 59> <Delay = 5.00>
+ST_135 : Operation 412 [2/2] (5.00ns)   --->   "call fastcc void @processChunk(i14 2816, [882 x float]* @result, i7 22, [8000 x float]* @inSound) nounwind" [voicerec/voicerec.cpp:255]   --->   Operation 412 'call' <Predicate = true> <Delay = 5.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 136 <SV = 60> <Delay = 0.00>
+ST_136 : Operation 413 [1/2] (0.00ns)   --->   "call fastcc void @processChunk(i14 2816, [882 x float]* @result, i7 22, [8000 x float]* @inSound) nounwind" [voicerec/voicerec.cpp:255]   --->   Operation 413 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 137 <SV = 61> <Delay = 5.00>
+ST_137 : Operation 414 [2/2] (5.00ns)   --->   "call fastcc void @processChunk(i14 2944, [882 x float]* @result, i7 23, [8000 x float]* @inSound) nounwind" [voicerec/voicerec.cpp:255]   --->   Operation 414 'call' <Predicate = true> <Delay = 5.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 138 <SV = 62> <Delay = 0.00>
+ST_138 : Operation 415 [1/2] (0.00ns)   --->   "call fastcc void @processChunk(i14 2944, [882 x float]* @result, i7 23, [8000 x float]* @inSound) nounwind" [voicerec/voicerec.cpp:255]   --->   Operation 415 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 139 <SV = 63> <Delay = 5.00>
+ST_139 : Operation 416 [2/2] (5.00ns)   --->   "call fastcc void @processChunk(i14 3072, [882 x float]* @result, i7 24, [8000 x float]* @inSound) nounwind" [voicerec/voicerec.cpp:255]   --->   Operation 416 'call' <Predicate = true> <Delay = 5.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 140 <SV = 64> <Delay = 0.00>
+ST_140 : Operation 417 [1/2] (0.00ns)   --->   "call fastcc void @processChunk(i14 3072, [882 x float]* @result, i7 24, [8000 x float]* @inSound) nounwind" [voicerec/voicerec.cpp:255]   --->   Operation 417 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 141 <SV = 65> <Delay = 5.00>
+ST_141 : Operation 418 [2/2] (5.00ns)   --->   "call fastcc void @processChunk(i14 3200, [882 x float]* @result, i7 25, [8000 x float]* @inSound) nounwind" [voicerec/voicerec.cpp:255]   --->   Operation 418 'call' <Predicate = true> <Delay = 5.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 142 <SV = 66> <Delay = 0.00>
+ST_142 : Operation 419 [1/2] (0.00ns)   --->   "call fastcc void @processChunk(i14 3200, [882 x float]* @result, i7 25, [8000 x float]* @inSound) nounwind" [voicerec/voicerec.cpp:255]   --->   Operation 419 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 143 <SV = 67> <Delay = 5.00>
+ST_143 : Operation 420 [2/2] (5.00ns)   --->   "call fastcc void @processChunk(i14 3328, [882 x float]* @result, i7 26, [8000 x float]* @inSound) nounwind" [voicerec/voicerec.cpp:255]   --->   Operation 420 'call' <Predicate = true> <Delay = 5.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 144 <SV = 68> <Delay = 0.00>
+ST_144 : Operation 421 [1/2] (0.00ns)   --->   "call fastcc void @processChunk(i14 3328, [882 x float]* @result, i7 26, [8000 x float]* @inSound) nounwind" [voicerec/voicerec.cpp:255]   --->   Operation 421 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 145 <SV = 69> <Delay = 5.00>
+ST_145 : Operation 422 [2/2] (5.00ns)   --->   "call fastcc void @processChunk(i14 3456, [882 x float]* @result, i7 27, [8000 x float]* @inSound) nounwind" [voicerec/voicerec.cpp:255]   --->   Operation 422 'call' <Predicate = true> <Delay = 5.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 146 <SV = 70> <Delay = 0.00>
+ST_146 : Operation 423 [1/2] (0.00ns)   --->   "call fastcc void @processChunk(i14 3456, [882 x float]* @result, i7 27, [8000 x float]* @inSound) nounwind" [voicerec/voicerec.cpp:255]   --->   Operation 423 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 147 <SV = 71> <Delay = 5.00>
+ST_147 : Operation 424 [2/2] (5.00ns)   --->   "call fastcc void @processChunk(i14 3584, [882 x float]* @result, i7 28, [8000 x float]* @inSound) nounwind" [voicerec/voicerec.cpp:255]   --->   Operation 424 'call' <Predicate = true> <Delay = 5.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 148 <SV = 72> <Delay = 0.00>
+ST_148 : Operation 425 [1/2] (0.00ns)   --->   "call fastcc void @processChunk(i14 3584, [882 x float]* @result, i7 28, [8000 x float]* @inSound) nounwind" [voicerec/voicerec.cpp:255]   --->   Operation 425 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 149 <SV = 73> <Delay = 5.00>
+ST_149 : Operation 426 [2/2] (5.00ns)   --->   "call fastcc void @processChunk(i14 3712, [882 x float]* @result, i7 29, [8000 x float]* @inSound) nounwind" [voicerec/voicerec.cpp:255]   --->   Operation 426 'call' <Predicate = true> <Delay = 5.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 150 <SV = 74> <Delay = 0.00>
+ST_150 : Operation 427 [1/2] (0.00ns)   --->   "call fastcc void @processChunk(i14 3712, [882 x float]* @result, i7 29, [8000 x float]* @inSound) nounwind" [voicerec/voicerec.cpp:255]   --->   Operation 427 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 151 <SV = 75> <Delay = 5.00>
+ST_151 : Operation 428 [2/2] (5.00ns)   --->   "call fastcc void @processChunk(i14 3840, [882 x float]* @result, i7 30, [8000 x float]* @inSound) nounwind" [voicerec/voicerec.cpp:255]   --->   Operation 428 'call' <Predicate = true> <Delay = 5.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 152 <SV = 76> <Delay = 0.00>
+ST_152 : Operation 429 [1/2] (0.00ns)   --->   "call fastcc void @processChunk(i14 3840, [882 x float]* @result, i7 30, [8000 x float]* @inSound) nounwind" [voicerec/voicerec.cpp:255]   --->   Operation 429 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 153 <SV = 77> <Delay = 5.00>
+ST_153 : Operation 430 [2/2] (5.00ns)   --->   "call fastcc void @processChunk(i14 3968, [882 x float]* @result, i7 31, [8000 x float]* @inSound) nounwind" [voicerec/voicerec.cpp:255]   --->   Operation 430 'call' <Predicate = true> <Delay = 5.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 154 <SV = 78> <Delay = 0.00>
+ST_154 : Operation 431 [1/2] (0.00ns)   --->   "call fastcc void @processChunk(i14 3968, [882 x float]* @result, i7 31, [8000 x float]* @inSound) nounwind" [voicerec/voicerec.cpp:255]   --->   Operation 431 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 155 <SV = 79> <Delay = 5.00>
+ST_155 : Operation 432 [2/2] (5.00ns)   --->   "call fastcc void @processChunk(i14 4096, [882 x float]* @result, i7 32, [8000 x float]* @inSound) nounwind" [voicerec/voicerec.cpp:255]   --->   Operation 432 'call' <Predicate = true> <Delay = 5.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 156 <SV = 80> <Delay = 0.00>
+ST_156 : Operation 433 [1/2] (0.00ns)   --->   "call fastcc void @processChunk(i14 4096, [882 x float]* @result, i7 32, [8000 x float]* @inSound) nounwind" [voicerec/voicerec.cpp:255]   --->   Operation 433 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 157 <SV = 81> <Delay = 5.00>
+ST_157 : Operation 434 [2/2] (5.00ns)   --->   "call fastcc void @processChunk(i14 4224, [882 x float]* @result, i7 33, [8000 x float]* @inSound) nounwind" [voicerec/voicerec.cpp:255]   --->   Operation 434 'call' <Predicate = true> <Delay = 5.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 158 <SV = 82> <Delay = 0.00>
+ST_158 : Operation 435 [1/2] (0.00ns)   --->   "call fastcc void @processChunk(i14 4224, [882 x float]* @result, i7 33, [8000 x float]* @inSound) nounwind" [voicerec/voicerec.cpp:255]   --->   Operation 435 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 159 <SV = 83> <Delay = 5.00>
+ST_159 : Operation 436 [2/2] (5.00ns)   --->   "call fastcc void @processChunk(i14 4352, [882 x float]* @result, i7 34, [8000 x float]* @inSound) nounwind" [voicerec/voicerec.cpp:255]   --->   Operation 436 'call' <Predicate = true> <Delay = 5.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 160 <SV = 84> <Delay = 0.00>
+ST_160 : Operation 437 [1/2] (0.00ns)   --->   "call fastcc void @processChunk(i14 4352, [882 x float]* @result, i7 34, [8000 x float]* @inSound) nounwind" [voicerec/voicerec.cpp:255]   --->   Operation 437 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 161 <SV = 85> <Delay = 5.00>
+ST_161 : Operation 438 [2/2] (5.00ns)   --->   "call fastcc void @processChunk(i14 4480, [882 x float]* @result, i7 35, [8000 x float]* @inSound) nounwind" [voicerec/voicerec.cpp:255]   --->   Operation 438 'call' <Predicate = true> <Delay = 5.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 162 <SV = 86> <Delay = 0.00>
+ST_162 : Operation 439 [1/2] (0.00ns)   --->   "call fastcc void @processChunk(i14 4480, [882 x float]* @result, i7 35, [8000 x float]* @inSound) nounwind" [voicerec/voicerec.cpp:255]   --->   Operation 439 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 163 <SV = 87> <Delay = 5.00>
+ST_163 : Operation 440 [2/2] (5.00ns)   --->   "call fastcc void @processChunk(i14 4608, [882 x float]* @result, i7 36, [8000 x float]* @inSound) nounwind" [voicerec/voicerec.cpp:255]   --->   Operation 440 'call' <Predicate = true> <Delay = 5.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 164 <SV = 88> <Delay = 0.00>
+ST_164 : Operation 441 [1/2] (0.00ns)   --->   "call fastcc void @processChunk(i14 4608, [882 x float]* @result, i7 36, [8000 x float]* @inSound) nounwind" [voicerec/voicerec.cpp:255]   --->   Operation 441 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 165 <SV = 89> <Delay = 5.00>
+ST_165 : Operation 442 [2/2] (5.00ns)   --->   "call fastcc void @processChunk(i14 4736, [882 x float]* @result, i7 37, [8000 x float]* @inSound) nounwind" [voicerec/voicerec.cpp:255]   --->   Operation 442 'call' <Predicate = true> <Delay = 5.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 166 <SV = 90> <Delay = 0.00>
+ST_166 : Operation 443 [1/2] (0.00ns)   --->   "call fastcc void @processChunk(i14 4736, [882 x float]* @result, i7 37, [8000 x float]* @inSound) nounwind" [voicerec/voicerec.cpp:255]   --->   Operation 443 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 167 <SV = 91> <Delay = 5.00>
+ST_167 : Operation 444 [2/2] (5.00ns)   --->   "call fastcc void @processChunk(i14 4864, [882 x float]* @result, i7 38, [8000 x float]* @inSound) nounwind" [voicerec/voicerec.cpp:255]   --->   Operation 444 'call' <Predicate = true> <Delay = 5.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 168 <SV = 92> <Delay = 0.00>
+ST_168 : Operation 445 [1/2] (0.00ns)   --->   "call fastcc void @processChunk(i14 4864, [882 x float]* @result, i7 38, [8000 x float]* @inSound) nounwind" [voicerec/voicerec.cpp:255]   --->   Operation 445 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 169 <SV = 93> <Delay = 5.00>
+ST_169 : Operation 446 [2/2] (5.00ns)   --->   "call fastcc void @processChunk(i14 4992, [882 x float]* @result, i7 39, [8000 x float]* @inSound) nounwind" [voicerec/voicerec.cpp:255]   --->   Operation 446 'call' <Predicate = true> <Delay = 5.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 170 <SV = 94> <Delay = 0.00>
+ST_170 : Operation 447 [1/2] (0.00ns)   --->   "call fastcc void @processChunk(i14 4992, [882 x float]* @result, i7 39, [8000 x float]* @inSound) nounwind" [voicerec/voicerec.cpp:255]   --->   Operation 447 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 171 <SV = 95> <Delay = 5.00>
+ST_171 : Operation 448 [2/2] (5.00ns)   --->   "call fastcc void @processChunk(i14 5120, [882 x float]* @result, i7 40, [8000 x float]* @inSound) nounwind" [voicerec/voicerec.cpp:255]   --->   Operation 448 'call' <Predicate = true> <Delay = 5.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 172 <SV = 96> <Delay = 0.00>
+ST_172 : Operation 449 [1/2] (0.00ns)   --->   "call fastcc void @processChunk(i14 5120, [882 x float]* @result, i7 40, [8000 x float]* @inSound) nounwind" [voicerec/voicerec.cpp:255]   --->   Operation 449 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 173 <SV = 97> <Delay = 5.00>
+ST_173 : Operation 450 [2/2] (5.00ns)   --->   "call fastcc void @processChunk(i14 5248, [882 x float]* @result, i7 41, [8000 x float]* @inSound) nounwind" [voicerec/voicerec.cpp:255]   --->   Operation 450 'call' <Predicate = true> <Delay = 5.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 174 <SV = 98> <Delay = 0.00>
+ST_174 : Operation 451 [1/2] (0.00ns)   --->   "call fastcc void @processChunk(i14 5248, [882 x float]* @result, i7 41, [8000 x float]* @inSound) nounwind" [voicerec/voicerec.cpp:255]   --->   Operation 451 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 175 <SV = 99> <Delay = 5.00>
+ST_175 : Operation 452 [2/2] (5.00ns)   --->   "call fastcc void @processChunk(i14 5376, [882 x float]* @result, i7 42, [8000 x float]* @inSound) nounwind" [voicerec/voicerec.cpp:255]   --->   Operation 452 'call' <Predicate = true> <Delay = 5.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 176 <SV = 100> <Delay = 0.00>
+ST_176 : Operation 453 [1/2] (0.00ns)   --->   "call fastcc void @processChunk(i14 5376, [882 x float]* @result, i7 42, [8000 x float]* @inSound) nounwind" [voicerec/voicerec.cpp:255]   --->   Operation 453 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 177 <SV = 101> <Delay = 5.00>
+ST_177 : Operation 454 [2/2] (5.00ns)   --->   "call fastcc void @processChunk(i14 5504, [882 x float]* @result, i7 43, [8000 x float]* @inSound) nounwind" [voicerec/voicerec.cpp:255]   --->   Operation 454 'call' <Predicate = true> <Delay = 5.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 178 <SV = 102> <Delay = 0.00>
+ST_178 : Operation 455 [1/2] (0.00ns)   --->   "call fastcc void @processChunk(i14 5504, [882 x float]* @result, i7 43, [8000 x float]* @inSound) nounwind" [voicerec/voicerec.cpp:255]   --->   Operation 455 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 179 <SV = 103> <Delay = 5.00>
+ST_179 : Operation 456 [2/2] (5.00ns)   --->   "call fastcc void @processChunk(i14 5632, [882 x float]* @result, i7 44, [8000 x float]* @inSound) nounwind" [voicerec/voicerec.cpp:255]   --->   Operation 456 'call' <Predicate = true> <Delay = 5.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 180 <SV = 104> <Delay = 0.00>
+ST_180 : Operation 457 [1/2] (0.00ns)   --->   "call fastcc void @processChunk(i14 5632, [882 x float]* @result, i7 44, [8000 x float]* @inSound) nounwind" [voicerec/voicerec.cpp:255]   --->   Operation 457 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 181 <SV = 105> <Delay = 5.00>
+ST_181 : Operation 458 [2/2] (5.00ns)   --->   "call fastcc void @processChunk(i14 5760, [882 x float]* @result, i7 45, [8000 x float]* @inSound) nounwind" [voicerec/voicerec.cpp:255]   --->   Operation 458 'call' <Predicate = true> <Delay = 5.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 182 <SV = 106> <Delay = 0.00>
+ST_182 : Operation 459 [1/2] (0.00ns)   --->   "call fastcc void @processChunk(i14 5760, [882 x float]* @result, i7 45, [8000 x float]* @inSound) nounwind" [voicerec/voicerec.cpp:255]   --->   Operation 459 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 183 <SV = 107> <Delay = 5.00>
+ST_183 : Operation 460 [2/2] (5.00ns)   --->   "call fastcc void @processChunk(i14 5888, [882 x float]* @result, i7 46, [8000 x float]* @inSound) nounwind" [voicerec/voicerec.cpp:255]   --->   Operation 460 'call' <Predicate = true> <Delay = 5.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 184 <SV = 108> <Delay = 0.00>
+ST_184 : Operation 461 [1/2] (0.00ns)   --->   "call fastcc void @processChunk(i14 5888, [882 x float]* @result, i7 46, [8000 x float]* @inSound) nounwind" [voicerec/voicerec.cpp:255]   --->   Operation 461 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 185 <SV = 109> <Delay = 5.00>
+ST_185 : Operation 462 [2/2] (5.00ns)   --->   "call fastcc void @processChunk(i14 6016, [882 x float]* @result, i7 47, [8000 x float]* @inSound) nounwind" [voicerec/voicerec.cpp:255]   --->   Operation 462 'call' <Predicate = true> <Delay = 5.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 186 <SV = 110> <Delay = 0.00>
+ST_186 : Operation 463 [1/2] (0.00ns)   --->   "call fastcc void @processChunk(i14 6016, [882 x float]* @result, i7 47, [8000 x float]* @inSound) nounwind" [voicerec/voicerec.cpp:255]   --->   Operation 463 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 187 <SV = 111> <Delay = 5.00>
+ST_187 : Operation 464 [2/2] (5.00ns)   --->   "call fastcc void @processChunk(i14 6144, [882 x float]* @result, i7 48, [8000 x float]* @inSound) nounwind" [voicerec/voicerec.cpp:255]   --->   Operation 464 'call' <Predicate = true> <Delay = 5.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 188 <SV = 112> <Delay = 0.00>
+ST_188 : Operation 465 [1/2] (0.00ns)   --->   "call fastcc void @processChunk(i14 6144, [882 x float]* @result, i7 48, [8000 x float]* @inSound) nounwind" [voicerec/voicerec.cpp:255]   --->   Operation 465 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 189 <SV = 113> <Delay = 5.00>
+ST_189 : Operation 466 [2/2] (5.00ns)   --->   "call fastcc void @processChunk(i14 6272, [882 x float]* @result, i7 49, [8000 x float]* @inSound) nounwind" [voicerec/voicerec.cpp:255]   --->   Operation 466 'call' <Predicate = true> <Delay = 5.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 190 <SV = 114> <Delay = 0.00>
+ST_190 : Operation 467 [1/2] (0.00ns)   --->   "call fastcc void @processChunk(i14 6272, [882 x float]* @result, i7 49, [8000 x float]* @inSound) nounwind" [voicerec/voicerec.cpp:255]   --->   Operation 467 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 191 <SV = 115> <Delay = 5.00>
+ST_191 : Operation 468 [2/2] (5.00ns)   --->   "call fastcc void @processChunk(i14 6400, [882 x float]* @result, i7 50, [8000 x float]* @inSound) nounwind" [voicerec/voicerec.cpp:255]   --->   Operation 468 'call' <Predicate = true> <Delay = 5.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 192 <SV = 116> <Delay = 0.00>
+ST_192 : Operation 469 [1/2] (0.00ns)   --->   "call fastcc void @processChunk(i14 6400, [882 x float]* @result, i7 50, [8000 x float]* @inSound) nounwind" [voicerec/voicerec.cpp:255]   --->   Operation 469 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 193 <SV = 117> <Delay = 5.00>
+ST_193 : Operation 470 [2/2] (5.00ns)   --->   "call fastcc void @processChunk(i14 6528, [882 x float]* @result, i7 51, [8000 x float]* @inSound) nounwind" [voicerec/voicerec.cpp:255]   --->   Operation 470 'call' <Predicate = true> <Delay = 5.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 194 <SV = 118> <Delay = 0.00>
+ST_194 : Operation 471 [1/2] (0.00ns)   --->   "call fastcc void @processChunk(i14 6528, [882 x float]* @result, i7 51, [8000 x float]* @inSound) nounwind" [voicerec/voicerec.cpp:255]   --->   Operation 471 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 195 <SV = 119> <Delay = 5.00>
+ST_195 : Operation 472 [2/2] (5.00ns)   --->   "call fastcc void @processChunk(i14 6656, [882 x float]* @result, i7 52, [8000 x float]* @inSound) nounwind" [voicerec/voicerec.cpp:255]   --->   Operation 472 'call' <Predicate = true> <Delay = 5.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 196 <SV = 120> <Delay = 0.00>
+ST_196 : Operation 473 [1/2] (0.00ns)   --->   "call fastcc void @processChunk(i14 6656, [882 x float]* @result, i7 52, [8000 x float]* @inSound) nounwind" [voicerec/voicerec.cpp:255]   --->   Operation 473 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 197 <SV = 121> <Delay = 5.00>
+ST_197 : Operation 474 [2/2] (5.00ns)   --->   "call fastcc void @processChunk(i14 6784, [882 x float]* @result, i7 53, [8000 x float]* @inSound) nounwind" [voicerec/voicerec.cpp:255]   --->   Operation 474 'call' <Predicate = true> <Delay = 5.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 198 <SV = 122> <Delay = 0.00>
+ST_198 : Operation 475 [1/2] (0.00ns)   --->   "call fastcc void @processChunk(i14 6784, [882 x float]* @result, i7 53, [8000 x float]* @inSound) nounwind" [voicerec/voicerec.cpp:255]   --->   Operation 475 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 199 <SV = 123> <Delay = 5.00>
+ST_199 : Operation 476 [2/2] (5.00ns)   --->   "call fastcc void @processChunk(i14 6912, [882 x float]* @result, i7 54, [8000 x float]* @inSound) nounwind" [voicerec/voicerec.cpp:255]   --->   Operation 476 'call' <Predicate = true> <Delay = 5.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 200 <SV = 124> <Delay = 0.00>
+ST_200 : Operation 477 [1/2] (0.00ns)   --->   "call fastcc void @processChunk(i14 6912, [882 x float]* @result, i7 54, [8000 x float]* @inSound) nounwind" [voicerec/voicerec.cpp:255]   --->   Operation 477 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 201 <SV = 125> <Delay = 5.00>
+ST_201 : Operation 478 [2/2] (5.00ns)   --->   "call fastcc void @processChunk(i14 7040, [882 x float]* @result, i7 55, [8000 x float]* @inSound) nounwind" [voicerec/voicerec.cpp:255]   --->   Operation 478 'call' <Predicate = true> <Delay = 5.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 202 <SV = 126> <Delay = 0.00>
+ST_202 : Operation 479 [1/2] (0.00ns)   --->   "call fastcc void @processChunk(i14 7040, [882 x float]* @result, i7 55, [8000 x float]* @inSound) nounwind" [voicerec/voicerec.cpp:255]   --->   Operation 479 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 203 <SV = 127> <Delay = 5.00>
+ST_203 : Operation 480 [2/2] (5.00ns)   --->   "call fastcc void @processChunk(i14 7168, [882 x float]* @result, i7 56, [8000 x float]* @inSound) nounwind" [voicerec/voicerec.cpp:255]   --->   Operation 480 'call' <Predicate = true> <Delay = 5.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 204 <SV = 128> <Delay = 0.00>
+ST_204 : Operation 481 [1/2] (0.00ns)   --->   "call fastcc void @processChunk(i14 7168, [882 x float]* @result, i7 56, [8000 x float]* @inSound) nounwind" [voicerec/voicerec.cpp:255]   --->   Operation 481 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 205 <SV = 129> <Delay = 5.00>
+ST_205 : Operation 482 [2/2] (5.00ns)   --->   "call fastcc void @processChunk(i14 7296, [882 x float]* @result, i7 57, [8000 x float]* @inSound) nounwind" [voicerec/voicerec.cpp:255]   --->   Operation 482 'call' <Predicate = true> <Delay = 5.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 206 <SV = 130> <Delay = 0.00>
+ST_206 : Operation 483 [1/2] (0.00ns)   --->   "call fastcc void @processChunk(i14 7296, [882 x float]* @result, i7 57, [8000 x float]* @inSound) nounwind" [voicerec/voicerec.cpp:255]   --->   Operation 483 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 207 <SV = 131> <Delay = 5.00>
+ST_207 : Operation 484 [2/2] (5.00ns)   --->   "call fastcc void @processChunk(i14 7424, [882 x float]* @result, i7 58, [8000 x float]* @inSound) nounwind" [voicerec/voicerec.cpp:255]   --->   Operation 484 'call' <Predicate = true> <Delay = 5.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 208 <SV = 132> <Delay = 0.00>
+ST_208 : Operation 485 [1/2] (0.00ns)   --->   "call fastcc void @processChunk(i14 7424, [882 x float]* @result, i7 58, [8000 x float]* @inSound) nounwind" [voicerec/voicerec.cpp:255]   --->   Operation 485 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 209 <SV = 133> <Delay = 5.00>
+ST_209 : Operation 486 [2/2] (5.00ns)   --->   "call fastcc void @processChunk(i14 7552, [882 x float]* @result, i7 59, [8000 x float]* @inSound) nounwind" [voicerec/voicerec.cpp:255]   --->   Operation 486 'call' <Predicate = true> <Delay = 5.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 210 <SV = 134> <Delay = 0.00>
+ST_210 : Operation 487 [1/2] (0.00ns)   --->   "call fastcc void @processChunk(i14 7552, [882 x float]* @result, i7 59, [8000 x float]* @inSound) nounwind" [voicerec/voicerec.cpp:255]   --->   Operation 487 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 211 <SV = 135> <Delay = 5.00>
+ST_211 : Operation 488 [2/2] (5.00ns)   --->   "call fastcc void @processChunk(i14 7680, [882 x float]* @result, i7 60, [8000 x float]* @inSound) nounwind" [voicerec/voicerec.cpp:255]   --->   Operation 488 'call' <Predicate = true> <Delay = 5.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 212 <SV = 136> <Delay = 1.66>
+ST_212 : Operation 489 [1/2] (0.00ns)   --->   "call fastcc void @processChunk(i14 7680, [882 x float]* @result, i7 60, [8000 x float]* @inSound) nounwind" [voicerec/voicerec.cpp:255]   --->   Operation 489 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_212 : Operation 490 [1/1] (1.66ns)   --->   "br label %.loopexit6" [voicerec/neuralNetworkSynth.cpp:72->voicerec/voicerec.cpp:258]   --->   Operation 490 'br' <Predicate = true> <Delay = 1.66>
+
+State 213 <SV = 137> <Delay = 2.43>
+ST_213 : Operation 491 [1/1] (0.00ns)   --->   "%i_i = phi i6 [ 0, %.preheader4.0 ], [ %i_3, %.loopexit6.loopexit ]"   --->   Operation 491 'phi' 'i_i' <Predicate = true> <Delay = 0.00>
+ST_213 : Operation 492 [1/1] (1.45ns)   --->   "%exitcond1_i = icmp eq i6 %i_i, -1" [voicerec/neuralNetworkSynth.cpp:72->voicerec/voicerec.cpp:258]   --->   Operation 492 'icmp' 'exitcond1_i' <Predicate = true> <Delay = 1.45> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.40> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_213 : Operation 493 [1/1] (0.00ns)   --->   "%empty_6 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 63, i64 63, i64 63) nounwind"   --->   Operation 493 'speclooptripcount' 'empty_6' <Predicate = true> <Delay = 0.00>
+ST_213 : Operation 494 [1/1] (1.94ns)   --->   "%i_3 = add i6 %i_i, 1" [voicerec/neuralNetworkSynth.cpp:72->voicerec/voicerec.cpp:258]   --->   Operation 494 'add' 'i_3' <Predicate = true> <Delay = 1.94> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.13> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_213 : Operation 495 [1/1] (0.00ns)   --->   "br i1 %exitcond1_i, label %classifySound.exit, label %.preheader.preheader.i" [voicerec/neuralNetworkSynth.cpp:72->voicerec/voicerec.cpp:258]   --->   Operation 495 'br' <Predicate = true> <Delay = 0.00>
+ST_213 : Operation 496 [1/1] (0.00ns)   --->   "%tmp_24 = call i10 @_ssdm_op_BitConcatenate.i10.i6.i4(i6 %i_i, i4 0)" [voicerec/neuralNetworkSynth.cpp:72->voicerec/voicerec.cpp:258]   --->   Operation 496 'bitconcatenate' 'tmp_24' <Predicate = (!exitcond1_i)> <Delay = 0.00>
+ST_213 : Operation 497 [1/1] (0.00ns)   --->   "%p_shl_cast = zext i10 %tmp_24 to i11" [voicerec/neuralNetworkSynth.cpp:72->voicerec/voicerec.cpp:258]   --->   Operation 497 'zext' 'p_shl_cast' <Predicate = (!exitcond1_i)> <Delay = 0.00>
+ST_213 : Operation 498 [1/1] (0.00ns)   --->   "%tmp_26 = call i7 @_ssdm_op_BitConcatenate.i7.i6.i1(i6 %i_i, i1 false)" [voicerec/neuralNetworkSynth.cpp:72->voicerec/voicerec.cpp:258]   --->   Operation 498 'bitconcatenate' 'tmp_26' <Predicate = (!exitcond1_i)> <Delay = 0.00>
+ST_213 : Operation 499 [1/1] (0.00ns)   --->   "%p_shl3_cast = zext i7 %tmp_26 to i11" [voicerec/neuralNetworkSynth.cpp:74->voicerec/voicerec.cpp:258]   --->   Operation 499 'zext' 'p_shl3_cast' <Predicate = (!exitcond1_i)> <Delay = 0.00>
+ST_213 : Operation 500 [1/1] (2.12ns)   --->   "%tmp_28 = sub i11 %p_shl_cast, %p_shl3_cast" [voicerec/neuralNetworkSynth.cpp:74->voicerec/voicerec.cpp:258]   --->   Operation 500 'sub' 'tmp_28' <Predicate = (!exitcond1_i)> <Delay = 2.12> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.13> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_213 : Operation 501 [1/1] (1.66ns)   --->   "br label %.preheader.i" [voicerec/neuralNetworkSynth.cpp:73->voicerec/voicerec.cpp:258]   --->   Operation 501 'br' <Predicate = (!exitcond1_i)> <Delay = 1.66>
+ST_213 : Operation 502 [2/2] (0.00ns)   --->   "call fastcc void @feedForward([882 x float]* %flatInput) nounwind" [voicerec/neuralNetworkSynth.cpp:78->voicerec/voicerec.cpp:258]   --->   Operation 502 'call' <Predicate = (exitcond1_i)> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 214 <SV = 138> <Delay = 2.41>
+ST_214 : Operation 503 [1/1] (0.00ns)   --->   "%j_i = phi i4 [ %j, %3 ], [ 0, %.preheader.preheader.i ]"   --->   Operation 503 'phi' 'j_i' <Predicate = true> <Delay = 0.00>
+ST_214 : Operation 504 [1/1] (0.00ns)   --->   "%j_i_cast8 = zext i4 %j_i to i11" [voicerec/neuralNetworkSynth.cpp:73->voicerec/voicerec.cpp:258]   --->   Operation 504 'zext' 'j_i_cast8' <Predicate = true> <Delay = 0.00>
+ST_214 : Operation 505 [1/1] (1.44ns)   --->   "%exitcond_i = icmp eq i4 %j_i, -2" [voicerec/neuralNetworkSynth.cpp:73->voicerec/voicerec.cpp:258]   --->   Operation 505 'icmp' 'exitcond_i' <Predicate = true> <Delay = 1.44> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.40> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_214 : Operation 506 [1/1] (0.00ns)   --->   "%empty_7 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 14, i64 14, i64 14) nounwind"   --->   Operation 506 'speclooptripcount' 'empty_7' <Predicate = true> <Delay = 0.00>
+ST_214 : Operation 507 [1/1] (1.77ns)   --->   "%j = add i4 %j_i, 1" [voicerec/neuralNetworkSynth.cpp:73->voicerec/voicerec.cpp:258]   --->   Operation 507 'add' 'j' <Predicate = true> <Delay = 1.77> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.13> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_214 : Operation 508 [1/1] (0.00ns)   --->   "br i1 %exitcond_i, label %.loopexit6.loopexit, label %3" [voicerec/neuralNetworkSynth.cpp:73->voicerec/voicerec.cpp:258]   --->   Operation 508 'br' <Predicate = true> <Delay = 0.00>
+ST_214 : Operation 509 [1/1] (2.12ns)   --->   "%tmp_37 = add i11 %tmp_28, %j_i_cast8" [voicerec/neuralNetworkSynth.cpp:74->voicerec/voicerec.cpp:258]   --->   Operation 509 'add' 'tmp_37' <Predicate = (!exitcond_i)> <Delay = 2.12> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.13> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_214 : Operation 510 [1/1] (0.00ns)   --->   "br label %.loopexit6"   --->   Operation 510 'br' <Predicate = (exitcond_i)> <Delay = 0.00>
+
+State 215 <SV = 139> <Delay = 3.25>
+ST_215 : Operation 511 [1/1] (0.00ns)   --->   "%tmp_37_cast = sext i11 %tmp_37 to i64" [voicerec/neuralNetworkSynth.cpp:74->voicerec/voicerec.cpp:258]   --->   Operation 511 'sext' 'tmp_37_cast' <Predicate = true> <Delay = 0.00>
+ST_215 : Operation 512 [1/1] (0.00ns)   --->   "%result_addr = getelementptr [882 x float]* @result, i64 0, i64 %tmp_37_cast" [voicerec/neuralNetworkSynth.cpp:74->voicerec/voicerec.cpp:258]   --->   Operation 512 'getelementptr' 'result_addr' <Predicate = true> <Delay = 0.00>
+ST_215 : Operation 513 [2/2] (3.25ns)   --->   "%result_load = load float* %result_addr, align 4" [voicerec/neuralNetworkSynth.cpp:74->voicerec/voicerec.cpp:258]   --->   Operation 513 'load' 'result_load' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 8000> <RAM>
+
+State 216 <SV = 140> <Delay = 3.25>
+ST_216 : Operation 514 [1/2] (3.25ns)   --->   "%result_load = load float* %result_addr, align 4" [voicerec/neuralNetworkSynth.cpp:74->voicerec/voicerec.cpp:258]   --->   Operation 514 'load' 'result_load' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 8000> <RAM>
+
+State 217 <SV = 141> <Delay = 3.25>
+ST_217 : Operation 515 [1/1] (0.00ns)   --->   "%tmp_68_i_cast = sext i11 %tmp_37 to i32" [voicerec/neuralNetworkSynth.cpp:74->voicerec/voicerec.cpp:258]   --->   Operation 515 'sext' 'tmp_68_i_cast' <Predicate = true> <Delay = 0.00>
+ST_217 : Operation 516 [1/1] (0.00ns)   --->   "%tmp_69_i = zext i32 %tmp_68_i_cast to i64" [voicerec/neuralNetworkSynth.cpp:74->voicerec/voicerec.cpp:258]   --->   Operation 516 'zext' 'tmp_69_i' <Predicate = true> <Delay = 0.00>
+ST_217 : Operation 517 [1/1] (0.00ns)   --->   "%flatInput_addr = getelementptr inbounds [882 x float]* %flatInput, i64 0, i64 %tmp_69_i" [voicerec/neuralNetworkSynth.cpp:74->voicerec/voicerec.cpp:258]   --->   Operation 517 'getelementptr' 'flatInput_addr' <Predicate = true> <Delay = 0.00>
+ST_217 : Operation 518 [1/1] (3.25ns)   --->   "store float %result_load, float* %flatInput_addr, align 4" [voicerec/neuralNetworkSynth.cpp:74->voicerec/voicerec.cpp:258]   --->   Operation 518 'store' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 8000> <RAM>
+ST_217 : Operation 519 [1/1] (0.00ns)   --->   "br label %.preheader.i" [voicerec/neuralNetworkSynth.cpp:73->voicerec/voicerec.cpp:258]   --->   Operation 519 'br' <Predicate = true> <Delay = 0.00>
+
+State 218 <SV = 138> <Delay = 1.66>
+ST_218 : Operation 520 [1/2] (0.00ns)   --->   "call fastcc void @feedForward([882 x float]* %flatInput) nounwind" [voicerec/neuralNetworkSynth.cpp:78->voicerec/voicerec.cpp:258]   --->   Operation 520 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_218 : Operation 521 [1/1] (1.66ns)   --->   "br label %4" [voicerec/neuralNetworkSynth.cpp:46->voicerec/neuralNetworkSynth.cpp:79->voicerec/voicerec.cpp:258]   --->   Operation 521 'br' <Predicate = true> <Delay = 1.66>
+
+State 219 <SV = 139> <Delay = 4.24>
+ST_219 : Operation 522 [1/1] (0.00ns)   --->   "%guess_1 = phi i2 [ 0, %classifySound.exit ], [ %j_1, %._crit_edge.i ]"   --->   Operation 522 'phi' 'guess_1' <Predicate = true> <Delay = 0.00>
+ST_219 : Operation 523 [1/1] (0.00ns)   --->   "%guess_i = phi i32 [ undef, %classifySound.exit ], [ %guess_2, %._crit_edge.i ]"   --->   Operation 523 'phi' 'guess_i' <Predicate = true> <Delay = 0.00>
+ST_219 : Operation 524 [1/1] (0.00ns)   --->   "%second_max = phi float [ 0.000000e+00, %classifySound.exit ], [ %max_1, %._crit_edge.i ]"   --->   Operation 524 'phi' 'second_max' <Predicate = true> <Delay = 0.00>
+ST_219 : Operation 525 [1/1] (0.00ns)   --->   "%guess_i_cast6 = zext i2 %guess_1 to i32" [voicerec/neuralNetworkSynth.cpp:46->voicerec/neuralNetworkSynth.cpp:79->voicerec/voicerec.cpp:258]   --->   Operation 525 'zext' 'guess_i_cast6' <Predicate = true> <Delay = 0.00>
+ST_219 : Operation 526 [1/1] (0.93ns)   --->   "%exitcond_i1 = icmp eq i2 %guess_1, -1" [voicerec/neuralNetworkSynth.cpp:46->voicerec/neuralNetworkSynth.cpp:79->voicerec/voicerec.cpp:258]   --->   Operation 526 'icmp' 'exitcond_i1' <Predicate = true> <Delay = 0.93> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.40> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_219 : Operation 527 [1/1] (0.00ns)   --->   "%empty_8 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 3, i64 3, i64 3) nounwind"   --->   Operation 527 'speclooptripcount' 'empty_8' <Predicate = true> <Delay = 0.00>
+ST_219 : Operation 528 [1/1] (1.58ns)   --->   "%j_1 = add i2 %guess_1, 1" [voicerec/neuralNetworkSynth.cpp:46->voicerec/neuralNetworkSynth.cpp:79->voicerec/voicerec.cpp:258]   --->   Operation 528 'add' 'j_1' <Predicate = true> <Delay = 1.58> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.13> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_219 : Operation 529 [1/1] (0.00ns)   --->   "br i1 %exitcond_i1, label %guessClassification.exit, label %._crit_edge.i" [voicerec/neuralNetworkSynth.cpp:46->voicerec/neuralNetworkSynth.cpp:79->voicerec/voicerec.cpp:258]   --->   Operation 529 'br' <Predicate = true> <Delay = 0.00>
+ST_219 : Operation 530 [1/1] (0.00ns)   --->   "%output_0_load = load float* @output_0, align 4"   --->   Operation 530 'load' 'output_0_load' <Predicate = (!exitcond_i1)> <Delay = 0.00>
+ST_219 : Operation 531 [1/1] (0.00ns)   --->   "%output_1_load = load float* @output_1, align 4"   --->   Operation 531 'load' 'output_1_load' <Predicate = (!exitcond_i1)> <Delay = 0.00>
+ST_219 : Operation 532 [1/1] (0.00ns)   --->   "%output_2_load = load float* @output_2, align 4"   --->   Operation 532 'load' 'output_2_load' <Predicate = (!exitcond_i1)> <Delay = 0.00>
+ST_219 : Operation 533 [1/1] (1.78ns)   --->   "%max = call float @_ssdm_op_Mux.ap_auto.3float.i2(float %output_0_load, float %output_1_load, float %output_2_load, i2 %guess_1) nounwind" [voicerec/neuralNetworkSynth.cpp:46->voicerec/neuralNetworkSynth.cpp:79->voicerec/voicerec.cpp:258]   --->   Operation 533 'mux' 'max' <Predicate = (!exitcond_i1)> <Delay = 1.78> <Core = "MuxnS">   --->   Core 31 'MuxnS' <Latency = 0> <II = 1> <Delay = 1.78> <FuncUnit> <Opcode : 'mux'> <InPorts = 2> <OutPorts = 1>
+ST_219 : Operation 534 [3/3] (4.24ns)   --->   "%tmp_20 = fcmp olt float %second_max, 5.000000e-01" [voicerec/neuralNetworkSynth.cpp:56->voicerec/neuralNetworkSynth.cpp:79->voicerec/voicerec.cpp:258]   --->   Operation 534 'fcmp' 'tmp_20' <Predicate = (exitcond_i1)> <Delay = 4.24> <Core = "FCmp">   --->   Core 105 'FCmp' <Latency = 2> <II = 1> <Delay = 4.24> <FuncUnit> <Opcode : 'fcmp'> <InPorts = 2> <OutPorts = 1>
+
+State 220 <SV = 140> <Delay = 4.24>
+ST_220 : Operation 535 [3/3] (4.24ns)   --->   "%tmp_32 = fcmp ogt float %max, %second_max" [voicerec/neuralNetworkSynth.cpp:48->voicerec/neuralNetworkSynth.cpp:79->voicerec/voicerec.cpp:258]   --->   Operation 535 'fcmp' 'tmp_32' <Predicate = true> <Delay = 4.24> <Core = "FCmp">   --->   Core 105 'FCmp' <Latency = 2> <II = 1> <Delay = 4.24> <FuncUnit> <Opcode : 'fcmp'> <InPorts = 2> <OutPorts = 1>
+
+State 221 <SV = 141> <Delay = 4.24>
+ST_221 : Operation 536 [2/3] (4.24ns)   --->   "%tmp_32 = fcmp ogt float %max, %second_max" [voicerec/neuralNetworkSynth.cpp:48->voicerec/neuralNetworkSynth.cpp:79->voicerec/voicerec.cpp:258]   --->   Operation 536 'fcmp' 'tmp_32' <Predicate = true> <Delay = 4.24> <Core = "FCmp">   --->   Core 105 'FCmp' <Latency = 2> <II = 1> <Delay = 4.24> <FuncUnit> <Opcode : 'fcmp'> <InPorts = 2> <OutPorts = 1>
+
+State 222 <SV = 142> <Delay = 4.24>
+ST_222 : Operation 537 [1/3] (4.24ns)   --->   "%tmp_32 = fcmp ogt float %max, %second_max" [voicerec/neuralNetworkSynth.cpp:48->voicerec/neuralNetworkSynth.cpp:79->voicerec/voicerec.cpp:258]   --->   Operation 537 'fcmp' 'tmp_32' <Predicate = true> <Delay = 4.24> <Core = "FCmp">   --->   Core 105 'FCmp' <Latency = 2> <II = 1> <Delay = 4.24> <FuncUnit> <Opcode : 'fcmp'> <InPorts = 2> <OutPorts = 1>
+
+State 223 <SV = 143> <Delay = 4.17>
+ST_223 : Operation 538 [1/1] (0.00ns)   --->   "%p_to_int = bitcast float %max to i32" [voicerec/neuralNetworkSynth.cpp:46->voicerec/neuralNetworkSynth.cpp:79->voicerec/voicerec.cpp:258]   --->   Operation 538 'bitcast' 'p_to_int' <Predicate = true> <Delay = 0.00>
+ST_223 : Operation 539 [1/1] (0.00ns)   --->   "%tmp_25 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %p_to_int, i32 23, i32 30)" [voicerec/neuralNetworkSynth.cpp:46->voicerec/neuralNetworkSynth.cpp:79->voicerec/voicerec.cpp:258]   --->   Operation 539 'partselect' 'tmp_25' <Predicate = true> <Delay = 0.00>
+ST_223 : Operation 540 [1/1] (0.00ns)   --->   "%tmp_35 = trunc i32 %p_to_int to i23" [voicerec/neuralNetworkSynth.cpp:46->voicerec/neuralNetworkSynth.cpp:79->voicerec/voicerec.cpp:258]   --->   Operation 540 'trunc' 'tmp_35' <Predicate = true> <Delay = 0.00>
+ST_223 : Operation 541 [1/1] (0.00ns)   --->   "%second_max_i_to_int = bitcast float %second_max to i32" [voicerec/neuralNetworkSynth.cpp:48->voicerec/neuralNetworkSynth.cpp:79->voicerec/voicerec.cpp:258]   --->   Operation 541 'bitcast' 'second_max_i_to_int' <Predicate = true> <Delay = 0.00>
+ST_223 : Operation 542 [1/1] (0.00ns)   --->   "%tmp_27 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %second_max_i_to_int, i32 23, i32 30)" [voicerec/neuralNetworkSynth.cpp:48->voicerec/neuralNetworkSynth.cpp:79->voicerec/voicerec.cpp:258]   --->   Operation 542 'partselect' 'tmp_27' <Predicate = true> <Delay = 0.00>
+ST_223 : Operation 543 [1/1] (0.00ns)   --->   "%tmp_36 = trunc i32 %second_max_i_to_int to i23" [voicerec/neuralNetworkSynth.cpp:48->voicerec/neuralNetworkSynth.cpp:79->voicerec/voicerec.cpp:258]   --->   Operation 543 'trunc' 'tmp_36' <Predicate = true> <Delay = 0.00>
+ST_223 : Operation 544 [1/1] (1.47ns)   --->   "%notlhs3 = icmp ne i8 %tmp_25, -1" [voicerec/neuralNetworkSynth.cpp:46->voicerec/neuralNetworkSynth.cpp:79->voicerec/voicerec.cpp:258]   --->   Operation 544 'icmp' 'notlhs3' <Predicate = true> <Delay = 1.47> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.40> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_223 : Operation 545 [1/1] (2.40ns)   --->   "%notrhs3 = icmp eq i23 %tmp_35, 0" [voicerec/neuralNetworkSynth.cpp:46->voicerec/neuralNetworkSynth.cpp:79->voicerec/voicerec.cpp:258]   --->   Operation 545 'icmp' 'notrhs3' <Predicate = true> <Delay = 2.40> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.40> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_223 : Operation 546 [1/1] (0.00ns) (grouped into LUT with out node tmp_33)   --->   "%tmp_29 = or i1 %notrhs3, %notlhs3" [voicerec/neuralNetworkSynth.cpp:46->voicerec/neuralNetworkSynth.cpp:79->voicerec/voicerec.cpp:258]   --->   Operation 546 'or' 'tmp_29' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_223 : Operation 547 [1/1] (1.47ns)   --->   "%notlhs4 = icmp ne i8 %tmp_27, -1" [voicerec/neuralNetworkSynth.cpp:48->voicerec/neuralNetworkSynth.cpp:79->voicerec/voicerec.cpp:258]   --->   Operation 547 'icmp' 'notlhs4' <Predicate = true> <Delay = 1.47> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.40> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_223 : Operation 548 [1/1] (2.40ns)   --->   "%notrhs4 = icmp eq i23 %tmp_36, 0" [voicerec/neuralNetworkSynth.cpp:48->voicerec/neuralNetworkSynth.cpp:79->voicerec/voicerec.cpp:258]   --->   Operation 548 'icmp' 'notrhs4' <Predicate = true> <Delay = 2.40> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.40> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_223 : Operation 549 [1/1] (0.00ns) (grouped into LUT with out node tmp_33)   --->   "%tmp_30 = or i1 %notrhs4, %notlhs4" [voicerec/neuralNetworkSynth.cpp:48->voicerec/neuralNetworkSynth.cpp:79->voicerec/voicerec.cpp:258]   --->   Operation 549 'or' 'tmp_30' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_223 : Operation 550 [1/1] (0.00ns) (grouped into LUT with out node tmp_33)   --->   "%tmp_31 = and i1 %tmp_29, %tmp_30" [voicerec/neuralNetworkSynth.cpp:46->voicerec/neuralNetworkSynth.cpp:79->voicerec/voicerec.cpp:258]   --->   Operation 550 'and' 'tmp_31' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_223 : Operation 551 [1/1] (0.97ns) (out node of the LUT)   --->   "%tmp_33 = and i1 %tmp_31, %tmp_32" [voicerec/neuralNetworkSynth.cpp:48->voicerec/neuralNetworkSynth.cpp:79->voicerec/voicerec.cpp:258]   --->   Operation 551 'and' 'tmp_33' <Predicate = true> <Delay = 0.97> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_223 : Operation 552 [1/1] (0.79ns)   --->   "%guess_2 = select i1 %tmp_33, i32 %guess_i_cast6, i32 %guess_i" [voicerec/neuralNetworkSynth.cpp:48->voicerec/neuralNetworkSynth.cpp:79->voicerec/voicerec.cpp:258]   --->   Operation 552 'select' 'guess_2' <Predicate = true> <Delay = 0.79> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_223 : Operation 553 [1/1] (0.79ns)   --->   "%max_1 = select i1 %tmp_33, float %max, float %second_max" [voicerec/neuralNetworkSynth.cpp:48->voicerec/neuralNetworkSynth.cpp:79->voicerec/voicerec.cpp:258]   --->   Operation 553 'select' 'max_1' <Predicate = true> <Delay = 0.79> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_223 : Operation 554 [1/1] (0.00ns)   --->   "br label %4" [voicerec/neuralNetworkSynth.cpp:46->voicerec/neuralNetworkSynth.cpp:79->voicerec/voicerec.cpp:258]   --->   Operation 554 'br' <Predicate = true> <Delay = 0.00>
+
+State 224 <SV = 140> <Delay = 4.24>
+ST_224 : Operation 555 [2/3] (4.24ns)   --->   "%tmp_20 = fcmp olt float %second_max, 5.000000e-01" [voicerec/neuralNetworkSynth.cpp:56->voicerec/neuralNetworkSynth.cpp:79->voicerec/voicerec.cpp:258]   --->   Operation 555 'fcmp' 'tmp_20' <Predicate = true> <Delay = 4.24> <Core = "FCmp">   --->   Core 105 'FCmp' <Latency = 2> <II = 1> <Delay = 4.24> <FuncUnit> <Opcode : 'fcmp'> <InPorts = 2> <OutPorts = 1>
+
+State 225 <SV = 141> <Delay = 4.24>
+ST_225 : Operation 556 [1/1] (0.00ns)   --->   "%second_max_i_to_int1 = bitcast float %second_max to i32" [voicerec/neuralNetworkSynth.cpp:48->voicerec/neuralNetworkSynth.cpp:79->voicerec/voicerec.cpp:258]   --->   Operation 556 'bitcast' 'second_max_i_to_int1' <Predicate = true> <Delay = 0.00>
+ST_225 : Operation 557 [1/1] (0.00ns)   --->   "%tmp_17 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %second_max_i_to_int1, i32 23, i32 30)" [voicerec/neuralNetworkSynth.cpp:48->voicerec/neuralNetworkSynth.cpp:79->voicerec/voicerec.cpp:258]   --->   Operation 557 'partselect' 'tmp_17' <Predicate = true> <Delay = 0.00>
+ST_225 : Operation 558 [1/1] (0.00ns)   --->   "%tmp_34 = trunc i32 %second_max_i_to_int1 to i23" [voicerec/neuralNetworkSynth.cpp:48->voicerec/neuralNetworkSynth.cpp:79->voicerec/voicerec.cpp:258]   --->   Operation 558 'trunc' 'tmp_34' <Predicate = true> <Delay = 0.00>
+ST_225 : Operation 559 [1/1] (1.47ns)   --->   "%notlhs2 = icmp ne i8 %tmp_17, -1" [voicerec/neuralNetworkSynth.cpp:48->voicerec/neuralNetworkSynth.cpp:79->voicerec/voicerec.cpp:258]   --->   Operation 559 'icmp' 'notlhs2' <Predicate = true> <Delay = 1.47> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.40> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_225 : Operation 560 [1/1] (2.40ns)   --->   "%notrhs2 = icmp eq i23 %tmp_34, 0" [voicerec/neuralNetworkSynth.cpp:48->voicerec/neuralNetworkSynth.cpp:79->voicerec/voicerec.cpp:258]   --->   Operation 560 'icmp' 'notrhs2' <Predicate = true> <Delay = 2.40> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.40> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_225 : Operation 561 [1/3] (4.24ns)   --->   "%tmp_20 = fcmp olt float %second_max, 5.000000e-01" [voicerec/neuralNetworkSynth.cpp:56->voicerec/neuralNetworkSynth.cpp:79->voicerec/voicerec.cpp:258]   --->   Operation 561 'fcmp' 'tmp_20' <Predicate = true> <Delay = 4.24> <Core = "FCmp">   --->   Core 105 'FCmp' <Latency = 2> <II = 1> <Delay = 4.24> <FuncUnit> <Opcode : 'fcmp'> <InPorts = 2> <OutPorts = 1>
+ST_225 : Operation 562 [1/1] (2.43ns)   --->   "%sel_tmp4_i = icmp eq i32 %guess_i, 1" [voicerec/neuralNetworkSynth.cpp:48->voicerec/neuralNetworkSynth.cpp:79->voicerec/voicerec.cpp:258]   --->   Operation 562 'icmp' 'sel_tmp4_i' <Predicate = true> <Delay = 2.43> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.40> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+
+State 226 <SV = 142> <Delay = 4.91>
+ST_226 : Operation 563 [1/1] (0.00ns) (grouped into LUT with out node tmp_21)   --->   "%tmp_19 = or i1 %notrhs2, %notlhs2" [voicerec/neuralNetworkSynth.cpp:48->voicerec/neuralNetworkSynth.cpp:79->voicerec/voicerec.cpp:258]   --->   Operation 563 'or' 'tmp_19' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_226 : Operation 564 [1/1] (0.97ns) (out node of the LUT)   --->   "%tmp_21 = and i1 %tmp_19, %tmp_20" [voicerec/neuralNetworkSynth.cpp:56->voicerec/neuralNetworkSynth.cpp:79->voicerec/voicerec.cpp:258]   --->   Operation 564 'and' 'tmp_21' <Predicate = true> <Delay = 0.97> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_226 : Operation 565 [1/1] (2.43ns)   --->   "%sel_tmp_i = icmp eq i32 %guess_i, 2" [voicerec/neuralNetworkSynth.cpp:48->voicerec/neuralNetworkSynth.cpp:79->voicerec/voicerec.cpp:258]   --->   Operation 565 'icmp' 'sel_tmp_i' <Predicate = true> <Delay = 2.43> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.40> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_226 : Operation 566 [1/1] (0.97ns)   --->   "%sel_tmp1_i = xor i1 %tmp_21, true" [voicerec/neuralNetworkSynth.cpp:56->voicerec/neuralNetworkSynth.cpp:79->voicerec/voicerec.cpp:258]   --->   Operation 566 'xor' 'sel_tmp1_i' <Predicate = true> <Delay = 0.97> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_226 : Operation 567 [1/1] (0.00ns) (grouped into LUT with out node sel_tmp7_i)   --->   "%sel_tmp2_i = and i1 %sel_tmp_i, %sel_tmp1_i" [voicerec/neuralNetworkSynth.cpp:48->voicerec/neuralNetworkSynth.cpp:79->voicerec/voicerec.cpp:258]   --->   Operation 567 'and' 'sel_tmp2_i' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_226 : Operation 568 [1/1] (0.97ns)   --->   "%sel_tmp6_i = and i1 %sel_tmp4_i, %sel_tmp1_i" [voicerec/neuralNetworkSynth.cpp:48->voicerec/neuralNetworkSynth.cpp:79->voicerec/voicerec.cpp:258]   --->   Operation 568 'and' 'sel_tmp6_i' <Predicate = true> <Delay = 0.97> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_226 : Operation 569 [1/1] (0.00ns) (grouped into LUT with out node sel_tmp7_i)   --->   "%sel_tmp3_i_cast = select i1 %sel_tmp6_i, i4 2, i4 3" [voicerec/neuralNetworkSynth.cpp:48->voicerec/neuralNetworkSynth.cpp:79->voicerec/voicerec.cpp:258]   --->   Operation 569 'select' 'sel_tmp3_i_cast' <Predicate = true> <Delay = 0.00> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_226 : Operation 570 [1/1] (0.00ns) (grouped into LUT with out node sel_tmp7_i)   --->   "%tmp_22 = or i1 %sel_tmp6_i, %sel_tmp2_i" [voicerec/neuralNetworkSynth.cpp:48->voicerec/neuralNetworkSynth.cpp:79->voicerec/voicerec.cpp:258]   --->   Operation 570 'or' 'tmp_22' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_226 : Operation 571 [1/1] (0.99ns) (out node of the LUT)   --->   "%sel_tmp7_i = select i1 %tmp_22, i4 %sel_tmp3_i_cast, i4 -7" [voicerec/neuralNetworkSynth.cpp:48->voicerec/neuralNetworkSynth.cpp:79->voicerec/voicerec.cpp:258]   --->   Operation 571 'select' 'sel_tmp7_i' <Predicate = true> <Delay = 0.99> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_226 : Operation 572 [1/1] (2.43ns)   --->   "%sel_tmp9_i = icmp eq i32 %guess_i, 0" [voicerec/neuralNetworkSynth.cpp:48->voicerec/neuralNetworkSynth.cpp:79->voicerec/voicerec.cpp:258]   --->   Operation 572 'icmp' 'sel_tmp9_i' <Predicate = true> <Delay = 2.43> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.40> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_226 : Operation 573 [1/1] (0.97ns)   --->   "%sel_tmp11_i = and i1 %sel_tmp9_i, %sel_tmp1_i" [voicerec/neuralNetworkSynth.cpp:48->voicerec/neuralNetworkSynth.cpp:79->voicerec/voicerec.cpp:258]   --->   Operation 573 'and' 'sel_tmp11_i' <Predicate = true> <Delay = 0.97> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_226 : Operation 574 [1/1] (0.00ns) (grouped into LUT with out node classification)   --->   "%sel_tmp8_i = select i1 %sel_tmp11_i, i4 1, i4 -8" [voicerec/neuralNetworkSynth.cpp:48->voicerec/neuralNetworkSynth.cpp:79->voicerec/voicerec.cpp:258]   --->   Operation 574 'select' 'sel_tmp8_i' <Predicate = true> <Delay = 0.00> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_226 : Operation 575 [1/1] (0.00ns) (grouped into LUT with out node classification)   --->   "%tmp_23 = or i1 %sel_tmp11_i, %tmp_21" [voicerec/neuralNetworkSynth.cpp:48->voicerec/neuralNetworkSynth.cpp:79->voicerec/voicerec.cpp:258]   --->   Operation 575 'or' 'tmp_23' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_226 : Operation 576 [1/1] (0.99ns) (out node of the LUT)   --->   "%classification = select i1 %tmp_23, i4 %sel_tmp8_i, i4 %sel_tmp7_i" [voicerec/neuralNetworkSynth.cpp:48->voicerec/neuralNetworkSynth.cpp:79->voicerec/voicerec.cpp:258]   --->   Operation 576 'select' 'classification' <Predicate = true> <Delay = 0.99> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_226 : Operation 577 [1/1] (0.00ns)   --->   "%p_0_i_cast5 = zext i4 %classification to i32" [voicerec/neuralNetworkSynth.cpp:48->voicerec/neuralNetworkSynth.cpp:79->voicerec/voicerec.cpp:258]   --->   Operation 577 'zext' 'p_0_i_cast5' <Predicate = true> <Delay = 0.00>
+ST_226 : Operation 578 [2/2] (0.00ns)   --->   "call void @_ssdm_op_Write.ap_none.i32P(i32* %guess, i32 %p_0_i_cast5)" [voicerec/voicerec.cpp:259]   --->   Operation 578 'write' <Predicate = true> <Delay = 0.00>
+
+State 227 <SV = 143> <Delay = 1.66>
+ST_227 : Operation 579 [1/1] (0.00ns)   --->   "%p_0_i_cast_cast = zext i4 %classification to i13" [voicerec/voicerec.cpp:258]   --->   Operation 579 'zext' 'p_0_i_cast_cast' <Predicate = (!tmp_11)> <Delay = 0.00>
+ST_227 : Operation 580 [1/2] (0.00ns)   --->   "call void @_ssdm_op_Write.ap_none.i32P(i32* %guess, i32 %p_0_i_cast5)" [voicerec/voicerec.cpp:259]   --->   Operation 580 'write' <Predicate = (!tmp_11)> <Delay = 0.00>
+ST_227 : Operation 581 [1/1] (1.66ns)   --->   "br label %.loopexit" [voicerec/voicerec.cpp:260]   --->   Operation 581 'br' <Predicate = (!tmp_11)> <Delay = 1.66>
+ST_227 : Operation 582 [1/1] (0.00ns)   --->   "%p_0 = phi i13 [ %p_0_i_cast_cast, %guessClassification.exit ], [ %tmp_8, %6 ], [ undef, %.loopexit.loopexit ]" [voicerec/voicerec.cpp:258]   --->   Operation 582 'phi' 'p_0' <Predicate = true> <Delay = 0.00>
+ST_227 : Operation 583 [1/1] (0.00ns)   --->   "%p_0_cast = zext i13 %p_0 to i32" [voicerec/voicerec.cpp:270]   --->   Operation 583 'zext' 'p_0_cast' <Predicate = true> <Delay = 0.00>
+ST_227 : Operation 584 [2/2] (0.00ns)   --->   "ret i32 %p_0_cast" [voicerec/voicerec.cpp:270]   --->   Operation 584 'ret' <Predicate = true> <Delay = 0.00>
+
+State 228 <SV = 16> <Delay = 3.25>
+ST_228 : Operation 585 [1/1] (0.00ns)   --->   "%i2 = phi i13 [ %i_2, %5 ], [ 0, %.preheader.preheader ]"   --->   Operation 585 'phi' 'i2' <Predicate = true> <Delay = 0.00>
+ST_228 : Operation 586 [1/1] (2.04ns)   --->   "%tmp_7 = icmp ult i13 %i2, -193" [voicerec/voicerec.cpp:264]   --->   Operation 586 'icmp' 'tmp_7' <Predicate = true> <Delay = 2.04> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.40> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_228 : Operation 587 [1/1] (0.00ns)   --->   "%empty_9 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 1, i64 7999, i64 4000) nounwind"   --->   Operation 587 'speclooptripcount' 'empty_9' <Predicate = true> <Delay = 0.00>
+ST_228 : Operation 588 [1/1] (2.13ns)   --->   "%i_2 = add i13 %i2, 1" [voicerec/voicerec.cpp:264]   --->   Operation 588 'add' 'i_2' <Predicate = true> <Delay = 2.13> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.13> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_228 : Operation 589 [1/1] (0.00ns)   --->   "br i1 %tmp_7, label %5, label %.loopexit.loopexit" [voicerec/voicerec.cpp:264]   --->   Operation 589 'br' <Predicate = true> <Delay = 0.00>
+ST_228 : Operation 590 [1/1] (0.00ns)   --->   "%tmp_s = zext i13 %i2 to i64" [voicerec/voicerec.cpp:266]   --->   Operation 590 'zext' 'tmp_s' <Predicate = (tmp_7)> <Delay = 0.00>
+ST_228 : Operation 591 [1/1] (0.00ns)   --->   "%inSound_addr_1 = getelementptr inbounds [8000 x float]* @inSound, i64 0, i64 %tmp_s" [voicerec/voicerec.cpp:266]   --->   Operation 591 'getelementptr' 'inSound_addr_1' <Predicate = (tmp_7)> <Delay = 0.00>
+ST_228 : Operation 592 [2/2] (3.25ns)   --->   "%inSound_load_1 = load float* %inSound_addr_1, align 4" [voicerec/voicerec.cpp:266]   --->   Operation 592 'load' 'inSound_load_1' <Predicate = (tmp_7)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 8000> <RAM>
+ST_228 : Operation 593 [1/1] (1.66ns)   --->   "br label %.loopexit"   --->   Operation 593 'br' <Predicate = (!tmp_7)> <Delay = 1.66>
+
+State 229 <SV = 17> <Delay = 3.25>
+ST_229 : Operation 594 [1/2] (3.25ns)   --->   "%inSound_load_1 = load float* %inSound_addr_1, align 4" [voicerec/voicerec.cpp:266]   --->   Operation 594 'load' 'inSound_load_1' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 8000> <RAM>
+
+State 230 <SV = 18> <Delay = 4.24>
+ST_230 : Operation 595 [1/1] (0.00ns)   --->   "%inSound_load_1_to_in = bitcast float %inSound_load_1 to i32" [voicerec/voicerec.cpp:266]   --->   Operation 595 'bitcast' 'inSound_load_1_to_in' <Predicate = true> <Delay = 0.00>
+ST_230 : Operation 596 [1/1] (0.00ns)   --->   "%tmp_12 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %inSound_load_1_to_in, i32 23, i32 30)" [voicerec/voicerec.cpp:266]   --->   Operation 596 'partselect' 'tmp_12' <Predicate = true> <Delay = 0.00>
+ST_230 : Operation 597 [1/1] (0.00ns)   --->   "%tmp_18 = trunc i32 %inSound_load_1_to_in to i23" [voicerec/voicerec.cpp:266]   --->   Operation 597 'trunc' 'tmp_18' <Predicate = true> <Delay = 0.00>
+ST_230 : Operation 598 [1/1] (1.47ns)   --->   "%notlhs1 = icmp ne i8 %tmp_12, -1" [voicerec/voicerec.cpp:266]   --->   Operation 598 'icmp' 'notlhs1' <Predicate = true> <Delay = 1.47> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.40> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_230 : Operation 599 [1/1] (2.40ns)   --->   "%notrhs1 = icmp eq i23 %tmp_18, 0" [voicerec/voicerec.cpp:266]   --->   Operation 599 'icmp' 'notrhs1' <Predicate = true> <Delay = 2.40> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.40> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_230 : Operation 600 [3/3] (4.24ns)   --->   "%tmp_15 = fcmp oeq float %inSound_load_1, 0.000000e+00" [voicerec/voicerec.cpp:266]   --->   Operation 600 'fcmp' 'tmp_15' <Predicate = true> <Delay = 4.24> <Core = "FCmp">   --->   Core 105 'FCmp' <Latency = 2> <II = 1> <Delay = 4.24> <FuncUnit> <Opcode : 'fcmp'> <InPorts = 2> <OutPorts = 1>
+
+State 231 <SV = 19> <Delay = 4.24>
+ST_231 : Operation 601 [2/3] (4.24ns)   --->   "%tmp_15 = fcmp oeq float %inSound_load_1, 0.000000e+00" [voicerec/voicerec.cpp:266]   --->   Operation 601 'fcmp' 'tmp_15' <Predicate = true> <Delay = 4.24> <Core = "FCmp">   --->   Core 105 'FCmp' <Latency = 2> <II = 1> <Delay = 4.24> <FuncUnit> <Opcode : 'fcmp'> <InPorts = 2> <OutPorts = 1>
+
+State 232 <SV = 20> <Delay = 4.24>
+ST_232 : Operation 602 [1/3] (4.24ns)   --->   "%tmp_15 = fcmp oeq float %inSound_load_1, 0.000000e+00" [voicerec/voicerec.cpp:266]   --->   Operation 602 'fcmp' 'tmp_15' <Predicate = true> <Delay = 4.24> <Core = "FCmp">   --->   Core 105 'FCmp' <Latency = 2> <II = 1> <Delay = 4.24> <FuncUnit> <Opcode : 'fcmp'> <InPorts = 2> <OutPorts = 1>
+
+State 233 <SV = 21> <Delay = 2.13>
+ST_233 : Operation 603 [1/1] (0.00ns) (grouped into LUT with out node tmp_16)   --->   "%tmp_14 = or i1 %notrhs1, %notlhs1" [voicerec/voicerec.cpp:266]   --->   Operation 603 'or' 'tmp_14' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_233 : Operation 604 [1/1] (0.97ns) (out node of the LUT)   --->   "%tmp_16 = and i1 %tmp_14, %tmp_15" [voicerec/voicerec.cpp:266]   --->   Operation 604 'and' 'tmp_16' <Predicate = true> <Delay = 0.97> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_233 : Operation 605 [1/1] (0.00ns)   --->   "br i1 %tmp_16, label %6, label %.preheader" [voicerec/voicerec.cpp:266]   --->   Operation 605 'br' <Predicate = true> <Delay = 0.00>
+ST_233 : Operation 606 [1/1] (2.13ns)   --->   "%tmp_8 = add i13 %i2, 10" [voicerec/voicerec.cpp:267]   --->   Operation 606 'add' 'tmp_8' <Predicate = (tmp_16)> <Delay = 2.13> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.13> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_233 : Operation 607 [1/1] (1.66ns)   --->   "br label %.loopexit" [voicerec/voicerec.cpp:267]   --->   Operation 607 'br' <Predicate = (tmp_16)> <Delay = 1.66>
+
+State 234 <SV = 144> <Delay = 0.00>
+ST_234 : Operation 608 [1/2] (0.00ns)   --->   "ret i32 %p_0_cast" [voicerec/voicerec.cpp:270]   --->   Operation 608 'ret' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 5ns, clock uncertainty: 0ns.
+
+ <State 1>: 1ns
+The critical path consists of the following:
+	s_axi read on port 'new_sample' [21]  (1 ns)
+
+ <State 2>: 5ns
+The critical path consists of the following:
+	'getelementptr' operation ('voice_rec_addr') [24]  (0 ns)
+	bus request on port 'voice_rec' (voicerec/voicerec.cpp:243) [34]  (5 ns)
+
+ <State 3>: 5ns
+The critical path consists of the following:
+	bus request on port 'voice_rec' (voicerec/voicerec.cpp:243) [34]  (5 ns)
+
+ <State 4>: 5ns
+The critical path consists of the following:
+	bus request on port 'voice_rec' (voicerec/voicerec.cpp:243) [34]  (5 ns)
+
+ <State 5>: 5ns
+The critical path consists of the following:
+	bus request on port 'voice_rec' (voicerec/voicerec.cpp:243) [34]  (5 ns)
+
+ <State 6>: 5ns
+The critical path consists of the following:
+	bus request on port 'voice_rec' (voicerec/voicerec.cpp:243) [34]  (5 ns)
+
+ <State 7>: 5ns
+The critical path consists of the following:
+	bus request on port 'voice_rec' (voicerec/voicerec.cpp:243) [34]  (5 ns)
+
+ <State 8>: 5ns
+The critical path consists of the following:
+	bus request on port 'voice_rec' (voicerec/voicerec.cpp:243) [34]  (5 ns)
+
+ <State 9>: 2.13ns
+The critical path consists of the following:
+	'phi' operation ('indvar') with incoming values : ('indvar_next') [37]  (0 ns)
+	'add' operation ('indvar_next') [40]  (2.13 ns)
+
+ <State 10>: 5ns
+The critical path consists of the following:
+	bus read on port 'voice_rec' (voicerec/voicerec.cpp:243) [47]  (5 ns)
+
+ <State 11>: 3.26ns
+The critical path consists of the following:
+	'getelementptr' operation ('testSound_addr', voicerec/voicerec.cpp:243) [48]  (0 ns)
+	'store' operation (voicerec/voicerec.cpp:243) of variable 'voice_rec_addr_read', voicerec/voicerec.cpp:243 on array 'testSound' [49]  (3.26 ns)
+
+ <State 12>: 1.66ns
+The critical path consists of the following:
+	multiplexor before 'phi' operation ('i') with incoming values : ('i', voicerec/voicerec.cpp:244) [55]  (1.66 ns)
+
+ <State 13>: 3.26ns
+The critical path consists of the following:
+	'phi' operation ('i') with incoming values : ('i', voicerec/voicerec.cpp:244) [55]  (0 ns)
+	'getelementptr' operation ('testSound_addr_1', voicerec/voicerec.cpp:245) [62]  (0 ns)
+	'load' operation ('testSound_load', voicerec/voicerec.cpp:245) on array 'testSound' [63]  (3.26 ns)
+
+ <State 14>: 3.26ns
+The critical path consists of the following:
+	'load' operation ('testSound_load', voicerec/voicerec.cpp:245) on array 'testSound' [63]  (3.26 ns)
+
+ <State 15>: 2.7ns
+The critical path consists of the following:
+	'add' operation ('tmp_2', voicerec/voicerec.cpp:245) [64]  (2.7 ns)
+
+ <State 16>: 6.61ns
+The critical path consists of the following:
+	'sitodp' operation ('tmp_3', voicerec/voicerec.cpp:245) [65]  (6.61 ns)
+
+ <State 17>: 6.61ns
+The critical path consists of the following:
+	'sitodp' operation ('tmp_3', voicerec/voicerec.cpp:245) [65]  (6.61 ns)
+
+ <State 18>: 6.61ns
+The critical path consists of the following:
+	'sitodp' operation ('tmp_3', voicerec/voicerec.cpp:245) [65]  (6.61 ns)
+
+ <State 19>: 6.61ns
+The critical path consists of the following:
+	'sitodp' operation ('tmp_3', voicerec/voicerec.cpp:245) [65]  (6.61 ns)
+
+ <State 20>: 6.61ns
+The critical path consists of the following:
+	'sitodp' operation ('tmp_3', voicerec/voicerec.cpp:245) [65]  (6.61 ns)
+
+ <State 21>: 6.61ns
+The critical path consists of the following:
+	'sitodp' operation ('tmp_3', voicerec/voicerec.cpp:245) [65]  (6.61 ns)
+
+ <State 22>: 6.61ns
+The critical path consists of the following:
+	'sitodp' operation ('tmp_3', voicerec/voicerec.cpp:245) [65]  (6.61 ns)
+
+ <State 23>: 6.61ns
+The critical path consists of the following:
+	'sitodp' operation ('tmp_3', voicerec/voicerec.cpp:245) [65]  (6.61 ns)
+
+ <State 24>: 4.88ns
+The critical path consists of the following:
+	'ddiv' operation ('tmp_4', voicerec/voicerec.cpp:245) [66]  (4.88 ns)
+
+ <State 25>: 4.88ns
+The critical path consists of the following:
+	'ddiv' operation ('tmp_4', voicerec/voicerec.cpp:245) [66]  (4.88 ns)
+
+ <State 26>: 4.88ns
+The critical path consists of the following:
+	'ddiv' operation ('tmp_4', voicerec/voicerec.cpp:245) [66]  (4.88 ns)
+
+ <State 27>: 4.88ns
+The critical path consists of the following:
+	'ddiv' operation ('tmp_4', voicerec/voicerec.cpp:245) [66]  (4.88 ns)
+
+ <State 28>: 4.88ns
+The critical path consists of the following:
+	'ddiv' operation ('tmp_4', voicerec/voicerec.cpp:245) [66]  (4.88 ns)
+
+ <State 29>: 4.88ns
+The critical path consists of the following:
+	'ddiv' operation ('tmp_4', voicerec/voicerec.cpp:245) [66]  (4.88 ns)
+
+ <State 30>: 4.88ns
+The critical path consists of the following:
+	'ddiv' operation ('tmp_4', voicerec/voicerec.cpp:245) [66]  (4.88 ns)
+
+ <State 31>: 4.88ns
+The critical path consists of the following:
+	'ddiv' operation ('tmp_4', voicerec/voicerec.cpp:245) [66]  (4.88 ns)
+
+ <State 32>: 4.88ns
+The critical path consists of the following:
+	'ddiv' operation ('tmp_4', voicerec/voicerec.cpp:245) [66]  (4.88 ns)
+
+ <State 33>: 4.88ns
+The critical path consists of the following:
+	'ddiv' operation ('tmp_4', voicerec/voicerec.cpp:245) [66]  (4.88 ns)
+
+ <State 34>: 4.88ns
+The critical path consists of the following:
+	'ddiv' operation ('tmp_4', voicerec/voicerec.cpp:245) [66]  (4.88 ns)
+
+ <State 35>: 4.88ns
+The critical path consists of the following:
+	'ddiv' operation ('tmp_4', voicerec/voicerec.cpp:245) [66]  (4.88 ns)
+
+ <State 36>: 4.88ns
+The critical path consists of the following:
+	'ddiv' operation ('tmp_4', voicerec/voicerec.cpp:245) [66]  (4.88 ns)
+
+ <State 37>: 4.88ns
+The critical path consists of the following:
+	'ddiv' operation ('tmp_4', voicerec/voicerec.cpp:245) [66]  (4.88 ns)
+
+ <State 38>: 4.88ns
+The critical path consists of the following:
+	'ddiv' operation ('tmp_4', voicerec/voicerec.cpp:245) [66]  (4.88 ns)
+
+ <State 39>: 4.88ns
+The critical path consists of the following:
+	'ddiv' operation ('tmp_4', voicerec/voicerec.cpp:245) [66]  (4.88 ns)
+
+ <State 40>: 4.88ns
+The critical path consists of the following:
+	'ddiv' operation ('tmp_4', voicerec/voicerec.cpp:245) [66]  (4.88 ns)
+
+ <State 41>: 4.88ns
+The critical path consists of the following:
+	'ddiv' operation ('tmp_4', voicerec/voicerec.cpp:245) [66]  (4.88 ns)
+
+ <State 42>: 4.88ns
+The critical path consists of the following:
+	'ddiv' operation ('tmp_4', voicerec/voicerec.cpp:245) [66]  (4.88 ns)
+
+ <State 43>: 4.88ns
+The critical path consists of the following:
+	'ddiv' operation ('tmp_4', voicerec/voicerec.cpp:245) [66]  (4.88 ns)
+
+ <State 44>: 4.88ns
+The critical path consists of the following:
+	'ddiv' operation ('tmp_4', voicerec/voicerec.cpp:245) [66]  (4.88 ns)
+
+ <State 45>: 4.88ns
+The critical path consists of the following:
+	'ddiv' operation ('tmp_4', voicerec/voicerec.cpp:245) [66]  (4.88 ns)
+
+ <State 46>: 4.88ns
+The critical path consists of the following:
+	'ddiv' operation ('tmp_4', voicerec/voicerec.cpp:245) [66]  (4.88 ns)
+
+ <State 47>: 4.88ns
+The critical path consists of the following:
+	'ddiv' operation ('tmp_4', voicerec/voicerec.cpp:245) [66]  (4.88 ns)
+
+ <State 48>: 4.88ns
+The critical path consists of the following:
+	'ddiv' operation ('tmp_4', voicerec/voicerec.cpp:245) [66]  (4.88 ns)
+
+ <State 49>: 4.88ns
+The critical path consists of the following:
+	'ddiv' operation ('tmp_4', voicerec/voicerec.cpp:245) [66]  (4.88 ns)
+
+ <State 50>: 4.88ns
+The critical path consists of the following:
+	'ddiv' operation ('tmp_4', voicerec/voicerec.cpp:245) [66]  (4.88 ns)
+
+ <State 51>: 4.88ns
+The critical path consists of the following:
+	'ddiv' operation ('tmp_4', voicerec/voicerec.cpp:245) [66]  (4.88 ns)
+
+ <State 52>: 4.88ns
+The critical path consists of the following:
+	'ddiv' operation ('tmp_4', voicerec/voicerec.cpp:245) [66]  (4.88 ns)
+
+ <State 53>: 4.88ns
+The critical path consists of the following:
+	'ddiv' operation ('tmp_4', voicerec/voicerec.cpp:245) [66]  (4.88 ns)
+
+ <State 54>: 4.88ns
+The critical path consists of the following:
+	'ddiv' operation ('tmp_4', voicerec/voicerec.cpp:245) [66]  (4.88 ns)
+
+ <State 55>: 4.88ns
+The critical path consists of the following:
+	'ddiv' operation ('tmp_4', voicerec/voicerec.cpp:245) [66]  (4.88 ns)
+
+ <State 56>: 4.88ns
+The critical path consists of the following:
+	'ddiv' operation ('tmp_4', voicerec/voicerec.cpp:245) [66]  (4.88 ns)
+
+ <State 57>: 4.88ns
+The critical path consists of the following:
+	'ddiv' operation ('tmp_4', voicerec/voicerec.cpp:245) [66]  (4.88 ns)
+
+ <State 58>: 4.88ns
+The critical path consists of the following:
+	'ddiv' operation ('tmp_4', voicerec/voicerec.cpp:245) [66]  (4.88 ns)
+
+ <State 59>: 4.88ns
+The critical path consists of the following:
+	'ddiv' operation ('tmp_4', voicerec/voicerec.cpp:245) [66]  (4.88 ns)
+
+ <State 60>: 4.88ns
+The critical path consists of the following:
+	'ddiv' operation ('tmp_4', voicerec/voicerec.cpp:245) [66]  (4.88 ns)
+
+ <State 61>: 4.88ns
+The critical path consists of the following:
+	'ddiv' operation ('tmp_4', voicerec/voicerec.cpp:245) [66]  (4.88 ns)
+
+ <State 62>: 4.88ns
+The critical path consists of the following:
+	'ddiv' operation ('tmp_4', voicerec/voicerec.cpp:245) [66]  (4.88 ns)
+
+ <State 63>: 4.88ns
+The critical path consists of the following:
+	'ddiv' operation ('tmp_4', voicerec/voicerec.cpp:245) [66]  (4.88 ns)
+
+ <State 64>: 4.88ns
+The critical path consists of the following:
+	'ddiv' operation ('tmp_4', voicerec/voicerec.cpp:245) [66]  (4.88 ns)
+
+ <State 65>: 4.88ns
+The critical path consists of the following:
+	'ddiv' operation ('tmp_4', voicerec/voicerec.cpp:245) [66]  (4.88 ns)
+
+ <State 66>: 4.88ns
+The critical path consists of the following:
+	'ddiv' operation ('tmp_4', voicerec/voicerec.cpp:245) [66]  (4.88 ns)
+
+ <State 67>: 4.88ns
+The critical path consists of the following:
+	'ddiv' operation ('tmp_4', voicerec/voicerec.cpp:245) [66]  (4.88 ns)
+
+ <State 68>: 4.88ns
+The critical path consists of the following:
+	'ddiv' operation ('tmp_4', voicerec/voicerec.cpp:245) [66]  (4.88 ns)
+
+ <State 69>: 4.88ns
+The critical path consists of the following:
+	'ddiv' operation ('tmp_4', voicerec/voicerec.cpp:245) [66]  (4.88 ns)
+
+ <State 70>: 4.88ns
+The critical path consists of the following:
+	'ddiv' operation ('tmp_4', voicerec/voicerec.cpp:245) [66]  (4.88 ns)
+
+ <State 71>: 4.88ns
+The critical path consists of the following:
+	'ddiv' operation ('tmp_4', voicerec/voicerec.cpp:245) [66]  (4.88 ns)
+
+ <State 72>: 4.88ns
+The critical path consists of the following:
+	'ddiv' operation ('tmp_4', voicerec/voicerec.cpp:245) [66]  (4.88 ns)
+
+ <State 73>: 4.88ns
+The critical path consists of the following:
+	'ddiv' operation ('tmp_4', voicerec/voicerec.cpp:245) [66]  (4.88 ns)
+
+ <State 74>: 4.88ns
+The critical path consists of the following:
+	'ddiv' operation ('tmp_4', voicerec/voicerec.cpp:245) [66]  (4.88 ns)
+
+ <State 75>: 4.88ns
+The critical path consists of the following:
+	'ddiv' operation ('tmp_4', voicerec/voicerec.cpp:245) [66]  (4.88 ns)
+
+ <State 76>: 4.88ns
+The critical path consists of the following:
+	'ddiv' operation ('tmp_4', voicerec/voicerec.cpp:245) [66]  (4.88 ns)
+
+ <State 77>: 4.88ns
+The critical path consists of the following:
+	'ddiv' operation ('tmp_4', voicerec/voicerec.cpp:245) [66]  (4.88 ns)
+
+ <State 78>: 4.88ns
+The critical path consists of the following:
+	'ddiv' operation ('tmp_4', voicerec/voicerec.cpp:245) [66]  (4.88 ns)
+
+ <State 79>: 4.88ns
+The critical path consists of the following:
+	'ddiv' operation ('tmp_4', voicerec/voicerec.cpp:245) [66]  (4.88 ns)
+
+ <State 80>: 4.88ns
+The critical path consists of the following:
+	'ddiv' operation ('tmp_4', voicerec/voicerec.cpp:245) [66]  (4.88 ns)
+
+ <State 81>: 4.88ns
+The critical path consists of the following:
+	'ddiv' operation ('tmp_4', voicerec/voicerec.cpp:245) [66]  (4.88 ns)
+
+ <State 82>: 4.88ns
+The critical path consists of the following:
+	'ddiv' operation ('tmp_4', voicerec/voicerec.cpp:245) [66]  (4.88 ns)
+
+ <State 83>: 4.3ns
+The critical path consists of the following:
+	'fptrunc' operation ('tmp_5', voicerec/voicerec.cpp:245) [67]  (4.3 ns)
+
+ <State 84>: 4.3ns
+The critical path consists of the following:
+	'fptrunc' operation ('tmp_5', voicerec/voicerec.cpp:245) [67]  (4.3 ns)
+
+ <State 85>: 4.3ns
+The critical path consists of the following:
+	'fptrunc' operation ('tmp_5', voicerec/voicerec.cpp:245) [67]  (4.3 ns)
+
+ <State 86>: 3.26ns
+The critical path consists of the following:
+	'getelementptr' operation ('inSound_addr', voicerec/voicerec.cpp:245) [68]  (0 ns)
+	'store' operation (voicerec/voicerec.cpp:245) of variable 'tmp_5', voicerec/voicerec.cpp:245 on array 'inSound' [69]  (3.26 ns)
+
+ <State 87>: 3.26ns
+The critical path consists of the following:
+	'load' operation ('inSound_load', voicerec/voicerec.cpp:248) on array 'inSound' [72]  (3.26 ns)
+
+ <State 88>: 4.25ns
+The critical path consists of the following:
+	'fcmp' operation ('tmp_10', voicerec/voicerec.cpp:248) [79]  (4.25 ns)
+
+ <State 89>: 4.25ns
+The critical path consists of the following:
+	'fcmp' operation ('tmp_10', voicerec/voicerec.cpp:248) [79]  (4.25 ns)
+
+ <State 90>: 4.25ns
+The critical path consists of the following:
+	'fcmp' operation ('tmp_10', voicerec/voicerec.cpp:248) [79]  (4.25 ns)
+
+ <State 91>: 5ns
+The critical path consists of the following:
+	'call' operation (voicerec/voicerec.cpp:255) to 'processChunk' [83]  (5 ns)
+
+ <State 92>: 0ns
+The critical path consists of the following:
+
+ <State 93>: 5ns
+The critical path consists of the following:
+	'call' operation (voicerec/voicerec.cpp:255) to 'processChunk' [84]  (5 ns)
+
+ <State 94>: 0ns
+The critical path consists of the following:
+
+ <State 95>: 5ns
+The critical path consists of the following:
+	'call' operation (voicerec/voicerec.cpp:255) to 'processChunk' [85]  (5 ns)
+
+ <State 96>: 0ns
+The critical path consists of the following:
+
+ <State 97>: 5ns
+The critical path consists of the following:
+	'call' operation (voicerec/voicerec.cpp:255) to 'processChunk' [86]  (5 ns)
+
+ <State 98>: 0ns
+The critical path consists of the following:
+
+ <State 99>: 5ns
+The critical path consists of the following:
+	'call' operation (voicerec/voicerec.cpp:255) to 'processChunk' [87]  (5 ns)
+
+ <State 100>: 0ns
+The critical path consists of the following:
+
+ <State 101>: 5ns
+The critical path consists of the following:
+	'call' operation (voicerec/voicerec.cpp:255) to 'processChunk' [88]  (5 ns)
+
+ <State 102>: 0ns
+The critical path consists of the following:
+
+ <State 103>: 5ns
+The critical path consists of the following:
+	'call' operation (voicerec/voicerec.cpp:255) to 'processChunk' [89]  (5 ns)
+
+ <State 104>: 0ns
+The critical path consists of the following:
+
+ <State 105>: 5ns
+The critical path consists of the following:
+	'call' operation (voicerec/voicerec.cpp:255) to 'processChunk' [90]  (5 ns)
+
+ <State 106>: 0ns
+The critical path consists of the following:
+
+ <State 107>: 5ns
+The critical path consists of the following:
+	'call' operation (voicerec/voicerec.cpp:255) to 'processChunk' [91]  (5 ns)
+
+ <State 108>: 0ns
+The critical path consists of the following:
+
+ <State 109>: 5ns
+The critical path consists of the following:
+	'call' operation (voicerec/voicerec.cpp:255) to 'processChunk' [92]  (5 ns)
+
+ <State 110>: 0ns
+The critical path consists of the following:
+
+ <State 111>: 5ns
+The critical path consists of the following:
+	'call' operation (voicerec/voicerec.cpp:255) to 'processChunk' [93]  (5 ns)
+
+ <State 112>: 0ns
+The critical path consists of the following:
+
+ <State 113>: 5ns
+The critical path consists of the following:
+	'call' operation (voicerec/voicerec.cpp:255) to 'processChunk' [94]  (5 ns)
+
+ <State 114>: 0ns
+The critical path consists of the following:
+
+ <State 115>: 5ns
+The critical path consists of the following:
+	'call' operation (voicerec/voicerec.cpp:255) to 'processChunk' [95]  (5 ns)
+
+ <State 116>: 0ns
+The critical path consists of the following:
+
+ <State 117>: 5ns
+The critical path consists of the following:
+	'call' operation (voicerec/voicerec.cpp:255) to 'processChunk' [96]  (5 ns)
+
+ <State 118>: 0ns
+The critical path consists of the following:
+
+ <State 119>: 5ns
+The critical path consists of the following:
+	'call' operation (voicerec/voicerec.cpp:255) to 'processChunk' [97]  (5 ns)
+
+ <State 120>: 0ns
+The critical path consists of the following:
+
+ <State 121>: 5ns
+The critical path consists of the following:
+	'call' operation (voicerec/voicerec.cpp:255) to 'processChunk' [98]  (5 ns)
+
+ <State 122>: 0ns
+The critical path consists of the following:
+
+ <State 123>: 5ns
+The critical path consists of the following:
+	'call' operation (voicerec/voicerec.cpp:255) to 'processChunk' [99]  (5 ns)
+
+ <State 124>: 0ns
+The critical path consists of the following:
+
+ <State 125>: 5ns
+The critical path consists of the following:
+	'call' operation (voicerec/voicerec.cpp:255) to 'processChunk' [100]  (5 ns)
+
+ <State 126>: 0ns
+The critical path consists of the following:
+
+ <State 127>: 5ns
+The critical path consists of the following:
+	'call' operation (voicerec/voicerec.cpp:255) to 'processChunk' [101]  (5 ns)
+
+ <State 128>: 0ns
+The critical path consists of the following:
+
+ <State 129>: 5ns
+The critical path consists of the following:
+	'call' operation (voicerec/voicerec.cpp:255) to 'processChunk' [102]  (5 ns)
+
+ <State 130>: 0ns
+The critical path consists of the following:
+
+ <State 131>: 5ns
+The critical path consists of the following:
+	'call' operation (voicerec/voicerec.cpp:255) to 'processChunk' [103]  (5 ns)
+
+ <State 132>: 0ns
+The critical path consists of the following:
+
+ <State 133>: 5ns
+The critical path consists of the following:
+	'call' operation (voicerec/voicerec.cpp:255) to 'processChunk' [104]  (5 ns)
+
+ <State 134>: 0ns
+The critical path consists of the following:
+
+ <State 135>: 5ns
+The critical path consists of the following:
+	'call' operation (voicerec/voicerec.cpp:255) to 'processChunk' [105]  (5 ns)
+
+ <State 136>: 0ns
+The critical path consists of the following:
+
+ <State 137>: 5ns
+The critical path consists of the following:
+	'call' operation (voicerec/voicerec.cpp:255) to 'processChunk' [106]  (5 ns)
+
+ <State 138>: 0ns
+The critical path consists of the following:
+
+ <State 139>: 5ns
+The critical path consists of the following:
+	'call' operation (voicerec/voicerec.cpp:255) to 'processChunk' [107]  (5 ns)
+
+ <State 140>: 0ns
+The critical path consists of the following:
+
+ <State 141>: 5ns
+The critical path consists of the following:
+	'call' operation (voicerec/voicerec.cpp:255) to 'processChunk' [108]  (5 ns)
+
+ <State 142>: 0ns
+The critical path consists of the following:
+
+ <State 143>: 5ns
+The critical path consists of the following:
+	'call' operation (voicerec/voicerec.cpp:255) to 'processChunk' [109]  (5 ns)
+
+ <State 144>: 0ns
+The critical path consists of the following:
+
+ <State 145>: 5ns
+The critical path consists of the following:
+	'call' operation (voicerec/voicerec.cpp:255) to 'processChunk' [110]  (5 ns)
+
+ <State 146>: 0ns
+The critical path consists of the following:
+
+ <State 147>: 5ns
+The critical path consists of the following:
+	'call' operation (voicerec/voicerec.cpp:255) to 'processChunk' [111]  (5 ns)
+
+ <State 148>: 0ns
+The critical path consists of the following:
+
+ <State 149>: 5ns
+The critical path consists of the following:
+	'call' operation (voicerec/voicerec.cpp:255) to 'processChunk' [112]  (5 ns)
+
+ <State 150>: 0ns
+The critical path consists of the following:
+
+ <State 151>: 5ns
+The critical path consists of the following:
+	'call' operation (voicerec/voicerec.cpp:255) to 'processChunk' [113]  (5 ns)
+
+ <State 152>: 0ns
+The critical path consists of the following:
+
+ <State 153>: 5ns
+The critical path consists of the following:
+	'call' operation (voicerec/voicerec.cpp:255) to 'processChunk' [114]  (5 ns)
+
+ <State 154>: 0ns
+The critical path consists of the following:
+
+ <State 155>: 5ns
+The critical path consists of the following:
+	'call' operation (voicerec/voicerec.cpp:255) to 'processChunk' [115]  (5 ns)
+
+ <State 156>: 0ns
+The critical path consists of the following:
+
+ <State 157>: 5ns
+The critical path consists of the following:
+	'call' operation (voicerec/voicerec.cpp:255) to 'processChunk' [116]  (5 ns)
+
+ <State 158>: 0ns
+The critical path consists of the following:
+
+ <State 159>: 5ns
+The critical path consists of the following:
+	'call' operation (voicerec/voicerec.cpp:255) to 'processChunk' [117]  (5 ns)
+
+ <State 160>: 0ns
+The critical path consists of the following:
+
+ <State 161>: 5ns
+The critical path consists of the following:
+	'call' operation (voicerec/voicerec.cpp:255) to 'processChunk' [118]  (5 ns)
+
+ <State 162>: 0ns
+The critical path consists of the following:
+
+ <State 163>: 5ns
+The critical path consists of the following:
+	'call' operation (voicerec/voicerec.cpp:255) to 'processChunk' [119]  (5 ns)
+
+ <State 164>: 0ns
+The critical path consists of the following:
+
+ <State 165>: 5ns
+The critical path consists of the following:
+	'call' operation (voicerec/voicerec.cpp:255) to 'processChunk' [120]  (5 ns)
+
+ <State 166>: 0ns
+The critical path consists of the following:
+
+ <State 167>: 5ns
+The critical path consists of the following:
+	'call' operation (voicerec/voicerec.cpp:255) to 'processChunk' [121]  (5 ns)
+
+ <State 168>: 0ns
+The critical path consists of the following:
+
+ <State 169>: 5ns
+The critical path consists of the following:
+	'call' operation (voicerec/voicerec.cpp:255) to 'processChunk' [122]  (5 ns)
+
+ <State 170>: 0ns
+The critical path consists of the following:
+
+ <State 171>: 5ns
+The critical path consists of the following:
+	'call' operation (voicerec/voicerec.cpp:255) to 'processChunk' [123]  (5 ns)
+
+ <State 172>: 0ns
+The critical path consists of the following:
+
+ <State 173>: 5ns
+The critical path consists of the following:
+	'call' operation (voicerec/voicerec.cpp:255) to 'processChunk' [124]  (5 ns)
+
+ <State 174>: 0ns
+The critical path consists of the following:
+
+ <State 175>: 5ns
+The critical path consists of the following:
+	'call' operation (voicerec/voicerec.cpp:255) to 'processChunk' [125]  (5 ns)
+
+ <State 176>: 0ns
+The critical path consists of the following:
+
+ <State 177>: 5ns
+The critical path consists of the following:
+	'call' operation (voicerec/voicerec.cpp:255) to 'processChunk' [126]  (5 ns)
+
+ <State 178>: 0ns
+The critical path consists of the following:
+
+ <State 179>: 5ns
+The critical path consists of the following:
+	'call' operation (voicerec/voicerec.cpp:255) to 'processChunk' [127]  (5 ns)
+
+ <State 180>: 0ns
+The critical path consists of the following:
+
+ <State 181>: 5ns
+The critical path consists of the following:
+	'call' operation (voicerec/voicerec.cpp:255) to 'processChunk' [128]  (5 ns)
+
+ <State 182>: 0ns
+The critical path consists of the following:
+
+ <State 183>: 5ns
+The critical path consists of the following:
+	'call' operation (voicerec/voicerec.cpp:255) to 'processChunk' [129]  (5 ns)
+
+ <State 184>: 0ns
+The critical path consists of the following:
+
+ <State 185>: 5ns
+The critical path consists of the following:
+	'call' operation (voicerec/voicerec.cpp:255) to 'processChunk' [130]  (5 ns)
+
+ <State 186>: 0ns
+The critical path consists of the following:
+
+ <State 187>: 5ns
+The critical path consists of the following:
+	'call' operation (voicerec/voicerec.cpp:255) to 'processChunk' [131]  (5 ns)
+
+ <State 188>: 0ns
+The critical path consists of the following:
+
+ <State 189>: 5ns
+The critical path consists of the following:
+	'call' operation (voicerec/voicerec.cpp:255) to 'processChunk' [132]  (5 ns)
+
+ <State 190>: 0ns
+The critical path consists of the following:
+
+ <State 191>: 5ns
+The critical path consists of the following:
+	'call' operation (voicerec/voicerec.cpp:255) to 'processChunk' [133]  (5 ns)
+
+ <State 192>: 0ns
+The critical path consists of the following:
+
+ <State 193>: 5ns
+The critical path consists of the following:
+	'call' operation (voicerec/voicerec.cpp:255) to 'processChunk' [134]  (5 ns)
+
+ <State 194>: 0ns
+The critical path consists of the following:
+
+ <State 195>: 5ns
+The critical path consists of the following:
+	'call' operation (voicerec/voicerec.cpp:255) to 'processChunk' [135]  (5 ns)
+
+ <State 196>: 0ns
+The critical path consists of the following:
+
+ <State 197>: 5ns
+The critical path consists of the following:
+	'call' operation (voicerec/voicerec.cpp:255) to 'processChunk' [136]  (5 ns)
+
+ <State 198>: 0ns
+The critical path consists of the following:
+
+ <State 199>: 5ns
+The critical path consists of the following:
+	'call' operation (voicerec/voicerec.cpp:255) to 'processChunk' [137]  (5 ns)
+
+ <State 200>: 0ns
+The critical path consists of the following:
+
+ <State 201>: 5ns
+The critical path consists of the following:
+	'call' operation (voicerec/voicerec.cpp:255) to 'processChunk' [138]  (5 ns)
+
+ <State 202>: 0ns
+The critical path consists of the following:
+
+ <State 203>: 5ns
+The critical path consists of the following:
+	'call' operation (voicerec/voicerec.cpp:255) to 'processChunk' [139]  (5 ns)
+
+ <State 204>: 0ns
+The critical path consists of the following:
+
+ <State 205>: 5ns
+The critical path consists of the following:
+	'call' operation (voicerec/voicerec.cpp:255) to 'processChunk' [140]  (5 ns)
+
+ <State 206>: 0ns
+The critical path consists of the following:
+
+ <State 207>: 5ns
+The critical path consists of the following:
+	'call' operation (voicerec/voicerec.cpp:255) to 'processChunk' [141]  (5 ns)
+
+ <State 208>: 0ns
+The critical path consists of the following:
+
+ <State 209>: 5ns
+The critical path consists of the following:
+	'call' operation (voicerec/voicerec.cpp:255) to 'processChunk' [142]  (5 ns)
+
+ <State 210>: 0ns
+The critical path consists of the following:
+
+ <State 211>: 5ns
+The critical path consists of the following:
+	'call' operation (voicerec/voicerec.cpp:255) to 'processChunk' [143]  (5 ns)
+
+ <State 212>: 1.66ns
+The critical path consists of the following:
+	multiplexor before 'phi' operation ('i') with incoming values : ('i', voicerec/neuralNetworkSynth.cpp:72->voicerec/voicerec.cpp:258) [146]  (1.66 ns)
+
+ <State 213>: 2.44ns
+The critical path consists of the following:
+	'icmp' operation ('exitcond1_i', voicerec/neuralNetworkSynth.cpp:72->voicerec/voicerec.cpp:258) [147]  (1.46 ns)
+	blocking operation 0.978 ns on control path)
+
+ <State 214>: 2.42ns
+The critical path consists of the following:
+	'icmp' operation ('exitcond_i', voicerec/neuralNetworkSynth.cpp:73->voicerec/voicerec.cpp:258) [161]  (1.44 ns)
+	blocking operation 0.978 ns on control path)
+
+ <State 215>: 3.26ns
+The critical path consists of the following:
+	'getelementptr' operation ('result_addr', voicerec/neuralNetworkSynth.cpp:74->voicerec/voicerec.cpp:258) [168]  (0 ns)
+	'load' operation ('result_load', voicerec/neuralNetworkSynth.cpp:74->voicerec/voicerec.cpp:258) on array 'result' [169]  (3.26 ns)
+
+ <State 216>: 3.26ns
+The critical path consists of the following:
+	'load' operation ('result_load', voicerec/neuralNetworkSynth.cpp:74->voicerec/voicerec.cpp:258) on array 'result' [169]  (3.26 ns)
+
+ <State 217>: 3.26ns
+The critical path consists of the following:
+	'getelementptr' operation ('flatInput_addr', voicerec/neuralNetworkSynth.cpp:74->voicerec/voicerec.cpp:258) [172]  (0 ns)
+	'store' operation (voicerec/neuralNetworkSynth.cpp:74->voicerec/voicerec.cpp:258) of variable 'result_load', voicerec/neuralNetworkSynth.cpp:74->voicerec/voicerec.cpp:258 on array 'flatInput', voicerec/neuralNetworkSynth.cpp:70->voicerec/voicerec.cpp:258 [173]  (3.26 ns)
+
+ <State 218>: 1.66ns
+The critical path consists of the following:
+	multiplexor before 'phi' operation ('j') with incoming values : ('j', voicerec/neuralNetworkSynth.cpp:46->voicerec/neuralNetworkSynth.cpp:79->voicerec/voicerec.cpp:258) [181]  (1.66 ns)
+
+ <State 219>: 4.25ns
+The critical path consists of the following:
+	'phi' operation ('max') with incoming values : ('max', voicerec/neuralNetworkSynth.cpp:48->voicerec/neuralNetworkSynth.cpp:79->voicerec/voicerec.cpp:258) [183]  (0 ns)
+	'fcmp' operation ('tmp_20', voicerec/neuralNetworkSynth.cpp:56->voicerec/neuralNetworkSynth.cpp:79->voicerec/voicerec.cpp:258) [219]  (4.25 ns)
+
+ <State 220>: 4.25ns
+The critical path consists of the following:
+	'fcmp' operation ('tmp_32', voicerec/neuralNetworkSynth.cpp:48->voicerec/neuralNetworkSynth.cpp:79->voicerec/voicerec.cpp:258) [207]  (4.25 ns)
+
+ <State 221>: 4.25ns
+The critical path consists of the following:
+	'fcmp' operation ('tmp_32', voicerec/neuralNetworkSynth.cpp:48->voicerec/neuralNetworkSynth.cpp:79->voicerec/voicerec.cpp:258) [207]  (4.25 ns)
+
+ <State 222>: 4.25ns
+The critical path consists of the following:
+	'fcmp' operation ('tmp_32', voicerec/neuralNetworkSynth.cpp:48->voicerec/neuralNetworkSynth.cpp:79->voicerec/voicerec.cpp:258) [207]  (4.25 ns)
+
+ <State 223>: 4.18ns
+The critical path consists of the following:
+	'icmp' operation ('notrhs3', voicerec/neuralNetworkSynth.cpp:46->voicerec/neuralNetworkSynth.cpp:79->voicerec/voicerec.cpp:258) [201]  (2.41 ns)
+	'or' operation ('tmp_29', voicerec/neuralNetworkSynth.cpp:46->voicerec/neuralNetworkSynth.cpp:79->voicerec/voicerec.cpp:258) [202]  (0 ns)
+	'and' operation ('tmp_31', voicerec/neuralNetworkSynth.cpp:46->voicerec/neuralNetworkSynth.cpp:79->voicerec/voicerec.cpp:258) [206]  (0 ns)
+	'and' operation ('tmp_33', voicerec/neuralNetworkSynth.cpp:48->voicerec/neuralNetworkSynth.cpp:79->voicerec/voicerec.cpp:258) [208]  (0.978 ns)
+	'select' operation ('guess', voicerec/neuralNetworkSynth.cpp:48->voicerec/neuralNetworkSynth.cpp:79->voicerec/voicerec.cpp:258) [209]  (0.796 ns)
+
+ <State 224>: 4.25ns
+The critical path consists of the following:
+	'fcmp' operation ('tmp_20', voicerec/neuralNetworkSynth.cpp:56->voicerec/neuralNetworkSynth.cpp:79->voicerec/voicerec.cpp:258) [219]  (4.25 ns)
+
+ <State 225>: 4.25ns
+The critical path consists of the following:
+	'fcmp' operation ('tmp_20', voicerec/neuralNetworkSynth.cpp:56->voicerec/neuralNetworkSynth.cpp:79->voicerec/voicerec.cpp:258) [219]  (4.25 ns)
+
+ <State 226>: 4.91ns
+The critical path consists of the following:
+	'or' operation ('tmp_19', voicerec/neuralNetworkSynth.cpp:48->voicerec/neuralNetworkSynth.cpp:79->voicerec/voicerec.cpp:258) [218]  (0 ns)
+	'and' operation ('tmp_21', voicerec/neuralNetworkSynth.cpp:56->voicerec/neuralNetworkSynth.cpp:79->voicerec/voicerec.cpp:258) [220]  (0.978 ns)
+	'xor' operation ('sel_tmp1_i', voicerec/neuralNetworkSynth.cpp:56->voicerec/neuralNetworkSynth.cpp:79->voicerec/voicerec.cpp:258) [222]  (0.978 ns)
+	'and' operation ('sel_tmp6_i', voicerec/neuralNetworkSynth.cpp:48->voicerec/neuralNetworkSynth.cpp:79->voicerec/voicerec.cpp:258) [225]  (0.978 ns)
+	'or' operation ('tmp_22', voicerec/neuralNetworkSynth.cpp:48->voicerec/neuralNetworkSynth.cpp:79->voicerec/voicerec.cpp:258) [227]  (0 ns)
+	'select' operation ('sel_tmp7_i', voicerec/neuralNetworkSynth.cpp:48->voicerec/neuralNetworkSynth.cpp:79->voicerec/voicerec.cpp:258) [228]  (0.99 ns)
+	'select' operation ('classification', voicerec/neuralNetworkSynth.cpp:48->voicerec/neuralNetworkSynth.cpp:79->voicerec/voicerec.cpp:258) [233]  (0.99 ns)
+
+ <State 227>: 1.66ns
+The critical path consists of the following:
+	multiplexor before 'phi' operation ('p_0', voicerec/voicerec.cpp:258) with incoming values : ('p_0_i_cast_cast', voicerec/voicerec.cpp:258) ('tmp_8', voicerec/voicerec.cpp:267) [265]  (1.66 ns)
+	'phi' operation ('p_0', voicerec/voicerec.cpp:258) with incoming values : ('p_0_i_cast_cast', voicerec/voicerec.cpp:258) ('tmp_8', voicerec/voicerec.cpp:267) [265]  (0 ns)
+
+ <State 228>: 3.26ns
+The critical path consists of the following:
+	'phi' operation ('i') with incoming values : ('i', voicerec/voicerec.cpp:264) [241]  (0 ns)
+	'getelementptr' operation ('inSound_addr_1', voicerec/voicerec.cpp:266) [248]  (0 ns)
+	'load' operation ('inSound_load_1', voicerec/voicerec.cpp:266) on array 'inSound' [249]  (3.26 ns)
+
+ <State 229>: 3.26ns
+The critical path consists of the following:
+	'load' operation ('inSound_load_1', voicerec/voicerec.cpp:266) on array 'inSound' [249]  (3.26 ns)
+
+ <State 230>: 4.25ns
+The critical path consists of the following:
+	'fcmp' operation ('tmp_15', voicerec/voicerec.cpp:266) [256]  (4.25 ns)
+
+ <State 231>: 4.25ns
+The critical path consists of the following:
+	'fcmp' operation ('tmp_15', voicerec/voicerec.cpp:266) [256]  (4.25 ns)
+
+ <State 232>: 4.25ns
+The critical path consists of the following:
+	'fcmp' operation ('tmp_15', voicerec/voicerec.cpp:266) [256]  (4.25 ns)
+
+ <State 233>: 2.13ns
+The critical path consists of the following:
+	'add' operation ('tmp_8', voicerec/voicerec.cpp:267) [260]  (2.13 ns)
+
+ <State 234>: 0ns
+The critical path consists of the following:
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+	State 10
+	State 11
+	State 12
+	State 13
+	State 14
+	State 15
+	State 16
+	State 17
+	State 18
+	State 19
+	State 20
+	State 21
+	State 22
+	State 23
+	State 24
+	State 25
+	State 26
+	State 27
+	State 28
+	State 29
+	State 30
+	State 31
+	State 32
+	State 33
+	State 34
+	State 35
+	State 36
+	State 37
+	State 38
+	State 39
+	State 40
+	State 41
+	State 42
+	State 43
+	State 44
+	State 45
+	State 46
+	State 47
+	State 48
+	State 49
+	State 50
+	State 51
+	State 52
+	State 53
+	State 54
+	State 55
+	State 56
+	State 57
+	State 58
+	State 59
+	State 60
+	State 61
+	State 62
+	State 63
+	State 64
+	State 65
+	State 66
+	State 67
+	State 68
+	State 69
+	State 70
+	State 71
+	State 72
+	State 73
+	State 74
+	State 75
+	State 76
+	State 77
+	State 78
+	State 79
+	State 80
+	State 81
+	State 82
+	State 83
+	State 84
+	State 85
+	State 86
+	State 87
+	State 88
+	State 89
+	State 90
+	State 91
+	State 92
+	State 93
+	State 94
+	State 95
+	State 96
+	State 97
+	State 98
+	State 99
+	State 100
+	State 101
+	State 102
+	State 103
+	State 104
+	State 105
+	State 106
+	State 107
+	State 108
+	State 109
+	State 110
+	State 111
+	State 112
+	State 113
+	State 114
+	State 115
+	State 116
+	State 117
+	State 118
+	State 119
+	State 120
+	State 121
+	State 122
+	State 123
+	State 124
+	State 125
+	State 126
+	State 127
+	State 128
+	State 129
+	State 130
+	State 131
+	State 132
+	State 133
+	State 134
+	State 135
+	State 136
+	State 137
+	State 138
+	State 139
+	State 140
+	State 141
+	State 142
+	State 143
+	State 144
+	State 145
+	State 146
+	State 147
+	State 148
+	State 149
+	State 150
+	State 151
+	State 152
+	State 153
+	State 154
+	State 155
+	State 156
+	State 157
+	State 158
+	State 159
+	State 160
+	State 161
+	State 162
+	State 163
+	State 164
+	State 165
+	State 166
+	State 167
+	State 168
+	State 169
+	State 170
+	State 171
+	State 172
+	State 173
+	State 174
+	State 175
+	State 176
+	State 177
+	State 178
+	State 179
+	State 180
+	State 181
+	State 182
+	State 183
+	State 184
+	State 185
+	State 186
+	State 187
+	State 188
+	State 189
+	State 190
+	State 191
+	State 192
+	State 193
+	State 194
+	State 195
+	State 196
+	State 197
+	State 198
+	State 199
+	State 200
+	State 201
+	State 202
+	State 203
+	State 204
+	State 205
+	State 206
+	State 207
+	State 208
+	State 209
+	State 210
+	State 211
+	State 212
+	State 213
+	State 214
+	State 215
+	State 216
+	State 217
+	State 218
+	State 219
+	State 220
+	State 221
+	State 222
+	State 223
+	State 224
+	State 225
+	State 226
+	State 227
+	State 228
+	State 229
+	State 230
+	State 231
+	State 232
+	State 233
+	State 234
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

@@ -1,0 +1,337 @@
+<profile>
+
+<section name = "Vivado HLS Report for 'voicerec'" level="0">
+<item name = "Date">Mon Aug 16 14:13:12 2021
+</item>
+<item name = "Version">2018.2 (Build 2258646 on Thu Jun 14 20:25:20 MDT 2018)</item>
+<item name = "Project">voicerec</item>
+<item name = "Solution">solution1</item>
+<item name = "Product family">artix7</item>
+<item name = "Target device">xc7a200tsbg484-1</item>
+</section>
+
+<section name = "Performance Estimates" level="0">
+<item name = "Timing (ns)">
+<section name = "" level="1">
+<item name = "Target clock period (ns)">5.00</item>
+<item name = "Clock uncertainty (ns)">0.00</item>
+<item name = "Estimated clock period (ns)">8.658</item>
+</section>
+</item>
+<item name = "Latency (clock cycles)">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="6">, min, max, min, max, Type</keys>
+<column name="">600025, 203786529, 600025, 203786529, none</column>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="0">
+<keys size="7">Instance, Module, min, max, min, max, Type</keys>
+<column name="grp_feedForward_fu_640">feedForward, 380651, 380651, 380651, 380651, none</column>
+<column name="grp_processChunk_fu_659">processChunk, 39048, 3324624, 39048, 3324624, none</column>
+</table>
+</item>
+<item name = "Loop"><table name="" hasTotal="0">
+<keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
+<column name="- memcpy.voicerec(int volatile*, int*)::testSound.new_sample">8001, 8001, 3, 1, 1, 8000, yes</column>
+<column name="- Loop 2">592000, 592000, 74, -, -, 8000, no</column>
+<column name="- Loop 3">3654, 3654, 58, -, -, 63, no</column>
+<column name=" + Loop 3.1">56, 56, 4, -, -, 14, no</column>
+<column name="- Loop 4">15, 15, 5, -, -, 3, no</column>
+<column name="- Loop 5">6, 47999, 6, -, -, 1 ~ 7999, no</column>
+</table>
+</item>
+</section>
+</item>
+</section>
+</item>
+</section>
+
+<section name = "Utilization Estimates" level="0">
+<item name = "Summary"><table name="" hasTotal="1">
+<keys size="5">Name, BRAM_18K, DSP48E, FF, LUT</keys>
+<column name="DSP">-, -, -, -</column>
+<column name="Expression">-, -, 0, 578</column>
+<column name="FIFO">-, -, -, -</column>
+<column name="Instance">76, 69, 26590, 30201</column>
+<column name="Memory">36, -, 0, 0</column>
+<column name="Multiplexer">-, -, -, 1860</column>
+<column name="Register">-, -, 977, -</column>
+<specialColumn name="Available">730, 740, 269200, 129000</specialColumn>
+<specialColumn name="Utilization (%)">15, 9, 10, 25</specialColumn>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="1">
+<keys size="6">Instance, Module, BRAM_18K, DSP48E, FF, LUT</keys>
+<column name="grp_feedForward_fu_640">feedForward, 67, 34, 11503, 18570</column>
+<column name="grp_processChunk_fu_659">processChunk, 7, 35, 7566, 6755</column>
+<column name="voicerec_ddiv_64npcA_U58">voicerec_ddiv_64npcA, 0, 0, 6160, 3489</column>
+<column name="voicerec_fcmp_32njbC_U57">voicerec_fcmp_32njbC, 0, 0, 66, 70</column>
+<column name="voicerec_fptrunc_hbi_U56">voicerec_fptrunc_hbi, 0, 0, 128, 103</column>
+<column name="voicerec_mux_32_3sc4_U60">voicerec_mux_32_3sc4, 0, 0, 0, 15</column>
+<column name="voicerec_sitodp_3rcU_U59">voicerec_sitodp_3rcU, 0, 0, 549, 451</column>
+<column name="voicerec_voice_rec_m_axi_U">voicerec_voice_rec_m_axi, 2, 0, 512, 580</column>
+<column name="voicerec_voice_rec_s_axi_U">voicerec_voice_rec_s_axi, 0, 0, 106, 168</column>
+</table>
+</item>
+<item name = "DSP48"><table name="" hasTotal="0">
+<keys size="3">Instance, Module, Expression</keys>
+</table>
+</item>
+<item name = "Memory"><table name="" hasTotal="1">
+<keys size="9">Memory, Module, BRAM_18K, FF, LUT, Words, Bits, Banks, W*Bits*Banks</keys>
+<column name="flatInput_U">voicerec_flatInput, 2, 0, 0, 882, 32, 1, 28224</column>
+<column name="result_U">voicerec_result, 2, 0, 0, 882, 32, 1, 28224</column>
+<column name="testSound_U">voicerec_testSound, 16, 0, 0, 8000, 32, 1, 256000</column>
+<column name="inSound_U">voicerec_testSound, 16, 0, 0, 8000, 32, 1, 256000</column>
+</table>
+</item>
+<item name = "FIFO"><table name="" hasTotal="1">
+<keys size="7">Name, BRAM_18K, FF, LUT, Depth, Bits, Size:D*B</keys>
+</table>
+</item>
+<item name = "Expression"><table name="" hasTotal="1">
+<keys size="7">Variable Name, Operation, DSP48E, FF, LUT, Bitwidth P0, Bitwidth P1</keys>
+<column name="i_1_fu_872_p2">+, 0, 0, 20, 13, 1</column>
+<column name="i_2_fu_1281_p2">+, 0, 0, 20, 13, 1</column>
+<column name="i_3_fu_933_p2">+, 0, 0, 15, 6, 1</column>
+<column name="indvar_next_fu_855_p2">+, 0, 0, 20, 13, 1</column>
+<column name="j_1_fu_1012_p2">+, 0, 0, 10, 2, 1</column>
+<column name="j_fu_979_p2">+, 0, 0, 13, 4, 1</column>
+<column name="tmp_2_fu_883_p2">+, 0, 0, 39, 32, 14</column>
+<column name="tmp_37_fu_985_p2">+, 0, 0, 18, 11, 11</column>
+<column name="tmp_8_fu_1331_p2">+, 0, 0, 20, 13, 4</column>
+<column name="tmp_28_fu_963_p2">-, 0, 0, 18, 11, 11</column>
+<column name="ap_block_pp0_stage0_11001">and, 0, 0, 2, 1, 1</column>
+<column name="ap_block_state10_pp0_stage0_iter1">and, 0, 0, 2, 1, 1</column>
+<column name="sel_tmp11_i_fu_1234_p2">and, 0, 0, 2, 1, 1</column>
+<column name="sel_tmp2_i_fu_1195_p2">and, 0, 0, 2, 1, 1</column>
+<column name="sel_tmp6_i_fu_1201_p2">and, 0, 0, 2, 1, 1</column>
+<column name="tmp_11_fu_922_p2">and, 0, 0, 2, 1, 1</column>
+<column name="tmp_16_fu_1326_p2">and, 0, 0, 2, 1, 1</column>
+<column name="tmp_21_fu_1178_p2">and, 0, 0, 2, 1, 1</column>
+<column name="tmp_31_fu_1113_p2">and, 0, 0, 2, 1, 1</column>
+<column name="tmp_33_fu_1119_p2">and, 0, 0, 2, 1, 1</column>
+<column name="exitcond1_i_fu_927_p2">icmp, 0, 0, 11, 6, 2</column>
+<column name="exitcond2_fu_866_p2">icmp, 0, 0, 13, 13, 9</column>
+<column name="exitcond8_fu_849_p2">icmp, 0, 0, 13, 13, 9</column>
+<column name="exitcond_i1_fu_1006_p2">icmp, 0, 0, 8, 2, 2</column>
+<column name="exitcond_i_fu_973_p2">icmp, 0, 0, 9, 4, 3</column>
+<column name="notlhs1_fu_1310_p2">icmp, 0, 0, 11, 8, 2</column>
+<column name="notlhs2_fu_1156_p2">icmp, 0, 0, 11, 8, 2</column>
+<column name="notlhs3_fu_1077_p2">icmp, 0, 0, 11, 8, 2</column>
+<column name="notlhs4_fu_1095_p2">icmp, 0, 0, 11, 8, 2</column>
+<column name="notlhs_fu_906_p2">icmp, 0, 0, 11, 8, 2</column>
+<column name="notrhs1_fu_1316_p2">icmp, 0, 0, 18, 23, 1</column>
+<column name="notrhs2_fu_1162_p2">icmp, 0, 0, 18, 23, 1</column>
+<column name="notrhs3_fu_1083_p2">icmp, 0, 0, 18, 23, 1</column>
+<column name="notrhs4_fu_1101_p2">icmp, 0, 0, 18, 23, 1</column>
+<column name="notrhs_fu_912_p2">icmp, 0, 0, 18, 23, 1</column>
+<column name="sel_tmp4_i_fu_1168_p2">icmp, 0, 0, 18, 32, 1</column>
+<column name="sel_tmp9_i_fu_1228_p2">icmp, 0, 0, 18, 32, 1</column>
+<column name="sel_tmp_i_fu_1183_p2">icmp, 0, 0, 18, 32, 2</column>
+<column name="tmp_7_fu_1275_p2">icmp, 0, 0, 13, 13, 9</column>
+<column name="tmp_14_fu_1322_p2">or, 0, 0, 2, 1, 1</column>
+<column name="tmp_19_fu_1174_p2">or, 0, 0, 2, 1, 1</column>
+<column name="tmp_22_fu_1214_p2">or, 0, 0, 2, 1, 1</column>
+<column name="tmp_23_fu_1248_p2">or, 0, 0, 2, 1, 1</column>
+<column name="tmp_29_fu_1089_p2">or, 0, 0, 2, 1, 1</column>
+<column name="tmp_30_fu_1107_p2">or, 0, 0, 2, 1, 1</column>
+<column name="tmp_9_fu_918_p2">or, 0, 0, 2, 1, 1</column>
+<column name="classification_fu_1254_p3">select, 0, 0, 4, 1, 4</column>
+<column name="guess_2_fu_1124_p3">select, 0, 0, 32, 1, 32</column>
+<column name="max_1_fu_1131_p3">select, 0, 0, 32, 1, 32</column>
+<column name="sel_tmp3_i_cast_fu_1206_p3">select, 0, 0, 2, 1, 2</column>
+<column name="sel_tmp7_i_fu_1220_p3">select, 0, 0, 4, 1, 4</column>
+<column name="sel_tmp8_i_fu_1240_p3">select, 0, 0, 5, 1, 1</column>
+<column name="ap_enable_pp0">xor, 0, 0, 2, 1, 2</column>
+<column name="ap_enable_reg_pp0_iter1">xor, 0, 0, 2, 2, 1</column>
+<column name="sel_tmp1_i_fu_1189_p2">xor, 0, 0, 2, 1, 2</column>
+</table>
+</item>
+<item name = "Multiplexer"><table name="" hasTotal="1">
+<keys size="5">Name, LUT, Input Size, Bits, Total Bits</keys>
+<column name="ap_NS_fsm">997, 233, 1, 233</column>
+<column name="ap_enable_reg_pp0_iter1">9, 2, 1, 2</column>
+<column name="ap_enable_reg_pp0_iter2">9, 2, 1, 2</column>
+<column name="ap_phi_mux_indvar_phi_fu_539_p4">9, 2, 13, 26</column>
+<column name="ap_phi_mux_p_0_phi_fu_619_p6">9, 2, 13, 26</column>
+<column name="ap_sig_ioackin_voice_rec_ARREADY">9, 2, 1, 2</column>
+<column name="flatInput_address0">15, 3, 10, 30</column>
+<column name="flatInput_ce0">15, 3, 1, 3</column>
+<column name="flatInput_ce1">9, 2, 1, 2</column>
+<column name="grp_fu_808_opcode">21, 4, 5, 20</column>
+<column name="grp_fu_808_p0">21, 4, 32, 128</column>
+<column name="grp_fu_808_p1">21, 4, 32, 128</column>
+<column name="grp_processChunk_fu_659_ret_offset">265, 62, 7, 434</column>
+<column name="grp_processChunk_fu_659_sp">265, 62, 14, 868</column>
+<column name="guess_1_reg_580">9, 2, 2, 4</column>
+<column name="i2_reg_628">9, 2, 13, 26</column>
+<column name="i_i_reg_558">9, 2, 6, 12</column>
+<column name="i_reg_547">9, 2, 13, 26</column>
+<column name="inSound_address0">27, 5, 13, 65</column>
+<column name="inSound_ce0">15, 3, 1, 3</column>
+<column name="indvar_reg_535">9, 2, 13, 26</column>
+<column name="j_i_reg_569">9, 2, 4, 8</column>
+<column name="p_0_reg_615">9, 2, 13, 26</column>
+<column name="result_address0">15, 3, 10, 30</column>
+<column name="result_ce0">15, 3, 1, 3</column>
+<column name="result_we0">9, 2, 1, 2</column>
+<column name="second_max_reg_603">9, 2, 32, 64</column>
+<column name="testSound_address0">15, 3, 13, 39</column>
+<column name="voice_rec_blk_n_AR">9, 2, 1, 2</column>
+<column name="voice_rec_blk_n_R">9, 2, 1, 2</column>
+</table>
+</item>
+<item name = "Register"><table name="" hasTotal="1">
+<keys size="5">Name, FF, LUT, Bits, Const Bits</keys>
+<column name="ap_CS_fsm">232, 0, 232, 0</column>
+<column name="ap_enable_reg_pp0_iter0">1, 0, 1, 0</column>
+<column name="ap_enable_reg_pp0_iter1">1, 0, 1, 0</column>
+<column name="ap_enable_reg_pp0_iter2">1, 0, 1, 0</column>
+<column name="ap_reg_ioackin_voice_rec_ARREADY">1, 0, 1, 0</column>
+<column name="ap_return">13, 0, 32, 19</column>
+<column name="classification_reg_1516">3, 0, 4, 1</column>
+<column name="exitcond8_reg_1348">1, 0, 1, 0</column>
+<column name="exitcond8_reg_1348_pp0_iter1_reg">1, 0, 1, 0</column>
+<column name="grp_feedForward_fu_640_ap_start_reg">1, 0, 1, 0</column>
+<column name="grp_processChunk_fu_659_ap_start_reg">1, 0, 1, 0</column>
+<column name="guess_1_data_reg">3, 0, 32, 29</column>
+<column name="guess_1_reg_580">2, 0, 2, 0</column>
+<column name="guess_1_vld_reg">0, 0, 1, 1</column>
+<column name="guess_i_cast6_reg_1461">2, 0, 32, 30</column>
+<column name="guess_i_reg_591">32, 0, 32, 0</column>
+<column name="i2_reg_628">13, 0, 13, 0</column>
+<column name="i_1_reg_1365">13, 0, 13, 0</column>
+<column name="i_2_reg_1533">13, 0, 13, 0</column>
+<column name="i_3_reg_1427">6, 0, 6, 0</column>
+<column name="i_i_reg_558">6, 0, 6, 0</column>
+<column name="i_reg_547">13, 0, 13, 0</column>
+<column name="indvar_next_reg_1352">13, 0, 13, 0</column>
+<column name="indvar_reg_535">13, 0, 13, 0</column>
+<column name="indvar_reg_535_pp0_iter1_reg">13, 0, 13, 0</column>
+<column name="j_1_reg_1469">2, 0, 2, 0</column>
+<column name="j_i_reg_569">4, 0, 4, 0</column>
+<column name="j_reg_1440">4, 0, 4, 0</column>
+<column name="max_reg_1474">32, 0, 32, 0</column>
+<column name="new_sample1_reg_1337">30, 0, 30, 0</column>
+<column name="notlhs1_reg_1543">1, 0, 1, 0</column>
+<column name="notlhs2_reg_1496">1, 0, 1, 0</column>
+<column name="notlhs_reg_1405">1, 0, 1, 0</column>
+<column name="notrhs1_reg_1548">1, 0, 1, 0</column>
+<column name="notrhs2_reg_1501">1, 0, 1, 0</column>
+<column name="notrhs_reg_1410">1, 0, 1, 0</column>
+<column name="output_0">32, 0, 32, 0</column>
+<column name="output_1">32, 0, 32, 0</column>
+<column name="output_2">32, 0, 32, 0</column>
+<column name="p_0_reg_615">13, 0, 13, 0</column>
+<column name="reg_824">32, 0, 32, 0</column>
+<column name="result_load_reg_1456">32, 0, 32, 0</column>
+<column name="second_max_reg_603">32, 0, 32, 0</column>
+<column name="sel_tmp4_i_reg_1511">1, 0, 1, 0</column>
+<column name="testSound_load_reg_1380">32, 0, 32, 0</column>
+<column name="tmp_10_reg_1415">1, 0, 1, 0</column>
+<column name="tmp_11_reg_1420">1, 0, 1, 0</column>
+<column name="tmp_15_reg_1553">1, 0, 1, 0</column>
+<column name="tmp_1_reg_1370">13, 0, 64, 51</column>
+<column name="tmp_20_reg_1506">1, 0, 1, 0</column>
+<column name="tmp_28_reg_1432">10, 0, 11, 1</column>
+<column name="tmp_2_reg_1385">32, 0, 32, 0</column>
+<column name="tmp_32_reg_1481">1, 0, 1, 0</column>
+<column name="tmp_37_reg_1445">11, 0, 11, 0</column>
+<column name="tmp_3_reg_1390">64, 0, 64, 0</column>
+<column name="tmp_4_reg_1395">64, 0, 64, 0</column>
+<column name="tmp_5_reg_1400">32, 0, 32, 0</column>
+<column name="voice_rec_addr_read_reg_1357">32, 0, 32, 0</column>
+</table>
+</item>
+</section>
+</item>
+</section>
+
+<section name = "Interface" level="0">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="6">RTL Ports, Dir, Bits, Protocol, Source Object, C Type</keys>
+<column name="s_axi_voice_rec_AWVALID">in, 1, s_axi, voice_rec, scalar</column>
+<column name="s_axi_voice_rec_AWREADY">out, 1, s_axi, voice_rec, scalar</column>
+<column name="s_axi_voice_rec_AWADDR">in, 5, s_axi, voice_rec, scalar</column>
+<column name="s_axi_voice_rec_WVALID">in, 1, s_axi, voice_rec, scalar</column>
+<column name="s_axi_voice_rec_WREADY">out, 1, s_axi, voice_rec, scalar</column>
+<column name="s_axi_voice_rec_WDATA">in, 32, s_axi, voice_rec, scalar</column>
+<column name="s_axi_voice_rec_WSTRB">in, 4, s_axi, voice_rec, scalar</column>
+<column name="s_axi_voice_rec_ARVALID">in, 1, s_axi, voice_rec, scalar</column>
+<column name="s_axi_voice_rec_ARREADY">out, 1, s_axi, voice_rec, scalar</column>
+<column name="s_axi_voice_rec_ARADDR">in, 5, s_axi, voice_rec, scalar</column>
+<column name="s_axi_voice_rec_RVALID">out, 1, s_axi, voice_rec, scalar</column>
+<column name="s_axi_voice_rec_RREADY">in, 1, s_axi, voice_rec, scalar</column>
+<column name="s_axi_voice_rec_RDATA">out, 32, s_axi, voice_rec, scalar</column>
+<column name="s_axi_voice_rec_RRESP">out, 2, s_axi, voice_rec, scalar</column>
+<column name="s_axi_voice_rec_BVALID">out, 1, s_axi, voice_rec, scalar</column>
+<column name="s_axi_voice_rec_BREADY">in, 1, s_axi, voice_rec, scalar</column>
+<column name="s_axi_voice_rec_BRESP">out, 2, s_axi, voice_rec, scalar</column>
+<column name="ap_clk">in, 1, ap_ctrl_hs, voicerec, return value</column>
+<column name="ap_rst_n">in, 1, ap_ctrl_hs, voicerec, return value</column>
+<column name="interrupt">out, 1, ap_ctrl_hs, voicerec, return value</column>
+<column name="m_axi_voice_rec_AWVALID">out, 1, m_axi, voice_rec, pointer</column>
+<column name="m_axi_voice_rec_AWREADY">in, 1, m_axi, voice_rec, pointer</column>
+<column name="m_axi_voice_rec_AWADDR">out, 32, m_axi, voice_rec, pointer</column>
+<column name="m_axi_voice_rec_AWID">out, 1, m_axi, voice_rec, pointer</column>
+<column name="m_axi_voice_rec_AWLEN">out, 8, m_axi, voice_rec, pointer</column>
+<column name="m_axi_voice_rec_AWSIZE">out, 3, m_axi, voice_rec, pointer</column>
+<column name="m_axi_voice_rec_AWBURST">out, 2, m_axi, voice_rec, pointer</column>
+<column name="m_axi_voice_rec_AWLOCK">out, 2, m_axi, voice_rec, pointer</column>
+<column name="m_axi_voice_rec_AWCACHE">out, 4, m_axi, voice_rec, pointer</column>
+<column name="m_axi_voice_rec_AWPROT">out, 3, m_axi, voice_rec, pointer</column>
+<column name="m_axi_voice_rec_AWQOS">out, 4, m_axi, voice_rec, pointer</column>
+<column name="m_axi_voice_rec_AWREGION">out, 4, m_axi, voice_rec, pointer</column>
+<column name="m_axi_voice_rec_AWUSER">out, 1, m_axi, voice_rec, pointer</column>
+<column name="m_axi_voice_rec_WVALID">out, 1, m_axi, voice_rec, pointer</column>
+<column name="m_axi_voice_rec_WREADY">in, 1, m_axi, voice_rec, pointer</column>
+<column name="m_axi_voice_rec_WDATA">out, 32, m_axi, voice_rec, pointer</column>
+<column name="m_axi_voice_rec_WSTRB">out, 4, m_axi, voice_rec, pointer</column>
+<column name="m_axi_voice_rec_WLAST">out, 1, m_axi, voice_rec, pointer</column>
+<column name="m_axi_voice_rec_WID">out, 1, m_axi, voice_rec, pointer</column>
+<column name="m_axi_voice_rec_WUSER">out, 1, m_axi, voice_rec, pointer</column>
+<column name="m_axi_voice_rec_ARVALID">out, 1, m_axi, voice_rec, pointer</column>
+<column name="m_axi_voice_rec_ARREADY">in, 1, m_axi, voice_rec, pointer</column>
+<column name="m_axi_voice_rec_ARADDR">out, 32, m_axi, voice_rec, pointer</column>
+<column name="m_axi_voice_rec_ARID">out, 1, m_axi, voice_rec, pointer</column>
+<column name="m_axi_voice_rec_ARLEN">out, 8, m_axi, voice_rec, pointer</column>
+<column name="m_axi_voice_rec_ARSIZE">out, 3, m_axi, voice_rec, pointer</column>
+<column name="m_axi_voice_rec_ARBURST">out, 2, m_axi, voice_rec, pointer</column>
+<column name="m_axi_voice_rec_ARLOCK">out, 2, m_axi, voice_rec, pointer</column>
+<column name="m_axi_voice_rec_ARCACHE">out, 4, m_axi, voice_rec, pointer</column>
+<column name="m_axi_voice_rec_ARPROT">out, 3, m_axi, voice_rec, pointer</column>
+<column name="m_axi_voice_rec_ARQOS">out, 4, m_axi, voice_rec, pointer</column>
+<column name="m_axi_voice_rec_ARREGION">out, 4, m_axi, voice_rec, pointer</column>
+<column name="m_axi_voice_rec_ARUSER">out, 1, m_axi, voice_rec, pointer</column>
+<column name="m_axi_voice_rec_RVALID">in, 1, m_axi, voice_rec, pointer</column>
+<column name="m_axi_voice_rec_RREADY">out, 1, m_axi, voice_rec, pointer</column>
+<column name="m_axi_voice_rec_RDATA">in, 32, m_axi, voice_rec, pointer</column>
+<column name="m_axi_voice_rec_RLAST">in, 1, m_axi, voice_rec, pointer</column>
+<column name="m_axi_voice_rec_RID">in, 1, m_axi, voice_rec, pointer</column>
+<column name="m_axi_voice_rec_RUSER">in, 1, m_axi, voice_rec, pointer</column>
+<column name="m_axi_voice_rec_RRESP">in, 2, m_axi, voice_rec, pointer</column>
+<column name="m_axi_voice_rec_BVALID">in, 1, m_axi, voice_rec, pointer</column>
+<column name="m_axi_voice_rec_BREADY">out, 1, m_axi, voice_rec, pointer</column>
+<column name="m_axi_voice_rec_BRESP">in, 2, m_axi, voice_rec, pointer</column>
+<column name="m_axi_voice_rec_BID">in, 1, m_axi, voice_rec, pointer</column>
+<column name="m_axi_voice_rec_BUSER">in, 1, m_axi, voice_rec, pointer</column>
+<column name="guess">out, 32, ap_none, guess, pointer</column>
+</table>
+</item>
+</section>
+
+<section name = "Critical Path" level="0">
+<item name = "Max Delay">6.61</item>
+<item name = "Critical Path Table"><table name="Critical Path Table" hasTotal="0">
+<keys size="15">Name, Operator, Delay, Accumulated Delay, Store Source, Resource, Core, Interface, Type, Port, Array, Scope, Pointer, Callee, Phi Node</keys>
+<column name="'tmp_3', voicerec/voicerec.cpp:245">sitodp, 6.61, 6.61, -, -, -, -, -, -, -, -, -, -, -</column>
+</table>
+</item>
+</section>
+</profile>

@@ -1,0 +1,1854 @@
+
+
+================================================================
+== Vivado HLS Report for 'processChunk'
+================================================================
+* Date:           Mon Aug 16 14:12:40 2021
+
+* Version:        2018.2 (Build 2258646 on Thu Jun 14 20:25:20 MDT 2018)
+* Project:        voicerec
+* Solution:       solution1
+* Product family: artix7
+* Target device:  xc7a200tsbg484-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |   5.00|     8.658|        0.00|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-------+---------+-------+---------+---------+
+    |     Latency     |     Interval    | Pipeline|
+    |  min  |   max   |  min  |   max   |   Type  |
+    +-------+---------+-------+---------+---------+
+    |  39048|  3324624|  39048|  3324624|   none  |
+    +-------+---------+-------+---------+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +-------------+------+------+----------+-----------+-----------+------+----------+
+        |             |   Latency   | Iteration|  Initiation Interval  | Trip |          |
+        |  Loop Name  |  min |  max |  Latency |  achieved |   target  | Count| Pipelined|
+        +-------------+------+------+----------+-----------+-----------+------+----------+
+        |- Loop 1     |  1024|  1024|         4|          -|          -|   256|    no    |
+        |- Loop 2     |  5632|  5632|        22|          -|          -|   256|    no    |
+        |- Loop 3     |  1792|  7424|  7 ~ 29  |          -|          -|   256|    no    |
+        |- Loop 4     |   182|  1534|  7 ~ 59  |          -|          -|    26|    no    |
+        |- Loop 5     |  7882|  7882|       563|          -|          -|    14|    no    |
+        | + Loop 5.1  |   546|   546|        21|          -|          -|    26|    no    |
+        +-------------+------+------+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 153
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+	2  / true
+2 --> 
+	3  / (!exitcond3)
+	6  / (exitcond3)
+3 --> 
+	4  / true
+4 --> 
+	5  / true
+5 --> 
+	2  / true
+6 --> 
+	7  / true
+7 --> 
+	8  / (!exitcond2)
+	29  / (exitcond2)
+8 --> 
+	9  / true
+9 --> 
+	10  / true
+10 --> 
+	11  / true
+11 --> 
+	12  / true
+12 --> 
+	13  / true
+13 --> 
+	14  / true
+14 --> 
+	15  / true
+15 --> 
+	16  / true
+16 --> 
+	17  / true
+17 --> 
+	18  / true
+18 --> 
+	19  / true
+19 --> 
+	20  / true
+20 --> 
+	21  / true
+21 --> 
+	22  / true
+22 --> 
+	23  / true
+23 --> 
+	24  / true
+24 --> 
+	25  / true
+25 --> 
+	26  / true
+26 --> 
+	27  / true
+27 --> 
+	28  / true
+28 --> 
+	7  / true
+29 --> 
+	30  / (!exitcond1)
+	58  / (exitcond1)
+30 --> 
+	31  / (tmp_17)
+	41  / (!tmp_17)
+31 --> 
+	32  / true
+32 --> 
+	33  / true
+33 --> 
+	34  / true
+34 --> 
+	35  / true
+35 --> 
+	36  / true
+36 --> 
+	37  / true
+37 --> 
+	38  / true
+38 --> 
+	39  / true
+39 --> 
+	40  / true
+40 --> 
+	41  / true
+41 --> 
+	42  / (tmp_22)
+	54  / (!tmp_22)
+42 --> 
+	43  / true
+43 --> 
+	44  / (!tmp_25)
+	54  / (tmp_25)
+44 --> 
+	45  / true
+45 --> 
+	46  / true
+46 --> 
+	47  / true
+47 --> 
+	48  / true
+48 --> 
+	49  / true
+49 --> 
+	50  / true
+50 --> 
+	51  / true
+51 --> 
+	52  / true
+52 --> 
+	53  / true
+53 --> 
+	54  / true
+54 --> 
+	55  / true
+55 --> 
+	56  / true
+56 --> 
+	57  / true
+57 --> 
+	29  / true
+58 --> 
+	59  / (!exitcond)
+	117  / (exitcond)
+59 --> 
+	60  / true
+60 --> 
+	61  / true
+61 --> 
+	62  / true
+62 --> 
+	63  / true
+63 --> 
+	64  / (!tmp_38)
+	116  / (tmp_38)
+64 --> 
+	65  / true
+65 --> 
+	66  / true
+66 --> 
+	67  / true
+67 --> 
+	68  / true
+68 --> 
+	69  / true
+69 --> 
+	70  / true
+70 --> 
+	71  / true
+71 --> 
+	72  / true
+72 --> 
+	73  / true
+73 --> 
+	74  / true
+74 --> 
+	75  / true
+75 --> 
+	76  / true
+76 --> 
+	77  / true
+77 --> 
+	78  / true
+78 --> 
+	79  / true
+79 --> 
+	80  / true
+80 --> 
+	81  / true
+81 --> 
+	82  / true
+82 --> 
+	83  / true
+83 --> 
+	84  / true
+84 --> 
+	85  / true
+85 --> 
+	86  / true
+86 --> 
+	87  / true
+87 --> 
+	88  / true
+88 --> 
+	89  / true
+89 --> 
+	90  / true
+90 --> 
+	91  / true
+91 --> 
+	92  / true
+92 --> 
+	93  / true
+93 --> 
+	94  / true
+94 --> 
+	95  / true
+95 --> 
+	96  / true
+96 --> 
+	97  / true
+97 --> 
+	98  / true
+98 --> 
+	99  / true
+99 --> 
+	100  / true
+100 --> 
+	101  / true
+101 --> 
+	102  / true
+102 --> 
+	103  / true
+103 --> 
+	104  / true
+104 --> 
+	105  / true
+105 --> 
+	106  / true
+106 --> 
+	107  / true
+107 --> 
+	108  / true
+108 --> 
+	109  / true
+109 --> 
+	110  / true
+110 --> 
+	111  / true
+111 --> 
+	112  / true
+112 --> 
+	113  / true
+113 --> 
+	114  / true
+114 --> 
+	115  / true
+115 --> 
+	116  / true
+116 --> 
+	58  / true
+117 --> 
+	118  / (!exitcond1_i)
+118 --> 
+	119  / (!exitcond_i)
+	139  / (exitcond_i)
+119 --> 
+	120  / true
+120 --> 
+	121  / true
+121 --> 
+	122  / true
+122 --> 
+	123  / true
+123 --> 
+	124  / true
+124 --> 
+	125  / true
+125 --> 
+	126  / true
+126 --> 
+	127  / true
+127 --> 
+	128  / true
+128 --> 
+	129  / true
+129 --> 
+	130  / true
+130 --> 
+	131  / true
+131 --> 
+	132  / true
+132 --> 
+	133  / true
+133 --> 
+	134  / true
+134 --> 
+	135  / true
+135 --> 
+	136  / true
+136 --> 
+	137  / true
+137 --> 
+	138  / true
+138 --> 
+	118  / true
+139 --> 
+	140  / true
+140 --> 
+	141  / true
+141 --> 
+	142  / true
+142 --> 
+	143  / true
+143 --> 
+	144  / true
+144 --> 
+	145  / true
+145 --> 
+	146  / true
+146 --> 
+	147  / true
+147 --> 
+	148  / true
+148 --> 
+	149  / true
+149 --> 
+	150  / true
+150 --> 
+	151  / true
+151 --> 
+	152  / true
+152 --> 
+	153  / true
+153 --> 
+	117  / true
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 2.12>
+ST_1 : Operation 154 [1/1] (0.00ns)   --->   "%ret_offset_read = call i7 @_ssdm_op_Read.ap_auto.i7(i7 %ret_offset)"   --->   Operation 154 'read' 'ret_offset_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 155 [1/1] (0.00ns)   --->   "%sp_read = call i14 @_ssdm_op_Read.ap_auto.i14(i14 %sp)"   --->   Operation 155 'read' 'sp_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 156 [1/1] (0.00ns)   --->   "%tmp_39 = call i11 @_ssdm_op_BitConcatenate.i11.i7.i4(i7 %ret_offset_read, i4 0)"   --->   Operation 156 'bitconcatenate' 'tmp_39' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 157 [1/1] (0.00ns)   --->   "%tmp_40 = call i8 @_ssdm_op_BitConcatenate.i8.i7.i1(i7 %ret_offset_read, i1 false)"   --->   Operation 157 'bitconcatenate' 'tmp_40' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 158 [1/1] (0.00ns)   --->   "%p_shl1_cast = zext i8 %tmp_40 to i11" [voicerec/voicerec.cpp:61->voicerec/voicerec.cpp:215]   --->   Operation 158 'zext' 'p_shl1_cast' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 159 [1/1] (2.12ns)   --->   "%tmp_41 = sub i11 %tmp_39, %p_shl1_cast" [voicerec/voicerec.cpp:61->voicerec/voicerec.cpp:215]   --->   Operation 159 'sub' 'tmp_41' <Predicate = true> <Delay = 2.12> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.11> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 160 [1/1] (0.00ns)   --->   "%tmp_42 = trunc i14 %sp_read to i13" [voicerec/voicerec.cpp:176]   --->   Operation 160 'trunc' 'tmp_42' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 161 [1/1] (1.66ns)   --->   "br label %1" [voicerec/voicerec.cpp:174]   --->   Operation 161 'br' <Predicate = true> <Delay = 1.66>
+
+State 2 <SV = 1> <Delay = 2.13>
+ST_2 : Operation 162 [1/1] (0.00ns)   --->   "%i = phi i9 [ 0, %0 ], [ %i_4, %._crit_edge ]"   --->   Operation 162 'phi' 'i' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 163 [1/1] (0.00ns)   --->   "%i_cast7 = zext i9 %i to i13" [voicerec/voicerec.cpp:174]   --->   Operation 163 'zext' 'i_cast7' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 164 [1/1] (1.58ns)   --->   "%exitcond3 = icmp eq i9 %i, -256" [voicerec/voicerec.cpp:174]   --->   Operation 164 'icmp' 'exitcond3' <Predicate = true> <Delay = 1.58> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.44> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 165 [1/1] (0.00ns)   --->   "%empty = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 256, i64 256, i64 256)"   --->   Operation 165 'speclooptripcount' 'empty' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 166 [1/1] (2.11ns)   --->   "%i_4 = add i9 %i, 1" [voicerec/voicerec.cpp:174]   --->   Operation 166 'add' 'i_4' <Predicate = true> <Delay = 2.11> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.11> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 167 [1/1] (0.00ns)   --->   "br i1 %exitcond3, label %4, label %2" [voicerec/voicerec.cpp:174]   --->   Operation 167 'br' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 168 [1/1] (2.13ns)   --->   "%tmp = add i13 %i_cast7, %tmp_42" [voicerec/voicerec.cpp:176]   --->   Operation 168 'add' 'tmp' <Predicate = (!exitcond3)> <Delay = 2.13> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.11> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 169 [2/2] (0.00ns)   --->   "call fastcc void @FFT([512 x float]* @c)" [voicerec/voicerec.cpp:181]   --->   Operation 169 'call' <Predicate = (exitcond3)> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 3 <SV = 2> <Delay = 3.25>
+ST_3 : Operation 170 [1/1] (0.00ns)   --->   "%tmp_s = zext i13 %tmp to i64" [voicerec/voicerec.cpp:176]   --->   Operation 170 'zext' 'tmp_s' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 171 [1/1] (0.00ns)   --->   "%inputSound_addr = getelementptr [8000 x float]* %inputSound, i64 0, i64 %tmp_s" [voicerec/voicerec.cpp:176]   --->   Operation 171 'getelementptr' 'inputSound_addr' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 172 [2/2] (3.25ns)   --->   "%inputSound_load = load float* %inputSound_addr, align 4" [voicerec/voicerec.cpp:176]   --->   Operation 172 'load' 'inputSound_load' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 882> <RAM>
+
+State 4 <SV = 3> <Delay = 3.25>
+ST_4 : Operation 173 [1/2] (3.25ns)   --->   "%inputSound_load = load float* %inputSound_addr, align 4" [voicerec/voicerec.cpp:176]   --->   Operation 173 'load' 'inputSound_load' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 882> <RAM>
+
+State 5 <SV = 4> <Delay = 3.25>
+ST_5 : Operation 174 [1/1] (0.00ns)   --->   "%tmp_43 = shl i9 %i, 1" [voicerec/voicerec.cpp:176]   --->   Operation 174 'shl' 'tmp_43' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 175 [1/1] (0.00ns)   --->   "%tmp_1 = zext i9 %tmp_43 to i64" [voicerec/voicerec.cpp:176]   --->   Operation 175 'zext' 'tmp_1' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 176 [1/1] (0.00ns)   --->   "%c_addr = getelementptr inbounds [512 x float]* @c, i64 0, i64 %tmp_1" [voicerec/voicerec.cpp:176]   --->   Operation 176 'getelementptr' 'c_addr' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 177 [1/1] (3.25ns)   --->   "store float %inputSound_load, float* %c_addr, align 8" [voicerec/voicerec.cpp:176]   --->   Operation 177 'store' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 882> <RAM>
+ST_5 : Operation 178 [1/1] (0.00ns)   --->   "%tmp_2 = or i9 %tmp_43, 1" [voicerec/voicerec.cpp:177]   --->   Operation 178 'or' 'tmp_2' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 179 [1/1] (0.00ns)   --->   "%tmp_3 = zext i9 %tmp_2 to i64" [voicerec/voicerec.cpp:177]   --->   Operation 179 'zext' 'tmp_3' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 180 [1/1] (0.00ns)   --->   "%c_addr_1 = getelementptr inbounds [512 x float]* @c, i64 0, i64 %tmp_3" [voicerec/voicerec.cpp:177]   --->   Operation 180 'getelementptr' 'c_addr_1' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 181 [1/1] (3.25ns)   --->   "store float 0.000000e+00, float* %c_addr_1, align 4" [voicerec/voicerec.cpp:177]   --->   Operation 181 'store' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 882> <RAM>
+ST_5 : Operation 182 [1/1] (1.58ns)   --->   "%tmp_4 = icmp ult i9 %i, 26" [voicerec/voicerec.cpp:178]   --->   Operation 182 'icmp' 'tmp_4' <Predicate = true> <Delay = 1.58> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.44> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 183 [1/1] (0.00ns)   --->   "br i1 %tmp_4, label %3, label %._crit_edge" [voicerec/voicerec.cpp:178]   --->   Operation 183 'br' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 184 [1/1] (0.00ns)   --->   "%tmp_5 = zext i9 %i to i64" [voicerec/voicerec.cpp:178]   --->   Operation 184 'zext' 'tmp_5' <Predicate = (tmp_4)> <Delay = 0.00>
+ST_5 : Operation 185 [1/1] (0.00ns)   --->   "%e_addr = getelementptr inbounds [26 x float]* @e, i64 0, i64 %tmp_5" [voicerec/voicerec.cpp:178]   --->   Operation 185 'getelementptr' 'e_addr' <Predicate = (tmp_4)> <Delay = 0.00>
+ST_5 : Operation 186 [1/1] (2.15ns)   --->   "store float 0.000000e+00, float* %e_addr, align 4" [voicerec/voicerec.cpp:178]   --->   Operation 186 'store' <Predicate = (tmp_4)> <Delay = 2.15> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 882> <RAM>
+ST_5 : Operation 187 [1/1] (0.00ns)   --->   "br label %._crit_edge" [voicerec/voicerec.cpp:178]   --->   Operation 187 'br' <Predicate = (tmp_4)> <Delay = 0.00>
+ST_5 : Operation 188 [1/1] (0.00ns)   --->   "br label %1" [voicerec/voicerec.cpp:174]   --->   Operation 188 'br' <Predicate = true> <Delay = 0.00>
+
+State 6 <SV = 2> <Delay = 1.66>
+ST_6 : Operation 189 [1/2] (0.00ns)   --->   "call fastcc void @FFT([512 x float]* @c)" [voicerec/voicerec.cpp:181]   --->   Operation 189 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_6 : Operation 190 [1/1] (0.00ns)   --->   "%tmp_19 = call i32 (...)* @_ssdm_op_SpecRegionBegin([7 x i8]* @p_str)" [voicerec/voicerec.cpp:183]   --->   Operation 190 'specregionbegin' 'tmp_19' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 191 [1/1] (1.66ns)   --->   "br label %5" [voicerec/voicerec.cpp:185]   --->   Operation 191 'br' <Predicate = true> <Delay = 1.66>
+
+State 7 <SV = 3> <Delay = 3.25>
+ST_7 : Operation 192 [1/1] (0.00ns)   --->   "%i_1 = phi i9 [ 0, %4 ], [ %i_5, %6 ]"   --->   Operation 192 'phi' 'i_1' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 193 [1/1] (1.58ns)   --->   "%exitcond2 = icmp eq i9 %i_1, -256" [voicerec/voicerec.cpp:185]   --->   Operation 193 'icmp' 'exitcond2' <Predicate = true> <Delay = 1.58> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.44> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 194 [1/1] (0.00ns)   --->   "%empty_10 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 256, i64 256, i64 256)"   --->   Operation 194 'speclooptripcount' 'empty_10' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 195 [1/1] (2.11ns)   --->   "%i_5 = add i9 %i_1, 1" [voicerec/voicerec.cpp:185]   --->   Operation 195 'add' 'i_5' <Predicate = true> <Delay = 2.11> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.11> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 196 [1/1] (0.00ns)   --->   "br i1 %exitcond2, label %.preheader4.preheader, label %6" [voicerec/voicerec.cpp:185]   --->   Operation 196 'br' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 197 [1/1] (0.00ns)   --->   "%tmp_44 = shl i9 %i_1, 1" [voicerec/voicerec.cpp:187]   --->   Operation 197 'shl' 'tmp_44' <Predicate = (!exitcond2)> <Delay = 0.00>
+ST_7 : Operation 198 [1/1] (0.00ns)   --->   "%tmp_7 = zext i9 %tmp_44 to i64" [voicerec/voicerec.cpp:187]   --->   Operation 198 'zext' 'tmp_7' <Predicate = (!exitcond2)> <Delay = 0.00>
+ST_7 : Operation 199 [1/1] (0.00ns)   --->   "%c_addr_2 = getelementptr inbounds [512 x float]* @c, i64 0, i64 %tmp_7" [voicerec/voicerec.cpp:187]   --->   Operation 199 'getelementptr' 'c_addr_2' <Predicate = (!exitcond2)> <Delay = 0.00>
+ST_7 : Operation 200 [2/2] (3.25ns)   --->   "%c_load = load float* %c_addr_2, align 8" [voicerec/voicerec.cpp:187]   --->   Operation 200 'load' 'c_load' <Predicate = (!exitcond2)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 882> <RAM>
+ST_7 : Operation 201 [1/1] (0.00ns)   --->   "%tmp_10 = or i9 %tmp_44, 1" [voicerec/voicerec.cpp:187]   --->   Operation 201 'or' 'tmp_10' <Predicate = (!exitcond2)> <Delay = 0.00>
+ST_7 : Operation 202 [1/1] (0.00ns)   --->   "%tmp_11 = zext i9 %tmp_10 to i64" [voicerec/voicerec.cpp:187]   --->   Operation 202 'zext' 'tmp_11' <Predicate = (!exitcond2)> <Delay = 0.00>
+ST_7 : Operation 203 [1/1] (0.00ns)   --->   "%c_addr_3 = getelementptr inbounds [512 x float]* @c, i64 0, i64 %tmp_11" [voicerec/voicerec.cpp:187]   --->   Operation 203 'getelementptr' 'c_addr_3' <Predicate = (!exitcond2)> <Delay = 0.00>
+ST_7 : Operation 204 [2/2] (3.25ns)   --->   "%c_load_1 = load float* %c_addr_3, align 4" [voicerec/voicerec.cpp:187]   --->   Operation 204 'load' 'c_load_1' <Predicate = (!exitcond2)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 882> <RAM>
+ST_7 : Operation 205 [1/1] (1.66ns)   --->   "br label %.preheader4" [voicerec/voicerec.cpp:191]   --->   Operation 205 'br' <Predicate = (exitcond2)> <Delay = 1.66>
+
+State 8 <SV = 4> <Delay = 3.25>
+ST_8 : Operation 206 [1/2] (3.25ns)   --->   "%c_load = load float* %c_addr_2, align 8" [voicerec/voicerec.cpp:187]   --->   Operation 206 'load' 'c_load' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 882> <RAM>
+ST_8 : Operation 207 [1/2] (3.25ns)   --->   "%c_load_1 = load float* %c_addr_3, align 4" [voicerec/voicerec.cpp:187]   --->   Operation 207 'load' 'c_load_1' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 882> <RAM>
+
+State 9 <SV = 5> <Delay = 4.34>
+ST_9 : Operation 208 [5/5] (4.34ns)   --->   "%tmp_8 = fmul float %c_load, %c_load" [voicerec/voicerec.cpp:187]   --->   Operation 208 'fmul' 'tmp_8' <Predicate = true> <Delay = 4.34> <Core = "FMul">   --->   Core 100 'FMul' <Latency = 4> <II = 1> <Delay = 4.34> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_9 : Operation 209 [5/5] (4.34ns)   --->   "%tmp_12 = fmul float %c_load_1, %c_load_1" [voicerec/voicerec.cpp:187]   --->   Operation 209 'fmul' 'tmp_12' <Predicate = true> <Delay = 4.34> <Core = "FMul">   --->   Core 100 'FMul' <Latency = 4> <II = 1> <Delay = 4.34> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 10 <SV = 6> <Delay = 4.34>
+ST_10 : Operation 210 [4/5] (4.34ns)   --->   "%tmp_8 = fmul float %c_load, %c_load" [voicerec/voicerec.cpp:187]   --->   Operation 210 'fmul' 'tmp_8' <Predicate = true> <Delay = 4.34> <Core = "FMul">   --->   Core 100 'FMul' <Latency = 4> <II = 1> <Delay = 4.34> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 211 [4/5] (4.34ns)   --->   "%tmp_12 = fmul float %c_load_1, %c_load_1" [voicerec/voicerec.cpp:187]   --->   Operation 211 'fmul' 'tmp_12' <Predicate = true> <Delay = 4.34> <Core = "FMul">   --->   Core 100 'FMul' <Latency = 4> <II = 1> <Delay = 4.34> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 11 <SV = 7> <Delay = 4.34>
+ST_11 : Operation 212 [3/5] (4.34ns)   --->   "%tmp_8 = fmul float %c_load, %c_load" [voicerec/voicerec.cpp:187]   --->   Operation 212 'fmul' 'tmp_8' <Predicate = true> <Delay = 4.34> <Core = "FMul">   --->   Core 100 'FMul' <Latency = 4> <II = 1> <Delay = 4.34> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_11 : Operation 213 [3/5] (4.34ns)   --->   "%tmp_12 = fmul float %c_load_1, %c_load_1" [voicerec/voicerec.cpp:187]   --->   Operation 213 'fmul' 'tmp_12' <Predicate = true> <Delay = 4.34> <Core = "FMul">   --->   Core 100 'FMul' <Latency = 4> <II = 1> <Delay = 4.34> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 12 <SV = 8> <Delay = 4.34>
+ST_12 : Operation 214 [2/5] (4.34ns)   --->   "%tmp_8 = fmul float %c_load, %c_load" [voicerec/voicerec.cpp:187]   --->   Operation 214 'fmul' 'tmp_8' <Predicate = true> <Delay = 4.34> <Core = "FMul">   --->   Core 100 'FMul' <Latency = 4> <II = 1> <Delay = 4.34> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_12 : Operation 215 [2/5] (4.34ns)   --->   "%tmp_12 = fmul float %c_load_1, %c_load_1" [voicerec/voicerec.cpp:187]   --->   Operation 215 'fmul' 'tmp_12' <Predicate = true> <Delay = 4.34> <Core = "FMul">   --->   Core 100 'FMul' <Latency = 4> <II = 1> <Delay = 4.34> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 13 <SV = 9> <Delay = 4.34>
+ST_13 : Operation 216 [1/5] (4.34ns)   --->   "%tmp_8 = fmul float %c_load, %c_load" [voicerec/voicerec.cpp:187]   --->   Operation 216 'fmul' 'tmp_8' <Predicate = true> <Delay = 4.34> <Core = "FMul">   --->   Core 100 'FMul' <Latency = 4> <II = 1> <Delay = 4.34> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_13 : Operation 217 [1/5] (4.34ns)   --->   "%tmp_12 = fmul float %c_load_1, %c_load_1" [voicerec/voicerec.cpp:187]   --->   Operation 217 'fmul' 'tmp_12' <Predicate = true> <Delay = 4.34> <Core = "FMul">   --->   Core 100 'FMul' <Latency = 4> <II = 1> <Delay = 4.34> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 14 <SV = 10> <Delay = 4.31>
+ST_14 : Operation 218 [9/9] (4.31ns)   --->   "%tmp_13 = fadd float %tmp_8, %tmp_12" [voicerec/voicerec.cpp:187]   --->   Operation 218 'fadd' 'tmp_13' <Predicate = true> <Delay = 4.31> <Core = "FAddSub">   --->   Core 99 'FAddSub' <Latency = 8> <II = 1> <Delay = 4.31> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 15 <SV = 11> <Delay = 4.31>
+ST_15 : Operation 219 [8/9] (4.31ns)   --->   "%tmp_13 = fadd float %tmp_8, %tmp_12" [voicerec/voicerec.cpp:187]   --->   Operation 219 'fadd' 'tmp_13' <Predicate = true> <Delay = 4.31> <Core = "FAddSub">   --->   Core 99 'FAddSub' <Latency = 8> <II = 1> <Delay = 4.31> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 16 <SV = 12> <Delay = 4.31>
+ST_16 : Operation 220 [7/9] (4.31ns)   --->   "%tmp_13 = fadd float %tmp_8, %tmp_12" [voicerec/voicerec.cpp:187]   --->   Operation 220 'fadd' 'tmp_13' <Predicate = true> <Delay = 4.31> <Core = "FAddSub">   --->   Core 99 'FAddSub' <Latency = 8> <II = 1> <Delay = 4.31> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 17 <SV = 13> <Delay = 4.31>
+ST_17 : Operation 221 [6/9] (4.31ns)   --->   "%tmp_13 = fadd float %tmp_8, %tmp_12" [voicerec/voicerec.cpp:187]   --->   Operation 221 'fadd' 'tmp_13' <Predicate = true> <Delay = 4.31> <Core = "FAddSub">   --->   Core 99 'FAddSub' <Latency = 8> <II = 1> <Delay = 4.31> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 18 <SV = 14> <Delay = 4.31>
+ST_18 : Operation 222 [5/9] (4.31ns)   --->   "%tmp_13 = fadd float %tmp_8, %tmp_12" [voicerec/voicerec.cpp:187]   --->   Operation 222 'fadd' 'tmp_13' <Predicate = true> <Delay = 4.31> <Core = "FAddSub">   --->   Core 99 'FAddSub' <Latency = 8> <II = 1> <Delay = 4.31> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 19 <SV = 15> <Delay = 4.31>
+ST_19 : Operation 223 [4/9] (4.31ns)   --->   "%tmp_13 = fadd float %tmp_8, %tmp_12" [voicerec/voicerec.cpp:187]   --->   Operation 223 'fadd' 'tmp_13' <Predicate = true> <Delay = 4.31> <Core = "FAddSub">   --->   Core 99 'FAddSub' <Latency = 8> <II = 1> <Delay = 4.31> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 20 <SV = 16> <Delay = 4.31>
+ST_20 : Operation 224 [3/9] (4.31ns)   --->   "%tmp_13 = fadd float %tmp_8, %tmp_12" [voicerec/voicerec.cpp:187]   --->   Operation 224 'fadd' 'tmp_13' <Predicate = true> <Delay = 4.31> <Core = "FAddSub">   --->   Core 99 'FAddSub' <Latency = 8> <II = 1> <Delay = 4.31> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 21 <SV = 17> <Delay = 4.31>
+ST_21 : Operation 225 [2/9] (4.31ns)   --->   "%tmp_13 = fadd float %tmp_8, %tmp_12" [voicerec/voicerec.cpp:187]   --->   Operation 225 'fadd' 'tmp_13' <Predicate = true> <Delay = 4.31> <Core = "FAddSub">   --->   Core 99 'FAddSub' <Latency = 8> <II = 1> <Delay = 4.31> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 22 <SV = 18> <Delay = 4.31>
+ST_22 : Operation 226 [1/9] (4.31ns)   --->   "%tmp_13 = fadd float %tmp_8, %tmp_12" [voicerec/voicerec.cpp:187]   --->   Operation 226 'fadd' 'tmp_13' <Predicate = true> <Delay = 4.31> <Core = "FAddSub">   --->   Core 99 'FAddSub' <Latency = 8> <II = 1> <Delay = 4.31> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 23 <SV = 19> <Delay = 4.34>
+ST_23 : Operation 227 [5/5] (4.34ns)   --->   "%tmp_14 = fmul float %tmp_13, 3.906250e-03" [voicerec/voicerec.cpp:187]   --->   Operation 227 'fmul' 'tmp_14' <Predicate = true> <Delay = 4.34> <Core = "FMul">   --->   Core 100 'FMul' <Latency = 4> <II = 1> <Delay = 4.34> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 24 <SV = 20> <Delay = 4.34>
+ST_24 : Operation 228 [4/5] (4.34ns)   --->   "%tmp_14 = fmul float %tmp_13, 3.906250e-03" [voicerec/voicerec.cpp:187]   --->   Operation 228 'fmul' 'tmp_14' <Predicate = true> <Delay = 4.34> <Core = "FMul">   --->   Core 100 'FMul' <Latency = 4> <II = 1> <Delay = 4.34> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 25 <SV = 21> <Delay = 4.34>
+ST_25 : Operation 229 [3/5] (4.34ns)   --->   "%tmp_14 = fmul float %tmp_13, 3.906250e-03" [voicerec/voicerec.cpp:187]   --->   Operation 229 'fmul' 'tmp_14' <Predicate = true> <Delay = 4.34> <Core = "FMul">   --->   Core 100 'FMul' <Latency = 4> <II = 1> <Delay = 4.34> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 26 <SV = 22> <Delay = 4.34>
+ST_26 : Operation 230 [2/5] (4.34ns)   --->   "%tmp_14 = fmul float %tmp_13, 3.906250e-03" [voicerec/voicerec.cpp:187]   --->   Operation 230 'fmul' 'tmp_14' <Predicate = true> <Delay = 4.34> <Core = "FMul">   --->   Core 100 'FMul' <Latency = 4> <II = 1> <Delay = 4.34> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 27 <SV = 23> <Delay = 4.34>
+ST_27 : Operation 231 [1/5] (4.34ns)   --->   "%tmp_14 = fmul float %tmp_13, 3.906250e-03" [voicerec/voicerec.cpp:187]   --->   Operation 231 'fmul' 'tmp_14' <Predicate = true> <Delay = 4.34> <Core = "FMul">   --->   Core 100 'FMul' <Latency = 4> <II = 1> <Delay = 4.34> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 28 <SV = 24> <Delay = 3.25>
+ST_28 : Operation 232 [1/1] (0.00ns)   --->   "%tmp_15 = zext i9 %i_1 to i64" [voicerec/voicerec.cpp:187]   --->   Operation 232 'zext' 'tmp_15' <Predicate = true> <Delay = 0.00>
+ST_28 : Operation 233 [1/1] (0.00ns)   --->   "%spec_addr = getelementptr inbounds [256 x float]* @spec, i64 0, i64 %tmp_15" [voicerec/voicerec.cpp:187]   --->   Operation 233 'getelementptr' 'spec_addr' <Predicate = true> <Delay = 0.00>
+ST_28 : Operation 234 [1/1] (3.25ns)   --->   "store float %tmp_14, float* %spec_addr, align 4" [voicerec/voicerec.cpp:187]   --->   Operation 234 'store' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 882> <RAM>
+ST_28 : Operation 235 [1/1] (0.00ns)   --->   "br label %5" [voicerec/voicerec.cpp:185]   --->   Operation 235 'br' <Predicate = true> <Delay = 0.00>
+
+State 29 <SV = 4> <Delay = 3.25>
+ST_29 : Operation 236 [1/1] (0.00ns)   --->   "%i_2 = phi i9 [ %i_7, %._crit_edge6 ], [ 0, %.preheader4.preheader ]"   --->   Operation 236 'phi' 'i_2' <Predicate = true> <Delay = 0.00>
+ST_29 : Operation 237 [1/1] (0.00ns)   --->   "%mellIdx = phi i32 [ %p_mellIdx, %._crit_edge6 ], [ 0, %.preheader4.preheader ]" [voicerec/voicerec.cpp:201]   --->   Operation 237 'phi' 'mellIdx' <Predicate = true> <Delay = 0.00>
+ST_29 : Operation 238 [1/1] (0.00ns)   --->   "%i_2_cast = zext i9 %i_2 to i10" [voicerec/voicerec.cpp:191]   --->   Operation 238 'zext' 'i_2_cast' <Predicate = true> <Delay = 0.00>
+ST_29 : Operation 239 [1/1] (1.58ns)   --->   "%exitcond1 = icmp eq i9 %i_2, -256" [voicerec/voicerec.cpp:191]   --->   Operation 239 'icmp' 'exitcond1' <Predicate = true> <Delay = 1.58> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.44> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_29 : Operation 240 [1/1] (0.00ns)   --->   "%empty_11 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 256, i64 256, i64 256)"   --->   Operation 240 'speclooptripcount' 'empty_11' <Predicate = true> <Delay = 0.00>
+ST_29 : Operation 241 [1/1] (2.11ns)   --->   "%i_7 = add i9 %i_2, 1" [voicerec/voicerec.cpp:191]   --->   Operation 241 'add' 'i_7' <Predicate = true> <Delay = 2.11> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.11> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_29 : Operation 242 [1/1] (0.00ns)   --->   "br i1 %exitcond1, label %.preheader.preheader, label %7" [voicerec/voicerec.cpp:191]   --->   Operation 242 'br' <Predicate = true> <Delay = 0.00>
+ST_29 : Operation 243 [1/1] (0.00ns)   --->   "%tmp_16 = sext i32 %mellIdx to i64" [voicerec/voicerec.cpp:193]   --->   Operation 243 'sext' 'tmp_16' <Predicate = (!exitcond1)> <Delay = 0.00>
+ST_29 : Operation 244 [1/1] (0.00ns)   --->   "%mell_addr = getelementptr [27 x i8]* @mell, i64 0, i64 %tmp_16" [voicerec/voicerec.cpp:193]   --->   Operation 244 'getelementptr' 'mell_addr' <Predicate = (!exitcond1)> <Delay = 0.00>
+ST_29 : Operation 245 [2/2] (3.25ns)   --->   "%mell_load = load i8* %mell_addr, align 1" [voicerec/voicerec.cpp:193]   --->   Operation 245 'load' 'mell_load' <Predicate = (!exitcond1)> <Delay = 3.25> <Core = "ROM_nP">   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 32> <Depth = 676> <ROM>
+ST_29 : Operation 246 [1/1] (1.66ns)   --->   "br label %.preheader" [voicerec/voicerec.cpp:206]   --->   Operation 246 'br' <Predicate = (exitcond1)> <Delay = 1.66>
+
+State 30 <SV = 5> <Delay = 4.84>
+ST_30 : Operation 247 [1/2] (3.25ns)   --->   "%mell_load = load i8* %mell_addr, align 1" [voicerec/voicerec.cpp:193]   --->   Operation 247 'load' 'mell_load' <Predicate = true> <Delay = 3.25> <Core = "ROM_nP">   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 32> <Depth = 676> <ROM>
+ST_30 : Operation 248 [1/1] (0.00ns)   --->   "%mell_load_cast = zext i8 %mell_load to i10" [voicerec/voicerec.cpp:193]   --->   Operation 248 'zext' 'mell_load_cast' <Predicate = true> <Delay = 0.00>
+ST_30 : Operation 249 [1/1] (0.00ns)   --->   "%mell_load_cast_cast = zext i8 %mell_load to i9" [voicerec/voicerec.cpp:193]   --->   Operation 249 'zext' 'mell_load_cast_cast' <Predicate = true> <Delay = 0.00>
+ST_30 : Operation 250 [1/1] (1.58ns)   --->   "%tmp_17 = icmp eq i10 %i_2_cast, %mell_load_cast" [voicerec/voicerec.cpp:193]   --->   Operation 250 'icmp' 'tmp_17' <Predicate = true> <Delay = 1.58> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.44> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_30 : Operation 251 [1/1] (0.00ns)   --->   "br i1 %tmp_17, label %8, label %._crit_edge5" [voicerec/voicerec.cpp:193]   --->   Operation 251 'br' <Predicate = true> <Delay = 0.00>
+ST_30 : Operation 252 [1/1] (0.00ns)   --->   "%tmp_20 = zext i9 %i_2 to i64" [voicerec/voicerec.cpp:194]   --->   Operation 252 'zext' 'tmp_20' <Predicate = (tmp_17)> <Delay = 0.00>
+ST_30 : Operation 253 [1/1] (0.00ns)   --->   "%spec_addr_1 = getelementptr inbounds [256 x float]* @spec, i64 0, i64 %tmp_20" [voicerec/voicerec.cpp:194]   --->   Operation 253 'getelementptr' 'spec_addr_1' <Predicate = (tmp_17)> <Delay = 0.00>
+ST_30 : Operation 254 [2/2] (3.25ns)   --->   "%spec_load = load float* %spec_addr_1, align 4" [voicerec/voicerec.cpp:194]   --->   Operation 254 'load' 'spec_load' <Predicate = (tmp_17)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 882> <RAM>
+ST_30 : Operation 255 [2/2] (2.15ns)   --->   "%e_load = load float* getelementptr inbounds ([26 x float]* @e, i64 0, i64 0), align 16" [voicerec/voicerec.cpp:194]   --->   Operation 255 'load' 'e_load' <Predicate = (tmp_17)> <Delay = 2.15> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 882> <RAM>
+
+State 31 <SV = 6> <Delay = 3.25>
+ST_31 : Operation 256 [1/2] (3.25ns)   --->   "%spec_load = load float* %spec_addr_1, align 4" [voicerec/voicerec.cpp:194]   --->   Operation 256 'load' 'spec_load' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 882> <RAM>
+ST_31 : Operation 257 [1/2] (2.15ns)   --->   "%e_load = load float* getelementptr inbounds ([26 x float]* @e, i64 0, i64 0), align 16" [voicerec/voicerec.cpp:194]   --->   Operation 257 'load' 'e_load' <Predicate = true> <Delay = 2.15> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 882> <RAM>
+
+State 32 <SV = 7> <Delay = 4.31>
+ST_32 : Operation 258 [9/9] (4.31ns)   --->   "%tmp_21 = fadd float %e_load, %spec_load" [voicerec/voicerec.cpp:194]   --->   Operation 258 'fadd' 'tmp_21' <Predicate = true> <Delay = 4.31> <Core = "FAddSub">   --->   Core 99 'FAddSub' <Latency = 8> <II = 1> <Delay = 4.31> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 33 <SV = 8> <Delay = 4.31>
+ST_33 : Operation 259 [8/9] (4.31ns)   --->   "%tmp_21 = fadd float %e_load, %spec_load" [voicerec/voicerec.cpp:194]   --->   Operation 259 'fadd' 'tmp_21' <Predicate = true> <Delay = 4.31> <Core = "FAddSub">   --->   Core 99 'FAddSub' <Latency = 8> <II = 1> <Delay = 4.31> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 34 <SV = 9> <Delay = 4.31>
+ST_34 : Operation 260 [7/9] (4.31ns)   --->   "%tmp_21 = fadd float %e_load, %spec_load" [voicerec/voicerec.cpp:194]   --->   Operation 260 'fadd' 'tmp_21' <Predicate = true> <Delay = 4.31> <Core = "FAddSub">   --->   Core 99 'FAddSub' <Latency = 8> <II = 1> <Delay = 4.31> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 35 <SV = 10> <Delay = 4.31>
+ST_35 : Operation 261 [6/9] (4.31ns)   --->   "%tmp_21 = fadd float %e_load, %spec_load" [voicerec/voicerec.cpp:194]   --->   Operation 261 'fadd' 'tmp_21' <Predicate = true> <Delay = 4.31> <Core = "FAddSub">   --->   Core 99 'FAddSub' <Latency = 8> <II = 1> <Delay = 4.31> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 36 <SV = 11> <Delay = 4.31>
+ST_36 : Operation 262 [5/9] (4.31ns)   --->   "%tmp_21 = fadd float %e_load, %spec_load" [voicerec/voicerec.cpp:194]   --->   Operation 262 'fadd' 'tmp_21' <Predicate = true> <Delay = 4.31> <Core = "FAddSub">   --->   Core 99 'FAddSub' <Latency = 8> <II = 1> <Delay = 4.31> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 37 <SV = 12> <Delay = 4.31>
+ST_37 : Operation 263 [4/9] (4.31ns)   --->   "%tmp_21 = fadd float %e_load, %spec_load" [voicerec/voicerec.cpp:194]   --->   Operation 263 'fadd' 'tmp_21' <Predicate = true> <Delay = 4.31> <Core = "FAddSub">   --->   Core 99 'FAddSub' <Latency = 8> <II = 1> <Delay = 4.31> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 38 <SV = 13> <Delay = 4.31>
+ST_38 : Operation 264 [3/9] (4.31ns)   --->   "%tmp_21 = fadd float %e_load, %spec_load" [voicerec/voicerec.cpp:194]   --->   Operation 264 'fadd' 'tmp_21' <Predicate = true> <Delay = 4.31> <Core = "FAddSub">   --->   Core 99 'FAddSub' <Latency = 8> <II = 1> <Delay = 4.31> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 39 <SV = 14> <Delay = 4.31>
+ST_39 : Operation 265 [2/9] (4.31ns)   --->   "%tmp_21 = fadd float %e_load, %spec_load" [voicerec/voicerec.cpp:194]   --->   Operation 265 'fadd' 'tmp_21' <Predicate = true> <Delay = 4.31> <Core = "FAddSub">   --->   Core 99 'FAddSub' <Latency = 8> <II = 1> <Delay = 4.31> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 40 <SV = 15> <Delay = 4.31>
+ST_40 : Operation 266 [1/9] (4.31ns)   --->   "%tmp_21 = fadd float %e_load, %spec_load" [voicerec/voicerec.cpp:194]   --->   Operation 266 'fadd' 'tmp_21' <Predicate = true> <Delay = 4.31> <Core = "FAddSub">   --->   Core 99 'FAddSub' <Latency = 8> <II = 1> <Delay = 4.31> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 41 <SV = 16> <Delay = 2.70>
+ST_41 : Operation 267 [1/1] (2.15ns)   --->   "store float %tmp_21, float* getelementptr inbounds ([26 x float]* @e, i64 0, i64 0), align 16" [voicerec/voicerec.cpp:194]   --->   Operation 267 'store' <Predicate = (tmp_17)> <Delay = 2.15> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 882> <RAM>
+ST_41 : Operation 268 [1/1] (0.00ns)   --->   "br label %._crit_edge5" [voicerec/voicerec.cpp:195]   --->   Operation 268 'br' <Predicate = (tmp_17)> <Delay = 0.00>
+ST_41 : Operation 269 [1/1] (1.58ns)   --->   "%tmp_22 = icmp ugt i9 %i_2, %mell_load_cast_cast" [voicerec/voicerec.cpp:197]   --->   Operation 269 'icmp' 'tmp_22' <Predicate = true> <Delay = 1.58> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.44> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_41 : Operation 270 [1/1] (0.00ns)   --->   "br i1 %tmp_22, label %9, label %._crit_edge6" [voicerec/voicerec.cpp:197]   --->   Operation 270 'br' <Predicate = true> <Delay = 0.00>
+ST_41 : Operation 271 [1/1] (2.70ns)   --->   "%tmp_23 = add nsw i32 %mellIdx, 1" [voicerec/voicerec.cpp:197]   --->   Operation 271 'add' 'tmp_23' <Predicate = (tmp_22)> <Delay = 2.70> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.11> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+
+State 42 <SV = 17> <Delay = 3.25>
+ST_42 : Operation 272 [1/1] (0.00ns)   --->   "%tmp_24 = sext i32 %tmp_23 to i64" [voicerec/voicerec.cpp:197]   --->   Operation 272 'sext' 'tmp_24' <Predicate = true> <Delay = 0.00>
+ST_42 : Operation 273 [1/1] (0.00ns)   --->   "%mell_addr_1 = getelementptr [27 x i8]* @mell, i64 0, i64 %tmp_24" [voicerec/voicerec.cpp:197]   --->   Operation 273 'getelementptr' 'mell_addr_1' <Predicate = true> <Delay = 0.00>
+ST_42 : Operation 274 [2/2] (3.25ns)   --->   "%mell_load_1 = load i8* %mell_addr_1, align 1" [voicerec/voicerec.cpp:197]   --->   Operation 274 'load' 'mell_load_1' <Predicate = true> <Delay = 3.25> <Core = "ROM_nP">   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 32> <Depth = 676> <ROM>
+
+State 43 <SV = 18> <Delay = 4.84>
+ST_43 : Operation 275 [1/2] (3.25ns)   --->   "%mell_load_1 = load i8* %mell_addr_1, align 1" [voicerec/voicerec.cpp:197]   --->   Operation 275 'load' 'mell_load_1' <Predicate = true> <Delay = 3.25> <Core = "ROM_nP">   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 32> <Depth = 676> <ROM>
+ST_43 : Operation 276 [1/1] (0.00ns)   --->   "%mell_load_1_cast_cas = zext i8 %mell_load_1 to i9" [voicerec/voicerec.cpp:197]   --->   Operation 276 'zext' 'mell_load_1_cast_cas' <Predicate = true> <Delay = 0.00>
+ST_43 : Operation 277 [1/1] (1.58ns)   --->   "%tmp_25 = icmp ugt i9 %i_2, %mell_load_1_cast_cas" [voicerec/voicerec.cpp:197]   --->   Operation 277 'icmp' 'tmp_25' <Predicate = true> <Delay = 1.58> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.44> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_43 : Operation 278 [1/1] (0.00ns)   --->   "br i1 %tmp_25, label %._crit_edge6, label %10" [voicerec/voicerec.cpp:197]   --->   Operation 278 'br' <Predicate = true> <Delay = 0.00>
+ST_43 : Operation 279 [1/1] (0.00ns)   --->   "%tmp_26 = zext i9 %i_2 to i64" [voicerec/voicerec.cpp:198]   --->   Operation 279 'zext' 'tmp_26' <Predicate = (!tmp_25)> <Delay = 0.00>
+ST_43 : Operation 280 [1/1] (0.00ns)   --->   "%spec_addr_2 = getelementptr inbounds [256 x float]* @spec, i64 0, i64 %tmp_26" [voicerec/voicerec.cpp:198]   --->   Operation 280 'getelementptr' 'spec_addr_2' <Predicate = (!tmp_25)> <Delay = 0.00>
+ST_43 : Operation 281 [2/2] (3.25ns)   --->   "%spec_load_1 = load float* %spec_addr_2, align 4" [voicerec/voicerec.cpp:198]   --->   Operation 281 'load' 'spec_load_1' <Predicate = (!tmp_25)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 882> <RAM>
+ST_43 : Operation 282 [1/1] (0.00ns)   --->   "%e_addr_2 = getelementptr inbounds [26 x float]* @e, i64 0, i64 %tmp_16" [voicerec/voicerec.cpp:198]   --->   Operation 282 'getelementptr' 'e_addr_2' <Predicate = (!tmp_25)> <Delay = 0.00>
+ST_43 : Operation 283 [2/2] (2.15ns)   --->   "%e_load_2 = load float* %e_addr_2, align 4" [voicerec/voicerec.cpp:198]   --->   Operation 283 'load' 'e_load_2' <Predicate = (!tmp_25)> <Delay = 2.15> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 882> <RAM>
+
+State 44 <SV = 19> <Delay = 3.25>
+ST_44 : Operation 284 [1/2] (3.25ns)   --->   "%spec_load_1 = load float* %spec_addr_2, align 4" [voicerec/voicerec.cpp:198]   --->   Operation 284 'load' 'spec_load_1' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 882> <RAM>
+ST_44 : Operation 285 [1/2] (2.15ns)   --->   "%e_load_2 = load float* %e_addr_2, align 4" [voicerec/voicerec.cpp:198]   --->   Operation 285 'load' 'e_load_2' <Predicate = true> <Delay = 2.15> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 882> <RAM>
+
+State 45 <SV = 20> <Delay = 4.31>
+ST_45 : Operation 286 [9/9] (4.31ns)   --->   "%tmp_27 = fadd float %e_load_2, %spec_load_1" [voicerec/voicerec.cpp:198]   --->   Operation 286 'fadd' 'tmp_27' <Predicate = true> <Delay = 4.31> <Core = "FAddSub">   --->   Core 99 'FAddSub' <Latency = 8> <II = 1> <Delay = 4.31> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 46 <SV = 21> <Delay = 4.31>
+ST_46 : Operation 287 [8/9] (4.31ns)   --->   "%tmp_27 = fadd float %e_load_2, %spec_load_1" [voicerec/voicerec.cpp:198]   --->   Operation 287 'fadd' 'tmp_27' <Predicate = true> <Delay = 4.31> <Core = "FAddSub">   --->   Core 99 'FAddSub' <Latency = 8> <II = 1> <Delay = 4.31> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 47 <SV = 22> <Delay = 4.31>
+ST_47 : Operation 288 [7/9] (4.31ns)   --->   "%tmp_27 = fadd float %e_load_2, %spec_load_1" [voicerec/voicerec.cpp:198]   --->   Operation 288 'fadd' 'tmp_27' <Predicate = true> <Delay = 4.31> <Core = "FAddSub">   --->   Core 99 'FAddSub' <Latency = 8> <II = 1> <Delay = 4.31> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 48 <SV = 23> <Delay = 4.31>
+ST_48 : Operation 289 [6/9] (4.31ns)   --->   "%tmp_27 = fadd float %e_load_2, %spec_load_1" [voicerec/voicerec.cpp:198]   --->   Operation 289 'fadd' 'tmp_27' <Predicate = true> <Delay = 4.31> <Core = "FAddSub">   --->   Core 99 'FAddSub' <Latency = 8> <II = 1> <Delay = 4.31> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 49 <SV = 24> <Delay = 4.31>
+ST_49 : Operation 290 [5/9] (4.31ns)   --->   "%tmp_27 = fadd float %e_load_2, %spec_load_1" [voicerec/voicerec.cpp:198]   --->   Operation 290 'fadd' 'tmp_27' <Predicate = true> <Delay = 4.31> <Core = "FAddSub">   --->   Core 99 'FAddSub' <Latency = 8> <II = 1> <Delay = 4.31> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 50 <SV = 25> <Delay = 4.31>
+ST_50 : Operation 291 [4/9] (4.31ns)   --->   "%tmp_27 = fadd float %e_load_2, %spec_load_1" [voicerec/voicerec.cpp:198]   --->   Operation 291 'fadd' 'tmp_27' <Predicate = true> <Delay = 4.31> <Core = "FAddSub">   --->   Core 99 'FAddSub' <Latency = 8> <II = 1> <Delay = 4.31> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 51 <SV = 26> <Delay = 4.31>
+ST_51 : Operation 292 [3/9] (4.31ns)   --->   "%tmp_27 = fadd float %e_load_2, %spec_load_1" [voicerec/voicerec.cpp:198]   --->   Operation 292 'fadd' 'tmp_27' <Predicate = true> <Delay = 4.31> <Core = "FAddSub">   --->   Core 99 'FAddSub' <Latency = 8> <II = 1> <Delay = 4.31> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 52 <SV = 27> <Delay = 4.31>
+ST_52 : Operation 293 [2/9] (4.31ns)   --->   "%tmp_27 = fadd float %e_load_2, %spec_load_1" [voicerec/voicerec.cpp:198]   --->   Operation 293 'fadd' 'tmp_27' <Predicate = true> <Delay = 4.31> <Core = "FAddSub">   --->   Core 99 'FAddSub' <Latency = 8> <II = 1> <Delay = 4.31> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 53 <SV = 28> <Delay = 4.31>
+ST_53 : Operation 294 [1/9] (4.31ns)   --->   "%tmp_27 = fadd float %e_load_2, %spec_load_1" [voicerec/voicerec.cpp:198]   --->   Operation 294 'fadd' 'tmp_27' <Predicate = true> <Delay = 4.31> <Core = "FAddSub">   --->   Core 99 'FAddSub' <Latency = 8> <II = 1> <Delay = 4.31> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 54 <SV = 29> <Delay = 2.70>
+ST_54 : Operation 295 [1/1] (2.15ns)   --->   "store float %tmp_27, float* %e_addr_2, align 4" [voicerec/voicerec.cpp:198]   --->   Operation 295 'store' <Predicate = (tmp_22 & !tmp_25)> <Delay = 2.15> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 882> <RAM>
+ST_54 : Operation 296 [1/1] (0.00ns)   --->   "br label %._crit_edge6" [voicerec/voicerec.cpp:199]   --->   Operation 296 'br' <Predicate = (tmp_22 & !tmp_25)> <Delay = 0.00>
+ST_54 : Operation 297 [1/1] (2.70ns)   --->   "%mellIdx_1 = add nsw i32 %mellIdx, 1" [voicerec/voicerec.cpp:201]   --->   Operation 297 'add' 'mellIdx_1' <Predicate = true> <Delay = 2.70> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.11> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+
+State 55 <SV = 30> <Delay = 3.25>
+ST_55 : Operation 298 [1/1] (0.00ns)   --->   "%tmp_28 = sext i32 %mellIdx_1 to i64" [voicerec/voicerec.cpp:201]   --->   Operation 298 'sext' 'tmp_28' <Predicate = true> <Delay = 0.00>
+ST_55 : Operation 299 [1/1] (0.00ns)   --->   "%mell_addr_2 = getelementptr [27 x i8]* @mell, i64 0, i64 %tmp_28" [voicerec/voicerec.cpp:201]   --->   Operation 299 'getelementptr' 'mell_addr_2' <Predicate = true> <Delay = 0.00>
+ST_55 : Operation 300 [2/2] (3.25ns)   --->   "%mell_load_2 = load i8* %mell_addr_2, align 1" [voicerec/voicerec.cpp:201]   --->   Operation 300 'load' 'mell_load_2' <Predicate = true> <Delay = 3.25> <Core = "ROM_nP">   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 32> <Depth = 676> <ROM>
+
+State 56 <SV = 31> <Delay = 4.84>
+ST_56 : Operation 301 [1/2] (3.25ns)   --->   "%mell_load_2 = load i8* %mell_addr_2, align 1" [voicerec/voicerec.cpp:201]   --->   Operation 301 'load' 'mell_load_2' <Predicate = true> <Delay = 3.25> <Core = "ROM_nP">   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 32> <Depth = 676> <ROM>
+ST_56 : Operation 302 [1/1] (0.00ns)   --->   "%mell_load_2_cast = zext i8 %mell_load_2 to i10" [voicerec/voicerec.cpp:201]   --->   Operation 302 'zext' 'mell_load_2_cast' <Predicate = true> <Delay = 0.00>
+ST_56 : Operation 303 [1/1] (1.58ns)   --->   "%tmp_29 = icmp eq i10 %i_2_cast, %mell_load_2_cast" [voicerec/voicerec.cpp:201]   --->   Operation 303 'icmp' 'tmp_29' <Predicate = true> <Delay = 1.58> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.44> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+
+State 57 <SV = 32> <Delay = 0.79>
+ST_57 : Operation 304 [1/1] (0.79ns)   --->   "%p_mellIdx = select i1 %tmp_29, i32 %mellIdx_1, i32 %mellIdx" [voicerec/voicerec.cpp:201]   --->   Operation 304 'select' 'p_mellIdx' <Predicate = true> <Delay = 0.79> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.79> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_57 : Operation 305 [1/1] (0.00ns)   --->   "br label %.preheader4" [voicerec/voicerec.cpp:191]   --->   Operation 305 'br' <Predicate = true> <Delay = 0.00>
+
+State 58 <SV = 5> <Delay = 2.15>
+ST_58 : Operation 306 [1/1] (0.00ns)   --->   "%i_3 = phi i5 [ %i_6, %13 ], [ 0, %.preheader.preheader ]"   --->   Operation 306 'phi' 'i_3' <Predicate = true> <Delay = 0.00>
+ST_58 : Operation 307 [1/1] (1.44ns)   --->   "%exitcond = icmp eq i5 %i_3, -6" [voicerec/voicerec.cpp:206]   --->   Operation 307 'icmp' 'exitcond' <Predicate = true> <Delay = 1.44> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.44> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_58 : Operation 308 [1/1] (0.00ns)   --->   "%empty_12 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 26, i64 26, i64 26)"   --->   Operation 308 'speclooptripcount' 'empty_12' <Predicate = true> <Delay = 0.00>
+ST_58 : Operation 309 [1/1] (1.86ns)   --->   "%i_6 = add i5 %i_3, 1" [voicerec/voicerec.cpp:206]   --->   Operation 309 'add' 'i_6' <Predicate = true> <Delay = 1.86> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.11> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_58 : Operation 310 [1/1] (0.00ns)   --->   "br i1 %exitcond, label %14, label %11" [voicerec/voicerec.cpp:206]   --->   Operation 310 'br' <Predicate = true> <Delay = 0.00>
+ST_58 : Operation 311 [1/1] (0.00ns)   --->   "%tmp_18 = zext i5 %i_3 to i64" [voicerec/voicerec.cpp:207]   --->   Operation 311 'zext' 'tmp_18' <Predicate = (!exitcond)> <Delay = 0.00>
+ST_58 : Operation 312 [1/1] (0.00ns)   --->   "%e_addr_1 = getelementptr inbounds [26 x float]* @e, i64 0, i64 %tmp_18" [voicerec/voicerec.cpp:207]   --->   Operation 312 'getelementptr' 'e_addr_1' <Predicate = (!exitcond)> <Delay = 0.00>
+ST_58 : Operation 313 [2/2] (2.15ns)   --->   "%e_load_1 = load float* %e_addr_1, align 4" [voicerec/voicerec.cpp:207]   --->   Operation 313 'load' 'e_load_1' <Predicate = (!exitcond)> <Delay = 2.15> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 882> <RAM>
+ST_58 : Operation 314 [1/1] (0.00ns)   --->   "%empty_13 = call i32 (...)* @_ssdm_op_SpecRegionEnd([7 x i8]* @p_str, i32 %tmp_19)" [voicerec/voicerec.cpp:213]   --->   Operation 314 'specregionend' 'empty_13' <Predicate = (exitcond)> <Delay = 0.00>
+ST_58 : Operation 315 [1/1] (1.66ns)   --->   "br label %15" [voicerec/voicerec.cpp:55->voicerec/voicerec.cpp:215]   --->   Operation 315 'br' <Predicate = (exitcond)> <Delay = 1.66>
+
+State 59 <SV = 6> <Delay = 2.15>
+ST_59 : Operation 316 [1/2] (2.15ns)   --->   "%e_load_1 = load float* %e_addr_1, align 4" [voicerec/voicerec.cpp:207]   --->   Operation 316 'load' 'e_load_1' <Predicate = true> <Delay = 2.15> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 882> <RAM>
+
+State 60 <SV = 7> <Delay = 4.24>
+ST_60 : Operation 317 [3/3] (4.24ns)   --->   "%tmp_37 = fcmp ole float %e_load_1, 0.000000e+00" [voicerec/voicerec.cpp:207]   --->   Operation 317 'fcmp' 'tmp_37' <Predicate = true> <Delay = 4.24> <Core = "FCmp">   --->   Core 105 'FCmp' <Latency = 2> <II = 1> <Delay = 4.24> <FuncUnit> <Opcode : 'fcmp'> <InPorts = 2> <OutPorts = 1>
+
+State 61 <SV = 8> <Delay = 4.24>
+ST_61 : Operation 318 [2/3] (4.24ns)   --->   "%tmp_37 = fcmp ole float %e_load_1, 0.000000e+00" [voicerec/voicerec.cpp:207]   --->   Operation 318 'fcmp' 'tmp_37' <Predicate = true> <Delay = 4.24> <Core = "FCmp">   --->   Core 105 'FCmp' <Latency = 2> <II = 1> <Delay = 4.24> <FuncUnit> <Opcode : 'fcmp'> <InPorts = 2> <OutPorts = 1>
+
+State 62 <SV = 9> <Delay = 4.24>
+ST_62 : Operation 319 [1/1] (0.00ns)   --->   "%x_assign_to_int = bitcast float %e_load_1 to i32" [voicerec/voicerec.cpp:207]   --->   Operation 319 'bitcast' 'x_assign_to_int' <Predicate = true> <Delay = 0.00>
+ST_62 : Operation 320 [1/1] (0.00ns)   --->   "%tmp_34 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %x_assign_to_int, i32 23, i32 30)" [voicerec/voicerec.cpp:207]   --->   Operation 320 'partselect' 'tmp_34' <Predicate = true> <Delay = 0.00>
+ST_62 : Operation 321 [1/1] (0.00ns)   --->   "%tmp_47 = trunc i32 %x_assign_to_int to i23" [voicerec/voicerec.cpp:207]   --->   Operation 321 'trunc' 'tmp_47' <Predicate = true> <Delay = 0.00>
+ST_62 : Operation 322 [1/1] (1.47ns)   --->   "%notlhs = icmp ne i8 %tmp_34, -1" [voicerec/voicerec.cpp:207]   --->   Operation 322 'icmp' 'notlhs' <Predicate = true> <Delay = 1.47> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.44> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_62 : Operation 323 [1/1] (2.40ns)   --->   "%notrhs = icmp eq i23 %tmp_47, 0" [voicerec/voicerec.cpp:207]   --->   Operation 323 'icmp' 'notrhs' <Predicate = true> <Delay = 2.40> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.44> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_62 : Operation 324 [1/3] (4.24ns)   --->   "%tmp_37 = fcmp ole float %e_load_1, 0.000000e+00" [voicerec/voicerec.cpp:207]   --->   Operation 324 'fcmp' 'tmp_37' <Predicate = true> <Delay = 4.24> <Core = "FCmp">   --->   Core 105 'FCmp' <Latency = 2> <II = 1> <Delay = 4.24> <FuncUnit> <Opcode : 'fcmp'> <InPorts = 2> <OutPorts = 1>
+
+State 63 <SV = 10> <Delay = 6.46>
+ST_63 : Operation 325 [1/1] (0.00ns) (grouped into LUT with out node tmp_38)   --->   "%tmp_36 = or i1 %notrhs, %notlhs" [voicerec/voicerec.cpp:207]   --->   Operation 325 'or' 'tmp_36' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_63 : Operation 326 [1/1] (0.97ns) (out node of the LUT)   --->   "%tmp_38 = and i1 %tmp_36, %tmp_37" [voicerec/voicerec.cpp:207]   --->   Operation 326 'and' 'tmp_38' <Predicate = true> <Delay = 0.97> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_63 : Operation 327 [1/1] (1.66ns)   --->   "br i1 %tmp_38, label %13, label %12" [voicerec/voicerec.cpp:207]   --->   Operation 327 'br' <Predicate = true> <Delay = 1.66>
+ST_63 : Operation 328 [1/1] (0.00ns)   --->   "%mx_i_i = call i30 @_ssdm_op_BitConcatenate.i30.i7.i23(i7 -2, i23 %tmp_47)" [voicerec/voicerec.cpp:35->voicerec/voicerec.cpp:46->voicerec/voicerec.cpp:210]   --->   Operation 328 'bitconcatenate' 'mx_i_i' <Predicate = (!tmp_38)> <Delay = 0.00>
+ST_63 : Operation 329 [1/1] (0.00ns)   --->   "%mx_i_i_cast = zext i30 %mx_i_i to i32" [voicerec/voicerec.cpp:35->voicerec/voicerec.cpp:46->voicerec/voicerec.cpp:210]   --->   Operation 329 'zext' 'mx_i_i_cast' <Predicate = (!tmp_38)> <Delay = 0.00>
+ST_63 : Operation 330 [8/8] (6.46ns)   --->   "%y = uitofp i32 %x_assign_to_int to float" [voicerec/voicerec.cpp:36->voicerec/voicerec.cpp:46->voicerec/voicerec.cpp:210]   --->   Operation 330 'uitofp' 'y' <Predicate = (!tmp_38)> <Delay = 6.46> <Core = "Int2Float">   --->   Core 106 'Int2Float' <Latency = 7> <II = 1> <Delay = 6.46> <FuncUnit> <Opcode : 'sitofp' 'uitofp'> <InPorts = 1> <OutPorts = 1>
+ST_63 : Operation 331 [1/1] (0.00ns)   --->   "%tmp_54_i_i = bitcast i32 %mx_i_i_cast to float" [voicerec/voicerec.cpp:38->voicerec/voicerec.cpp:46->voicerec/voicerec.cpp:210]   --->   Operation 331 'bitcast' 'tmp_54_i_i' <Predicate = (!tmp_38)> <Delay = 0.00>
+ST_63 : Operation 332 [9/9] (4.31ns)   --->   "%tmp_57_i_i = fadd float %tmp_54_i_i, 0x3FD6889F20000000" [voicerec/voicerec.cpp:38->voicerec/voicerec.cpp:46->voicerec/voicerec.cpp:210]   --->   Operation 332 'fadd' 'tmp_57_i_i' <Predicate = (!tmp_38)> <Delay = 4.31> <Core = "FAddSub">   --->   Core 99 'FAddSub' <Latency = 8> <II = 1> <Delay = 4.31> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 64 <SV = 11> <Delay = 6.46>
+ST_64 : Operation 333 [7/8] (6.46ns)   --->   "%y = uitofp i32 %x_assign_to_int to float" [voicerec/voicerec.cpp:36->voicerec/voicerec.cpp:46->voicerec/voicerec.cpp:210]   --->   Operation 333 'uitofp' 'y' <Predicate = true> <Delay = 6.46> <Core = "Int2Float">   --->   Core 106 'Int2Float' <Latency = 7> <II = 1> <Delay = 6.46> <FuncUnit> <Opcode : 'sitofp' 'uitofp'> <InPorts = 1> <OutPorts = 1>
+ST_64 : Operation 334 [8/9] (4.31ns)   --->   "%tmp_57_i_i = fadd float %tmp_54_i_i, 0x3FD6889F20000000" [voicerec/voicerec.cpp:38->voicerec/voicerec.cpp:46->voicerec/voicerec.cpp:210]   --->   Operation 334 'fadd' 'tmp_57_i_i' <Predicate = true> <Delay = 4.31> <Core = "FAddSub">   --->   Core 99 'FAddSub' <Latency = 8> <II = 1> <Delay = 4.31> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 65 <SV = 12> <Delay = 6.46>
+ST_65 : Operation 335 [6/8] (6.46ns)   --->   "%y = uitofp i32 %x_assign_to_int to float" [voicerec/voicerec.cpp:36->voicerec/voicerec.cpp:46->voicerec/voicerec.cpp:210]   --->   Operation 335 'uitofp' 'y' <Predicate = true> <Delay = 6.46> <Core = "Int2Float">   --->   Core 106 'Int2Float' <Latency = 7> <II = 1> <Delay = 6.46> <FuncUnit> <Opcode : 'sitofp' 'uitofp'> <InPorts = 1> <OutPorts = 1>
+ST_65 : Operation 336 [7/9] (4.31ns)   --->   "%tmp_57_i_i = fadd float %tmp_54_i_i, 0x3FD6889F20000000" [voicerec/voicerec.cpp:38->voicerec/voicerec.cpp:46->voicerec/voicerec.cpp:210]   --->   Operation 336 'fadd' 'tmp_57_i_i' <Predicate = true> <Delay = 4.31> <Core = "FAddSub">   --->   Core 99 'FAddSub' <Latency = 8> <II = 1> <Delay = 4.31> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 66 <SV = 13> <Delay = 6.46>
+ST_66 : Operation 337 [5/8] (6.46ns)   --->   "%y = uitofp i32 %x_assign_to_int to float" [voicerec/voicerec.cpp:36->voicerec/voicerec.cpp:46->voicerec/voicerec.cpp:210]   --->   Operation 337 'uitofp' 'y' <Predicate = true> <Delay = 6.46> <Core = "Int2Float">   --->   Core 106 'Int2Float' <Latency = 7> <II = 1> <Delay = 6.46> <FuncUnit> <Opcode : 'sitofp' 'uitofp'> <InPorts = 1> <OutPorts = 1>
+ST_66 : Operation 338 [6/9] (4.31ns)   --->   "%tmp_57_i_i = fadd float %tmp_54_i_i, 0x3FD6889F20000000" [voicerec/voicerec.cpp:38->voicerec/voicerec.cpp:46->voicerec/voicerec.cpp:210]   --->   Operation 338 'fadd' 'tmp_57_i_i' <Predicate = true> <Delay = 4.31> <Core = "FAddSub">   --->   Core 99 'FAddSub' <Latency = 8> <II = 1> <Delay = 4.31> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 67 <SV = 14> <Delay = 6.46>
+ST_67 : Operation 339 [4/8] (6.46ns)   --->   "%y = uitofp i32 %x_assign_to_int to float" [voicerec/voicerec.cpp:36->voicerec/voicerec.cpp:46->voicerec/voicerec.cpp:210]   --->   Operation 339 'uitofp' 'y' <Predicate = true> <Delay = 6.46> <Core = "Int2Float">   --->   Core 106 'Int2Float' <Latency = 7> <II = 1> <Delay = 6.46> <FuncUnit> <Opcode : 'sitofp' 'uitofp'> <InPorts = 1> <OutPorts = 1>
+ST_67 : Operation 340 [5/9] (4.31ns)   --->   "%tmp_57_i_i = fadd float %tmp_54_i_i, 0x3FD6889F20000000" [voicerec/voicerec.cpp:38->voicerec/voicerec.cpp:46->voicerec/voicerec.cpp:210]   --->   Operation 340 'fadd' 'tmp_57_i_i' <Predicate = true> <Delay = 4.31> <Core = "FAddSub">   --->   Core 99 'FAddSub' <Latency = 8> <II = 1> <Delay = 4.31> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 68 <SV = 15> <Delay = 6.46>
+ST_68 : Operation 341 [3/8] (6.46ns)   --->   "%y = uitofp i32 %x_assign_to_int to float" [voicerec/voicerec.cpp:36->voicerec/voicerec.cpp:46->voicerec/voicerec.cpp:210]   --->   Operation 341 'uitofp' 'y' <Predicate = true> <Delay = 6.46> <Core = "Int2Float">   --->   Core 106 'Int2Float' <Latency = 7> <II = 1> <Delay = 6.46> <FuncUnit> <Opcode : 'sitofp' 'uitofp'> <InPorts = 1> <OutPorts = 1>
+ST_68 : Operation 342 [4/9] (4.31ns)   --->   "%tmp_57_i_i = fadd float %tmp_54_i_i, 0x3FD6889F20000000" [voicerec/voicerec.cpp:38->voicerec/voicerec.cpp:46->voicerec/voicerec.cpp:210]   --->   Operation 342 'fadd' 'tmp_57_i_i' <Predicate = true> <Delay = 4.31> <Core = "FAddSub">   --->   Core 99 'FAddSub' <Latency = 8> <II = 1> <Delay = 4.31> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 69 <SV = 16> <Delay = 6.46>
+ST_69 : Operation 343 [2/8] (6.46ns)   --->   "%y = uitofp i32 %x_assign_to_int to float" [voicerec/voicerec.cpp:36->voicerec/voicerec.cpp:46->voicerec/voicerec.cpp:210]   --->   Operation 343 'uitofp' 'y' <Predicate = true> <Delay = 6.46> <Core = "Int2Float">   --->   Core 106 'Int2Float' <Latency = 7> <II = 1> <Delay = 6.46> <FuncUnit> <Opcode : 'sitofp' 'uitofp'> <InPorts = 1> <OutPorts = 1>
+ST_69 : Operation 344 [3/9] (4.31ns)   --->   "%tmp_57_i_i = fadd float %tmp_54_i_i, 0x3FD6889F20000000" [voicerec/voicerec.cpp:38->voicerec/voicerec.cpp:46->voicerec/voicerec.cpp:210]   --->   Operation 344 'fadd' 'tmp_57_i_i' <Predicate = true> <Delay = 4.31> <Core = "FAddSub">   --->   Core 99 'FAddSub' <Latency = 8> <II = 1> <Delay = 4.31> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 70 <SV = 17> <Delay = 6.46>
+ST_70 : Operation 345 [1/8] (6.46ns)   --->   "%y = uitofp i32 %x_assign_to_int to float" [voicerec/voicerec.cpp:36->voicerec/voicerec.cpp:46->voicerec/voicerec.cpp:210]   --->   Operation 345 'uitofp' 'y' <Predicate = true> <Delay = 6.46> <Core = "Int2Float">   --->   Core 106 'Int2Float' <Latency = 7> <II = 1> <Delay = 6.46> <FuncUnit> <Opcode : 'sitofp' 'uitofp'> <InPorts = 1> <OutPorts = 1>
+ST_70 : Operation 346 [2/9] (4.31ns)   --->   "%tmp_57_i_i = fadd float %tmp_54_i_i, 0x3FD6889F20000000" [voicerec/voicerec.cpp:38->voicerec/voicerec.cpp:46->voicerec/voicerec.cpp:210]   --->   Operation 346 'fadd' 'tmp_57_i_i' <Predicate = true> <Delay = 4.31> <Core = "FAddSub">   --->   Core 99 'FAddSub' <Latency = 8> <II = 1> <Delay = 4.31> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 71 <SV = 18> <Delay = 4.34>
+ST_71 : Operation 347 [5/5] (4.34ns)   --->   "%y_1 = fmul float %y, 0x3E80000000000000" [voicerec/voicerec.cpp:37->voicerec/voicerec.cpp:46->voicerec/voicerec.cpp:210]   --->   Operation 347 'fmul' 'y_1' <Predicate = true> <Delay = 4.34> <Core = "FMul">   --->   Core 100 'FMul' <Latency = 4> <II = 1> <Delay = 4.34> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_71 : Operation 348 [1/9] (4.31ns)   --->   "%tmp_57_i_i = fadd float %tmp_54_i_i, 0x3FD6889F20000000" [voicerec/voicerec.cpp:38->voicerec/voicerec.cpp:46->voicerec/voicerec.cpp:210]   --->   Operation 348 'fadd' 'tmp_57_i_i' <Predicate = true> <Delay = 4.31> <Core = "FAddSub">   --->   Core 99 'FAddSub' <Latency = 8> <II = 1> <Delay = 4.31> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 72 <SV = 19> <Delay = 4.34>
+ST_72 : Operation 349 [4/5] (4.34ns)   --->   "%y_1 = fmul float %y, 0x3E80000000000000" [voicerec/voicerec.cpp:37->voicerec/voicerec.cpp:46->voicerec/voicerec.cpp:210]   --->   Operation 349 'fmul' 'y_1' <Predicate = true> <Delay = 4.34> <Core = "FMul">   --->   Core 100 'FMul' <Latency = 4> <II = 1> <Delay = 4.34> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_72 : Operation 350 [30/30] (3.13ns)   --->   "%tmp_58_i_i = fdiv float 0x3FFB9D3460000000, %tmp_57_i_i" [voicerec/voicerec.cpp:38->voicerec/voicerec.cpp:46->voicerec/voicerec.cpp:210]   --->   Operation 350 'fdiv' 'tmp_58_i_i' <Predicate = true> <Delay = 3.13> <Core = "FDiv">   --->   Core 101 'FDiv' <Latency = 29> <II = 1> <Delay = 3.13> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 73 <SV = 20> <Delay = 4.34>
+ST_73 : Operation 351 [3/5] (4.34ns)   --->   "%y_1 = fmul float %y, 0x3E80000000000000" [voicerec/voicerec.cpp:37->voicerec/voicerec.cpp:46->voicerec/voicerec.cpp:210]   --->   Operation 351 'fmul' 'y_1' <Predicate = true> <Delay = 4.34> <Core = "FMul">   --->   Core 100 'FMul' <Latency = 4> <II = 1> <Delay = 4.34> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_73 : Operation 352 [29/30] (3.13ns)   --->   "%tmp_58_i_i = fdiv float 0x3FFB9D3460000000, %tmp_57_i_i" [voicerec/voicerec.cpp:38->voicerec/voicerec.cpp:46->voicerec/voicerec.cpp:210]   --->   Operation 352 'fdiv' 'tmp_58_i_i' <Predicate = true> <Delay = 3.13> <Core = "FDiv">   --->   Core 101 'FDiv' <Latency = 29> <II = 1> <Delay = 3.13> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 74 <SV = 21> <Delay = 4.34>
+ST_74 : Operation 353 [2/5] (4.34ns)   --->   "%y_1 = fmul float %y, 0x3E80000000000000" [voicerec/voicerec.cpp:37->voicerec/voicerec.cpp:46->voicerec/voicerec.cpp:210]   --->   Operation 353 'fmul' 'y_1' <Predicate = true> <Delay = 4.34> <Core = "FMul">   --->   Core 100 'FMul' <Latency = 4> <II = 1> <Delay = 4.34> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_74 : Operation 354 [28/30] (3.13ns)   --->   "%tmp_58_i_i = fdiv float 0x3FFB9D3460000000, %tmp_57_i_i" [voicerec/voicerec.cpp:38->voicerec/voicerec.cpp:46->voicerec/voicerec.cpp:210]   --->   Operation 354 'fdiv' 'tmp_58_i_i' <Predicate = true> <Delay = 3.13> <Core = "FDiv">   --->   Core 101 'FDiv' <Latency = 29> <II = 1> <Delay = 3.13> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 75 <SV = 22> <Delay = 4.34>
+ST_75 : Operation 355 [1/5] (4.34ns)   --->   "%y_1 = fmul float %y, 0x3E80000000000000" [voicerec/voicerec.cpp:37->voicerec/voicerec.cpp:46->voicerec/voicerec.cpp:210]   --->   Operation 355 'fmul' 'y_1' <Predicate = true> <Delay = 4.34> <Core = "FMul">   --->   Core 100 'FMul' <Latency = 4> <II = 1> <Delay = 4.34> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_75 : Operation 356 [27/30] (3.13ns)   --->   "%tmp_58_i_i = fdiv float 0x3FFB9D3460000000, %tmp_57_i_i" [voicerec/voicerec.cpp:38->voicerec/voicerec.cpp:46->voicerec/voicerec.cpp:210]   --->   Operation 356 'fdiv' 'tmp_58_i_i' <Predicate = true> <Delay = 3.13> <Core = "FDiv">   --->   Core 101 'FDiv' <Latency = 29> <II = 1> <Delay = 3.13> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 76 <SV = 23> <Delay = 4.31>
+ST_76 : Operation 357 [9/9] (4.31ns)   --->   "%tmp_53_i_i = fadd float %y_1, 0xC05F0E6EE0000000" [voicerec/voicerec.cpp:38->voicerec/voicerec.cpp:46->voicerec/voicerec.cpp:210]   --->   Operation 357 'fadd' 'tmp_53_i_i' <Predicate = true> <Delay = 4.31> <Core = "FAddSub">   --->   Core 99 'FAddSub' <Latency = 8> <II = 1> <Delay = 4.31> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_76 : Operation 358 [26/30] (3.13ns)   --->   "%tmp_58_i_i = fdiv float 0x3FFB9D3460000000, %tmp_57_i_i" [voicerec/voicerec.cpp:38->voicerec/voicerec.cpp:46->voicerec/voicerec.cpp:210]   --->   Operation 358 'fdiv' 'tmp_58_i_i' <Predicate = true> <Delay = 3.13> <Core = "FDiv">   --->   Core 101 'FDiv' <Latency = 29> <II = 1> <Delay = 3.13> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 77 <SV = 24> <Delay = 4.31>
+ST_77 : Operation 359 [8/9] (4.31ns)   --->   "%tmp_53_i_i = fadd float %y_1, 0xC05F0E6EE0000000" [voicerec/voicerec.cpp:38->voicerec/voicerec.cpp:46->voicerec/voicerec.cpp:210]   --->   Operation 359 'fadd' 'tmp_53_i_i' <Predicate = true> <Delay = 4.31> <Core = "FAddSub">   --->   Core 99 'FAddSub' <Latency = 8> <II = 1> <Delay = 4.31> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_77 : Operation 360 [25/30] (3.13ns)   --->   "%tmp_58_i_i = fdiv float 0x3FFB9D3460000000, %tmp_57_i_i" [voicerec/voicerec.cpp:38->voicerec/voicerec.cpp:46->voicerec/voicerec.cpp:210]   --->   Operation 360 'fdiv' 'tmp_58_i_i' <Predicate = true> <Delay = 3.13> <Core = "FDiv">   --->   Core 101 'FDiv' <Latency = 29> <II = 1> <Delay = 3.13> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 78 <SV = 25> <Delay = 4.31>
+ST_78 : Operation 361 [7/9] (4.31ns)   --->   "%tmp_53_i_i = fadd float %y_1, 0xC05F0E6EE0000000" [voicerec/voicerec.cpp:38->voicerec/voicerec.cpp:46->voicerec/voicerec.cpp:210]   --->   Operation 361 'fadd' 'tmp_53_i_i' <Predicate = true> <Delay = 4.31> <Core = "FAddSub">   --->   Core 99 'FAddSub' <Latency = 8> <II = 1> <Delay = 4.31> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_78 : Operation 362 [24/30] (3.13ns)   --->   "%tmp_58_i_i = fdiv float 0x3FFB9D3460000000, %tmp_57_i_i" [voicerec/voicerec.cpp:38->voicerec/voicerec.cpp:46->voicerec/voicerec.cpp:210]   --->   Operation 362 'fdiv' 'tmp_58_i_i' <Predicate = true> <Delay = 3.13> <Core = "FDiv">   --->   Core 101 'FDiv' <Latency = 29> <II = 1> <Delay = 3.13> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 79 <SV = 26> <Delay = 4.31>
+ST_79 : Operation 363 [6/9] (4.31ns)   --->   "%tmp_53_i_i = fadd float %y_1, 0xC05F0E6EE0000000" [voicerec/voicerec.cpp:38->voicerec/voicerec.cpp:46->voicerec/voicerec.cpp:210]   --->   Operation 363 'fadd' 'tmp_53_i_i' <Predicate = true> <Delay = 4.31> <Core = "FAddSub">   --->   Core 99 'FAddSub' <Latency = 8> <II = 1> <Delay = 4.31> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_79 : Operation 364 [23/30] (3.13ns)   --->   "%tmp_58_i_i = fdiv float 0x3FFB9D3460000000, %tmp_57_i_i" [voicerec/voicerec.cpp:38->voicerec/voicerec.cpp:46->voicerec/voicerec.cpp:210]   --->   Operation 364 'fdiv' 'tmp_58_i_i' <Predicate = true> <Delay = 3.13> <Core = "FDiv">   --->   Core 101 'FDiv' <Latency = 29> <II = 1> <Delay = 3.13> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 80 <SV = 27> <Delay = 4.34>
+ST_80 : Operation 365 [5/9] (4.31ns)   --->   "%tmp_53_i_i = fadd float %y_1, 0xC05F0E6EE0000000" [voicerec/voicerec.cpp:38->voicerec/voicerec.cpp:46->voicerec/voicerec.cpp:210]   --->   Operation 365 'fadd' 'tmp_53_i_i' <Predicate = true> <Delay = 4.31> <Core = "FAddSub">   --->   Core 99 'FAddSub' <Latency = 8> <II = 1> <Delay = 4.31> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_80 : Operation 366 [5/5] (4.34ns)   --->   "%tmp_55_i_i = fmul float %tmp_54_i_i, 0x3FF7F7EEA0000000" [voicerec/voicerec.cpp:38->voicerec/voicerec.cpp:46->voicerec/voicerec.cpp:210]   --->   Operation 366 'fmul' 'tmp_55_i_i' <Predicate = true> <Delay = 4.34> <Core = "FMul">   --->   Core 100 'FMul' <Latency = 4> <II = 1> <Delay = 4.34> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_80 : Operation 367 [22/30] (3.13ns)   --->   "%tmp_58_i_i = fdiv float 0x3FFB9D3460000000, %tmp_57_i_i" [voicerec/voicerec.cpp:38->voicerec/voicerec.cpp:46->voicerec/voicerec.cpp:210]   --->   Operation 367 'fdiv' 'tmp_58_i_i' <Predicate = true> <Delay = 3.13> <Core = "FDiv">   --->   Core 101 'FDiv' <Latency = 29> <II = 1> <Delay = 3.13> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 81 <SV = 28> <Delay = 4.34>
+ST_81 : Operation 368 [4/9] (4.31ns)   --->   "%tmp_53_i_i = fadd float %y_1, 0xC05F0E6EE0000000" [voicerec/voicerec.cpp:38->voicerec/voicerec.cpp:46->voicerec/voicerec.cpp:210]   --->   Operation 368 'fadd' 'tmp_53_i_i' <Predicate = true> <Delay = 4.31> <Core = "FAddSub">   --->   Core 99 'FAddSub' <Latency = 8> <II = 1> <Delay = 4.31> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_81 : Operation 369 [4/5] (4.34ns)   --->   "%tmp_55_i_i = fmul float %tmp_54_i_i, 0x3FF7F7EEA0000000" [voicerec/voicerec.cpp:38->voicerec/voicerec.cpp:46->voicerec/voicerec.cpp:210]   --->   Operation 369 'fmul' 'tmp_55_i_i' <Predicate = true> <Delay = 4.34> <Core = "FMul">   --->   Core 100 'FMul' <Latency = 4> <II = 1> <Delay = 4.34> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_81 : Operation 370 [21/30] (3.13ns)   --->   "%tmp_58_i_i = fdiv float 0x3FFB9D3460000000, %tmp_57_i_i" [voicerec/voicerec.cpp:38->voicerec/voicerec.cpp:46->voicerec/voicerec.cpp:210]   --->   Operation 370 'fdiv' 'tmp_58_i_i' <Predicate = true> <Delay = 3.13> <Core = "FDiv">   --->   Core 101 'FDiv' <Latency = 29> <II = 1> <Delay = 3.13> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 82 <SV = 29> <Delay = 4.34>
+ST_82 : Operation 371 [3/9] (4.31ns)   --->   "%tmp_53_i_i = fadd float %y_1, 0xC05F0E6EE0000000" [voicerec/voicerec.cpp:38->voicerec/voicerec.cpp:46->voicerec/voicerec.cpp:210]   --->   Operation 371 'fadd' 'tmp_53_i_i' <Predicate = true> <Delay = 4.31> <Core = "FAddSub">   --->   Core 99 'FAddSub' <Latency = 8> <II = 1> <Delay = 4.31> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_82 : Operation 372 [3/5] (4.34ns)   --->   "%tmp_55_i_i = fmul float %tmp_54_i_i, 0x3FF7F7EEA0000000" [voicerec/voicerec.cpp:38->voicerec/voicerec.cpp:46->voicerec/voicerec.cpp:210]   --->   Operation 372 'fmul' 'tmp_55_i_i' <Predicate = true> <Delay = 4.34> <Core = "FMul">   --->   Core 100 'FMul' <Latency = 4> <II = 1> <Delay = 4.34> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_82 : Operation 373 [20/30] (3.13ns)   --->   "%tmp_58_i_i = fdiv float 0x3FFB9D3460000000, %tmp_57_i_i" [voicerec/voicerec.cpp:38->voicerec/voicerec.cpp:46->voicerec/voicerec.cpp:210]   --->   Operation 373 'fdiv' 'tmp_58_i_i' <Predicate = true> <Delay = 3.13> <Core = "FDiv">   --->   Core 101 'FDiv' <Latency = 29> <II = 1> <Delay = 3.13> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 83 <SV = 30> <Delay = 4.34>
+ST_83 : Operation 374 [2/9] (4.31ns)   --->   "%tmp_53_i_i = fadd float %y_1, 0xC05F0E6EE0000000" [voicerec/voicerec.cpp:38->voicerec/voicerec.cpp:46->voicerec/voicerec.cpp:210]   --->   Operation 374 'fadd' 'tmp_53_i_i' <Predicate = true> <Delay = 4.31> <Core = "FAddSub">   --->   Core 99 'FAddSub' <Latency = 8> <II = 1> <Delay = 4.31> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_83 : Operation 375 [2/5] (4.34ns)   --->   "%tmp_55_i_i = fmul float %tmp_54_i_i, 0x3FF7F7EEA0000000" [voicerec/voicerec.cpp:38->voicerec/voicerec.cpp:46->voicerec/voicerec.cpp:210]   --->   Operation 375 'fmul' 'tmp_55_i_i' <Predicate = true> <Delay = 4.34> <Core = "FMul">   --->   Core 100 'FMul' <Latency = 4> <II = 1> <Delay = 4.34> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_83 : Operation 376 [19/30] (3.13ns)   --->   "%tmp_58_i_i = fdiv float 0x3FFB9D3460000000, %tmp_57_i_i" [voicerec/voicerec.cpp:38->voicerec/voicerec.cpp:46->voicerec/voicerec.cpp:210]   --->   Operation 376 'fdiv' 'tmp_58_i_i' <Predicate = true> <Delay = 3.13> <Core = "FDiv">   --->   Core 101 'FDiv' <Latency = 29> <II = 1> <Delay = 3.13> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 84 <SV = 31> <Delay = 4.34>
+ST_84 : Operation 377 [1/9] (4.31ns)   --->   "%tmp_53_i_i = fadd float %y_1, 0xC05F0E6EE0000000" [voicerec/voicerec.cpp:38->voicerec/voicerec.cpp:46->voicerec/voicerec.cpp:210]   --->   Operation 377 'fadd' 'tmp_53_i_i' <Predicate = true> <Delay = 4.31> <Core = "FAddSub">   --->   Core 99 'FAddSub' <Latency = 8> <II = 1> <Delay = 4.31> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_84 : Operation 378 [1/5] (4.34ns)   --->   "%tmp_55_i_i = fmul float %tmp_54_i_i, 0x3FF7F7EEA0000000" [voicerec/voicerec.cpp:38->voicerec/voicerec.cpp:46->voicerec/voicerec.cpp:210]   --->   Operation 378 'fmul' 'tmp_55_i_i' <Predicate = true> <Delay = 4.34> <Core = "FMul">   --->   Core 100 'FMul' <Latency = 4> <II = 1> <Delay = 4.34> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_84 : Operation 379 [18/30] (3.13ns)   --->   "%tmp_58_i_i = fdiv float 0x3FFB9D3460000000, %tmp_57_i_i" [voicerec/voicerec.cpp:38->voicerec/voicerec.cpp:46->voicerec/voicerec.cpp:210]   --->   Operation 379 'fdiv' 'tmp_58_i_i' <Predicate = true> <Delay = 3.13> <Core = "FDiv">   --->   Core 101 'FDiv' <Latency = 29> <II = 1> <Delay = 3.13> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 85 <SV = 32> <Delay = 4.31>
+ST_85 : Operation 380 [9/9] (4.31ns)   --->   "%tmp_56_i_i = fsub float %tmp_53_i_i, %tmp_55_i_i" [voicerec/voicerec.cpp:38->voicerec/voicerec.cpp:46->voicerec/voicerec.cpp:210]   --->   Operation 380 'fsub' 'tmp_56_i_i' <Predicate = true> <Delay = 4.31> <Core = "FAddSub">   --->   Core 99 'FAddSub' <Latency = 8> <II = 1> <Delay = 4.31> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_85 : Operation 381 [17/30] (3.13ns)   --->   "%tmp_58_i_i = fdiv float 0x3FFB9D3460000000, %tmp_57_i_i" [voicerec/voicerec.cpp:38->voicerec/voicerec.cpp:46->voicerec/voicerec.cpp:210]   --->   Operation 381 'fdiv' 'tmp_58_i_i' <Predicate = true> <Delay = 3.13> <Core = "FDiv">   --->   Core 101 'FDiv' <Latency = 29> <II = 1> <Delay = 3.13> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 86 <SV = 33> <Delay = 4.31>
+ST_86 : Operation 382 [8/9] (4.31ns)   --->   "%tmp_56_i_i = fsub float %tmp_53_i_i, %tmp_55_i_i" [voicerec/voicerec.cpp:38->voicerec/voicerec.cpp:46->voicerec/voicerec.cpp:210]   --->   Operation 382 'fsub' 'tmp_56_i_i' <Predicate = true> <Delay = 4.31> <Core = "FAddSub">   --->   Core 99 'FAddSub' <Latency = 8> <II = 1> <Delay = 4.31> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_86 : Operation 383 [16/30] (3.13ns)   --->   "%tmp_58_i_i = fdiv float 0x3FFB9D3460000000, %tmp_57_i_i" [voicerec/voicerec.cpp:38->voicerec/voicerec.cpp:46->voicerec/voicerec.cpp:210]   --->   Operation 383 'fdiv' 'tmp_58_i_i' <Predicate = true> <Delay = 3.13> <Core = "FDiv">   --->   Core 101 'FDiv' <Latency = 29> <II = 1> <Delay = 3.13> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 87 <SV = 34> <Delay = 4.31>
+ST_87 : Operation 384 [7/9] (4.31ns)   --->   "%tmp_56_i_i = fsub float %tmp_53_i_i, %tmp_55_i_i" [voicerec/voicerec.cpp:38->voicerec/voicerec.cpp:46->voicerec/voicerec.cpp:210]   --->   Operation 384 'fsub' 'tmp_56_i_i' <Predicate = true> <Delay = 4.31> <Core = "FAddSub">   --->   Core 99 'FAddSub' <Latency = 8> <II = 1> <Delay = 4.31> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_87 : Operation 385 [15/30] (3.13ns)   --->   "%tmp_58_i_i = fdiv float 0x3FFB9D3460000000, %tmp_57_i_i" [voicerec/voicerec.cpp:38->voicerec/voicerec.cpp:46->voicerec/voicerec.cpp:210]   --->   Operation 385 'fdiv' 'tmp_58_i_i' <Predicate = true> <Delay = 3.13> <Core = "FDiv">   --->   Core 101 'FDiv' <Latency = 29> <II = 1> <Delay = 3.13> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 88 <SV = 35> <Delay = 4.31>
+ST_88 : Operation 386 [6/9] (4.31ns)   --->   "%tmp_56_i_i = fsub float %tmp_53_i_i, %tmp_55_i_i" [voicerec/voicerec.cpp:38->voicerec/voicerec.cpp:46->voicerec/voicerec.cpp:210]   --->   Operation 386 'fsub' 'tmp_56_i_i' <Predicate = true> <Delay = 4.31> <Core = "FAddSub">   --->   Core 99 'FAddSub' <Latency = 8> <II = 1> <Delay = 4.31> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_88 : Operation 387 [14/30] (3.13ns)   --->   "%tmp_58_i_i = fdiv float 0x3FFB9D3460000000, %tmp_57_i_i" [voicerec/voicerec.cpp:38->voicerec/voicerec.cpp:46->voicerec/voicerec.cpp:210]   --->   Operation 387 'fdiv' 'tmp_58_i_i' <Predicate = true> <Delay = 3.13> <Core = "FDiv">   --->   Core 101 'FDiv' <Latency = 29> <II = 1> <Delay = 3.13> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 89 <SV = 36> <Delay = 4.31>
+ST_89 : Operation 388 [5/9] (4.31ns)   --->   "%tmp_56_i_i = fsub float %tmp_53_i_i, %tmp_55_i_i" [voicerec/voicerec.cpp:38->voicerec/voicerec.cpp:46->voicerec/voicerec.cpp:210]   --->   Operation 388 'fsub' 'tmp_56_i_i' <Predicate = true> <Delay = 4.31> <Core = "FAddSub">   --->   Core 99 'FAddSub' <Latency = 8> <II = 1> <Delay = 4.31> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_89 : Operation 389 [13/30] (3.13ns)   --->   "%tmp_58_i_i = fdiv float 0x3FFB9D3460000000, %tmp_57_i_i" [voicerec/voicerec.cpp:38->voicerec/voicerec.cpp:46->voicerec/voicerec.cpp:210]   --->   Operation 389 'fdiv' 'tmp_58_i_i' <Predicate = true> <Delay = 3.13> <Core = "FDiv">   --->   Core 101 'FDiv' <Latency = 29> <II = 1> <Delay = 3.13> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 90 <SV = 37> <Delay = 4.31>
+ST_90 : Operation 390 [4/9] (4.31ns)   --->   "%tmp_56_i_i = fsub float %tmp_53_i_i, %tmp_55_i_i" [voicerec/voicerec.cpp:38->voicerec/voicerec.cpp:46->voicerec/voicerec.cpp:210]   --->   Operation 390 'fsub' 'tmp_56_i_i' <Predicate = true> <Delay = 4.31> <Core = "FAddSub">   --->   Core 99 'FAddSub' <Latency = 8> <II = 1> <Delay = 4.31> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_90 : Operation 391 [12/30] (3.13ns)   --->   "%tmp_58_i_i = fdiv float 0x3FFB9D3460000000, %tmp_57_i_i" [voicerec/voicerec.cpp:38->voicerec/voicerec.cpp:46->voicerec/voicerec.cpp:210]   --->   Operation 391 'fdiv' 'tmp_58_i_i' <Predicate = true> <Delay = 3.13> <Core = "FDiv">   --->   Core 101 'FDiv' <Latency = 29> <II = 1> <Delay = 3.13> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 91 <SV = 38> <Delay = 4.31>
+ST_91 : Operation 392 [3/9] (4.31ns)   --->   "%tmp_56_i_i = fsub float %tmp_53_i_i, %tmp_55_i_i" [voicerec/voicerec.cpp:38->voicerec/voicerec.cpp:46->voicerec/voicerec.cpp:210]   --->   Operation 392 'fsub' 'tmp_56_i_i' <Predicate = true> <Delay = 4.31> <Core = "FAddSub">   --->   Core 99 'FAddSub' <Latency = 8> <II = 1> <Delay = 4.31> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_91 : Operation 393 [11/30] (3.13ns)   --->   "%tmp_58_i_i = fdiv float 0x3FFB9D3460000000, %tmp_57_i_i" [voicerec/voicerec.cpp:38->voicerec/voicerec.cpp:46->voicerec/voicerec.cpp:210]   --->   Operation 393 'fdiv' 'tmp_58_i_i' <Predicate = true> <Delay = 3.13> <Core = "FDiv">   --->   Core 101 'FDiv' <Latency = 29> <II = 1> <Delay = 3.13> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 92 <SV = 39> <Delay = 4.31>
+ST_92 : Operation 394 [2/9] (4.31ns)   --->   "%tmp_56_i_i = fsub float %tmp_53_i_i, %tmp_55_i_i" [voicerec/voicerec.cpp:38->voicerec/voicerec.cpp:46->voicerec/voicerec.cpp:210]   --->   Operation 394 'fsub' 'tmp_56_i_i' <Predicate = true> <Delay = 4.31> <Core = "FAddSub">   --->   Core 99 'FAddSub' <Latency = 8> <II = 1> <Delay = 4.31> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_92 : Operation 395 [10/30] (3.13ns)   --->   "%tmp_58_i_i = fdiv float 0x3FFB9D3460000000, %tmp_57_i_i" [voicerec/voicerec.cpp:38->voicerec/voicerec.cpp:46->voicerec/voicerec.cpp:210]   --->   Operation 395 'fdiv' 'tmp_58_i_i' <Predicate = true> <Delay = 3.13> <Core = "FDiv">   --->   Core 101 'FDiv' <Latency = 29> <II = 1> <Delay = 3.13> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 93 <SV = 40> <Delay = 4.31>
+ST_93 : Operation 396 [1/9] (4.31ns)   --->   "%tmp_56_i_i = fsub float %tmp_53_i_i, %tmp_55_i_i" [voicerec/voicerec.cpp:38->voicerec/voicerec.cpp:46->voicerec/voicerec.cpp:210]   --->   Operation 396 'fsub' 'tmp_56_i_i' <Predicate = true> <Delay = 4.31> <Core = "FAddSub">   --->   Core 99 'FAddSub' <Latency = 8> <II = 1> <Delay = 4.31> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_93 : Operation 397 [9/30] (3.13ns)   --->   "%tmp_58_i_i = fdiv float 0x3FFB9D3460000000, %tmp_57_i_i" [voicerec/voicerec.cpp:38->voicerec/voicerec.cpp:46->voicerec/voicerec.cpp:210]   --->   Operation 397 'fdiv' 'tmp_58_i_i' <Predicate = true> <Delay = 3.13> <Core = "FDiv">   --->   Core 101 'FDiv' <Latency = 29> <II = 1> <Delay = 3.13> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 94 <SV = 41> <Delay = 3.13>
+ST_94 : Operation 398 [8/30] (3.13ns)   --->   "%tmp_58_i_i = fdiv float 0x3FFB9D3460000000, %tmp_57_i_i" [voicerec/voicerec.cpp:38->voicerec/voicerec.cpp:46->voicerec/voicerec.cpp:210]   --->   Operation 398 'fdiv' 'tmp_58_i_i' <Predicate = true> <Delay = 3.13> <Core = "FDiv">   --->   Core 101 'FDiv' <Latency = 29> <II = 1> <Delay = 3.13> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 95 <SV = 42> <Delay = 3.13>
+ST_95 : Operation 399 [7/30] (3.13ns)   --->   "%tmp_58_i_i = fdiv float 0x3FFB9D3460000000, %tmp_57_i_i" [voicerec/voicerec.cpp:38->voicerec/voicerec.cpp:46->voicerec/voicerec.cpp:210]   --->   Operation 399 'fdiv' 'tmp_58_i_i' <Predicate = true> <Delay = 3.13> <Core = "FDiv">   --->   Core 101 'FDiv' <Latency = 29> <II = 1> <Delay = 3.13> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 96 <SV = 43> <Delay = 3.13>
+ST_96 : Operation 400 [6/30] (3.13ns)   --->   "%tmp_58_i_i = fdiv float 0x3FFB9D3460000000, %tmp_57_i_i" [voicerec/voicerec.cpp:38->voicerec/voicerec.cpp:46->voicerec/voicerec.cpp:210]   --->   Operation 400 'fdiv' 'tmp_58_i_i' <Predicate = true> <Delay = 3.13> <Core = "FDiv">   --->   Core 101 'FDiv' <Latency = 29> <II = 1> <Delay = 3.13> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 97 <SV = 44> <Delay = 3.13>
+ST_97 : Operation 401 [5/30] (3.13ns)   --->   "%tmp_58_i_i = fdiv float 0x3FFB9D3460000000, %tmp_57_i_i" [voicerec/voicerec.cpp:38->voicerec/voicerec.cpp:46->voicerec/voicerec.cpp:210]   --->   Operation 401 'fdiv' 'tmp_58_i_i' <Predicate = true> <Delay = 3.13> <Core = "FDiv">   --->   Core 101 'FDiv' <Latency = 29> <II = 1> <Delay = 3.13> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 98 <SV = 45> <Delay = 3.13>
+ST_98 : Operation 402 [4/30] (3.13ns)   --->   "%tmp_58_i_i = fdiv float 0x3FFB9D3460000000, %tmp_57_i_i" [voicerec/voicerec.cpp:38->voicerec/voicerec.cpp:46->voicerec/voicerec.cpp:210]   --->   Operation 402 'fdiv' 'tmp_58_i_i' <Predicate = true> <Delay = 3.13> <Core = "FDiv">   --->   Core 101 'FDiv' <Latency = 29> <II = 1> <Delay = 3.13> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 99 <SV = 46> <Delay = 3.13>
+ST_99 : Operation 403 [3/30] (3.13ns)   --->   "%tmp_58_i_i = fdiv float 0x3FFB9D3460000000, %tmp_57_i_i" [voicerec/voicerec.cpp:38->voicerec/voicerec.cpp:46->voicerec/voicerec.cpp:210]   --->   Operation 403 'fdiv' 'tmp_58_i_i' <Predicate = true> <Delay = 3.13> <Core = "FDiv">   --->   Core 101 'FDiv' <Latency = 29> <II = 1> <Delay = 3.13> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 100 <SV = 47> <Delay = 3.13>
+ST_100 : Operation 404 [2/30] (3.13ns)   --->   "%tmp_58_i_i = fdiv float 0x3FFB9D3460000000, %tmp_57_i_i" [voicerec/voicerec.cpp:38->voicerec/voicerec.cpp:46->voicerec/voicerec.cpp:210]   --->   Operation 404 'fdiv' 'tmp_58_i_i' <Predicate = true> <Delay = 3.13> <Core = "FDiv">   --->   Core 101 'FDiv' <Latency = 29> <II = 1> <Delay = 3.13> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 101 <SV = 48> <Delay = 3.13>
+ST_101 : Operation 405 [1/30] (3.13ns)   --->   "%tmp_58_i_i = fdiv float 0x3FFB9D3460000000, %tmp_57_i_i" [voicerec/voicerec.cpp:38->voicerec/voicerec.cpp:46->voicerec/voicerec.cpp:210]   --->   Operation 405 'fdiv' 'tmp_58_i_i' <Predicate = true> <Delay = 3.13> <Core = "FDiv">   --->   Core 101 'FDiv' <Latency = 29> <II = 1> <Delay = 3.13> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 102 <SV = 49> <Delay = 4.31>
+ST_102 : Operation 406 [9/9] (4.31ns)   --->   "%tmp_59_i_i = fsub float %tmp_56_i_i, %tmp_58_i_i" [voicerec/voicerec.cpp:38->voicerec/voicerec.cpp:46->voicerec/voicerec.cpp:210]   --->   Operation 406 'fsub' 'tmp_59_i_i' <Predicate = true> <Delay = 4.31> <Core = "FAddSub">   --->   Core 99 'FAddSub' <Latency = 8> <II = 1> <Delay = 4.31> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 103 <SV = 50> <Delay = 4.31>
+ST_103 : Operation 407 [8/9] (4.31ns)   --->   "%tmp_59_i_i = fsub float %tmp_56_i_i, %tmp_58_i_i" [voicerec/voicerec.cpp:38->voicerec/voicerec.cpp:46->voicerec/voicerec.cpp:210]   --->   Operation 407 'fsub' 'tmp_59_i_i' <Predicate = true> <Delay = 4.31> <Core = "FAddSub">   --->   Core 99 'FAddSub' <Latency = 8> <II = 1> <Delay = 4.31> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 104 <SV = 51> <Delay = 4.31>
+ST_104 : Operation 408 [7/9] (4.31ns)   --->   "%tmp_59_i_i = fsub float %tmp_56_i_i, %tmp_58_i_i" [voicerec/voicerec.cpp:38->voicerec/voicerec.cpp:46->voicerec/voicerec.cpp:210]   --->   Operation 408 'fsub' 'tmp_59_i_i' <Predicate = true> <Delay = 4.31> <Core = "FAddSub">   --->   Core 99 'FAddSub' <Latency = 8> <II = 1> <Delay = 4.31> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 105 <SV = 52> <Delay = 4.31>
+ST_105 : Operation 409 [6/9] (4.31ns)   --->   "%tmp_59_i_i = fsub float %tmp_56_i_i, %tmp_58_i_i" [voicerec/voicerec.cpp:38->voicerec/voicerec.cpp:46->voicerec/voicerec.cpp:210]   --->   Operation 409 'fsub' 'tmp_59_i_i' <Predicate = true> <Delay = 4.31> <Core = "FAddSub">   --->   Core 99 'FAddSub' <Latency = 8> <II = 1> <Delay = 4.31> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 106 <SV = 53> <Delay = 4.31>
+ST_106 : Operation 410 [5/9] (4.31ns)   --->   "%tmp_59_i_i = fsub float %tmp_56_i_i, %tmp_58_i_i" [voicerec/voicerec.cpp:38->voicerec/voicerec.cpp:46->voicerec/voicerec.cpp:210]   --->   Operation 410 'fsub' 'tmp_59_i_i' <Predicate = true> <Delay = 4.31> <Core = "FAddSub">   --->   Core 99 'FAddSub' <Latency = 8> <II = 1> <Delay = 4.31> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 107 <SV = 54> <Delay = 4.31>
+ST_107 : Operation 411 [4/9] (4.31ns)   --->   "%tmp_59_i_i = fsub float %tmp_56_i_i, %tmp_58_i_i" [voicerec/voicerec.cpp:38->voicerec/voicerec.cpp:46->voicerec/voicerec.cpp:210]   --->   Operation 411 'fsub' 'tmp_59_i_i' <Predicate = true> <Delay = 4.31> <Core = "FAddSub">   --->   Core 99 'FAddSub' <Latency = 8> <II = 1> <Delay = 4.31> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 108 <SV = 55> <Delay = 4.31>
+ST_108 : Operation 412 [3/9] (4.31ns)   --->   "%tmp_59_i_i = fsub float %tmp_56_i_i, %tmp_58_i_i" [voicerec/voicerec.cpp:38->voicerec/voicerec.cpp:46->voicerec/voicerec.cpp:210]   --->   Operation 412 'fsub' 'tmp_59_i_i' <Predicate = true> <Delay = 4.31> <Core = "FAddSub">   --->   Core 99 'FAddSub' <Latency = 8> <II = 1> <Delay = 4.31> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 109 <SV = 56> <Delay = 4.31>
+ST_109 : Operation 413 [2/9] (4.31ns)   --->   "%tmp_59_i_i = fsub float %tmp_56_i_i, %tmp_58_i_i" [voicerec/voicerec.cpp:38->voicerec/voicerec.cpp:46->voicerec/voicerec.cpp:210]   --->   Operation 413 'fsub' 'tmp_59_i_i' <Predicate = true> <Delay = 4.31> <Core = "FAddSub">   --->   Core 99 'FAddSub' <Latency = 8> <II = 1> <Delay = 4.31> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 110 <SV = 57> <Delay = 4.31>
+ST_110 : Operation 414 [1/9] (4.31ns)   --->   "%tmp_59_i_i = fsub float %tmp_56_i_i, %tmp_58_i_i" [voicerec/voicerec.cpp:38->voicerec/voicerec.cpp:46->voicerec/voicerec.cpp:210]   --->   Operation 414 'fsub' 'tmp_59_i_i' <Predicate = true> <Delay = 4.31> <Core = "FAddSub">   --->   Core 99 'FAddSub' <Latency = 8> <II = 1> <Delay = 4.31> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 111 <SV = 58> <Delay = 4.34>
+ST_111 : Operation 415 [5/5] (4.34ns)   --->   "%tmp_i = fmul float %tmp_59_i_i, 0x3FE62E4300000000" [voicerec/voicerec.cpp:46->voicerec/voicerec.cpp:210]   --->   Operation 415 'fmul' 'tmp_i' <Predicate = true> <Delay = 4.34> <Core = "FMul">   --->   Core 100 'FMul' <Latency = 4> <II = 1> <Delay = 4.34> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 112 <SV = 59> <Delay = 4.34>
+ST_112 : Operation 416 [4/5] (4.34ns)   --->   "%tmp_i = fmul float %tmp_59_i_i, 0x3FE62E4300000000" [voicerec/voicerec.cpp:46->voicerec/voicerec.cpp:210]   --->   Operation 416 'fmul' 'tmp_i' <Predicate = true> <Delay = 4.34> <Core = "FMul">   --->   Core 100 'FMul' <Latency = 4> <II = 1> <Delay = 4.34> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 113 <SV = 60> <Delay = 4.34>
+ST_113 : Operation 417 [3/5] (4.34ns)   --->   "%tmp_i = fmul float %tmp_59_i_i, 0x3FE62E4300000000" [voicerec/voicerec.cpp:46->voicerec/voicerec.cpp:210]   --->   Operation 417 'fmul' 'tmp_i' <Predicate = true> <Delay = 4.34> <Core = "FMul">   --->   Core 100 'FMul' <Latency = 4> <II = 1> <Delay = 4.34> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 114 <SV = 61> <Delay = 4.34>
+ST_114 : Operation 418 [2/5] (4.34ns)   --->   "%tmp_i = fmul float %tmp_59_i_i, 0x3FE62E4300000000" [voicerec/voicerec.cpp:46->voicerec/voicerec.cpp:210]   --->   Operation 418 'fmul' 'tmp_i' <Predicate = true> <Delay = 4.34> <Core = "FMul">   --->   Core 100 'FMul' <Latency = 4> <II = 1> <Delay = 4.34> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 115 <SV = 62> <Delay = 4.34>
+ST_115 : Operation 419 [1/5] (4.34ns)   --->   "%tmp_i = fmul float %tmp_59_i_i, 0x3FE62E4300000000" [voicerec/voicerec.cpp:46->voicerec/voicerec.cpp:210]   --->   Operation 419 'fmul' 'tmp_i' <Predicate = true> <Delay = 4.34> <Core = "FMul">   --->   Core 100 'FMul' <Latency = 4> <II = 1> <Delay = 4.34> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 116 <SV = 63> <Delay = 3.81>
+ST_116 : Operation 420 [1/1] (1.66ns)   --->   "br label %13"   --->   Operation 420 'br' <Predicate = (!tmp_38)> <Delay = 1.66>
+ST_116 : Operation 421 [1/1] (0.00ns)   --->   "%storemerge = phi float [ %tmp_i, %12 ], [ 0.000000e+00, %11 ]" [voicerec/voicerec.cpp:46->voicerec/voicerec.cpp:210]   --->   Operation 421 'phi' 'storemerge' <Predicate = true> <Delay = 0.00>
+ST_116 : Operation 422 [1/1] (2.15ns)   --->   "store float %storemerge, float* %e_addr_1, align 4" [voicerec/voicerec.cpp:210]   --->   Operation 422 'store' <Predicate = true> <Delay = 2.15> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 882> <RAM>
+ST_116 : Operation 423 [1/1] (0.00ns)   --->   "br label %.preheader" [voicerec/voicerec.cpp:206]   --->   Operation 423 'br' <Predicate = true> <Delay = 0.00>
+
+State 117 <SV = 6> <Delay = 2.23>
+ST_117 : Operation 424 [1/1] (0.00ns)   --->   "%k_i = phi i4 [ 0, %14 ], [ %k, %19 ]"   --->   Operation 424 'phi' 'k_i' <Predicate = true> <Delay = 0.00>
+ST_117 : Operation 425 [1/1] (0.00ns)   --->   "%phi_mul = phi i9 [ 0, %14 ], [ %next_mul, %19 ]"   --->   Operation 425 'phi' 'phi_mul' <Predicate = true> <Delay = 0.00>
+ST_117 : Operation 426 [1/1] (2.11ns)   --->   "%next_mul = add i9 %phi_mul, 26"   --->   Operation 426 'add' 'next_mul' <Predicate = true> <Delay = 2.11> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.11> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_117 : Operation 427 [1/1] (1.44ns)   --->   "%exitcond1_i = icmp eq i4 %k_i, -2" [voicerec/voicerec.cpp:55->voicerec/voicerec.cpp:215]   --->   Operation 427 'icmp' 'exitcond1_i' <Predicate = true> <Delay = 1.44> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.44> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_117 : Operation 428 [1/1] (0.00ns)   --->   "%empty_14 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 14, i64 14, i64 14)"   --->   Operation 428 'speclooptripcount' 'empty_14' <Predicate = true> <Delay = 0.00>
+ST_117 : Operation 429 [1/1] (1.77ns)   --->   "%k = add i4 %k_i, 1" [voicerec/voicerec.cpp:55->voicerec/voicerec.cpp:215]   --->   Operation 429 'add' 'k' <Predicate = true> <Delay = 1.77> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.11> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_117 : Operation 430 [1/1] (0.00ns)   --->   "br i1 %exitcond1_i, label %dct_ii.exit, label %16" [voicerec/voicerec.cpp:55->voicerec/voicerec.cpp:215]   --->   Operation 430 'br' <Predicate = true> <Delay = 0.00>
+ST_117 : Operation 431 [1/1] (1.44ns)   --->   "%tmp_i_15 = icmp eq i4 %k_i, 0" [voicerec/voicerec.cpp:57->voicerec/voicerec.cpp:215]   --->   Operation 431 'icmp' 'tmp_i_15' <Predicate = (!exitcond1_i)> <Delay = 1.44> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.44> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_117 : Operation 432 [1/1] (0.79ns)   --->   "%s = select i1 %tmp_i_15, float 0x3FE6A09E60000000, float 1.000000e+00" [voicerec/voicerec.cpp:57->voicerec/voicerec.cpp:215]   --->   Operation 432 'select' 's' <Predicate = (!exitcond1_i)> <Delay = 0.79> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.79> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_117 : Operation 433 [1/1] (0.00ns)   --->   "%tmp_i1_cast = zext i4 %k_i to i11" [voicerec/voicerec.cpp:61->voicerec/voicerec.cpp:215]   --->   Operation 433 'zext' 'tmp_i1_cast' <Predicate = (!exitcond1_i)> <Delay = 0.00>
+ST_117 : Operation 434 [1/1] (2.12ns)   --->   "%tmp_45 = add i11 %tmp_41, %tmp_i1_cast" [voicerec/voicerec.cpp:61->voicerec/voicerec.cpp:215]   --->   Operation 434 'add' 'tmp_45' <Predicate = (!exitcond1_i)> <Delay = 2.12> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.11> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_117 : Operation 435 [1/1] (0.00ns)   --->   "%tmp_45_cast = sext i11 %tmp_45 to i64" [voicerec/voicerec.cpp:61->voicerec/voicerec.cpp:215]   --->   Operation 435 'sext' 'tmp_45_cast' <Predicate = (!exitcond1_i)> <Delay = 0.00>
+ST_117 : Operation 436 [1/1] (0.00ns)   --->   "%ret_addr = getelementptr [882 x float]* %ret, i64 0, i64 %tmp_45_cast" [voicerec/voicerec.cpp:61->voicerec/voicerec.cpp:215]   --->   Operation 436 'getelementptr' 'ret_addr' <Predicate = (!exitcond1_i)> <Delay = 0.00>
+ST_117 : Operation 437 [1/1] (1.66ns)   --->   "br label %17" [voicerec/voicerec.cpp:58->voicerec/voicerec.cpp:215]   --->   Operation 437 'br' <Predicate = (!exitcond1_i)> <Delay = 1.66>
+ST_117 : Operation 438 [1/1] (0.00ns)   --->   "ret void" [voicerec/voicerec.cpp:217]   --->   Operation 438 'ret' <Predicate = (exitcond1_i)> <Delay = 0.00>
+
+State 118 <SV = 7> <Delay = 4.09>
+ST_118 : Operation 439 [1/1] (0.00ns)   --->   "%sum_i = phi float [ 0.000000e+00, %16 ], [ %sum, %18 ]"   --->   Operation 439 'phi' 'sum_i' <Predicate = true> <Delay = 0.00>
+ST_118 : Operation 440 [1/1] (0.00ns)   --->   "%n_i = phi i5 [ 0, %16 ], [ %n, %18 ]"   --->   Operation 440 'phi' 'n_i' <Predicate = true> <Delay = 0.00>
+ST_118 : Operation 441 [1/1] (1.44ns)   --->   "%exitcond_i = icmp eq i5 %n_i, -6" [voicerec/voicerec.cpp:58->voicerec/voicerec.cpp:215]   --->   Operation 441 'icmp' 'exitcond_i' <Predicate = true> <Delay = 1.44> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.44> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_118 : Operation 442 [1/1] (0.00ns)   --->   "%empty_16 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 26, i64 26, i64 26)"   --->   Operation 442 'speclooptripcount' 'empty_16' <Predicate = true> <Delay = 0.00>
+ST_118 : Operation 443 [1/1] (1.86ns)   --->   "%n = add i5 %n_i, 1" [voicerec/voicerec.cpp:58->voicerec/voicerec.cpp:215]   --->   Operation 443 'add' 'n' <Predicate = true> <Delay = 1.86> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.11> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_118 : Operation 444 [1/1] (0.00ns)   --->   "br i1 %exitcond_i, label %19, label %18" [voicerec/voicerec.cpp:58->voicerec/voicerec.cpp:215]   --->   Operation 444 'br' <Predicate = true> <Delay = 0.00>
+ST_118 : Operation 445 [1/1] (0.00ns)   --->   "%tmp_63_i = zext i5 %n_i to i64" [voicerec/voicerec.cpp:59->voicerec/voicerec.cpp:215]   --->   Operation 445 'zext' 'tmp_63_i' <Predicate = (!exitcond_i)> <Delay = 0.00>
+ST_118 : Operation 446 [1/1] (0.00ns)   --->   "%tmp_63_i_cast = zext i5 %n_i to i9" [voicerec/voicerec.cpp:59->voicerec/voicerec.cpp:215]   --->   Operation 446 'zext' 'tmp_63_i_cast' <Predicate = (!exitcond_i)> <Delay = 0.00>
+ST_118 : Operation 447 [1/1] (2.11ns)   --->   "%tmp_46 = add i9 %phi_mul, %tmp_63_i_cast" [voicerec/voicerec.cpp:59->voicerec/voicerec.cpp:215]   --->   Operation 447 'add' 'tmp_46' <Predicate = (!exitcond_i)> <Delay = 2.11> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.11> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_118 : Operation 448 [1/1] (0.00ns)   --->   "%e_addr_3 = getelementptr [26 x float]* @e, i64 0, i64 %tmp_63_i" [voicerec/voicerec.cpp:59->voicerec/voicerec.cpp:215]   --->   Operation 448 'getelementptr' 'e_addr_3' <Predicate = (!exitcond_i)> <Delay = 0.00>
+ST_118 : Operation 449 [2/2] (2.15ns)   --->   "%e_load_3 = load float* %e_addr_3, align 4" [voicerec/voicerec.cpp:59->voicerec/voicerec.cpp:215]   --->   Operation 449 'load' 'e_load_3' <Predicate = (!exitcond_i)> <Delay = 2.15> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 882> <RAM>
+ST_118 : Operation 450 [2/2] (4.09ns)   --->   "%tmp_60_i = fpext float %sum_i to double" [voicerec/voicerec.cpp:61->voicerec/voicerec.cpp:215]   --->   Operation 450 'fpext' 'tmp_60_i' <Predicate = (exitcond_i)> <Delay = 4.09> <Core = "Float2Double">   --->   Core 108 'Float2Double' <Latency = 1> <II = 1> <Delay = 4.09> <FuncUnit> <Opcode : 'fpext'> <InPorts = 1> <OutPorts = 1>
+
+State 119 <SV = 8> <Delay = 2.15>
+ST_119 : Operation 451 [1/2] (2.15ns)   --->   "%e_load_3 = load float* %e_addr_3, align 4" [voicerec/voicerec.cpp:59->voicerec/voicerec.cpp:215]   --->   Operation 451 'load' 'e_load_3' <Predicate = true> <Delay = 2.15> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 882> <RAM>
+
+State 120 <SV = 9> <Delay = 4.34>
+ST_120 : Operation 452 [5/5] (4.34ns)   --->   "%tmp_64_i = fmul float %s, %e_load_3" [voicerec/voicerec.cpp:59->voicerec/voicerec.cpp:215]   --->   Operation 452 'fmul' 'tmp_64_i' <Predicate = true> <Delay = 4.34> <Core = "FMul">   --->   Core 100 'FMul' <Latency = 4> <II = 1> <Delay = 4.34> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 121 <SV = 10> <Delay = 4.34>
+ST_121 : Operation 453 [4/5] (4.34ns)   --->   "%tmp_64_i = fmul float %s, %e_load_3" [voicerec/voicerec.cpp:59->voicerec/voicerec.cpp:215]   --->   Operation 453 'fmul' 'tmp_64_i' <Predicate = true> <Delay = 4.34> <Core = "FMul">   --->   Core 100 'FMul' <Latency = 4> <II = 1> <Delay = 4.34> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 122 <SV = 11> <Delay = 4.34>
+ST_122 : Operation 454 [3/5] (4.34ns)   --->   "%tmp_64_i = fmul float %s, %e_load_3" [voicerec/voicerec.cpp:59->voicerec/voicerec.cpp:215]   --->   Operation 454 'fmul' 'tmp_64_i' <Predicate = true> <Delay = 4.34> <Core = "FMul">   --->   Core 100 'FMul' <Latency = 4> <II = 1> <Delay = 4.34> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 123 <SV = 12> <Delay = 4.34>
+ST_123 : Operation 455 [1/1] (0.00ns)   --->   "%tmp_46_cast = zext i9 %tmp_46 to i64" [voicerec/voicerec.cpp:59->voicerec/voicerec.cpp:215]   --->   Operation 455 'zext' 'tmp_46_cast' <Predicate = true> <Delay = 0.00>
+ST_123 : Operation 456 [1/1] (0.00ns)   --->   "%dctMatrix_addr = getelementptr [676 x float]* @dctMatrix, i64 0, i64 %tmp_46_cast" [voicerec/voicerec.cpp:59->voicerec/voicerec.cpp:215]   --->   Operation 456 'getelementptr' 'dctMatrix_addr' <Predicate = true> <Delay = 0.00>
+ST_123 : Operation 457 [2/5] (4.34ns)   --->   "%tmp_64_i = fmul float %s, %e_load_3" [voicerec/voicerec.cpp:59->voicerec/voicerec.cpp:215]   --->   Operation 457 'fmul' 'tmp_64_i' <Predicate = true> <Delay = 4.34> <Core = "FMul">   --->   Core 100 'FMul' <Latency = 4> <II = 1> <Delay = 4.34> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_123 : Operation 458 [2/2] (3.25ns)   --->   "%dctMatrix_load = load float* %dctMatrix_addr, align 4" [voicerec/voicerec.cpp:59->voicerec/voicerec.cpp:215]   --->   Operation 458 'load' 'dctMatrix_load' <Predicate = true> <Delay = 3.25> <Core = "ROM_nP">   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 32> <Depth = 676> <ROM>
+
+State 124 <SV = 13> <Delay = 4.34>
+ST_124 : Operation 459 [1/5] (4.34ns)   --->   "%tmp_64_i = fmul float %s, %e_load_3" [voicerec/voicerec.cpp:59->voicerec/voicerec.cpp:215]   --->   Operation 459 'fmul' 'tmp_64_i' <Predicate = true> <Delay = 4.34> <Core = "FMul">   --->   Core 100 'FMul' <Latency = 4> <II = 1> <Delay = 4.34> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_124 : Operation 460 [1/2] (3.25ns)   --->   "%dctMatrix_load = load float* %dctMatrix_addr, align 4" [voicerec/voicerec.cpp:59->voicerec/voicerec.cpp:215]   --->   Operation 460 'load' 'dctMatrix_load' <Predicate = true> <Delay = 3.25> <Core = "ROM_nP">   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 32> <Depth = 676> <ROM>
+
+State 125 <SV = 14> <Delay = 4.34>
+ST_125 : Operation 461 [5/5] (4.34ns)   --->   "%tmp_65_i = fmul float %tmp_64_i, %dctMatrix_load" [voicerec/voicerec.cpp:59->voicerec/voicerec.cpp:215]   --->   Operation 461 'fmul' 'tmp_65_i' <Predicate = true> <Delay = 4.34> <Core = "FMul">   --->   Core 100 'FMul' <Latency = 4> <II = 1> <Delay = 4.34> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 126 <SV = 15> <Delay = 4.34>
+ST_126 : Operation 462 [4/5] (4.34ns)   --->   "%tmp_65_i = fmul float %tmp_64_i, %dctMatrix_load" [voicerec/voicerec.cpp:59->voicerec/voicerec.cpp:215]   --->   Operation 462 'fmul' 'tmp_65_i' <Predicate = true> <Delay = 4.34> <Core = "FMul">   --->   Core 100 'FMul' <Latency = 4> <II = 1> <Delay = 4.34> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 127 <SV = 16> <Delay = 4.34>
+ST_127 : Operation 463 [3/5] (4.34ns)   --->   "%tmp_65_i = fmul float %tmp_64_i, %dctMatrix_load" [voicerec/voicerec.cpp:59->voicerec/voicerec.cpp:215]   --->   Operation 463 'fmul' 'tmp_65_i' <Predicate = true> <Delay = 4.34> <Core = "FMul">   --->   Core 100 'FMul' <Latency = 4> <II = 1> <Delay = 4.34> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 128 <SV = 17> <Delay = 4.34>
+ST_128 : Operation 464 [2/5] (4.34ns)   --->   "%tmp_65_i = fmul float %tmp_64_i, %dctMatrix_load" [voicerec/voicerec.cpp:59->voicerec/voicerec.cpp:215]   --->   Operation 464 'fmul' 'tmp_65_i' <Predicate = true> <Delay = 4.34> <Core = "FMul">   --->   Core 100 'FMul' <Latency = 4> <II = 1> <Delay = 4.34> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 129 <SV = 18> <Delay = 4.34>
+ST_129 : Operation 465 [1/5] (4.34ns)   --->   "%tmp_65_i = fmul float %tmp_64_i, %dctMatrix_load" [voicerec/voicerec.cpp:59->voicerec/voicerec.cpp:215]   --->   Operation 465 'fmul' 'tmp_65_i' <Predicate = true> <Delay = 4.34> <Core = "FMul">   --->   Core 100 'FMul' <Latency = 4> <II = 1> <Delay = 4.34> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 130 <SV = 19> <Delay = 4.31>
+ST_130 : Operation 466 [9/9] (4.31ns)   --->   "%sum = fadd float %sum_i, %tmp_65_i" [voicerec/voicerec.cpp:59->voicerec/voicerec.cpp:215]   --->   Operation 466 'fadd' 'sum' <Predicate = true> <Delay = 4.31> <Core = "FAddSub">   --->   Core 99 'FAddSub' <Latency = 8> <II = 1> <Delay = 4.31> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 131 <SV = 20> <Delay = 4.31>
+ST_131 : Operation 467 [8/9] (4.31ns)   --->   "%sum = fadd float %sum_i, %tmp_65_i" [voicerec/voicerec.cpp:59->voicerec/voicerec.cpp:215]   --->   Operation 467 'fadd' 'sum' <Predicate = true> <Delay = 4.31> <Core = "FAddSub">   --->   Core 99 'FAddSub' <Latency = 8> <II = 1> <Delay = 4.31> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 132 <SV = 21> <Delay = 4.31>
+ST_132 : Operation 468 [7/9] (4.31ns)   --->   "%sum = fadd float %sum_i, %tmp_65_i" [voicerec/voicerec.cpp:59->voicerec/voicerec.cpp:215]   --->   Operation 468 'fadd' 'sum' <Predicate = true> <Delay = 4.31> <Core = "FAddSub">   --->   Core 99 'FAddSub' <Latency = 8> <II = 1> <Delay = 4.31> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 133 <SV = 22> <Delay = 4.31>
+ST_133 : Operation 469 [6/9] (4.31ns)   --->   "%sum = fadd float %sum_i, %tmp_65_i" [voicerec/voicerec.cpp:59->voicerec/voicerec.cpp:215]   --->   Operation 469 'fadd' 'sum' <Predicate = true> <Delay = 4.31> <Core = "FAddSub">   --->   Core 99 'FAddSub' <Latency = 8> <II = 1> <Delay = 4.31> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 134 <SV = 23> <Delay = 4.31>
+ST_134 : Operation 470 [5/9] (4.31ns)   --->   "%sum = fadd float %sum_i, %tmp_65_i" [voicerec/voicerec.cpp:59->voicerec/voicerec.cpp:215]   --->   Operation 470 'fadd' 'sum' <Predicate = true> <Delay = 4.31> <Core = "FAddSub">   --->   Core 99 'FAddSub' <Latency = 8> <II = 1> <Delay = 4.31> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 135 <SV = 24> <Delay = 4.31>
+ST_135 : Operation 471 [4/9] (4.31ns)   --->   "%sum = fadd float %sum_i, %tmp_65_i" [voicerec/voicerec.cpp:59->voicerec/voicerec.cpp:215]   --->   Operation 471 'fadd' 'sum' <Predicate = true> <Delay = 4.31> <Core = "FAddSub">   --->   Core 99 'FAddSub' <Latency = 8> <II = 1> <Delay = 4.31> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 136 <SV = 25> <Delay = 4.31>
+ST_136 : Operation 472 [3/9] (4.31ns)   --->   "%sum = fadd float %sum_i, %tmp_65_i" [voicerec/voicerec.cpp:59->voicerec/voicerec.cpp:215]   --->   Operation 472 'fadd' 'sum' <Predicate = true> <Delay = 4.31> <Core = "FAddSub">   --->   Core 99 'FAddSub' <Latency = 8> <II = 1> <Delay = 4.31> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 137 <SV = 26> <Delay = 4.31>
+ST_137 : Operation 473 [2/9] (4.31ns)   --->   "%sum = fadd float %sum_i, %tmp_65_i" [voicerec/voicerec.cpp:59->voicerec/voicerec.cpp:215]   --->   Operation 473 'fadd' 'sum' <Predicate = true> <Delay = 4.31> <Core = "FAddSub">   --->   Core 99 'FAddSub' <Latency = 8> <II = 1> <Delay = 4.31> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 138 <SV = 27> <Delay = 4.31>
+ST_138 : Operation 474 [1/9] (4.31ns)   --->   "%sum = fadd float %sum_i, %tmp_65_i" [voicerec/voicerec.cpp:59->voicerec/voicerec.cpp:215]   --->   Operation 474 'fadd' 'sum' <Predicate = true> <Delay = 4.31> <Core = "FAddSub">   --->   Core 99 'FAddSub' <Latency = 8> <II = 1> <Delay = 4.31> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_138 : Operation 475 [1/1] (0.00ns)   --->   "br label %17" [voicerec/voicerec.cpp:58->voicerec/voicerec.cpp:215]   --->   Operation 475 'br' <Predicate = true> <Delay = 0.00>
+
+State 139 <SV = 8> <Delay = 4.09>
+ST_139 : Operation 476 [1/2] (4.09ns)   --->   "%tmp_60_i = fpext float %sum_i to double" [voicerec/voicerec.cpp:61->voicerec/voicerec.cpp:215]   --->   Operation 476 'fpext' 'tmp_60_i' <Predicate = true> <Delay = 4.09> <Core = "Float2Double">   --->   Core 108 'Float2Double' <Latency = 1> <II = 1> <Delay = 4.09> <FuncUnit> <Opcode : 'fpext'> <InPorts = 1> <OutPorts = 1>
+
+State 140 <SV = 9> <Delay = 4.35>
+ST_140 : Operation 477 [10/10] (4.35ns)   --->   "%tmp_61_i = fmul double %tmp_60_i, 0x3FD1C01AA03BE89E" [voicerec/voicerec.cpp:61->voicerec/voicerec.cpp:215]   --->   Operation 477 'dmul' 'tmp_61_i' <Predicate = true> <Delay = 4.35> <Core = "DMul">   --->   Core 110 'DMul' <Latency = 9> <II = 1> <Delay = 4.35> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+
+State 141 <SV = 10> <Delay = 4.35>
+ST_141 : Operation 478 [9/10] (4.35ns)   --->   "%tmp_61_i = fmul double %tmp_60_i, 0x3FD1C01AA03BE89E" [voicerec/voicerec.cpp:61->voicerec/voicerec.cpp:215]   --->   Operation 478 'dmul' 'tmp_61_i' <Predicate = true> <Delay = 4.35> <Core = "DMul">   --->   Core 110 'DMul' <Latency = 9> <II = 1> <Delay = 4.35> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+
+State 142 <SV = 11> <Delay = 4.35>
+ST_142 : Operation 479 [8/10] (4.35ns)   --->   "%tmp_61_i = fmul double %tmp_60_i, 0x3FD1C01AA03BE89E" [voicerec/voicerec.cpp:61->voicerec/voicerec.cpp:215]   --->   Operation 479 'dmul' 'tmp_61_i' <Predicate = true> <Delay = 4.35> <Core = "DMul">   --->   Core 110 'DMul' <Latency = 9> <II = 1> <Delay = 4.35> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+
+State 143 <SV = 12> <Delay = 4.35>
+ST_143 : Operation 480 [7/10] (4.35ns)   --->   "%tmp_61_i = fmul double %tmp_60_i, 0x3FD1C01AA03BE89E" [voicerec/voicerec.cpp:61->voicerec/voicerec.cpp:215]   --->   Operation 480 'dmul' 'tmp_61_i' <Predicate = true> <Delay = 4.35> <Core = "DMul">   --->   Core 110 'DMul' <Latency = 9> <II = 1> <Delay = 4.35> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+
+State 144 <SV = 13> <Delay = 4.35>
+ST_144 : Operation 481 [6/10] (4.35ns)   --->   "%tmp_61_i = fmul double %tmp_60_i, 0x3FD1C01AA03BE89E" [voicerec/voicerec.cpp:61->voicerec/voicerec.cpp:215]   --->   Operation 481 'dmul' 'tmp_61_i' <Predicate = true> <Delay = 4.35> <Core = "DMul">   --->   Core 110 'DMul' <Latency = 9> <II = 1> <Delay = 4.35> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+
+State 145 <SV = 14> <Delay = 4.35>
+ST_145 : Operation 482 [5/10] (4.35ns)   --->   "%tmp_61_i = fmul double %tmp_60_i, 0x3FD1C01AA03BE89E" [voicerec/voicerec.cpp:61->voicerec/voicerec.cpp:215]   --->   Operation 482 'dmul' 'tmp_61_i' <Predicate = true> <Delay = 4.35> <Core = "DMul">   --->   Core 110 'DMul' <Latency = 9> <II = 1> <Delay = 4.35> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+
+State 146 <SV = 15> <Delay = 4.35>
+ST_146 : Operation 483 [4/10] (4.35ns)   --->   "%tmp_61_i = fmul double %tmp_60_i, 0x3FD1C01AA03BE89E" [voicerec/voicerec.cpp:61->voicerec/voicerec.cpp:215]   --->   Operation 483 'dmul' 'tmp_61_i' <Predicate = true> <Delay = 4.35> <Core = "DMul">   --->   Core 110 'DMul' <Latency = 9> <II = 1> <Delay = 4.35> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+
+State 147 <SV = 16> <Delay = 4.35>
+ST_147 : Operation 484 [3/10] (4.35ns)   --->   "%tmp_61_i = fmul double %tmp_60_i, 0x3FD1C01AA03BE89E" [voicerec/voicerec.cpp:61->voicerec/voicerec.cpp:215]   --->   Operation 484 'dmul' 'tmp_61_i' <Predicate = true> <Delay = 4.35> <Core = "DMul">   --->   Core 110 'DMul' <Latency = 9> <II = 1> <Delay = 4.35> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+
+State 148 <SV = 17> <Delay = 4.35>
+ST_148 : Operation 485 [2/10] (4.35ns)   --->   "%tmp_61_i = fmul double %tmp_60_i, 0x3FD1C01AA03BE89E" [voicerec/voicerec.cpp:61->voicerec/voicerec.cpp:215]   --->   Operation 485 'dmul' 'tmp_61_i' <Predicate = true> <Delay = 4.35> <Core = "DMul">   --->   Core 110 'DMul' <Latency = 9> <II = 1> <Delay = 4.35> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+
+State 149 <SV = 18> <Delay = 4.35>
+ST_149 : Operation 486 [1/10] (4.35ns)   --->   "%tmp_61_i = fmul double %tmp_60_i, 0x3FD1C01AA03BE89E" [voicerec/voicerec.cpp:61->voicerec/voicerec.cpp:215]   --->   Operation 486 'dmul' 'tmp_61_i' <Predicate = true> <Delay = 4.35> <Core = "DMul">   --->   Core 110 'DMul' <Latency = 9> <II = 1> <Delay = 4.35> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+
+State 150 <SV = 19> <Delay = 4.30>
+ST_150 : Operation 487 [3/3] (4.30ns)   --->   "%tmp_62_i = fptrunc double %tmp_61_i to float" [voicerec/voicerec.cpp:61->voicerec/voicerec.cpp:215]   --->   Operation 487 'fptrunc' 'tmp_62_i' <Predicate = true> <Delay = 4.30> <Core = "Double2Float">   --->   Core 117 'Double2Float' <Latency = 2> <II = 1> <Delay = 4.30> <FuncUnit> <Opcode : 'fptrunc'> <InPorts = 1> <OutPorts = 1>
+
+State 151 <SV = 20> <Delay = 4.30>
+ST_151 : Operation 488 [2/3] (4.30ns)   --->   "%tmp_62_i = fptrunc double %tmp_61_i to float" [voicerec/voicerec.cpp:61->voicerec/voicerec.cpp:215]   --->   Operation 488 'fptrunc' 'tmp_62_i' <Predicate = true> <Delay = 4.30> <Core = "Double2Float">   --->   Core 117 'Double2Float' <Latency = 2> <II = 1> <Delay = 4.30> <FuncUnit> <Opcode : 'fptrunc'> <InPorts = 1> <OutPorts = 1>
+
+State 152 <SV = 21> <Delay = 4.30>
+ST_152 : Operation 489 [1/3] (4.30ns)   --->   "%tmp_62_i = fptrunc double %tmp_61_i to float" [voicerec/voicerec.cpp:61->voicerec/voicerec.cpp:215]   --->   Operation 489 'fptrunc' 'tmp_62_i' <Predicate = true> <Delay = 4.30> <Core = "Double2Float">   --->   Core 117 'Double2Float' <Latency = 2> <II = 1> <Delay = 4.30> <FuncUnit> <Opcode : 'fptrunc'> <InPorts = 1> <OutPorts = 1>
+
+State 153 <SV = 22> <Delay = 3.25>
+ST_153 : Operation 490 [1/1] (3.25ns)   --->   "store float %tmp_62_i, float* %ret_addr, align 4" [voicerec/voicerec.cpp:61->voicerec/voicerec.cpp:215]   --->   Operation 490 'store' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 882> <RAM>
+ST_153 : Operation 491 [1/1] (0.00ns)   --->   "br label %15" [voicerec/voicerec.cpp:55->voicerec/voicerec.cpp:215]   --->   Operation 491 'br' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 5ns, clock uncertainty: 0ns.
+
+ <State 1>: 2.13ns
+The critical path consists of the following:
+	wire read on port 'ret_offset' [12]  (0 ns)
+	'sub' operation ('tmp_41', voicerec/voicerec.cpp:61->voicerec/voicerec.cpp:215) [17]  (2.13 ns)
+
+ <State 2>: 2.13ns
+The critical path consists of the following:
+	'phi' operation ('i') with incoming values : ('i', voicerec/voicerec.cpp:174) [21]  (0 ns)
+	'add' operation ('tmp', voicerec/voicerec.cpp:176) [28]  (2.13 ns)
+
+ <State 3>: 3.26ns
+The critical path consists of the following:
+	'getelementptr' operation ('inputSound_addr', voicerec/voicerec.cpp:176) [30]  (0 ns)
+	'load' operation ('inputSound_load', voicerec/voicerec.cpp:176) on array 'inputSound' [31]  (3.26 ns)
+
+ <State 4>: 3.26ns
+The critical path consists of the following:
+	'load' operation ('inputSound_load', voicerec/voicerec.cpp:176) on array 'inputSound' [31]  (3.26 ns)
+
+ <State 5>: 3.26ns
+The critical path consists of the following:
+	'shl' operation ('tmp_43', voicerec/voicerec.cpp:176) [32]  (0 ns)
+	'or' operation ('tmp_2', voicerec/voicerec.cpp:177) [36]  (0 ns)
+	'getelementptr' operation ('c_addr_1', voicerec/voicerec.cpp:177) [38]  (0 ns)
+	'store' operation (voicerec/voicerec.cpp:177) of constant 0 on array 'c' [39]  (3.26 ns)
+
+ <State 6>: 1.66ns
+The critical path consists of the following:
+	multiplexor before 'phi' operation ('i') with incoming values : ('i', voicerec/voicerec.cpp:185) [54]  (1.66 ns)
+
+ <State 7>: 3.26ns
+The critical path consists of the following:
+	'phi' operation ('i') with incoming values : ('i', voicerec/voicerec.cpp:185) [54]  (0 ns)
+	'shl' operation ('tmp_44', voicerec/voicerec.cpp:187) [60]  (0 ns)
+	'getelementptr' operation ('c_addr_2', voicerec/voicerec.cpp:187) [62]  (0 ns)
+	'load' operation ('c_load', voicerec/voicerec.cpp:187) on array 'c' [63]  (3.26 ns)
+
+ <State 8>: 3.26ns
+The critical path consists of the following:
+	'load' operation ('c_load', voicerec/voicerec.cpp:187) on array 'c' [63]  (3.26 ns)
+
+ <State 9>: 4.35ns
+The critical path consists of the following:
+	'fmul' operation ('tmp_8', voicerec/voicerec.cpp:187) [64]  (4.35 ns)
+
+ <State 10>: 4.35ns
+The critical path consists of the following:
+	'fmul' operation ('tmp_8', voicerec/voicerec.cpp:187) [64]  (4.35 ns)
+
+ <State 11>: 4.35ns
+The critical path consists of the following:
+	'fmul' operation ('tmp_8', voicerec/voicerec.cpp:187) [64]  (4.35 ns)
+
+ <State 12>: 4.35ns
+The critical path consists of the following:
+	'fmul' operation ('tmp_8', voicerec/voicerec.cpp:187) [64]  (4.35 ns)
+
+ <State 13>: 4.35ns
+The critical path consists of the following:
+	'fmul' operation ('tmp_8', voicerec/voicerec.cpp:187) [64]  (4.35 ns)
+
+ <State 14>: 4.31ns
+The critical path consists of the following:
+	'fadd' operation ('tmp_13', voicerec/voicerec.cpp:187) [70]  (4.31 ns)
+
+ <State 15>: 4.31ns
+The critical path consists of the following:
+	'fadd' operation ('tmp_13', voicerec/voicerec.cpp:187) [70]  (4.31 ns)
+
+ <State 16>: 4.31ns
+The critical path consists of the following:
+	'fadd' operation ('tmp_13', voicerec/voicerec.cpp:187) [70]  (4.31 ns)
+
+ <State 17>: 4.31ns
+The critical path consists of the following:
+	'fadd' operation ('tmp_13', voicerec/voicerec.cpp:187) [70]  (4.31 ns)
+
+ <State 18>: 4.31ns
+The critical path consists of the following:
+	'fadd' operation ('tmp_13', voicerec/voicerec.cpp:187) [70]  (4.31 ns)
+
+ <State 19>: 4.31ns
+The critical path consists of the following:
+	'fadd' operation ('tmp_13', voicerec/voicerec.cpp:187) [70]  (4.31 ns)
+
+ <State 20>: 4.31ns
+The critical path consists of the following:
+	'fadd' operation ('tmp_13', voicerec/voicerec.cpp:187) [70]  (4.31 ns)
+
+ <State 21>: 4.31ns
+The critical path consists of the following:
+	'fadd' operation ('tmp_13', voicerec/voicerec.cpp:187) [70]  (4.31 ns)
+
+ <State 22>: 4.31ns
+The critical path consists of the following:
+	'fadd' operation ('tmp_13', voicerec/voicerec.cpp:187) [70]  (4.31 ns)
+
+ <State 23>: 4.35ns
+The critical path consists of the following:
+	'fmul' operation ('tmp_14', voicerec/voicerec.cpp:187) [71]  (4.35 ns)
+
+ <State 24>: 4.35ns
+The critical path consists of the following:
+	'fmul' operation ('tmp_14', voicerec/voicerec.cpp:187) [71]  (4.35 ns)
+
+ <State 25>: 4.35ns
+The critical path consists of the following:
+	'fmul' operation ('tmp_14', voicerec/voicerec.cpp:187) [71]  (4.35 ns)
+
+ <State 26>: 4.35ns
+The critical path consists of the following:
+	'fmul' operation ('tmp_14', voicerec/voicerec.cpp:187) [71]  (4.35 ns)
+
+ <State 27>: 4.35ns
+The critical path consists of the following:
+	'fmul' operation ('tmp_14', voicerec/voicerec.cpp:187) [71]  (4.35 ns)
+
+ <State 28>: 3.26ns
+The critical path consists of the following:
+	'getelementptr' operation ('spec_addr', voicerec/voicerec.cpp:187) [73]  (0 ns)
+	'store' operation (voicerec/voicerec.cpp:187) of variable 'tmp_14', voicerec/voicerec.cpp:187 on array 'spec' [74]  (3.26 ns)
+
+ <State 29>: 3.26ns
+The critical path consists of the following:
+	'phi' operation ('mellIdx', voicerec/voicerec.cpp:201) with incoming values : ('p_mellIdx', voicerec/voicerec.cpp:201) [80]  (0 ns)
+	'getelementptr' operation ('mell_addr', voicerec/voicerec.cpp:193) [88]  (0 ns)
+	'load' operation ('mell_load', voicerec/voicerec.cpp:193) on array 'mell' [89]  (3.26 ns)
+
+ <State 30>: 4.85ns
+The critical path consists of the following:
+	'load' operation ('mell_load', voicerec/voicerec.cpp:193) on array 'mell' [89]  (3.26 ns)
+	'icmp' operation ('tmp_17', voicerec/voicerec.cpp:193) [92]  (1.59 ns)
+
+ <State 31>: 3.26ns
+The critical path consists of the following:
+	'load' operation ('spec_load', voicerec/voicerec.cpp:194) on array 'spec' [97]  (3.26 ns)
+
+ <State 32>: 4.31ns
+The critical path consists of the following:
+	'fadd' operation ('tmp_21', voicerec/voicerec.cpp:194) [99]  (4.31 ns)
+
+ <State 33>: 4.31ns
+The critical path consists of the following:
+	'fadd' operation ('tmp_21', voicerec/voicerec.cpp:194) [99]  (4.31 ns)
+
+ <State 34>: 4.31ns
+The critical path consists of the following:
+	'fadd' operation ('tmp_21', voicerec/voicerec.cpp:194) [99]  (4.31 ns)
+
+ <State 35>: 4.31ns
+The critical path consists of the following:
+	'fadd' operation ('tmp_21', voicerec/voicerec.cpp:194) [99]  (4.31 ns)
+
+ <State 36>: 4.31ns
+The critical path consists of the following:
+	'fadd' operation ('tmp_21', voicerec/voicerec.cpp:194) [99]  (4.31 ns)
+
+ <State 37>: 4.31ns
+The critical path consists of the following:
+	'fadd' operation ('tmp_21', voicerec/voicerec.cpp:194) [99]  (4.31 ns)
+
+ <State 38>: 4.31ns
+The critical path consists of the following:
+	'fadd' operation ('tmp_21', voicerec/voicerec.cpp:194) [99]  (4.31 ns)
+
+ <State 39>: 4.31ns
+The critical path consists of the following:
+	'fadd' operation ('tmp_21', voicerec/voicerec.cpp:194) [99]  (4.31 ns)
+
+ <State 40>: 4.31ns
+The critical path consists of the following:
+	'fadd' operation ('tmp_21', voicerec/voicerec.cpp:194) [99]  (4.31 ns)
+
+ <State 41>: 2.7ns
+The critical path consists of the following:
+	'add' operation ('tmp_23', voicerec/voicerec.cpp:197) [106]  (2.7 ns)
+
+ <State 42>: 3.26ns
+The critical path consists of the following:
+	'getelementptr' operation ('mell_addr_1', voicerec/voicerec.cpp:197) [108]  (0 ns)
+	'load' operation ('mell_load_1', voicerec/voicerec.cpp:197) on array 'mell' [109]  (3.26 ns)
+
+ <State 43>: 4.85ns
+The critical path consists of the following:
+	'load' operation ('mell_load_1', voicerec/voicerec.cpp:197) on array 'mell' [109]  (3.26 ns)
+	'icmp' operation ('tmp_25', voicerec/voicerec.cpp:197) [111]  (1.59 ns)
+
+ <State 44>: 3.26ns
+The critical path consists of the following:
+	'load' operation ('spec_load_1', voicerec/voicerec.cpp:198) on array 'spec' [116]  (3.26 ns)
+
+ <State 45>: 4.31ns
+The critical path consists of the following:
+	'fadd' operation ('tmp_27', voicerec/voicerec.cpp:198) [119]  (4.31 ns)
+
+ <State 46>: 4.31ns
+The critical path consists of the following:
+	'fadd' operation ('tmp_27', voicerec/voicerec.cpp:198) [119]  (4.31 ns)
+
+ <State 47>: 4.31ns
+The critical path consists of the following:
+	'fadd' operation ('tmp_27', voicerec/voicerec.cpp:198) [119]  (4.31 ns)
+
+ <State 48>: 4.31ns
+The critical path consists of the following:
+	'fadd' operation ('tmp_27', voicerec/voicerec.cpp:198) [119]  (4.31 ns)
+
+ <State 49>: 4.31ns
+The critical path consists of the following:
+	'fadd' operation ('tmp_27', voicerec/voicerec.cpp:198) [119]  (4.31 ns)
+
+ <State 50>: 4.31ns
+The critical path consists of the following:
+	'fadd' operation ('tmp_27', voicerec/voicerec.cpp:198) [119]  (4.31 ns)
+
+ <State 51>: 4.31ns
+The critical path consists of the following:
+	'fadd' operation ('tmp_27', voicerec/voicerec.cpp:198) [119]  (4.31 ns)
+
+ <State 52>: 4.31ns
+The critical path consists of the following:
+	'fadd' operation ('tmp_27', voicerec/voicerec.cpp:198) [119]  (4.31 ns)
+
+ <State 53>: 4.31ns
+The critical path consists of the following:
+	'fadd' operation ('tmp_27', voicerec/voicerec.cpp:198) [119]  (4.31 ns)
+
+ <State 54>: 2.7ns
+The critical path consists of the following:
+	'add' operation ('mellIdx', voicerec/voicerec.cpp:201) [123]  (2.7 ns)
+
+ <State 55>: 3.26ns
+The critical path consists of the following:
+	'getelementptr' operation ('mell_addr_2', voicerec/voicerec.cpp:201) [125]  (0 ns)
+	'load' operation ('mell_load_2', voicerec/voicerec.cpp:201) on array 'mell' [126]  (3.26 ns)
+
+ <State 56>: 4.85ns
+The critical path consists of the following:
+	'load' operation ('mell_load_2', voicerec/voicerec.cpp:201) on array 'mell' [126]  (3.26 ns)
+	'icmp' operation ('tmp_29', voicerec/voicerec.cpp:201) [128]  (1.59 ns)
+
+ <State 57>: 0.796ns
+The critical path consists of the following:
+	'select' operation ('p_mellIdx', voicerec/voicerec.cpp:201) [129]  (0.796 ns)
+
+ <State 58>: 2.15ns
+The critical path consists of the following:
+	'phi' operation ('i') with incoming values : ('i', voicerec/voicerec.cpp:206) [134]  (0 ns)
+	'getelementptr' operation ('e_addr_1', voicerec/voicerec.cpp:207) [141]  (0 ns)
+	'load' operation ('x', voicerec/voicerec.cpp:207) on array 'e' [142]  (2.15 ns)
+
+ <State 59>: 2.15ns
+The critical path consists of the following:
+	'load' operation ('x', voicerec/voicerec.cpp:207) on array 'e' [142]  (2.15 ns)
+
+ <State 60>: 4.25ns
+The critical path consists of the following:
+	'fcmp' operation ('tmp_37', voicerec/voicerec.cpp:207) [149]  (4.25 ns)
+
+ <State 61>: 4.25ns
+The critical path consists of the following:
+	'fcmp' operation ('tmp_37', voicerec/voicerec.cpp:207) [149]  (4.25 ns)
+
+ <State 62>: 4.25ns
+The critical path consists of the following:
+	'fcmp' operation ('tmp_37', voicerec/voicerec.cpp:207) [149]  (4.25 ns)
+
+ <State 63>: 6.47ns
+The critical path consists of the following:
+	'uitofp' operation ('y', voicerec/voicerec.cpp:36->voicerec/voicerec.cpp:46->voicerec/voicerec.cpp:210) [155]  (6.47 ns)
+
+ <State 64>: 6.47ns
+The critical path consists of the following:
+	'uitofp' operation ('y', voicerec/voicerec.cpp:36->voicerec/voicerec.cpp:46->voicerec/voicerec.cpp:210) [155]  (6.47 ns)
+
+ <State 65>: 6.47ns
+The critical path consists of the following:
+	'uitofp' operation ('y', voicerec/voicerec.cpp:36->voicerec/voicerec.cpp:46->voicerec/voicerec.cpp:210) [155]  (6.47 ns)
+
+ <State 66>: 6.47ns
+The critical path consists of the following:
+	'uitofp' operation ('y', voicerec/voicerec.cpp:36->voicerec/voicerec.cpp:46->voicerec/voicerec.cpp:210) [155]  (6.47 ns)
+
+ <State 67>: 6.47ns
+The critical path consists of the following:
+	'uitofp' operation ('y', voicerec/voicerec.cpp:36->voicerec/voicerec.cpp:46->voicerec/voicerec.cpp:210) [155]  (6.47 ns)
+
+ <State 68>: 6.47ns
+The critical path consists of the following:
+	'uitofp' operation ('y', voicerec/voicerec.cpp:36->voicerec/voicerec.cpp:46->voicerec/voicerec.cpp:210) [155]  (6.47 ns)
+
+ <State 69>: 6.47ns
+The critical path consists of the following:
+	'uitofp' operation ('y', voicerec/voicerec.cpp:36->voicerec/voicerec.cpp:46->voicerec/voicerec.cpp:210) [155]  (6.47 ns)
+
+ <State 70>: 6.47ns
+The critical path consists of the following:
+	'uitofp' operation ('y', voicerec/voicerec.cpp:36->voicerec/voicerec.cpp:46->voicerec/voicerec.cpp:210) [155]  (6.47 ns)
+
+ <State 71>: 4.35ns
+The critical path consists of the following:
+	'fmul' operation ('y', voicerec/voicerec.cpp:37->voicerec/voicerec.cpp:46->voicerec/voicerec.cpp:210) [156]  (4.35 ns)
+
+ <State 72>: 4.35ns
+The critical path consists of the following:
+	'fmul' operation ('y', voicerec/voicerec.cpp:37->voicerec/voicerec.cpp:46->voicerec/voicerec.cpp:210) [156]  (4.35 ns)
+
+ <State 73>: 4.35ns
+The critical path consists of the following:
+	'fmul' operation ('y', voicerec/voicerec.cpp:37->voicerec/voicerec.cpp:46->voicerec/voicerec.cpp:210) [156]  (4.35 ns)
+
+ <State 74>: 4.35ns
+The critical path consists of the following:
+	'fmul' operation ('y', voicerec/voicerec.cpp:37->voicerec/voicerec.cpp:46->voicerec/voicerec.cpp:210) [156]  (4.35 ns)
+
+ <State 75>: 4.35ns
+The critical path consists of the following:
+	'fmul' operation ('y', voicerec/voicerec.cpp:37->voicerec/voicerec.cpp:46->voicerec/voicerec.cpp:210) [156]  (4.35 ns)
+
+ <State 76>: 4.31ns
+The critical path consists of the following:
+	'fadd' operation ('tmp_53_i_i', voicerec/voicerec.cpp:38->voicerec/voicerec.cpp:46->voicerec/voicerec.cpp:210) [157]  (4.31 ns)
+
+ <State 77>: 4.31ns
+The critical path consists of the following:
+	'fadd' operation ('tmp_53_i_i', voicerec/voicerec.cpp:38->voicerec/voicerec.cpp:46->voicerec/voicerec.cpp:210) [157]  (4.31 ns)
+
+ <State 78>: 4.31ns
+The critical path consists of the following:
+	'fadd' operation ('tmp_53_i_i', voicerec/voicerec.cpp:38->voicerec/voicerec.cpp:46->voicerec/voicerec.cpp:210) [157]  (4.31 ns)
+
+ <State 79>: 4.31ns
+The critical path consists of the following:
+	'fadd' operation ('tmp_53_i_i', voicerec/voicerec.cpp:38->voicerec/voicerec.cpp:46->voicerec/voicerec.cpp:210) [157]  (4.31 ns)
+
+ <State 80>: 4.35ns
+The critical path consists of the following:
+	'fmul' operation ('tmp_55_i_i', voicerec/voicerec.cpp:38->voicerec/voicerec.cpp:46->voicerec/voicerec.cpp:210) [159]  (4.35 ns)
+
+ <State 81>: 4.35ns
+The critical path consists of the following:
+	'fmul' operation ('tmp_55_i_i', voicerec/voicerec.cpp:38->voicerec/voicerec.cpp:46->voicerec/voicerec.cpp:210) [159]  (4.35 ns)
+
+ <State 82>: 4.35ns
+The critical path consists of the following:
+	'fmul' operation ('tmp_55_i_i', voicerec/voicerec.cpp:38->voicerec/voicerec.cpp:46->voicerec/voicerec.cpp:210) [159]  (4.35 ns)
+
+ <State 83>: 4.35ns
+The critical path consists of the following:
+	'fmul' operation ('tmp_55_i_i', voicerec/voicerec.cpp:38->voicerec/voicerec.cpp:46->voicerec/voicerec.cpp:210) [159]  (4.35 ns)
+
+ <State 84>: 4.35ns
+The critical path consists of the following:
+	'fmul' operation ('tmp_55_i_i', voicerec/voicerec.cpp:38->voicerec/voicerec.cpp:46->voicerec/voicerec.cpp:210) [159]  (4.35 ns)
+
+ <State 85>: 4.31ns
+The critical path consists of the following:
+	'fsub' operation ('tmp_56_i_i', voicerec/voicerec.cpp:38->voicerec/voicerec.cpp:46->voicerec/voicerec.cpp:210) [160]  (4.31 ns)
+
+ <State 86>: 4.31ns
+The critical path consists of the following:
+	'fsub' operation ('tmp_56_i_i', voicerec/voicerec.cpp:38->voicerec/voicerec.cpp:46->voicerec/voicerec.cpp:210) [160]  (4.31 ns)
+
+ <State 87>: 4.31ns
+The critical path consists of the following:
+	'fsub' operation ('tmp_56_i_i', voicerec/voicerec.cpp:38->voicerec/voicerec.cpp:46->voicerec/voicerec.cpp:210) [160]  (4.31 ns)
+
+ <State 88>: 4.31ns
+The critical path consists of the following:
+	'fsub' operation ('tmp_56_i_i', voicerec/voicerec.cpp:38->voicerec/voicerec.cpp:46->voicerec/voicerec.cpp:210) [160]  (4.31 ns)
+
+ <State 89>: 4.31ns
+The critical path consists of the following:
+	'fsub' operation ('tmp_56_i_i', voicerec/voicerec.cpp:38->voicerec/voicerec.cpp:46->voicerec/voicerec.cpp:210) [160]  (4.31 ns)
+
+ <State 90>: 4.31ns
+The critical path consists of the following:
+	'fsub' operation ('tmp_56_i_i', voicerec/voicerec.cpp:38->voicerec/voicerec.cpp:46->voicerec/voicerec.cpp:210) [160]  (4.31 ns)
+
+ <State 91>: 4.31ns
+The critical path consists of the following:
+	'fsub' operation ('tmp_56_i_i', voicerec/voicerec.cpp:38->voicerec/voicerec.cpp:46->voicerec/voicerec.cpp:210) [160]  (4.31 ns)
+
+ <State 92>: 4.31ns
+The critical path consists of the following:
+	'fsub' operation ('tmp_56_i_i', voicerec/voicerec.cpp:38->voicerec/voicerec.cpp:46->voicerec/voicerec.cpp:210) [160]  (4.31 ns)
+
+ <State 93>: 4.31ns
+The critical path consists of the following:
+	'fsub' operation ('tmp_56_i_i', voicerec/voicerec.cpp:38->voicerec/voicerec.cpp:46->voicerec/voicerec.cpp:210) [160]  (4.31 ns)
+
+ <State 94>: 3.14ns
+The critical path consists of the following:
+	'fdiv' operation ('tmp_58_i_i', voicerec/voicerec.cpp:38->voicerec/voicerec.cpp:46->voicerec/voicerec.cpp:210) [162]  (3.14 ns)
+
+ <State 95>: 3.14ns
+The critical path consists of the following:
+	'fdiv' operation ('tmp_58_i_i', voicerec/voicerec.cpp:38->voicerec/voicerec.cpp:46->voicerec/voicerec.cpp:210) [162]  (3.14 ns)
+
+ <State 96>: 3.14ns
+The critical path consists of the following:
+	'fdiv' operation ('tmp_58_i_i', voicerec/voicerec.cpp:38->voicerec/voicerec.cpp:46->voicerec/voicerec.cpp:210) [162]  (3.14 ns)
+
+ <State 97>: 3.14ns
+The critical path consists of the following:
+	'fdiv' operation ('tmp_58_i_i', voicerec/voicerec.cpp:38->voicerec/voicerec.cpp:46->voicerec/voicerec.cpp:210) [162]  (3.14 ns)
+
+ <State 98>: 3.14ns
+The critical path consists of the following:
+	'fdiv' operation ('tmp_58_i_i', voicerec/voicerec.cpp:38->voicerec/voicerec.cpp:46->voicerec/voicerec.cpp:210) [162]  (3.14 ns)
+
+ <State 99>: 3.14ns
+The critical path consists of the following:
+	'fdiv' operation ('tmp_58_i_i', voicerec/voicerec.cpp:38->voicerec/voicerec.cpp:46->voicerec/voicerec.cpp:210) [162]  (3.14 ns)
+
+ <State 100>: 3.14ns
+The critical path consists of the following:
+	'fdiv' operation ('tmp_58_i_i', voicerec/voicerec.cpp:38->voicerec/voicerec.cpp:46->voicerec/voicerec.cpp:210) [162]  (3.14 ns)
+
+ <State 101>: 3.14ns
+The critical path consists of the following:
+	'fdiv' operation ('tmp_58_i_i', voicerec/voicerec.cpp:38->voicerec/voicerec.cpp:46->voicerec/voicerec.cpp:210) [162]  (3.14 ns)
+
+ <State 102>: 4.31ns
+The critical path consists of the following:
+	'fsub' operation ('tmp_59_i_i', voicerec/voicerec.cpp:38->voicerec/voicerec.cpp:46->voicerec/voicerec.cpp:210) [163]  (4.31 ns)
+
+ <State 103>: 4.31ns
+The critical path consists of the following:
+	'fsub' operation ('tmp_59_i_i', voicerec/voicerec.cpp:38->voicerec/voicerec.cpp:46->voicerec/voicerec.cpp:210) [163]  (4.31 ns)
+
+ <State 104>: 4.31ns
+The critical path consists of the following:
+	'fsub' operation ('tmp_59_i_i', voicerec/voicerec.cpp:38->voicerec/voicerec.cpp:46->voicerec/voicerec.cpp:210) [163]  (4.31 ns)
+
+ <State 105>: 4.31ns
+The critical path consists of the following:
+	'fsub' operation ('tmp_59_i_i', voicerec/voicerec.cpp:38->voicerec/voicerec.cpp:46->voicerec/voicerec.cpp:210) [163]  (4.31 ns)
+
+ <State 106>: 4.31ns
+The critical path consists of the following:
+	'fsub' operation ('tmp_59_i_i', voicerec/voicerec.cpp:38->voicerec/voicerec.cpp:46->voicerec/voicerec.cpp:210) [163]  (4.31 ns)
+
+ <State 107>: 4.31ns
+The critical path consists of the following:
+	'fsub' operation ('tmp_59_i_i', voicerec/voicerec.cpp:38->voicerec/voicerec.cpp:46->voicerec/voicerec.cpp:210) [163]  (4.31 ns)
+
+ <State 108>: 4.31ns
+The critical path consists of the following:
+	'fsub' operation ('tmp_59_i_i', voicerec/voicerec.cpp:38->voicerec/voicerec.cpp:46->voicerec/voicerec.cpp:210) [163]  (4.31 ns)
+
+ <State 109>: 4.31ns
+The critical path consists of the following:
+	'fsub' operation ('tmp_59_i_i', voicerec/voicerec.cpp:38->voicerec/voicerec.cpp:46->voicerec/voicerec.cpp:210) [163]  (4.31 ns)
+
+ <State 110>: 4.31ns
+The critical path consists of the following:
+	'fsub' operation ('tmp_59_i_i', voicerec/voicerec.cpp:38->voicerec/voicerec.cpp:46->voicerec/voicerec.cpp:210) [163]  (4.31 ns)
+
+ <State 111>: 4.35ns
+The critical path consists of the following:
+	'fmul' operation ('tmp_i', voicerec/voicerec.cpp:46->voicerec/voicerec.cpp:210) [164]  (4.35 ns)
+
+ <State 112>: 4.35ns
+The critical path consists of the following:
+	'fmul' operation ('tmp_i', voicerec/voicerec.cpp:46->voicerec/voicerec.cpp:210) [164]  (4.35 ns)
+
+ <State 113>: 4.35ns
+The critical path consists of the following:
+	'fmul' operation ('tmp_i', voicerec/voicerec.cpp:46->voicerec/voicerec.cpp:210) [164]  (4.35 ns)
+
+ <State 114>: 4.35ns
+The critical path consists of the following:
+	'fmul' operation ('tmp_i', voicerec/voicerec.cpp:46->voicerec/voicerec.cpp:210) [164]  (4.35 ns)
+
+ <State 115>: 4.35ns
+The critical path consists of the following:
+	'fmul' operation ('tmp_i', voicerec/voicerec.cpp:46->voicerec/voicerec.cpp:210) [164]  (4.35 ns)
+
+ <State 116>: 3.82ns
+The critical path consists of the following:
+	multiplexor before 'phi' operation ('storemerge', voicerec/voicerec.cpp:46->voicerec/voicerec.cpp:210) with incoming values : ('tmp_i', voicerec/voicerec.cpp:46->voicerec/voicerec.cpp:210) [167]  (1.66 ns)
+	'phi' operation ('storemerge', voicerec/voicerec.cpp:46->voicerec/voicerec.cpp:210) with incoming values : ('tmp_i', voicerec/voicerec.cpp:46->voicerec/voicerec.cpp:210) [167]  (0 ns)
+	'store' operation (voicerec/voicerec.cpp:210) of variable 'storemerge', voicerec/voicerec.cpp:46->voicerec/voicerec.cpp:210 on array 'e' [168]  (2.15 ns)
+
+ <State 117>: 2.24ns
+The critical path consists of the following:
+	'phi' operation ('k') with incoming values : ('k', voicerec/voicerec.cpp:55->voicerec/voicerec.cpp:215) [174]  (0 ns)
+	'icmp' operation ('tmp_i_15', voicerec/voicerec.cpp:57->voicerec/voicerec.cpp:215) [182]  (1.44 ns)
+	'select' operation ('s', voicerec/voicerec.cpp:57->voicerec/voicerec.cpp:215) [183]  (0.796 ns)
+
+ <State 118>: 4.1ns
+The critical path consists of the following:
+	'phi' operation ('sum') with incoming values : ('sum', voicerec/voicerec.cpp:59->voicerec/voicerec.cpp:215) [190]  (0 ns)
+	'fpext' operation ('tmp_60_i', voicerec/voicerec.cpp:61->voicerec/voicerec.cpp:215) [210]  (4.1 ns)
+
+ <State 119>: 2.15ns
+The critical path consists of the following:
+	'load' operation ('e_load_3', voicerec/voicerec.cpp:59->voicerec/voicerec.cpp:215) on array 'e' [203]  (2.15 ns)
+
+ <State 120>: 4.35ns
+The critical path consists of the following:
+	'fmul' operation ('tmp_64_i', voicerec/voicerec.cpp:59->voicerec/voicerec.cpp:215) [204]  (4.35 ns)
+
+ <State 121>: 4.35ns
+The critical path consists of the following:
+	'fmul' operation ('tmp_64_i', voicerec/voicerec.cpp:59->voicerec/voicerec.cpp:215) [204]  (4.35 ns)
+
+ <State 122>: 4.35ns
+The critical path consists of the following:
+	'fmul' operation ('tmp_64_i', voicerec/voicerec.cpp:59->voicerec/voicerec.cpp:215) [204]  (4.35 ns)
+
+ <State 123>: 4.35ns
+The critical path consists of the following:
+	'fmul' operation ('tmp_64_i', voicerec/voicerec.cpp:59->voicerec/voicerec.cpp:215) [204]  (4.35 ns)
+
+ <State 124>: 4.35ns
+The critical path consists of the following:
+	'fmul' operation ('tmp_64_i', voicerec/voicerec.cpp:59->voicerec/voicerec.cpp:215) [204]  (4.35 ns)
+
+ <State 125>: 4.35ns
+The critical path consists of the following:
+	'fmul' operation ('tmp_65_i', voicerec/voicerec.cpp:59->voicerec/voicerec.cpp:215) [206]  (4.35 ns)
+
+ <State 126>: 4.35ns
+The critical path consists of the following:
+	'fmul' operation ('tmp_65_i', voicerec/voicerec.cpp:59->voicerec/voicerec.cpp:215) [206]  (4.35 ns)
+
+ <State 127>: 4.35ns
+The critical path consists of the following:
+	'fmul' operation ('tmp_65_i', voicerec/voicerec.cpp:59->voicerec/voicerec.cpp:215) [206]  (4.35 ns)
+
+ <State 128>: 4.35ns
+The critical path consists of the following:
+	'fmul' operation ('tmp_65_i', voicerec/voicerec.cpp:59->voicerec/voicerec.cpp:215) [206]  (4.35 ns)
+
+ <State 129>: 4.35ns
+The critical path consists of the following:
+	'fmul' operation ('tmp_65_i', voicerec/voicerec.cpp:59->voicerec/voicerec.cpp:215) [206]  (4.35 ns)
+
+ <State 130>: 4.31ns
+The critical path consists of the following:
+	'fadd' operation ('sum', voicerec/voicerec.cpp:59->voicerec/voicerec.cpp:215) [207]  (4.31 ns)
+
+ <State 131>: 4.31ns
+The critical path consists of the following:
+	'fadd' operation ('sum', voicerec/voicerec.cpp:59->voicerec/voicerec.cpp:215) [207]  (4.31 ns)
+
+ <State 132>: 4.31ns
+The critical path consists of the following:
+	'fadd' operation ('sum', voicerec/voicerec.cpp:59->voicerec/voicerec.cpp:215) [207]  (4.31 ns)
+
+ <State 133>: 4.31ns
+The critical path consists of the following:
+	'fadd' operation ('sum', voicerec/voicerec.cpp:59->voicerec/voicerec.cpp:215) [207]  (4.31 ns)
+
+ <State 134>: 4.31ns
+The critical path consists of the following:
+	'fadd' operation ('sum', voicerec/voicerec.cpp:59->voicerec/voicerec.cpp:215) [207]  (4.31 ns)
+
+ <State 135>: 4.31ns
+The critical path consists of the following:
+	'fadd' operation ('sum', voicerec/voicerec.cpp:59->voicerec/voicerec.cpp:215) [207]  (4.31 ns)
+
+ <State 136>: 4.31ns
+The critical path consists of the following:
+	'fadd' operation ('sum', voicerec/voicerec.cpp:59->voicerec/voicerec.cpp:215) [207]  (4.31 ns)
+
+ <State 137>: 4.31ns
+The critical path consists of the following:
+	'fadd' operation ('sum', voicerec/voicerec.cpp:59->voicerec/voicerec.cpp:215) [207]  (4.31 ns)
+
+ <State 138>: 4.31ns
+The critical path consists of the following:
+	'fadd' operation ('sum', voicerec/voicerec.cpp:59->voicerec/voicerec.cpp:215) [207]  (4.31 ns)
+
+ <State 139>: 4.1ns
+The critical path consists of the following:
+	'fpext' operation ('tmp_60_i', voicerec/voicerec.cpp:61->voicerec/voicerec.cpp:215) [210]  (4.1 ns)
+
+ <State 140>: 4.36ns
+The critical path consists of the following:
+	'dmul' operation ('tmp_61_i', voicerec/voicerec.cpp:61->voicerec/voicerec.cpp:215) [211]  (4.36 ns)
+
+ <State 141>: 4.36ns
+The critical path consists of the following:
+	'dmul' operation ('tmp_61_i', voicerec/voicerec.cpp:61->voicerec/voicerec.cpp:215) [211]  (4.36 ns)
+
+ <State 142>: 4.36ns
+The critical path consists of the following:
+	'dmul' operation ('tmp_61_i', voicerec/voicerec.cpp:61->voicerec/voicerec.cpp:215) [211]  (4.36 ns)
+
+ <State 143>: 4.36ns
+The critical path consists of the following:
+	'dmul' operation ('tmp_61_i', voicerec/voicerec.cpp:61->voicerec/voicerec.cpp:215) [211]  (4.36 ns)
+
+ <State 144>: 4.36ns
+The critical path consists of the following:
+	'dmul' operation ('tmp_61_i', voicerec/voicerec.cpp:61->voicerec/voicerec.cpp:215) [211]  (4.36 ns)
+
+ <State 145>: 4.36ns
+The critical path consists of the following:
+	'dmul' operation ('tmp_61_i', voicerec/voicerec.cpp:61->voicerec/voicerec.cpp:215) [211]  (4.36 ns)
+
+ <State 146>: 4.36ns
+The critical path consists of the following:
+	'dmul' operation ('tmp_61_i', voicerec/voicerec.cpp:61->voicerec/voicerec.cpp:215) [211]  (4.36 ns)
+
+ <State 147>: 4.36ns
+The critical path consists of the following:
+	'dmul' operation ('tmp_61_i', voicerec/voicerec.cpp:61->voicerec/voicerec.cpp:215) [211]  (4.36 ns)
+
+ <State 148>: 4.36ns
+The critical path consists of the following:
+	'dmul' operation ('tmp_61_i', voicerec/voicerec.cpp:61->voicerec/voicerec.cpp:215) [211]  (4.36 ns)
+
+ <State 149>: 4.36ns
+The critical path consists of the following:
+	'dmul' operation ('tmp_61_i', voicerec/voicerec.cpp:61->voicerec/voicerec.cpp:215) [211]  (4.36 ns)
+
+ <State 150>: 4.3ns
+The critical path consists of the following:
+	'fptrunc' operation ('tmp_62_i', voicerec/voicerec.cpp:61->voicerec/voicerec.cpp:215) [212]  (4.3 ns)
+
+ <State 151>: 4.3ns
+The critical path consists of the following:
+	'fptrunc' operation ('tmp_62_i', voicerec/voicerec.cpp:61->voicerec/voicerec.cpp:215) [212]  (4.3 ns)
+
+ <State 152>: 4.3ns
+The critical path consists of the following:
+	'fptrunc' operation ('tmp_62_i', voicerec/voicerec.cpp:61->voicerec/voicerec.cpp:215) [212]  (4.3 ns)
+
+ <State 153>: 3.26ns
+The critical path consists of the following:
+	'store' operation (voicerec/voicerec.cpp:61->voicerec/voicerec.cpp:215) of variable 'tmp_62_i', voicerec/voicerec.cpp:61->voicerec/voicerec.cpp:215 on array 'ret' [213]  (3.26 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+	State 10
+	State 11
+	State 12
+	State 13
+	State 14
+	State 15
+	State 16
+	State 17
+	State 18
+	State 19
+	State 20
+	State 21
+	State 22
+	State 23
+	State 24
+	State 25
+	State 26
+	State 27
+	State 28
+	State 29
+	State 30
+	State 31
+	State 32
+	State 33
+	State 34
+	State 35
+	State 36
+	State 37
+	State 38
+	State 39
+	State 40
+	State 41
+	State 42
+	State 43
+	State 44
+	State 45
+	State 46
+	State 47
+	State 48
+	State 49
+	State 50
+	State 51
+	State 52
+	State 53
+	State 54
+	State 55
+	State 56
+	State 57
+	State 58
+	State 59
+	State 60
+	State 61
+	State 62
+	State 63
+	State 64
+	State 65
+	State 66
+	State 67
+	State 68
+	State 69
+	State 70
+	State 71
+	State 72
+	State 73
+	State 74
+	State 75
+	State 76
+	State 77
+	State 78
+	State 79
+	State 80
+	State 81
+	State 82
+	State 83
+	State 84
+	State 85
+	State 86
+	State 87
+	State 88
+	State 89
+	State 90
+	State 91
+	State 92
+	State 93
+	State 94
+	State 95
+	State 96
+	State 97
+	State 98
+	State 99
+	State 100
+	State 101
+	State 102
+	State 103
+	State 104
+	State 105
+	State 106
+	State 107
+	State 108
+	State 109
+	State 110
+	State 111
+	State 112
+	State 113
+	State 114
+	State 115
+	State 116
+	State 117
+	State 118
+	State 119
+	State 120
+	State 121
+	State 122
+	State 123
+	State 124
+	State 125
+	State 126
+	State 127
+	State 128
+	State 129
+	State 130
+	State 131
+	State 132
+	State 133
+	State 134
+	State 135
+	State 136
+	State 137
+	State 138
+	State 139
+	State 140
+	State 141
+	State 142
+	State 143
+	State 144
+	State 145
+	State 146
+	State 147
+	State 148
+	State 149
+	State 150
+	State 151
+	State 152
+	State 153
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

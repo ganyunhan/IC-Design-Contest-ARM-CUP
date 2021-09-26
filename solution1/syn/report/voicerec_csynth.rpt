@@ -1,0 +1,361 @@
+
+
+================================================================
+== Vivado HLS Report for 'voicerec'
+================================================================
+* Date:           Mon Aug 16 14:13:12 2021
+
+* Version:        2018.2 (Build 2258646 on Thu Jun 14 20:25:20 MDT 2018)
+* Project:        voicerec
+* Solution:       solution1
+* Product family: artix7
+* Target device:  xc7a200tsbg484-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |   5.00|     8.658|        0.00|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +--------+-----------+--------+-----------+---------+
+    |       Latency      |      Interval      | Pipeline|
+    |   min  |    max    |   min  |    max    |   Type  |
+    +--------+-----------+--------+-----------+---------+
+    |  600025|  203786529|  600025|  203786529|   none  |
+    +--------+-----------+--------+-----------+---------+
+
+    + Detail: 
+        * Instance: 
+        +-------------------------+--------------+--------+---------+--------+---------+---------+
+        |                         |              |      Latency     |     Interval     | Pipeline|
+        |         Instance        |    Module    |   min  |   max   |   min  |   max   |   Type  |
+        +-------------------------+--------------+--------+---------+--------+---------+---------+
+        |grp_feedForward_fu_640   |feedForward   |  380651|   380651|  380651|   380651|   none  |
+        |grp_processChunk_fu_659  |processChunk  |   39048|  3324624|   39048|  3324624|   none  |
+        +-------------------------+--------------+--------+---------+--------+---------+---------+
+
+        * Loop: 
+        +--------------------------------------------------------------+--------+--------+----------+-----------+-----------+----------+----------+
+        |                                                              |     Latency     | Iteration|  Initiation Interval  |   Trip   |          |
+        |                           Loop Name                          |   min  |   max  |  Latency |  achieved |   target  |   Count  | Pipelined|
+        +--------------------------------------------------------------+--------+--------+----------+-----------+-----------+----------+----------+
+        |- memcpy.voicerec(int volatile*, int*)::testSound.new_sample  |    8001|    8001|         3|          1|          1|      8000|    yes   |
+        |- Loop 2                                                      |  592000|  592000|        74|          -|          -|      8000|    no    |
+        |- Loop 3                                                      |    3654|    3654|        58|          -|          -|        63|    no    |
+        | + Loop 3.1                                                   |      56|      56|         4|          -|          -|        14|    no    |
+        |- Loop 4                                                      |      15|      15|         5|          -|          -|         3|    no    |
+        |- Loop 5                                                      |       6|   47999|         6|          -|          -| 1 ~ 7999 |    no    |
+        +--------------------------------------------------------------+--------+--------+----------+-----------+-----------+----------+----------+
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-------+--------+--------+
+|       Name      | BRAM_18K| DSP48E|   FF   |   LUT  |
++-----------------+---------+-------+--------+--------+
+|DSP              |        -|      -|       -|       -|
+|Expression       |        -|      -|       0|     578|
+|FIFO             |        -|      -|       -|       -|
+|Instance         |       76|     69|   26590|   30201|
+|Memory           |       36|      -|       0|       0|
+|Multiplexer      |        -|      -|       -|    1860|
+|Register         |        -|      -|     977|       -|
++-----------------+---------+-------+--------+--------+
+|Total            |      112|     69|   27567|   32639|
++-----------------+---------+-------+--------+--------+
+|Available        |      730|    740|  269200|  129000|
++-----------------+---------+-------+--------+--------+
+|Utilization (%)  |       15|      9|      10|      25|
++-----------------+---------+-------+--------+--------+
+
++ Detail: 
+    * Instance: 
+    +----------------------------+--------------------------+---------+-------+-------+-------+
+    |          Instance          |          Module          | BRAM_18K| DSP48E|   FF  |  LUT  |
+    +----------------------------+--------------------------+---------+-------+-------+-------+
+    |grp_feedForward_fu_640      |feedForward               |       67|     34|  11503|  18570|
+    |grp_processChunk_fu_659     |processChunk              |        7|     35|   7566|   6755|
+    |voicerec_ddiv_64npcA_U58    |voicerec_ddiv_64npcA      |        0|      0|   6160|   3489|
+    |voicerec_fcmp_32njbC_U57    |voicerec_fcmp_32njbC      |        0|      0|     66|     70|
+    |voicerec_fptrunc_hbi_U56    |voicerec_fptrunc_hbi      |        0|      0|    128|    103|
+    |voicerec_mux_32_3sc4_U60    |voicerec_mux_32_3sc4      |        0|      0|      0|     15|
+    |voicerec_sitodp_3rcU_U59    |voicerec_sitodp_3rcU      |        0|      0|    549|    451|
+    |voicerec_voice_rec_m_axi_U  |voicerec_voice_rec_m_axi  |        2|      0|    512|    580|
+    |voicerec_voice_rec_s_axi_U  |voicerec_voice_rec_s_axi  |        0|      0|    106|    168|
+    +----------------------------+--------------------------+---------+-------+-------+-------+
+    |Total                       |                          |       76|     69|  26590|  30201|
+    +----------------------------+--------------------------+---------+-------+-------+-------+
+
+    * DSP48: 
+    N/A
+
+    * Memory: 
+    +-------------+--------------------+---------+---+----+------+-----+------+-------------+
+    |    Memory   |       Module       | BRAM_18K| FF| LUT| Words| Bits| Banks| W*Bits*Banks|
+    +-------------+--------------------+---------+---+----+------+-----+------+-------------+
+    |flatInput_U  |voicerec_flatInput  |        2|  0|   0|   882|   32|     1|        28224|
+    |result_U     |voicerec_result     |        2|  0|   0|   882|   32|     1|        28224|
+    |testSound_U  |voicerec_testSound  |       16|  0|   0|  8000|   32|     1|       256000|
+    |inSound_U    |voicerec_testSound  |       16|  0|   0|  8000|   32|     1|       256000|
+    +-------------+--------------------+---------+---+----+------+-----+------+-------------+
+    |Total        |                    |       36|  0|   0| 17764|  128|     4|       568448|
+    +-------------+--------------------+---------+---+----+------+-----+------+-------------+
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +-----------------------------------+----------+-------+---+----+------------+------------+
+    |           Variable Name           | Operation| DSP48E| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +-----------------------------------+----------+-------+---+----+------------+------------+
+    |i_1_fu_872_p2                      |     +    |      0|  0|  20|          13|           1|
+    |i_2_fu_1281_p2                     |     +    |      0|  0|  20|          13|           1|
+    |i_3_fu_933_p2                      |     +    |      0|  0|  15|           6|           1|
+    |indvar_next_fu_855_p2              |     +    |      0|  0|  20|          13|           1|
+    |j_1_fu_1012_p2                     |     +    |      0|  0|  10|           2|           1|
+    |j_fu_979_p2                        |     +    |      0|  0|  13|           4|           1|
+    |tmp_2_fu_883_p2                    |     +    |      0|  0|  39|          32|          14|
+    |tmp_37_fu_985_p2                   |     +    |      0|  0|  18|          11|          11|
+    |tmp_8_fu_1331_p2                   |     +    |      0|  0|  20|          13|           4|
+    |tmp_28_fu_963_p2                   |     -    |      0|  0|  18|          11|          11|
+    |ap_block_pp0_stage0_11001          |    and   |      0|  0|   2|           1|           1|
+    |ap_block_state10_pp0_stage0_iter1  |    and   |      0|  0|   2|           1|           1|
+    |sel_tmp11_i_fu_1234_p2             |    and   |      0|  0|   2|           1|           1|
+    |sel_tmp2_i_fu_1195_p2              |    and   |      0|  0|   2|           1|           1|
+    |sel_tmp6_i_fu_1201_p2              |    and   |      0|  0|   2|           1|           1|
+    |tmp_11_fu_922_p2                   |    and   |      0|  0|   2|           1|           1|
+    |tmp_16_fu_1326_p2                  |    and   |      0|  0|   2|           1|           1|
+    |tmp_21_fu_1178_p2                  |    and   |      0|  0|   2|           1|           1|
+    |tmp_31_fu_1113_p2                  |    and   |      0|  0|   2|           1|           1|
+    |tmp_33_fu_1119_p2                  |    and   |      0|  0|   2|           1|           1|
+    |exitcond1_i_fu_927_p2              |   icmp   |      0|  0|  11|           6|           2|
+    |exitcond2_fu_866_p2                |   icmp   |      0|  0|  13|          13|           9|
+    |exitcond8_fu_849_p2                |   icmp   |      0|  0|  13|          13|           9|
+    |exitcond_i1_fu_1006_p2             |   icmp   |      0|  0|   8|           2|           2|
+    |exitcond_i_fu_973_p2               |   icmp   |      0|  0|   9|           4|           3|
+    |notlhs1_fu_1310_p2                 |   icmp   |      0|  0|  11|           8|           2|
+    |notlhs2_fu_1156_p2                 |   icmp   |      0|  0|  11|           8|           2|
+    |notlhs3_fu_1077_p2                 |   icmp   |      0|  0|  11|           8|           2|
+    |notlhs4_fu_1095_p2                 |   icmp   |      0|  0|  11|           8|           2|
+    |notlhs_fu_906_p2                   |   icmp   |      0|  0|  11|           8|           2|
+    |notrhs1_fu_1316_p2                 |   icmp   |      0|  0|  18|          23|           1|
+    |notrhs2_fu_1162_p2                 |   icmp   |      0|  0|  18|          23|           1|
+    |notrhs3_fu_1083_p2                 |   icmp   |      0|  0|  18|          23|           1|
+    |notrhs4_fu_1101_p2                 |   icmp   |      0|  0|  18|          23|           1|
+    |notrhs_fu_912_p2                   |   icmp   |      0|  0|  18|          23|           1|
+    |sel_tmp4_i_fu_1168_p2              |   icmp   |      0|  0|  18|          32|           1|
+    |sel_tmp9_i_fu_1228_p2              |   icmp   |      0|  0|  18|          32|           1|
+    |sel_tmp_i_fu_1183_p2               |   icmp   |      0|  0|  18|          32|           2|
+    |tmp_7_fu_1275_p2                   |   icmp   |      0|  0|  13|          13|           9|
+    |tmp_14_fu_1322_p2                  |    or    |      0|  0|   2|           1|           1|
+    |tmp_19_fu_1174_p2                  |    or    |      0|  0|   2|           1|           1|
+    |tmp_22_fu_1214_p2                  |    or    |      0|  0|   2|           1|           1|
+    |tmp_23_fu_1248_p2                  |    or    |      0|  0|   2|           1|           1|
+    |tmp_29_fu_1089_p2                  |    or    |      0|  0|   2|           1|           1|
+    |tmp_30_fu_1107_p2                  |    or    |      0|  0|   2|           1|           1|
+    |tmp_9_fu_918_p2                    |    or    |      0|  0|   2|           1|           1|
+    |classification_fu_1254_p3          |  select  |      0|  0|   4|           1|           4|
+    |guess_2_fu_1124_p3                 |  select  |      0|  0|  32|           1|          32|
+    |max_1_fu_1131_p3                   |  select  |      0|  0|  32|           1|          32|
+    |sel_tmp3_i_cast_fu_1206_p3         |  select  |      0|  0|   2|           1|           2|
+    |sel_tmp7_i_fu_1220_p3              |  select  |      0|  0|   4|           1|           4|
+    |sel_tmp8_i_fu_1240_p3              |  select  |      0|  0|   5|           1|           1|
+    |ap_enable_pp0                      |    xor   |      0|  0|   2|           1|           2|
+    |ap_enable_reg_pp0_iter1            |    xor   |      0|  0|   2|           2|           1|
+    |sel_tmp1_i_fu_1189_p2              |    xor   |      0|  0|   2|           1|           2|
+    +-----------------------------------+----------+-------+---+----+------------+------------+
+    |Total                              |          |      0|  0| 578|         447|         196|
+    +-----------------------------------+----------+-------+---+----+------------+------------+
+
+    * Multiplexer: 
+    +------------------------------------+-----+-----------+-----+-----------+
+    |                Name                | LUT | Input Size| Bits| Total Bits|
+    +------------------------------------+-----+-----------+-----+-----------+
+    |ap_NS_fsm                           |  997|        233|    1|        233|
+    |ap_enable_reg_pp0_iter1             |    9|          2|    1|          2|
+    |ap_enable_reg_pp0_iter2             |    9|          2|    1|          2|
+    |ap_phi_mux_indvar_phi_fu_539_p4     |    9|          2|   13|         26|
+    |ap_phi_mux_p_0_phi_fu_619_p6        |    9|          2|   13|         26|
+    |ap_sig_ioackin_voice_rec_ARREADY    |    9|          2|    1|          2|
+    |flatInput_address0                  |   15|          3|   10|         30|
+    |flatInput_ce0                       |   15|          3|    1|          3|
+    |flatInput_ce1                       |    9|          2|    1|          2|
+    |grp_fu_808_opcode                   |   21|          4|    5|         20|
+    |grp_fu_808_p0                       |   21|          4|   32|        128|
+    |grp_fu_808_p1                       |   21|          4|   32|        128|
+    |grp_processChunk_fu_659_ret_offset  |  265|         62|    7|        434|
+    |grp_processChunk_fu_659_sp          |  265|         62|   14|        868|
+    |guess_1_reg_580                     |    9|          2|    2|          4|
+    |i2_reg_628                          |    9|          2|   13|         26|
+    |i_i_reg_558                         |    9|          2|    6|         12|
+    |i_reg_547                           |    9|          2|   13|         26|
+    |inSound_address0                    |   27|          5|   13|         65|
+    |inSound_ce0                         |   15|          3|    1|          3|
+    |indvar_reg_535                      |    9|          2|   13|         26|
+    |j_i_reg_569                         |    9|          2|    4|          8|
+    |p_0_reg_615                         |    9|          2|   13|         26|
+    |result_address0                     |   15|          3|   10|         30|
+    |result_ce0                          |   15|          3|    1|          3|
+    |result_we0                          |    9|          2|    1|          2|
+    |second_max_reg_603                  |    9|          2|   32|         64|
+    |testSound_address0                  |   15|          3|   13|         39|
+    |voice_rec_blk_n_AR                  |    9|          2|    1|          2|
+    |voice_rec_blk_n_R                   |    9|          2|    1|          2|
+    +------------------------------------+-----+-----------+-----+-----------+
+    |Total                               | 1860|        426|  269|       2242|
+    +------------------------------------+-----+-----------+-----+-----------+
+
+    * Register: 
+    +--------------------------------------+-----+----+-----+-----------+
+    |                 Name                 |  FF | LUT| Bits| Const Bits|
+    +--------------------------------------+-----+----+-----+-----------+
+    |ap_CS_fsm                             |  232|   0|  232|          0|
+    |ap_enable_reg_pp0_iter0               |    1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter1               |    1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter2               |    1|   0|    1|          0|
+    |ap_reg_ioackin_voice_rec_ARREADY      |    1|   0|    1|          0|
+    |ap_return                             |   13|   0|   32|         19|
+    |classification_reg_1516               |    3|   0|    4|          1|
+    |exitcond8_reg_1348                    |    1|   0|    1|          0|
+    |exitcond8_reg_1348_pp0_iter1_reg      |    1|   0|    1|          0|
+    |grp_feedForward_fu_640_ap_start_reg   |    1|   0|    1|          0|
+    |grp_processChunk_fu_659_ap_start_reg  |    1|   0|    1|          0|
+    |guess_1_data_reg                      |    3|   0|   32|         29|
+    |guess_1_reg_580                       |    2|   0|    2|          0|
+    |guess_1_vld_reg                       |    0|   0|    1|          1|
+    |guess_i_cast6_reg_1461                |    2|   0|   32|         30|
+    |guess_i_reg_591                       |   32|   0|   32|          0|
+    |i2_reg_628                            |   13|   0|   13|          0|
+    |i_1_reg_1365                          |   13|   0|   13|          0|
+    |i_2_reg_1533                          |   13|   0|   13|          0|
+    |i_3_reg_1427                          |    6|   0|    6|          0|
+    |i_i_reg_558                           |    6|   0|    6|          0|
+    |i_reg_547                             |   13|   0|   13|          0|
+    |indvar_next_reg_1352                  |   13|   0|   13|          0|
+    |indvar_reg_535                        |   13|   0|   13|          0|
+    |indvar_reg_535_pp0_iter1_reg          |   13|   0|   13|          0|
+    |j_1_reg_1469                          |    2|   0|    2|          0|
+    |j_i_reg_569                           |    4|   0|    4|          0|
+    |j_reg_1440                            |    4|   0|    4|          0|
+    |max_reg_1474                          |   32|   0|   32|          0|
+    |new_sample1_reg_1337                  |   30|   0|   30|          0|
+    |notlhs1_reg_1543                      |    1|   0|    1|          0|
+    |notlhs2_reg_1496                      |    1|   0|    1|          0|
+    |notlhs_reg_1405                       |    1|   0|    1|          0|
+    |notrhs1_reg_1548                      |    1|   0|    1|          0|
+    |notrhs2_reg_1501                      |    1|   0|    1|          0|
+    |notrhs_reg_1410                       |    1|   0|    1|          0|
+    |output_0                              |   32|   0|   32|          0|
+    |output_1                              |   32|   0|   32|          0|
+    |output_2                              |   32|   0|   32|          0|
+    |p_0_reg_615                           |   13|   0|   13|          0|
+    |reg_824                               |   32|   0|   32|          0|
+    |result_load_reg_1456                  |   32|   0|   32|          0|
+    |second_max_reg_603                    |   32|   0|   32|          0|
+    |sel_tmp4_i_reg_1511                   |    1|   0|    1|          0|
+    |testSound_load_reg_1380               |   32|   0|   32|          0|
+    |tmp_10_reg_1415                       |    1|   0|    1|          0|
+    |tmp_11_reg_1420                       |    1|   0|    1|          0|
+    |tmp_15_reg_1553                       |    1|   0|    1|          0|
+    |tmp_1_reg_1370                        |   13|   0|   64|         51|
+    |tmp_20_reg_1506                       |    1|   0|    1|          0|
+    |tmp_28_reg_1432                       |   10|   0|   11|          1|
+    |tmp_2_reg_1385                        |   32|   0|   32|          0|
+    |tmp_32_reg_1481                       |    1|   0|    1|          0|
+    |tmp_37_reg_1445                       |   11|   0|   11|          0|
+    |tmp_3_reg_1390                        |   64|   0|   64|          0|
+    |tmp_4_reg_1395                        |   64|   0|   64|          0|
+    |tmp_5_reg_1400                        |   32|   0|   32|          0|
+    |voice_rec_addr_read_reg_1357          |   32|   0|   32|          0|
+    +--------------------------------------+-----+----+-----+-----------+
+    |Total                                 |  977|   0| 1109|        132|
+    +--------------------------------------+-----+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++--------------------------+-----+-----+------------+--------------+--------------+
+|         RTL Ports        | Dir | Bits|  Protocol  | Source Object|    C Type    |
++--------------------------+-----+-----+------------+--------------+--------------+
+|s_axi_voice_rec_AWVALID   |  in |    1|    s_axi   |   voice_rec  |    scalar    |
+|s_axi_voice_rec_AWREADY   | out |    1|    s_axi   |   voice_rec  |    scalar    |
+|s_axi_voice_rec_AWADDR    |  in |    5|    s_axi   |   voice_rec  |    scalar    |
+|s_axi_voice_rec_WVALID    |  in |    1|    s_axi   |   voice_rec  |    scalar    |
+|s_axi_voice_rec_WREADY    | out |    1|    s_axi   |   voice_rec  |    scalar    |
+|s_axi_voice_rec_WDATA     |  in |   32|    s_axi   |   voice_rec  |    scalar    |
+|s_axi_voice_rec_WSTRB     |  in |    4|    s_axi   |   voice_rec  |    scalar    |
+|s_axi_voice_rec_ARVALID   |  in |    1|    s_axi   |   voice_rec  |    scalar    |
+|s_axi_voice_rec_ARREADY   | out |    1|    s_axi   |   voice_rec  |    scalar    |
+|s_axi_voice_rec_ARADDR    |  in |    5|    s_axi   |   voice_rec  |    scalar    |
+|s_axi_voice_rec_RVALID    | out |    1|    s_axi   |   voice_rec  |    scalar    |
+|s_axi_voice_rec_RREADY    |  in |    1|    s_axi   |   voice_rec  |    scalar    |
+|s_axi_voice_rec_RDATA     | out |   32|    s_axi   |   voice_rec  |    scalar    |
+|s_axi_voice_rec_RRESP     | out |    2|    s_axi   |   voice_rec  |    scalar    |
+|s_axi_voice_rec_BVALID    | out |    1|    s_axi   |   voice_rec  |    scalar    |
+|s_axi_voice_rec_BREADY    |  in |    1|    s_axi   |   voice_rec  |    scalar    |
+|s_axi_voice_rec_BRESP     | out |    2|    s_axi   |   voice_rec  |    scalar    |
+|ap_clk                    |  in |    1| ap_ctrl_hs |   voicerec   | return value |
+|ap_rst_n                  |  in |    1| ap_ctrl_hs |   voicerec   | return value |
+|interrupt                 | out |    1| ap_ctrl_hs |   voicerec   | return value |
+|m_axi_voice_rec_AWVALID   | out |    1|    m_axi   |   voice_rec  |    pointer   |
+|m_axi_voice_rec_AWREADY   |  in |    1|    m_axi   |   voice_rec  |    pointer   |
+|m_axi_voice_rec_AWADDR    | out |   32|    m_axi   |   voice_rec  |    pointer   |
+|m_axi_voice_rec_AWID      | out |    1|    m_axi   |   voice_rec  |    pointer   |
+|m_axi_voice_rec_AWLEN     | out |    8|    m_axi   |   voice_rec  |    pointer   |
+|m_axi_voice_rec_AWSIZE    | out |    3|    m_axi   |   voice_rec  |    pointer   |
+|m_axi_voice_rec_AWBURST   | out |    2|    m_axi   |   voice_rec  |    pointer   |
+|m_axi_voice_rec_AWLOCK    | out |    2|    m_axi   |   voice_rec  |    pointer   |
+|m_axi_voice_rec_AWCACHE   | out |    4|    m_axi   |   voice_rec  |    pointer   |
+|m_axi_voice_rec_AWPROT    | out |    3|    m_axi   |   voice_rec  |    pointer   |
+|m_axi_voice_rec_AWQOS     | out |    4|    m_axi   |   voice_rec  |    pointer   |
+|m_axi_voice_rec_AWREGION  | out |    4|    m_axi   |   voice_rec  |    pointer   |
+|m_axi_voice_rec_AWUSER    | out |    1|    m_axi   |   voice_rec  |    pointer   |
+|m_axi_voice_rec_WVALID    | out |    1|    m_axi   |   voice_rec  |    pointer   |
+|m_axi_voice_rec_WREADY    |  in |    1|    m_axi   |   voice_rec  |    pointer   |
+|m_axi_voice_rec_WDATA     | out |   32|    m_axi   |   voice_rec  |    pointer   |
+|m_axi_voice_rec_WSTRB     | out |    4|    m_axi   |   voice_rec  |    pointer   |
+|m_axi_voice_rec_WLAST     | out |    1|    m_axi   |   voice_rec  |    pointer   |
+|m_axi_voice_rec_WID       | out |    1|    m_axi   |   voice_rec  |    pointer   |
+|m_axi_voice_rec_WUSER     | out |    1|    m_axi   |   voice_rec  |    pointer   |
+|m_axi_voice_rec_ARVALID   | out |    1|    m_axi   |   voice_rec  |    pointer   |
+|m_axi_voice_rec_ARREADY   |  in |    1|    m_axi   |   voice_rec  |    pointer   |
+|m_axi_voice_rec_ARADDR    | out |   32|    m_axi   |   voice_rec  |    pointer   |
+|m_axi_voice_rec_ARID      | out |    1|    m_axi   |   voice_rec  |    pointer   |
+|m_axi_voice_rec_ARLEN     | out |    8|    m_axi   |   voice_rec  |    pointer   |
+|m_axi_voice_rec_ARSIZE    | out |    3|    m_axi   |   voice_rec  |    pointer   |
+|m_axi_voice_rec_ARBURST   | out |    2|    m_axi   |   voice_rec  |    pointer   |
+|m_axi_voice_rec_ARLOCK    | out |    2|    m_axi   |   voice_rec  |    pointer   |
+|m_axi_voice_rec_ARCACHE   | out |    4|    m_axi   |   voice_rec  |    pointer   |
+|m_axi_voice_rec_ARPROT    | out |    3|    m_axi   |   voice_rec  |    pointer   |
+|m_axi_voice_rec_ARQOS     | out |    4|    m_axi   |   voice_rec  |    pointer   |
+|m_axi_voice_rec_ARREGION  | out |    4|    m_axi   |   voice_rec  |    pointer   |
+|m_axi_voice_rec_ARUSER    | out |    1|    m_axi   |   voice_rec  |    pointer   |
+|m_axi_voice_rec_RVALID    |  in |    1|    m_axi   |   voice_rec  |    pointer   |
+|m_axi_voice_rec_RREADY    | out |    1|    m_axi   |   voice_rec  |    pointer   |
+|m_axi_voice_rec_RDATA     |  in |   32|    m_axi   |   voice_rec  |    pointer   |
+|m_axi_voice_rec_RLAST     |  in |    1|    m_axi   |   voice_rec  |    pointer   |
+|m_axi_voice_rec_RID       |  in |    1|    m_axi   |   voice_rec  |    pointer   |
+|m_axi_voice_rec_RUSER     |  in |    1|    m_axi   |   voice_rec  |    pointer   |
+|m_axi_voice_rec_RRESP     |  in |    2|    m_axi   |   voice_rec  |    pointer   |
+|m_axi_voice_rec_BVALID    |  in |    1|    m_axi   |   voice_rec  |    pointer   |
+|m_axi_voice_rec_BREADY    | out |    1|    m_axi   |   voice_rec  |    pointer   |
+|m_axi_voice_rec_BRESP     |  in |    2|    m_axi   |   voice_rec  |    pointer   |
+|m_axi_voice_rec_BID       |  in |    1|    m_axi   |   voice_rec  |    pointer   |
+|m_axi_voice_rec_BUSER     |  in |    1|    m_axi   |   voice_rec  |    pointer   |
+|guess                     | out |   32|   ap_none  |     guess    |    pointer   |
++--------------------------+-----+-----+------------+--------------+--------------+
+
